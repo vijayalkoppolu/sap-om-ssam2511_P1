@@ -1,0 +1,17 @@
+{
+  "_Type": "Action.Type.ODataService.CreateEntity",
+  "Target": {
+    "EntitySet": "WarehouseGoodsReceipts",
+    "Service": "/SAPAssetManager/Services/AssetManager.service"
+  },
+  "Properties": {
+    "DocumentCat": "#Property:DocCategory",
+    "DocumentID": "#Property:DocumentID"
+  },
+  "ActionResult": {
+    "_Name": "WarehouseGoodsReceipt"
+  },
+  "Headers": {
+    "OfflineOData.RemoveAfterUpload": "true"
+  }
+}

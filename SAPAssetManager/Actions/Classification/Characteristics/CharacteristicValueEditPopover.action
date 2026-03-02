@@ -1,0 +1,9 @@
+{
+	"PopoverItems": [
+		{
+			"Title": "$(L,add_characteristic_lam)",
+			"OnPress": "/SAPAssetManager/Rules/Classification/Characteristics/LAM/CharacteristicLAMValuesCreateNav.js"
+		}
+	],
+	"_Type": "Action.Type.PopoverMenu"
+}

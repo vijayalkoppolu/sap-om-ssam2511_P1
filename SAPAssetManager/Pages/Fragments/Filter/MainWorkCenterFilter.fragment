@@ -1,0 +1,28 @@
+{
+    "_Name": "MainWorkCenterFilter",
+    "_Type": "Control.Type.FormCell.ListPicker",
+    "AllowMultipleSelection": true,
+    "IsPickerDismissedOnSelection": true,
+    "IsSearchCancelledAfterSelection": true,
+    "Search": {
+        "Enabled": true,
+        "Delay": 500,
+        "MinimumCharacterThreshold": 3,
+        "Placeholder": "$(L,search)",
+        "BarcodeScanner": true
+    },
+    "Caption": "$(L,work_center)",
+    "PlaceHolder": "",
+    "Value": "{ExternalWorkCenterId}",
+    "PickerItems": {
+        "DisplayValue": "{ExternalWorkCenterId} ({PlantId})",
+        "ReturnValue": "{WorkCenterId}",
+        "Target": {
+            "EntitySet": "WorkCenters",
+            "Service": "/SAPAssetManager/Services/AssetManager.service",
+            "QueryOptions": "$orderby=ExternalWorkCenterId,PlantId"
+        }
+    },
+    "FilterProperty": "WorkCenterInternalId",
+    "OnValueChange": "/SAPAssetManager/Rules/Filter/RedrawFilterToolbar.js"
+}

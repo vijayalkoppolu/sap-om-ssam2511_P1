@@ -1,0 +1,12 @@
+{
+	"_Type": "Action.Type.ODataService.ChangeSet",
+	"Actions": [
+        "/SAPAssetManager/Actions/EWM/Inbound/WHInboundDeliveryPostGoodsReceipt.action",
+		"/SAPAssetManager/Actions/EWM/Inbound/WHInboundDeliverySetGRToCompleted.action"
+	],
+	"Target": {
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "OnSuccess": "/SAPAssetManager/Actions/EWM/Inbound/WHInboundDeliveryItemGoodsReceiptCreationSuccess.action",
+    "OnFailure": "/SAPAssetManager/Actions/EWM/Inbound/WHInboundDeliveryPostGoodReceiptError.action"
+}
