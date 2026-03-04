@@ -1,0 +1,189 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MasterInspectionChars",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MasterInspectionChar_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{CharId}",
+						"Subhead": "{TargetValue}",
+						"BodyText": "",
+						"Footnote": "{UpperLimit}",
+						"Description": "{DecimalPlaces}",
+						"StatusText": "{LowerLimit}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ShortDesc}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "TargetValue",
+							"Value": "{TargetValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DecimalPlaces",
+							"Value": "{DecimalPlaces}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UpperLimit",
+							"Value": "{UpperLimit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LowerLimit",
+							"Value": "{LowerLimit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortDesc",
+							"Value": "{ShortDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UpperLimitFlag",
+							"Value": "{UpperLimitFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LowerLimitFlag",
+							"Value": "{LowerLimitFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharCategory",
+							"Value": "{CharCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CalculatedCharFlag",
+							"Value": "{CalculatedCharFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharAttributeFlag",
+							"Value": "{CharAttributeFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QuantitativeFlag",
+							"Value": "{QuantitativeFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectRecordingFlag",
+							"Value": "{DefectRecordingFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionScope",
+							"Value": "{InspectionScope}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongTermInspFlag",
+							"Value": "{LongTermInspFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ScrapShareFlag",
+							"Value": "{ScrapShareFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SortField",
+							"Value": "{SortField}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TargetValueFlag",
+							"Value": "{TargetValueFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectCodeGroupLowerLimit",
+							"Value": "{DefectCodeGroupLowerLimit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectCodeLowerLimit",
+							"Value": "{DefectCodeLowerLimit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectCodeGroupUpperLimit",
+							"Value": "{DefectCodeGroupUpperLimit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SampleProcReqFlag",
+							"Value": "{SampleProcReqFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecordingType",
+							"Value": "{RecordingType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectCodeUpperLimit",
+							"Value": "{DefectCodeUpperLimit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterInspCharPlant",
+							"Value": "{MasterInspCharPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UoM",
+							"Value": "{UoM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterInspChar",
+							"Value": "{MasterInspChar}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterInspCharVersion",
+							"Value": "{MasterInspCharVersion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharId",
+							"Value": "{CharId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MasterInspectionChars_Detail"
+}

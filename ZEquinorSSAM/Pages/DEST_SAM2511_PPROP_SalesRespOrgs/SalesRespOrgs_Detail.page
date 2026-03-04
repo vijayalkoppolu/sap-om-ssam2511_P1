@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "SalesRespOrgs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,SalesRespOrg_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ShortDescription}",
+						"Subhead": "{SalesRespOrg}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{Description}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ShortDescription",
+							"Value": "{ShortDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesRespOrg",
+							"Value": "{SalesRespOrg}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SalesRespOrgs_Detail"
+}

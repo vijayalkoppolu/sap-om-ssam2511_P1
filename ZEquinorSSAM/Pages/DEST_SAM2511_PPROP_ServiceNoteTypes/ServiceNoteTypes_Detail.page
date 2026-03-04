@@ -1,0 +1,109 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ServiceNoteTypes",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ServiceNoteType_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{TextID}",
+						"Subhead": "{ObligatoryText}",
+						"BodyText": "",
+						"Footnote": "{Redetermination}",
+						"Description": "{AccessSequence}",
+						"StatusText": "{TransferType}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Changes}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ObligatoryText",
+							"Value": "{ObligatoryText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AccessSequence",
+							"Value": "{AccessSequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Redetermination",
+							"Value": "{Redetermination}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransferType",
+							"Value": "{TransferType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Changes",
+							"Value": "{Changes}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransCategory",
+							"Value": "{TransCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Sequence",
+							"Value": "{Sequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextDetProc",
+							"Value": "{TextDetProc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextID",
+							"Value": "{TextID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Textobject",
+							"Value": "{Textobject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransactionType",
+							"Value": "{TransactionType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ServiceNoteTypes_Detail"
+}

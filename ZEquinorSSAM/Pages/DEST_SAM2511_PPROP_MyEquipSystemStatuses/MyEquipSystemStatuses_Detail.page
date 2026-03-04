@@ -1,0 +1,79 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyEquipSystemStatuses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyEquipSystemStatus_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{StatusInact}",
+						"BodyText": "",
+						"Footnote": "{SequencePosition}",
+						"Description": "{SequencePriority}",
+						"StatusText": "{ObjectNum}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Status}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "StatusInact",
+							"Value": "{StatusInact}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequencePriority",
+							"Value": "{SequencePriority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequencePosition",
+							"Value": "{SequencePosition}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNum",
+							"Value": "{ObjectNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyEquipSystemStatuses_Detail"
+}

@@ -1,0 +1,182 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyNotificationItemCauses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyNotificationItemCause_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{CauseSortNumber}",
+						"Subhead": "{ItemSortNumber}",
+						"BodyText": "",
+						"Footnote": "{CauseSequenceNumber}",
+						"Description": "{NotificationNumber}",
+						"StatusText": "{ItemNumber}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{CauseCatalogType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "CauseSortNumber",
+							"Value": "{CauseSortNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemSortNumber",
+							"Value": "{ItemSortNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationNumber",
+							"Value": "{NotificationNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CauseSequenceNumber",
+							"Value": "{CauseSequenceNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNumber",
+							"Value": "{ItemNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CauseCatalogType",
+							"Value": "{CauseCatalogType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CauseCode",
+							"Value": "{CauseCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CauseCodeGroup",
+							"Value": "{CauseCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CauseText",
+							"Value": "{CauseText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedBy",
+							"Value": "{ChangedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedTime",
+							"Value": "{ChangedTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedBy",
+							"Value": "{CreatedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationDate",
+							"Value": "{CreationDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationTime",
+							"Value": "{CreationTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongTextFlag",
+							"Value": "{LongTextFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartyRespCodeGroup",
+							"Value": "{PartyRespCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Quantity",
+							"Value": "{Quantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedDate",
+							"Value": "{ChangedDate}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "ItemCauseLongText",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{CauseSequenceNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{TextId}",
+						"Footnote": "{NotificationNumber}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{TextObjType}",
+						"Subhead": "{ItemNumber}",
+						"SubstatusText": "{ObjectKey}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyNotifItemCauseLongTexts/NavToMyNotifItemCauseLongTexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ItemCauseLongText",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MyNotifItemCauseLongTexts"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyNotificationItemCauses_Detail"
+}

@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FSMFormElements",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FSMFormElement_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Id}",
+						"Subhead": "{ChecklistId}",
+						"BodyText": "",
+						"Footnote": "{Value}",
+						"Description": "{Template}",
+						"StatusText": "{LastChangedTimestamp}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ElementID}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Id",
+							"Value": "{Id}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChecklistId",
+							"Value": "{ChecklistId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Template",
+							"Value": "{Template}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Value",
+							"Value": "{Value}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangedTimestamp",
+							"Value": "{LastChangedTimestamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ElementID",
+							"Value": "{ElementID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChapterID",
+							"Value": "{ChapterID}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FSMFormElements_Detail"
+}

@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyEquipObjectStatuses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyEquipObjectStatus_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{Status}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{ObjectKey}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyEquipObjectStatuses_Detail"
+}

@@ -1,0 +1,99 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyEquipPartners",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyEquipPartner_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{PersonnelNum}",
+						"BodyText": "",
+						"Footnote": "{Counter}",
+						"Description": "{ObjectNum}",
+						"StatusText": "{PartnerFunction}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{AddressNum}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PersonnelNum",
+							"Value": "{PersonnelNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNum",
+							"Value": "{ObjectNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter",
+							"Value": "{Counter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerFunction",
+							"Value": "{PartnerFunction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AddressNum",
+							"Value": "{AddressNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectCategory",
+							"Value": "{ObjectCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerNum",
+							"Value": "{PartnerNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BPNum",
+							"Value": "{BPNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonNum",
+							"Value": "{PersonNum}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyEquipPartners_Detail"
+}

@@ -1,0 +1,109 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMApprovalPartners",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMApprovalPartner_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{AddressNumber}",
+						"Subhead": "{BPNum}",
+						"BodyText": "",
+						"Footnote": "{PersonnelNum}",
+						"Description": "{OldPartner}",
+						"StatusText": "{AddressExists}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PersonNum}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "AddressNumber",
+							"Value": "{AddressNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BPNum",
+							"Value": "{BPNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OldPartner",
+							"Value": "{OldPartner}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonnelNum",
+							"Value": "{PersonnelNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AddressExists",
+							"Value": "{AddressExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonNum",
+							"Value": "{PersonNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerFunction",
+							"Value": "{PartnerFunction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter",
+							"Value": "{Counter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectCategory",
+							"Value": "{ObjectCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerNum",
+							"Value": "{PartnerNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMWorkApproval",
+							"Value": "{WCMWorkApproval}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMApprovalPartners_Detail"
+}

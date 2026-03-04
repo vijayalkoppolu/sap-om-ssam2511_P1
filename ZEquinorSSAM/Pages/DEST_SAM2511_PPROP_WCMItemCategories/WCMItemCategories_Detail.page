@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMItemCategories",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMItemCategory_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ItemCategoryCC}",
+						"Subhead": "{ItemCategory}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{ItemCategoryText}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ItemCategoryCC",
+							"Value": "{ItemCategoryCC}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemCategory",
+							"Value": "{ItemCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemCategoryText",
+							"Value": "{ItemCategoryText}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMItemCategories_Detail"
+}

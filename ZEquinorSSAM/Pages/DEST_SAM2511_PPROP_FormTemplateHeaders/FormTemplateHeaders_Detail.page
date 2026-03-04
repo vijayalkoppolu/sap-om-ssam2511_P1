@@ -1,0 +1,99 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FormTemplateHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FormTemplateHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DisplayId}",
+						"Subhead": "{Status}",
+						"BodyText": "",
+						"Footnote": "{TemplateId}",
+						"Description": "{LongDescription}",
+						"StatusText": "{IntentCode}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PublishDate}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DisplayId",
+							"Value": "{DisplayId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongDescription",
+							"Value": "{LongDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TemplateId",
+							"Value": "{TemplateId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IntentCode",
+							"Value": "{IntentCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PublishDate",
+							"Value": "{PublishDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortDescription",
+							"Value": "{ShortDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Version",
+							"Value": "{Version}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BusinessObjects",
+							"Value": "{BusinessObjects}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FormCategory",
+							"Value": "{FormCategory}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FormTemplateHeaders_Detail"
+}

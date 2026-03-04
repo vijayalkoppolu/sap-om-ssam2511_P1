@@ -1,0 +1,406 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyFunctionalLocations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyFunctionalLocation_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SuperiorFuncLocInternId}",
+						"Subhead": "{ConstType}",
+						"BodyText": "",
+						"Footnote": "{LongTextIndicator}",
+						"Description": "{Location}",
+						"StatusText": "{LAMTableKey}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{LAMObjectType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ConstType",
+							"Value": "{ConstType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Location",
+							"Value": "{Location}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongTextIndicator",
+							"Value": "{LongTextIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LAMTableKey",
+							"Value": "{LAMTableKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LAMObjectType",
+							"Value": "{LAMObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyFuncLocIdIntern",
+							"Value": "{CopyFuncLocIdIntern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintWorkCenter",
+							"Value": "{MaintWorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PMObjectType",
+							"Value": "{PMObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SuperiorFuncLocInternId",
+							"Value": "{SuperiorFuncLocInternId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AuthorizationGroup",
+							"Value": "{AuthorizationGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CRObjectType",
+							"Value": "{CRObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyMeasuringPoints",
+							"Value": "{CopyMeasuringPoints}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InventoryNumber",
+							"Value": "{InventoryNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Manufacturer",
+							"Value": "{Manufacturer}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ModelNumber",
+							"Value": "{ModelNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartNumber",
+							"Value": "{PartNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Room",
+							"Value": "{Room}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Section",
+							"Value": "{Section}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SerialNumber",
+							"Value": "{SerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SingleInstall",
+							"Value": "{SingleInstall}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SuperiorFuncLoc",
+							"Value": "{SuperiorFuncLoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocStructInd",
+							"Value": "{FuncLocStructInd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocLabel",
+							"Value": "{FuncLocLabel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefFuncLocIdIntern",
+							"Value": "{RefFuncLocIdIntern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BoMFlag",
+							"Value": "{BoMFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNum",
+							"Value": "{ObjectNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipType",
+							"Value": "{EquipType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocDesc",
+							"Value": "{FuncLocDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocId",
+							"Value": "{FuncLocId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocType",
+							"Value": "{FuncLocType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LocAssignment",
+							"Value": "{LocAssignment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintPlant",
+							"Value": "{MaintPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterLanguage",
+							"Value": "{MasterLanguage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenter",
+							"Value": "{WorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BusinessArea",
+							"Value": "{BusinessArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CatalogProfile",
+							"Value": "{CatalogProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompanyCode",
+							"Value": "{CompanyCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControllingArea",
+							"Value": "{ControllingArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipAllowed",
+							"Value": "{EquipAllowed}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocIdIntern",
+							"Value": "{FuncLocIdIntern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AddressNum",
+							"Value": "{AddressNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartDate",
+							"Value": "{StartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ConstYear",
+							"Value": "{ConstYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ConstMonth",
+							"Value": "{ConstMonth}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyNote",
+							"Value": "{CopyNote}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyClassification",
+							"Value": "{CopyClassification}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyDocuments",
+							"Value": "{CopyDocuments}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyPartners",
+							"Value": "{CopyPartners}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "FuncLocLongText_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{NewTextString}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{FuncLocId}",
+						"Footnote": "{TextString}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ObjectKey}",
+						"Subhead": "{FuncLocIdIntern}",
+						"SubstatusText": "{TextObjType}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyFuncLocLongTexts/NavToMyFuncLocLongTexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/FuncLocLongText_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "SystemStatuses_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{StatusInact}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SequencePriority}",
+						"Footnote": "{FuncLocIdIntern}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ObjectNum}",
+						"Subhead": "{SequencePosition}",
+						"SubstatusText": "{Status}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyFuncLocSystemStatuses/NavToMyFuncLocSystemStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/SystemStatuses_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "UserStatuses_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{StatusInact}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SequencePriority}",
+						"Footnote": "{FuncLocIdIntern}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ObjectNum}",
+						"Subhead": "{SequencePosition}",
+						"SubstatusText": "{StatusProfile}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyFuncLocUserStatuses/NavToMyFuncLocUserStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/UserStatuses_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MyFuncLocLongTexts",
+				"MyFuncLocSystemStatuses",
+				"MyFuncLocUserStatuses"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyFunctionalLocations_Detail"
+}

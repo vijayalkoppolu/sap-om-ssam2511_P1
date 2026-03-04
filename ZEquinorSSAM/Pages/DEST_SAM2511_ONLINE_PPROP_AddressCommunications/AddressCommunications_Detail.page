@@ -1,0 +1,109 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "AddressCommunications",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,AddressCommunication_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{AddressNum}",
+						"Subhead": "{CommType}",
+						"BodyText": "",
+						"Footnote": "{SequenceNum}",
+						"Description": "{PersonNum}",
+						"StatusText": "{Country}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Default}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "AddressNum",
+							"Value": "{AddressNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CommType",
+							"Value": "{CommType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonNum",
+							"Value": "{PersonNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequenceNum",
+							"Value": "{SequenceNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Country",
+							"Value": "{Country}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Default",
+							"Value": "{Default}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EMail",
+							"Value": "{EMail}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PreferTelType",
+							"Value": "{PreferTelType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TelExtension",
+							"Value": "{TelExtension}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TelNumber",
+							"Value": "{TelNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TelNumberCall",
+							"Value": "{TelNumberCall}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TelNumberLong",
+							"Value": "{TelNumberLong}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "AddressCommunications_Detail"
+}

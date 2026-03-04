@@ -1,0 +1,97 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PRTCategories",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PRTCategory_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PRTCategoryDesc}",
+						"Subhead": "{PRTCategory}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PRTCategoryDesc",
+							"Value": "{PRTCategoryDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PRTCategory",
+							"Value": "{PRTCategory}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "MyWorkOrderTools_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{UsageValue}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{DocumentID}",
+						"Footnote": "{PRTText}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ControlKey}",
+						"Subhead": "{ItemCounterChar}",
+						"SubstatusText": "{Quantity}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyWorkOrderTools/NavToMyWorkOrderTools_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyWorkOrderTools_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MyWorkOrderTools"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PRTCategories_Detail"
+}

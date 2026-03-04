@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "GuidedFlowSteps",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,GuidedFlowStep_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{FlowID}",
+						"Subhead": "{ToStep}",
+						"BodyText": "",
+						"Footnote": "{FromStep}",
+						"Description": "{Actions}",
+						"StatusText": "{Sequence}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "FlowID",
+							"Value": "{FlowID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ToStep",
+							"Value": "{ToStep}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Actions",
+							"Value": "{Actions}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FromStep",
+							"Value": "{FromStep}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Sequence",
+							"Value": "{Sequence}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "GuidedFlowSteps_Detail"
+}

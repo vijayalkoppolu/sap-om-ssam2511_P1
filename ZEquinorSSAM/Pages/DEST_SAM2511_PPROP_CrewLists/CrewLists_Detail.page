@@ -1,0 +1,129 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "CrewLists",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,CrewList_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Name}",
+						"Subhead": "{Plant}",
+						"BodyText": "",
+						"Footnote": "{CrewListNo}",
+						"Description": "{UserGuid}",
+						"StatusText": "{SAPUserName}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ListType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserGuid",
+							"Value": "{UserGuid}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CrewListNo",
+							"Value": "{CrewListNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SAPUserName",
+							"Value": "{SAPUserName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ListType",
+							"Value": "{ListType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ListReferenceKey",
+							"Value": "{ListReferenceKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompanyCode",
+							"Value": "{CompanyCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OriginTimeStamp",
+							"Value": "{OriginTimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationTimeStamp",
+							"Value": "{CreationTimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CrewId",
+							"Value": "{CrewId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name",
+							"Value": "{Name}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MinimumSize",
+							"Value": "{MinimumSize}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MinimumCapacity",
+							"Value": "{MinimumCapacity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EndTimestamp",
+							"Value": "{EndTimestamp}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "CrewLists_Detail"
+}

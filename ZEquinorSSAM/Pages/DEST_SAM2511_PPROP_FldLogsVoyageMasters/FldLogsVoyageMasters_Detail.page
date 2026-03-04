@@ -1,0 +1,149 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FldLogsVoyageMasters",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FldLogsVoyageMaster_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{VoyageVehName}",
+						"Subhead": "{FldLogsVoyageStageId}",
+						"BodyText": "",
+						"Footnote": "{ChangedOn}",
+						"Description": "{VoyageStageUUID}",
+						"StatusText": "{ContainerNotAllwd}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{CountryRegionKey}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "FldLogsVoyageStageId",
+							"Value": "{FldLogsVoyageStageId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageStageUUID",
+							"Value": "{VoyageStageUUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedOn",
+							"Value": "{ChangedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ContainerNotAllwd",
+							"Value": "{ContainerNotAllwd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CountryRegionKey",
+							"Value": "{CountryRegionKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestinationPlant",
+							"Value": "{DestinationPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestinationStage",
+							"Value": "{DestinationStage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EndTime",
+							"Value": "{EndTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ExternallyManaged",
+							"Value": "{ExternallyManaged}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedArrivalDate",
+							"Value": "{PlannedArrivalDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedDeptrDate",
+							"Value": "{PlannedDeptrDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SourcePlant",
+							"Value": "{SourcePlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SourceStage",
+							"Value": "{SourceStage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartTime",
+							"Value": "{StartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Supplier",
+							"Value": "{Supplier}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageNumber",
+							"Value": "{VoyageNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageStatusCode",
+							"Value": "{VoyageStatusCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageTypeCode",
+							"Value": "{VoyageTypeCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageVehName",
+							"Value": "{VoyageVehName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageVehnumber",
+							"Value": "{VoyageVehnumber}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FldLogsVoyageMasters_Detail"
+}

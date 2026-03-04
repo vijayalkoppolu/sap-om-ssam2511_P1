@@ -1,0 +1,208 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "DigitalSignatureApplications",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,DigitalSignatureApplication_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ApplicationDescription}",
+						"Subhead": "{Application}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ApplicationDescription",
+							"Value": "{ApplicationDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Application",
+							"Value": "{Application}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "DigitalSignatureHeader_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Version}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SignatureId}",
+						"Footnote": "{Application}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Method}",
+						"Subhead": "{Type}",
+						"SubstatusText": "{Object}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/DigitalSignatureHeaders/NavToDigitalSignatureHeaders_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/DigitalSignatureHeader_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "DigitalSignatureLink_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SignatureId}",
+						"Footnote": "{Application}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Object}",
+						"Subhead": "{Strategy}",
+						"SubstatusText": "{ObjectGroup}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/DigitalSignatureLinks/NavToDigitalSignatureLinks_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/DigitalSignatureLink_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "DigitalSignatureObjectConfig_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Object}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{TableFields}",
+						"Footnote": "{Application}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{ObjectType}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/DigitalSignatureObjectConfigs/NavToDigitalSignatureObjectConfigs_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/DigitalSignatureObjectConfig_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "DigitalSignatureObject_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SubObject}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{MetaName}",
+						"Footnote": "{AllowComment}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{AllowRemark}",
+						"Subhead": "{LogStructure}",
+						"SubstatusText": "{AllowObjectDescription}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/DigitalSignatureObjects/NavToDigitalSignatureObjects_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/DigitalSignatureObject_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"DigitalSignatureHeaders",
+				"DigitalSignatureLinks",
+				"DigitalSignatureObjectConfigs",
+				"DigitalSignatureObjects"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "DigitalSignatureApplications_Detail"
+}

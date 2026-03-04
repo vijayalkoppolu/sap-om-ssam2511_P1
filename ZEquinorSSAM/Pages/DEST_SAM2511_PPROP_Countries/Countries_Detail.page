@@ -1,0 +1,154 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "Countries",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,Country_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Description}",
+						"Subhead": "{PostalCodeMask2}",
+						"BodyText": "",
+						"Footnote": "{DialingCode}",
+						"Description": "{PostalCodeMask}",
+						"StatusText": "{PostalCodeLength}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Country}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostalCodeMask2",
+							"Value": "{PostalCodeMask2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostalCodeMask",
+							"Value": "{PostalCodeMask}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DialingCode",
+							"Value": "{DialingCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostalCodeLength",
+							"Value": "{PostalCodeLength}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Country",
+							"Value": "{Country}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "Addresses_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{City}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Name}",
+						"Footnote": "{Street}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{HouseNum}",
+						"Subhead": "{Country}",
+						"SubstatusText": "{LastName}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/Addresses/NavToAddresses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/Addresses_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "Regions_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Description}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Region}",
+						"Footnote": "",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{Country}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/Regions/NavToRegions_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/Regions_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"Addresses",
+				"Regions"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Countries_Detail"
+}

@@ -1,0 +1,159 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMObjectApprovals",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMObjectApproval_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PlanningPlant}",
+						"Subhead": "{ObjectType}",
+						"BodyText": "",
+						"Footnote": "{Permit}",
+						"Description": "{WCMObjectType}",
+						"StatusText": "{HierarchyLevel}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ReltoProcessFlag}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMObjectType",
+							"Value": "{WCMObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Permit",
+							"Value": "{Permit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HierarchyLevel",
+							"Value": "{HierarchyLevel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReltoProcessFlag",
+							"Value": "{ReltoProcessFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Direction",
+							"Value": "{Direction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyAutomaticallyFlag",
+							"Value": "{CopyAutomaticallyFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AppMandatoryFlag",
+							"Value": "{AppMandatoryFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RevokeApprovalFlag",
+							"Value": "{RevokeApprovalFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ApprovalStatusFlag",
+							"Value": "{ApprovalStatusFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SysStIssue",
+							"Value": "{SysStIssue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AssgmtRequiredFlag",
+							"Value": "{AssgmtRequiredFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IssueAutomaticFlag",
+							"Value": "{IssueAutomaticFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Agent",
+							"Value": "{Agent}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UsrStIssue",
+							"Value": "{UsrStIssue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RevokingStatGrp",
+							"Value": "{RevokingStatGrp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CopyApprovalsFlag",
+							"Value": "{CopyApprovalsFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidityReqd",
+							"Value": "{ValidityReqd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Usage",
+							"Value": "{Usage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UsageType",
+							"Value": "{UsageType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PermitText",
+							"Value": "{PermitText}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMObjectApprovals_Detail"
+}

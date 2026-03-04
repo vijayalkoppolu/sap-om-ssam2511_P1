@@ -1,0 +1,114 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "EAMOverallStatusSeqs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,EAMOverallStatusSeq_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{FeatureId}",
+						"Subhead": "{ToEAMOverallStatusProfile}",
+						"BodyText": "",
+						"Footnote": "{CannotBeSkipped}",
+						"Description": "{EAMOverallStatus}",
+						"StatusText": "{EAMNextOverallStatus}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{UserPersona}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ToEAMOverallStatusProfile",
+							"Value": "{ToEAMOverallStatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMOverallStatus",
+							"Value": "{EAMOverallStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CannotBeSkipped",
+							"Value": "{CannotBeSkipped}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMNextOverallStatus",
+							"Value": "{EAMNextOverallStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserPersona",
+							"Value": "{UserPersona}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsMandatory",
+							"Value": "{IsMandatory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMOverallStatusProfile",
+							"Value": "{EAMOverallStatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RoleType",
+							"Value": "{RoleType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FromStatus",
+							"Value": "{FromStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ToStatus",
+							"Value": "{ToStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransitionType",
+							"Value": "{TransitionType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhaseModelRelevant",
+							"Value": "{PhaseModelRelevant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FeatureId",
+							"Value": "{FeatureId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "EAMOverallStatusSeqs_Detail"
+}

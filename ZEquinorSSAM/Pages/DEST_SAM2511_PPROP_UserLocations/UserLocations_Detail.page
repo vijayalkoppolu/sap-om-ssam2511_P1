@@ -1,0 +1,104 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "UserLocations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,UserLocation_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{UserGUID}",
+						"Subhead": "{ObjectGroup}",
+						"BodyText": "",
+						"Footnote": "{GeometryValFormat}",
+						"Description": "{ObjectGroup1}",
+						"StatusText": "{CurrentTimeStamp}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{MobileObjectStatus}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ObjectGroup",
+							"Value": "{ObjectGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup1",
+							"Value": "{ObjectGroup1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GeometryValFormat",
+							"Value": "{GeometryValFormat}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CurrentTimeStamp",
+							"Value": "{CurrentTimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MobileObjectStatus",
+							"Value": "{MobileObjectStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusAttribute1",
+							"Value": "{StatusAttribute1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserGUID",
+							"Value": "{UserGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GeometryValue",
+							"Value": "{GeometryValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusAttribute2",
+							"Value": "{StatusAttribute2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "UserLocations_Detail"
+}

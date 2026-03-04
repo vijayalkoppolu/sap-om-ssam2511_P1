@@ -1,0 +1,214 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "StockTransportOrderItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,StockTransportOrderItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{StockTransportOrderId}",
+						"Subhead": "{StorageBin}",
+						"BodyText": "",
+						"Footnote": "{ValuationCategory}",
+						"Description": "{ValuationType}",
+						"StatusText": "{OrderUOM}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{StorageLoc}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "StorageBin",
+							"Value": "{StorageBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationType",
+							"Value": "{ValuationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationCategory",
+							"Value": "{ValuationCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderUOM",
+							"Value": "{OrderUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLoc",
+							"Value": "{StorageLoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinalDeliveryFlag",
+							"Value": "{FinalDeliveryFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OpenQuantity",
+							"Value": "{OpenQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderQuantity",
+							"Value": "{OrderQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReceivedQuantity",
+							"Value": "{ReceivedQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockType",
+							"Value": "{StockType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemText",
+							"Value": "{ItemText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockTransportOrderId",
+							"Value": "{StockTransportOrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialNum",
+							"Value": "{MaterialNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IssuedQuantity",
+							"Value": "{IssuedQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryCompletedFlag",
+							"Value": "{DeliveryCompletedFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNum",
+							"Value": "{ItemNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SupplierMaterialNum",
+							"Value": "{SupplierMaterialNum}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "STOScheduleLine_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ScheduleLine}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{StockTransportOrderId}",
+						"Footnote": "{ItemNum}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Batch}",
+						"Subhead": "{ReservationNum}",
+						"SubstatusText": "{DeliveredQuantity}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/STOScheduleLines/NavToSTOScheduleLines_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/STOScheduleLine_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "STOSerialNumber_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SerialNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{StockTransportOrderId}",
+						"Footnote": "{UniversalItemId}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{ItemNumber}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/StockTransportOrderSerialNumbers/NavToStockTransportOrderSerialNumbers_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/STOSerialNumber_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"STOScheduleLines",
+				"StockTransportOrderSerialNumbers"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "StockTransportOrderItems_Detail"
+}

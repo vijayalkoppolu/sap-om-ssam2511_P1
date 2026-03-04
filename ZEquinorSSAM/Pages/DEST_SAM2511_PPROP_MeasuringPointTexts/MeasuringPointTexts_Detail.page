@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MeasuringPointTexts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MeasuringPointText_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{TextId}",
+						"Subhead": "{TextString}",
+						"BodyText": "",
+						"Footnote": "{TextObjType}",
+						"Description": "{ObjectKey}",
+						"StatusText": "{Point}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "TextString",
+							"Value": "{TextString}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextObjType",
+							"Value": "{TextObjType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextId",
+							"Value": "{TextId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Point",
+							"Value": "{Point}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MeasuringPointTexts_Detail"
+}

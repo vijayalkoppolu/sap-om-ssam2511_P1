@@ -1,0 +1,99 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "HandlingUnitItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,HandlingUnitItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ParentGUID}",
+						"Subhead": "{StockGUID}",
+						"BodyText": "",
+						"Footnote": "{RefDocId}",
+						"Description": "{RefDocCategory}",
+						"StatusText": "{RefItemId}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PackedQuantity}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ParentGUID",
+							"Value": "{ParentGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockGUID",
+							"Value": "{StockGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefDocCategory",
+							"Value": "{RefDocCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefDocId",
+							"Value": "{RefDocId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefItemId",
+							"Value": "{RefItemId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackedQuantity",
+							"Value": "{PackedQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QuantityUoM",
+							"Value": "{QuantityUoM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Serialized",
+							"Value": "{Serialized}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LoadingWeight",
+							"Value": "{LoadingWeight}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LoadingWeightUoM",
+							"Value": "{LoadingWeightUoM}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "HandlingUnitItems_Detail"
+}

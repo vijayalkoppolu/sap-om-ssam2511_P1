@@ -1,0 +1,244 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FldLogsInitRetProducts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FldLogsInitRetProduct_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{StockTypeName}",
+						"Subhead": "{ObjectId}",
+						"BodyText": "",
+						"Footnote": "{Product}",
+						"Description": "{OutboundDelivery}",
+						"StatusText": "{FldLogsReferenceDocumentNumber}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{FldLogsRemotePlant}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ObjectId",
+							"Value": "{ObjectId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OutboundDelivery",
+							"Value": "{OutboundDelivery}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Product",
+							"Value": "{Product}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsReferenceDocumentNumber",
+							"Value": "{FldLogsReferenceDocumentNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsRemotePlant",
+							"Value": "{FldLogsRemotePlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DispatchedStartDate",
+							"Value": "{DispatchedStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsReturnStatus",
+							"Value": "{FldLogsReturnStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyInBaseUnit",
+							"Value": "{RetblQtyInBaseUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyBaseUnit",
+							"Value": "{RetblQtyBaseUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsRecommendedAction",
+							"Value": "{FldLogsRecommendedAction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsSupplyProcess",
+							"Value": "{FldLogsSupplyProcess}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProductDescription",
+							"Value": "{ProductDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsInternalBatchManaged",
+							"Value": "{IsInternalBatchManaged}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SerialNumber",
+							"Value": "{SerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyInOrderUnit",
+							"Value": "{RetblQtyInOrderUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyOrderUnit",
+							"Value": "{RetblQtyOrderUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LoadingQtyInOrderUnit",
+							"Value": "{LoadingQtyInOrderUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SupplyingStorageLocation",
+							"Value": "{SupplyingStorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FieldLogisticsTransferPlant",
+							"Value": "{FieldLogisticsTransferPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RemoteStorageLocation",
+							"Value": "{RemoteStorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InventoryUsabilityCode",
+							"Value": "{InventoryUsabilityCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsReturnComment",
+							"Value": "{FldLogsReturnComment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsRetOutbDelivIsCreated",
+							"Value": "{FldLogsRetOutbDelivIsCreated}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseOrderItem",
+							"Value": "{PurchaseOrderItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferencePurchasingDocument",
+							"Value": "{ReferencePurchasingDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceOrder",
+							"Value": "{ReferenceOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsRefurbishmentOrder",
+							"Value": "{FldLogsRefurbishmentOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderCategory",
+							"Value": "{OrderCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsReferenceDocCategory",
+							"Value": "{FldLogsReferenceDocCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsTranspContainerID",
+							"Value": "{FldLogsTranspContainerID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequestedShippingDate",
+							"Value": "{RequestedShippingDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsVoyageDestStage",
+							"Value": "{FldLogsVoyageDestStage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FlogMaintenanceOrder",
+							"Value": "{FlogMaintenanceOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDocumentItem",
+							"Value": "{ReferenceDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsSerialized",
+							"Value": "{IsSerialized}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationType",
+							"Value": "{ValuationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntryQty",
+							"Value": "{EntryQty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockTypeName",
+							"Value": "{StockTypeName}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FldLogsInitRetProducts_Detail"
+}

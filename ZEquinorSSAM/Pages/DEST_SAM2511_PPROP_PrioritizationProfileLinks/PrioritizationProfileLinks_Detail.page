@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PrioritizationProfileLinks",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PrioritizationProfileLink_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PrioritizationProfileID}",
+						"Subhead": "{Plant}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{NotificationType}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PrioritizationProfileID",
+							"Value": "{PrioritizationProfileID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationType",
+							"Value": "{NotificationType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PrioritizationProfileLinks_Detail"
+}

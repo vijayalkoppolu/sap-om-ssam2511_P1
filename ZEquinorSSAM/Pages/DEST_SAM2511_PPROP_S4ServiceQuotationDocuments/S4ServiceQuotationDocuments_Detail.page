@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "S4ServiceQuotationDocuments",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,S4ServiceQuotationDocument_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{RelationshipID}",
+						"Subhead": "{ObjectKey}",
+						"BodyText": "",
+						"Footnote": "{HeaderID}",
+						"Description": "{DocumentID}",
+						"StatusText": "{ItemNo}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ObjectID}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RelationshipID",
+							"Value": "{RelationshipID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentID",
+							"Value": "{DocumentID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HeaderID",
+							"Value": "{HeaderID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNo",
+							"Value": "{ItemNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectID",
+							"Value": "{ObjectID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefItemID",
+							"Value": "{RefItemID}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "S4ServiceQuotationDocuments_Detail"
+}

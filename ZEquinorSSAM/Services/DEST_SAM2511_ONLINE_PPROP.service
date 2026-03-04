@@ -1,0 +1,10 @@
+{
+    "DestinationName": "DEST_SAM2511_ONLINE_PPROP",
+    "OfflineEnabled": false,
+    "LanguageURLParam": "",
+    "OnlineOptions": {},
+    "OfflineOptions": {},
+    "PathSuffix": "",
+    "SourceType": "Mobile",
+    "ServiceUrl":""
+}

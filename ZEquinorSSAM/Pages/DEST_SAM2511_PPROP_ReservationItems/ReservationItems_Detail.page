@@ -1,0 +1,199 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ReservationItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ReservationItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{DebitCreditIndicator}",
+						"BodyText": "",
+						"Footnote": "{GoodsRecipient}",
+						"Description": "{UnloadingPoint}",
+						"StatusText": "{QuantityUnE}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{UnitOfEntry}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "DebitCreditIndicator",
+							"Value": "{DebitCreditIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnloadingPoint",
+							"Value": "{UnloadingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GoodsRecipient",
+							"Value": "{GoodsRecipient}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QuantityUnE",
+							"Value": "{QuantityUnE}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnitOfEntry",
+							"Value": "{UnitOfEntry}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageBin",
+							"Value": "{StorageBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNum",
+							"Value": "{ItemNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MovementType",
+							"Value": "{MovementType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BackFlushIndicator",
+							"Value": "{BackFlushIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderOperationNo",
+							"Value": "{OrderOperationNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequirementUOM",
+							"Value": "{RequirementUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialNum",
+							"Value": "{MaterialNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrder",
+							"Value": "{SalesOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WBSElement",
+							"Value": "{WBSElement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GLAccount",
+							"Value": "{GLAccount}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BusinessArea",
+							"Value": "{BusinessArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrderItem",
+							"Value": "{SalesOrderItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrderSchedule",
+							"Value": "{SalesOrderSchedule}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecordType",
+							"Value": "{RecordType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SupplyPlant",
+							"Value": "{SupplyPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SupplyStorageLocation",
+							"Value": "{SupplyStorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MovementAllowed",
+							"Value": "{MovementAllowed}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Completed",
+							"Value": "{Completed}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AccountAssignmentCategory",
+							"Value": "{AccountAssignmentCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WithdrawalQuantity",
+							"Value": "{WithdrawalQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReservationNum",
+							"Value": "{ReservationNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequirementQuantity",
+							"Value": "{RequirementQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequirementDate",
+							"Value": "{RequirementDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ReservationItems_Detail"
+}

@@ -1,0 +1,114 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PhaseControlCodes",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PhaseControlCode_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Entity}",
+						"Subhead": "{OrderType}",
+						"BodyText": "",
+						"Footnote": "{AuthorizationKey}",
+						"Description": "{PhaseControl}",
+						"StatusText": "{BlockingSubPhase}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Description}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Entity",
+							"Value": "{Entity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderType",
+							"Value": "{OrderType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhaseControl",
+							"Value": "{PhaseControl}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AuthorizationKey",
+							"Value": "{AuthorizationKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BlockingSubPhase",
+							"Value": "{BlockingSubPhase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EnteringPhase",
+							"Value": "{EnteringPhase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EnteringSubPhase",
+							"Value": "{EnteringSubPhase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OvrlStsProfile",
+							"Value": "{OvrlStsProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Phase",
+							"Value": "{Phase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SetAutomatically",
+							"Value": "{SetAutomatically}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfile",
+							"Value": "{StatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Userstatus",
+							"Value": "{Userstatus}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PhaseControlCodes_Detail"
+}

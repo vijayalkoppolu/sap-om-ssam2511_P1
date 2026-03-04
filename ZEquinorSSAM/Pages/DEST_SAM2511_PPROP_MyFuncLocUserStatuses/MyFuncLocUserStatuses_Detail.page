@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyFuncLocUserStatuses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyFuncLocUserStatus_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SequencePriority}",
+						"Subhead": "{SequencePosition}",
+						"BodyText": "",
+						"Footnote": "{FuncLocIdIntern}",
+						"Description": "{StatusInact}",
+						"StatusText": "{ObjectNum}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{StatusProfile}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SequencePriority",
+							"Value": "{SequencePriority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequencePosition",
+							"Value": "{SequencePosition}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusInact",
+							"Value": "{StatusInact}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocIdIntern",
+							"Value": "{FuncLocIdIntern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNum",
+							"Value": "{ObjectNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfile",
+							"Value": "{StatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusNum",
+							"Value": "{StatusNum}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyFuncLocUserStatuses_Detail"
+}

@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ConsequenceCategories",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ConsequenceCategory_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Title}",
+						"Subhead": "{Subtitle}",
+						"BodyText": "",
+						"Footnote": "{GroupId}",
+						"Description": "{CategoryId}",
+						"StatusText": "{PrioritizationProfileId}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Subtitle",
+							"Value": "{Subtitle}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Title",
+							"Value": "{Title}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CategoryId",
+							"Value": "{CategoryId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GroupId",
+							"Value": "{GroupId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PrioritizationProfileId",
+							"Value": "{PrioritizationProfileId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ConsequenceCategories_Detail"
+}

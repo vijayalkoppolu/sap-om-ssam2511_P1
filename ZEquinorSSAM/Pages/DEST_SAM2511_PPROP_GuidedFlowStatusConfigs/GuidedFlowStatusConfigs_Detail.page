@@ -1,0 +1,154 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "GuidedFlowStatusConfigs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,GuidedFlowStatusConfig_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EAMOverallStatusProfile}",
+						"Subhead": "{Status}",
+						"BodyText": "",
+						"Footnote": "{EAMOverallStatus}",
+						"Description": "{Description}",
+						"StatusText": "{EntityType}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{IsLogged}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "EAMOverallStatusProfile",
+							"Value": "{EAMOverallStatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMOverallStatus",
+							"Value": "{EAMOverallStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntityType",
+							"Value": "{EntityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsLogged",
+							"Value": "{IsLogged}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsSkippable",
+							"Value": "{IsSkippable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MobileStatus",
+							"Value": "{MobileStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OverallStatusLabel",
+							"Value": "{OverallStatusLabel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Phase",
+							"Value": "{Phase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhaseDesc",
+							"Value": "{PhaseDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequenceNum",
+							"Value": "{SequenceNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusAttribute1",
+							"Value": "{StatusAttribute1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusAttribute2",
+							"Value": "{StatusAttribute2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfile",
+							"Value": "{StatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Subphase",
+							"Value": "{Subphase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubphaseDesc",
+							"Value": "{SubphaseDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SystemStatus",
+							"Value": "{SystemStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransitionTextKey",
+							"Value": "{TransitionTextKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserStatus",
+							"Value": "{UserStatus}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "GuidedFlowStatusConfigs_Detail"
+}

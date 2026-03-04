@@ -1,0 +1,164 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "DigitalSignatureStrategies",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,DigitalSignatureStrategy_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ApplicationId}",
+						"Subhead": "{Method}",
+						"BodyText": "",
+						"Footnote": "{AllowComment}",
+						"Description": "{Strategy}",
+						"StatusText": "{AllowRemark}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{AllowVerification}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ApplicationId",
+							"Value": "{ApplicationId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Method",
+							"Value": "{Method}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Strategy",
+							"Value": "{Strategy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AllowComment",
+							"Value": "{AllowComment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AllowRemark",
+							"Value": "{AllowRemark}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AllowVerification",
+							"Value": "{AllowVerification}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AllowDocument",
+							"Value": "{AllowDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StrategyDescription",
+							"Value": "{StrategyDescription}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "DigitalSignatureHeader_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Version}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SignatureId}",
+						"Footnote": "{Application}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Method}",
+						"Subhead": "{Type}",
+						"SubstatusText": "{Object}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/DigitalSignatureHeaders/NavToDigitalSignatureHeaders_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/DigitalSignatureHeader_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "DigitalSignatureLink_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SignatureId}",
+						"Footnote": "{Application}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Object}",
+						"Subhead": "{Strategy}",
+						"SubstatusText": "{ObjectGroup}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/DigitalSignatureLinks/NavToDigitalSignatureLinks_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/DigitalSignatureLink_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"DigitalSignatureHeaders",
+				"DigitalSignatureLinks"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "DigitalSignatureStrategies_Detail"
+}

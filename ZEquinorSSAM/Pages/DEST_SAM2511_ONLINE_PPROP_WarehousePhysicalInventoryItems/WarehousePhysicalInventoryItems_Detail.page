@@ -1,0 +1,267 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "WarehousePhysicalInventoryItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WarehousePhysicalInventoryItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{GUID}",
+						"Subhead": "{EmptyBin}",
+						"BodyText": "",
+						"Footnote": "{DocumentYear}",
+						"Description": "{PIDocumentNo}",
+						"StatusText": "{ProcedureDesc}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ReasonDesc}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "EmptyBin",
+							"Value": "{EmptyBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PIDocumentNo",
+							"Value": "{PIDocumentNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentYear",
+							"Value": "{DocumentYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProcedureDesc",
+							"Value": "{ProcedureDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReasonDesc",
+							"Value": "{ReasonDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DisplayQuantity",
+							"Value": "{DisplayQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HUComplCntd",
+							"Value": "{HUComplCntd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HUEmpty",
+							"Value": "{HUEmpty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NoHU",
+							"Value": "{NoHU}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CountDatePhysInv",
+							"Value": "{CountDatePhysInv}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysInvPrior",
+							"Value": "{PhysInvPrior}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseOrder",
+							"Value": "{WarehouseOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseNo",
+							"Value": "{WarehouseNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GUID",
+							"Value": "{GUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ITEM_NO",
+							"Value": "{ITEM_NO}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PIStatus",
+							"Value": "{PIStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysInvProcedure",
+							"Value": "{PhysInvProcedure}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Quantity",
+							"Value": "{Quantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReasonfPhysInv",
+							"Value": "{ReasonfPhysInv}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UOM",
+							"Value": "{UOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TableRow",
+							"Value": "{TableRow}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Version",
+							"Value": "{Version}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LineCategory",
+							"Value": "{LineCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysInvArea",
+							"Value": "{PhysInvArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageType",
+							"Value": "{StorageType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageBin",
+							"Value": "{StorageBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProductID",
+							"Value": "{ProductID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProductDescription",
+							"Value": "{ProductDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HandlingUnit",
+							"Value": "{HandlingUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Serialized",
+							"Value": "{Serialized}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BookInventory",
+							"Value": "{BookInventory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BaseUnit",
+							"Value": "{BaseUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ZeroCount",
+							"Value": "{ZeroCount}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysInvAreaDesc",
+							"Value": "{PhysInvAreaDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedCountDate",
+							"Value": "{PlannedCountDate}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WarehousePhysicalInventoryItemSerial_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Version}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{GUID}",
+						"Footnote": "{LineCategory}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Selected}",
+						"Subhead": "{TableRow}",
+						"SubstatusText": "{ITEM_NO}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/WarehousePhysicalInventoryItemSerials/NavToWarehousePhysicalInventoryItemSerials_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WarehousePhysicalInventoryItemSerial_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WarehousePhysicalInventoryItemSerials"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WarehousePhysicalInventoryItems_Detail"
+}

@@ -1,0 +1,99 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyWorkOrderComponentLongTexts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyWorkOrderComponentLongText_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{TextId}",
+						"Subhead": "{NewTextString}",
+						"BodyText": "",
+						"Footnote": "{ObjectKey}",
+						"Description": "{TextString}",
+						"StatusText": "{TextObjType}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ItemNumber}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "NewTextString",
+							"Value": "{NewTextString}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextString",
+							"Value": "{TextString}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextId",
+							"Value": "{TextId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextObjType",
+							"Value": "{TextObjType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNumber",
+							"Value": "{ItemNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationNo",
+							"Value": "{OperationNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecordType",
+							"Value": "{RecordType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequirementNumber",
+							"Value": "{RequirementNumber}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyWorkOrderComponentLongTexts_Detail"
+}

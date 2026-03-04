@@ -1,0 +1,449 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMApprovals",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMApproval_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{WorkCenterID}",
+						"Subhead": "{CatalogTwoExists}",
+						"BodyText": "",
+						"Footnote": "{Usage}",
+						"Description": "{WCMApplication}",
+						"StatusText": "{ShortText}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{LongText}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "CatalogTwoExists",
+							"Value": "{CatalogTwoExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMApplication",
+							"Value": "{WCMApplication}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Usage",
+							"Value": "{Usage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortText",
+							"Value": "{ShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongText",
+							"Value": "{LongText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Delete",
+							"Value": "{Delete}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RQTextExists",
+							"Value": "{RQTextExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CatalogExists",
+							"Value": "{CatalogExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannerGroup",
+							"Value": "{PlannerGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterObjectType",
+							"Value": "{WorkCenterObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterID",
+							"Value": "{WorkCenterID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AuthorizGroup",
+							"Value": "{AuthorizGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidFrom",
+							"Value": "{ValidFrom}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidFrmTime",
+							"Value": "{ValidFrmTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidTo",
+							"Value": "{ValidTo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidToTime",
+							"Value": "{ValidToTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OverallCondtn",
+							"Value": "{OverallCondtn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecallTime",
+							"Value": "{RecallTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Unit",
+							"Value": "{Unit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Priority",
+							"Value": "{Priority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLoc",
+							"Value": "{FuncLoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Equipment",
+							"Value": "{Equipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjListExists",
+							"Value": "{ObjListExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Train",
+							"Value": "{Train}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualSystemStatus",
+							"Value": "{ActualSystemStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMApproval",
+							"Value": "{WCMApproval}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalApplications",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{WCMApproval}",
+						"Footnote": "",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{WCMApplication}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalApplications/NavToWCMApprovalApplications_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalApplications",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalAttachments",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{RelationshipID}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{DocumentID}",
+						"Footnote": "{ObjectKey}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{WCMApproval}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalAttachments/NavToWCMApprovalAttachments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalAttachments",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalLongtexts",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{TextString}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{NewTextString}",
+						"Footnote": "{ObjectNumber}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{TextType}",
+						"Subhead": "{TextObject}",
+						"SubstatusText": "{WCMApproval}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalLongtexts/NavToWCMApprovalLongtexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalLongtexts",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalOrders",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Order}",
+						"Footnote": "",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{WCMApproval}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalOrders/NavToWCMApprovalOrders_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalOrders",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalPartners",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{OldPartner}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{AddressNumber}",
+						"Footnote": "{PersonnelNum}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{AddressExists}",
+						"Subhead": "{BPNum}",
+						"SubstatusText": "{PersonNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalPartners/NavToWCMApprovalPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalPartners",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMSystemStatuses",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{WCMApplication}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ChangeNumber}",
+						"Footnote": "{WCMDocument}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WCMDocumentItem}",
+						"Subhead": "{WCMApproval}",
+						"SubstatusText": "{StatusInact}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMSystemStatuses/NavToWCMSystemStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMSystemStatuses",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMUserStatuses",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectType}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ChangeNumber}",
+						"Footnote": "{StatusProfile}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Status}",
+						"Subhead": "{ObjectNumber}",
+						"SubstatusText": "{StatusInact}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMUserStatuses/NavToWCMUserStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMUserStatuses",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WCMApprovalApplications",
+				"WCMApprovalAttachments",
+				"WCMApprovalLongtexts",
+				"WCMApprovalOrders",
+				"WCMApprovalPartners",
+				"WCMSystemStatuses",
+				"WCMUserStatuses"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMApprovals_Detail"
+}

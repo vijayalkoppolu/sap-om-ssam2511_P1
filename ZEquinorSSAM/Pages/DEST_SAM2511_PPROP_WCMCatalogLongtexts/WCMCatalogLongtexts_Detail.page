@@ -1,0 +1,124 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMCatalogLongtexts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMCatalogLongtext_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{TextName}",
+						"Subhead": "{Textobject}",
+						"BodyText": "",
+						"Footnote": "{Tagcolumn}",
+						"Description": "{Item}",
+						"StatusText": "{TDLINE}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{TextID}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "TextName",
+							"Value": "{TextName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Textobject",
+							"Value": "{Textobject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Item",
+							"Value": "{Item}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Tagcolumn",
+							"Value": "{Tagcolumn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TDLINE",
+							"Value": "{TDLINE}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextID",
+							"Value": "{TextID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TEXT_STRING",
+							"Value": "{TEXT_STRING}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NEW_STRING",
+							"Value": "{NEW_STRING}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextID1",
+							"Value": "{TextID1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCDocument",
+							"Value": "{WCDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Item1",
+							"Value": "{Item1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkApproval",
+							"Value": "{WorkApproval}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Application",
+							"Value": "{Application}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter",
+							"Value": "{Counter}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMCatalogLongtexts_Detail"
+}

@@ -1,0 +1,149 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyEquipSerialNumbers",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyEquipSerialNumber_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{LastSerialNumber}",
+						"BodyText": "",
+						"Footnote": "{Vendor}",
+						"Description": "{SerialNumber}",
+						"StatusText": "{WBSElement}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Issued}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "LastSerialNumber",
+							"Value": "{LastSerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SerialNumber",
+							"Value": "{SerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Vendor",
+							"Value": "{Vendor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WBSElement",
+							"Value": "{WBSElement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Issued",
+							"Value": "{Issued}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SpecialStock",
+							"Value": "{SpecialStock}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterBatchNumber",
+							"Value": "{MasterBatchNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompanyCode",
+							"Value": "{CompanyCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BatchNumber",
+							"Value": "{BatchNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLocation",
+							"Value": "{StorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockType",
+							"Value": "{StockType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastGoodsMvtDate",
+							"Value": "{LastGoodsMvtDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialNum",
+							"Value": "{MaterialNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrder",
+							"Value": "{SalesOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Customer",
+							"Value": "{Customer}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UniqueItemIdentifier",
+							"Value": "{UniqueItemIdentifier}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IUIDType",
+							"Value": "{IUIDType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UIIPlant",
+							"Value": "{UIIPlant}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyEquipSerialNumbers_Detail"
+}

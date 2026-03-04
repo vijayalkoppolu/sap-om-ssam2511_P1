@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FldLogsContainerItemSrNos",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FldLogsContainerItemSrNo_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DeliveryDocumentItem}",
+						"Subhead": "{Batch}",
+						"BodyText": "",
+						"Footnote": "{ActualDeliveryQuantity}",
+						"Description": "{ValuationType}",
+						"StatusText": "{StorageLocation}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{DeliveryDocument}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "DeliveryDocumentItem",
+							"Value": "{DeliveryDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationType",
+							"Value": "{ValuationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualDeliveryQuantity",
+							"Value": "{ActualDeliveryQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLocation",
+							"Value": "{StorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryDocument",
+							"Value": "{DeliveryDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SerialNumber",
+							"Value": "{SerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryQuantityUnit",
+							"Value": "{DeliveryQuantityUnit}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FldLogsContainerItemSrNos_Detail"
+}

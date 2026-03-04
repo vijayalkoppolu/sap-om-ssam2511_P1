@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "TOTPDeviceValidates",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,TOTPDeviceValidate_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DeviceId}",
+						"Subhead": "{Passphrase}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{TOTP}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Passphrase",
+							"Value": "{Passphrase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeviceId",
+							"Value": "{DeviceId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TOTP",
+							"Value": "{TOTP}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TOTPDeviceValidates_Detail"
+}

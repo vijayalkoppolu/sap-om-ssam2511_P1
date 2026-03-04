@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "PersonaFeatureEntityLinks",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PersonaFeatureEntityLink_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{UserPersona}",
+						"Subhead": "{AppFeature}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{Entity}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "UserPersona",
+							"Value": "{UserPersona}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AppFeature",
+							"Value": "{AppFeature}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Entity",
+							"Value": "{Entity}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PersonaFeatureEntityLinks_Detail"
+}

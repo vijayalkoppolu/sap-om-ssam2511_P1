@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "UserTrunkAssignments",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,UserTrunkAssignment_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{AttributeName}",
+						"Subhead": "{Active}",
+						"BodyText": "",
+						"Footnote": "{StorageLocation}",
+						"Description": "{Plant}",
+						"StatusText": "{UserName}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{RecordNo}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Active",
+							"Value": "{Active}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AttributeName",
+							"Value": "{AttributeName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLocation",
+							"Value": "{StorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserName",
+							"Value": "{UserName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecordNo",
+							"Value": "{RecordNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserGuid",
+							"Value": "{UserGuid}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "UserTrunkAssignments_Detail"
+}

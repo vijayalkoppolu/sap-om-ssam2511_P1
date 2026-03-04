@@ -1,0 +1,109 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "FuncLocClassCharValues",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FuncLocClassCharValue_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{CharId}",
+						"Subhead": "{CharValCounter}",
+						"BodyText": "",
+						"Footnote": "{InternCounter}",
+						"Description": "{ClassType}",
+						"StatusText": "{ObjClassFlag}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{FuncLocIdIntern}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "CharId",
+							"Value": "{CharId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharValCounter",
+							"Value": "{CharValCounter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ClassType",
+							"Value": "{ClassType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InternCounter",
+							"Value": "{InternCounter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjClassFlag",
+							"Value": "{ObjClassFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocIdIntern",
+							"Value": "{FuncLocIdIntern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharValDesc",
+							"Value": "{CharValDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharValFrom",
+							"Value": "{CharValFrom}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharValTo",
+							"Value": "{CharValTo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharValue",
+							"Value": "{CharValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValueRel",
+							"Value": "{ValueRel}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FuncLocClassCharValues_Detail"
+}

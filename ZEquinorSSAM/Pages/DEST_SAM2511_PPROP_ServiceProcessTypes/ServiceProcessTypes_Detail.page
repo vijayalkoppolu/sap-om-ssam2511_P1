@@ -1,0 +1,94 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ServiceProcessTypes",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ServiceProcessType_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{TransCategory}",
+						"Subhead": "{StatusProfile}",
+						"BodyText": "",
+						"Footnote": "{SubjectProfile}",
+						"Description": "{TransactionType}",
+						"StatusText": "{TransactionType1}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Copyitemno}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "TransCategory",
+							"Value": "{TransCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfile",
+							"Value": "{StatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransactionType",
+							"Value": "{TransactionType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubjectProfile",
+							"Value": "{SubjectProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransactionType1",
+							"Value": "{TransactionType1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Copyitemno",
+							"Value": "{Copyitemno}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Completerefer",
+							"Value": "{Completerefer}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortDescription",
+							"Value": "{ShortDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ServiceProcessTypes_Detail"
+}

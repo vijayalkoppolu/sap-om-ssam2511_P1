@@ -1,0 +1,69 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FuncLocStructInds",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FuncLocStructInd_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{FuncLocStructInd}",
+						"Subhead": "{EditMask}",
+						"BodyText": "",
+						"Footnote": "{FuncLocStructIndDesc}",
+						"Description": "{HierarchyLevels}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "FuncLocStructInd",
+							"Value": "{FuncLocStructInd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EditMask",
+							"Value": "{EditMask}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HierarchyLevels",
+							"Value": "{HierarchyLevels}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocStructIndDesc",
+							"Value": "{FuncLocStructIndDesc}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FuncLocStructInds_Detail"
+}

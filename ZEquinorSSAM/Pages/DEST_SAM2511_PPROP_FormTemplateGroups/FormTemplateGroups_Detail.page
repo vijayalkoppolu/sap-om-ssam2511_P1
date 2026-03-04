@@ -1,0 +1,69 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FormTemplateGroups",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FormTemplateGroup_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DisplayId}",
+						"Subhead": "{GroupId}",
+						"BodyText": "",
+						"Footnote": "{SortNumber}",
+						"Description": "{TemplateId}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "DisplayId",
+							"Value": "{DisplayId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GroupId",
+							"Value": "{GroupId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TemplateId",
+							"Value": "{TemplateId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SortNumber",
+							"Value": "{SortNumber}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FormTemplateGroups_Detail"
+}

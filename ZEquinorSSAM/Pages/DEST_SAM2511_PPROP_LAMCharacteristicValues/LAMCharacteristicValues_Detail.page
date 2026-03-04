@@ -1,0 +1,109 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "LAMCharacteristicValues",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,LAMCharacteristicValue_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{LAMInternCounter}",
+						"Subhead": "{ObjectKey}",
+						"BodyText": "",
+						"Footnote": "{ObjClassFlag}",
+						"Description": "{CharValCounter}",
+						"StatusText": "{ClassType}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{InternCounter}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "LAMInternCounter",
+							"Value": "{LAMInternCounter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CharValCounter",
+							"Value": "{CharValCounter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjClassFlag",
+							"Value": "{ObjClassFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ClassType",
+							"Value": "{ClassType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InternCounter",
+							"Value": "{InternCounter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Table",
+							"Value": "{Table}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InternCharacteristic",
+							"Value": "{InternCharacteristic}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartPoint",
+							"Value": "{StartPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EndPoint",
+							"Value": "{EndPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Length",
+							"Value": "{Length}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UOM",
+							"Value": "{UOM}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "LAMCharacteristicValues_Detail"
+}

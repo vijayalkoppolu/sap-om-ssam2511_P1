@@ -1,0 +1,189 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "WarehouseInboundDeliveryItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WarehouseInboundDeliveryItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ItemID}",
+						"Subhead": "{DescStockType}",
+						"BodyText": "",
+						"Footnote": "{OpenPackableQuantity}",
+						"Description": "{ProductDescription}",
+						"StatusText": "{Serialized}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PackingStatusValue}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "DescStockType",
+							"Value": "{DescStockType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProductDescription",
+							"Value": "{ProductDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OpenPackableQuantity",
+							"Value": "{OpenPackableQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Serialized",
+							"Value": "{Serialized}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemID",
+							"Value": "{ItemID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackingStatusValue",
+							"Value": "{PackingStatusValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GRStatusValue",
+							"Value": "{GRStatusValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PutawayPlannedStatusValue",
+							"Value": "{PutawayPlannedStatusValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentID",
+							"Value": "{DocumentID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItmID",
+							"Value": "{ItmID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BatchNumber",
+							"Value": "{BatchNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocCategory",
+							"Value": "{DocCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentNumber",
+							"Value": "{DocumentNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GRStatus",
+							"Value": "{GRStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemCategory",
+							"Value": "{ItemCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNumber",
+							"Value": "{ItemNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemType",
+							"Value": "{ItemType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackingStatus",
+							"Value": "{PackingStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Product",
+							"Value": "{Product}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PutawayPlannedStatus",
+							"Value": "{PutawayPlannedStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Quantity",
+							"Value": "{Quantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockType",
+							"Value": "{StockType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnitofMeasure",
+							"Value": "{UnitofMeasure}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BatchManaged",
+							"Value": "{BatchManaged}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseOrder",
+							"Value": "{PurchaseOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenanceOrder",
+							"Value": "{MaintenanceOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackedQuantity",
+							"Value": "{PackedQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnloadingPoint",
+							"Value": "{UnloadingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WarehouseInboundDeliveryItems_Detail"
+}

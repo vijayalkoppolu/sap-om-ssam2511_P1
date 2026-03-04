@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FldLogsPackCtnRdyPckSrNos",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FldLogsPackCtnRdyPckSrNo_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ObjectID}",
+						"Subhead": "{DeliveryDocument}",
+						"BodyText": "",
+						"Footnote": "{Batch}",
+						"Description": "{DeliveryDocumentItem}",
+						"StatusText": "{SerialNumber}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "DeliveryDocument",
+							"Value": "{DeliveryDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryDocumentItem",
+							"Value": "{DeliveryDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SerialNumber",
+							"Value": "{SerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectID",
+							"Value": "{ObjectID}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FldLogsPackCtnRdyPckSrNos_Detail"
+}

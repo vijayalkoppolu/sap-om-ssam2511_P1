@@ -1,0 +1,69 @@
+{
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,EmployeeCommunications)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Header": {
+						"UseTopPadding": false,
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PersonnelNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/EmployeeCommunications/NavToEmployeeCommunications_Detail.action",
+						"StatusImage": "",
+						"Title": "{Value}",
+						"Footnote": "{SequenceNum}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{CommunicationType}",
+						"SubstatusText": "",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "Item Search",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "Loading more items, please wait..."
+					},
+					"Target": {
+						"EntitySet": "EmployeeCommunications",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+						"QueryOptions": ""
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading, please wait..."
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "EmployeeCommunications_List"
+}

@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WarehouseProcessTypes",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WarehouseProcessType_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{WarehouseProcessTypeDescription}",
+						"Subhead": "{WarehouseNo}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{WarehouseProcessType}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "WarehouseProcessTypeDescription",
+							"Value": "{WarehouseProcessTypeDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseNo",
+							"Value": "{WarehouseNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseProcessType",
+							"Value": "{WarehouseProcessType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WarehouseProcessTypes_Detail"
+}

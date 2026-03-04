@@ -1,0 +1,129 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PurchaseRequisitionServMgmntHdrs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PurchaseRequisitionServMgmntHdr_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Currency}",
+						"Subhead": "{NetValue}",
+						"BodyText": "",
+						"Footnote": "{SDDocument}",
+						"Description": "{PackageNo}",
+						"StatusText": "{UnitForWork}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PurchasingDoc}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Currency",
+							"Value": "{Currency}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NetValue",
+							"Value": "{NetValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackageNo",
+							"Value": "{PackageNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SDDocument",
+							"Value": "{SDDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnitForWork",
+							"Value": "{UnitForWork}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchasingDoc",
+							"Value": "{PurchasingDoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocCategory",
+							"Value": "{DocCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchasingDocItem",
+							"Value": "{PurchasingDocItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InternalObjectNo",
+							"Value": "{InternalObjectNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ConditionDocNo",
+							"Value": "{ConditionDocNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HighestPackageNo",
+							"Value": "{HighestPackageNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ParentPackageNo",
+							"Value": "{ParentPackageNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InternalWork",
+							"Value": "{InternalWork}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InternalServiceUse",
+							"Value": "{InternalServiceUse}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SDDocumentItem",
+							"Value": "{SDDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentCat",
+							"Value": "{DocumentCat}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PurchaseRequisitionServMgmntHdrs_Detail"
+}

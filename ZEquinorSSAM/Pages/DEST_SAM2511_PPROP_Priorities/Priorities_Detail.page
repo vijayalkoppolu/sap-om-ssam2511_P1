@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "Priorities",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,Priority_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{FinalDueDateDuration}",
+						"Subhead": "{EndDate}",
+						"BodyText": "",
+						"Footnote": "{LanguageKey}",
+						"Description": "{StartDate}",
+						"StatusText": "{FinalDueDateUoM}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PriorityType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "FinalDueDateDuration",
+							"Value": "{FinalDueDateDuration}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EndDate",
+							"Value": "{EndDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartDate",
+							"Value": "{StartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LanguageKey",
+							"Value": "{LanguageKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinalDueDateUoM",
+							"Value": "{FinalDueDateUoM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PriorityType",
+							"Value": "{PriorityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Priority",
+							"Value": "{Priority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PriorityDescription",
+							"Value": "{PriorityDescription}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Priorities_Detail"
+}

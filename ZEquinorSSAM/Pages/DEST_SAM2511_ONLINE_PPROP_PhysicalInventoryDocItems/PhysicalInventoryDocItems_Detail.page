@@ -1,0 +1,257 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "PhysicalInventoryDocItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PhysicalInventoryDocItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Batch}",
+						"Subhead": "{BookQuantity}",
+						"BodyText": "",
+						"Footnote": "{BaseQuantity}",
+						"Description": "{BaseUOM}",
+						"StatusText": "{PhysInvDoc}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{CountDate}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BookQuantity",
+							"Value": "{BookQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BaseUOM",
+							"Value": "{BaseUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BaseQuantity",
+							"Value": "{BaseQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysInvDoc",
+							"Value": "{PhysInvDoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CountDate",
+							"Value": "{CountDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CountedBy",
+							"Value": "{CountedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Customer",
+							"Value": "{Customer}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Deleted",
+							"Value": "{Deleted}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DifferenceAmt",
+							"Value": "{DifferenceAmt}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Item",
+							"Value": "{Item}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FiscalYear",
+							"Value": "{FiscalYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntryQuantity",
+							"Value": "{EntryQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntryUOM",
+							"Value": "{EntryUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemCounted",
+							"Value": "{ItemCounted}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MatDocItem",
+							"Value": "{MatDocItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MatDocYear",
+							"Value": "{MatDocYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Material",
+							"Value": "{Material}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialDoc",
+							"Value": "{MaterialDoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysInvRef",
+							"Value": "{PhysInvRef}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostingDate",
+							"Value": "{PostingDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Recount",
+							"Value": "{Recount}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecountDoc",
+							"Value": "{RecountDoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SOrderSchedule",
+							"Value": "{SOrderSchedule}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrder",
+							"Value": "{SalesOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Salesorditem",
+							"Value": "{Salesorditem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SpecialStock",
+							"Value": "{SpecialStock}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockType",
+							"Value": "{StockType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorLocation",
+							"Value": "{StorLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Supplier",
+							"Value": "{Supplier}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationCategory",
+							"Value": "{ValuationCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationType",
+							"Value": "{ValuationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ZeroCount",
+							"Value": "{ZeroCount}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "PhysicalInventoryDocItemSerial_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PhysInvDoc}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{FiscalYear}",
+						"Footnote": "{SerialNumber}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{Item}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/PhysicalInventoryDocItemSerials/NavToPhysicalInventoryDocItemSerials_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/PhysicalInventoryDocItemSerial_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"PhysicalInventoryDocItemSerials"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PhysicalInventoryDocItems_Detail"
+}

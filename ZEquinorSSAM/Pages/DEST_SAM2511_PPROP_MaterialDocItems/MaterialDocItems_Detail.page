@@ -1,0 +1,357 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MaterialDocItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MaterialDocItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{MaterialDocYear}",
+						"Subhead": "{ReferenceDocHdr}",
+						"BodyText": "",
+						"Footnote": "{ReferenceDocItem}",
+						"Description": "{ReferenceDocYear}",
+						"StatusText": "{Vendor}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{WBSElement}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "MaterialDocYear",
+							"Value": "{MaterialDocYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDocHdr",
+							"Value": "{ReferenceDocHdr}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDocYear",
+							"Value": "{ReferenceDocYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDocItem",
+							"Value": "{ReferenceDocItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Vendor",
+							"Value": "{Vendor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WBSElement",
+							"Value": "{WBSElement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenter",
+							"Value": "{CostCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Customer",
+							"Value": "{Customer}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Delivery",
+							"Value": "{Delivery}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntryUOM",
+							"Value": "{EntryUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GLAccount",
+							"Value": "{GLAccount}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialDocNumber",
+							"Value": "{MaterialDocNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NumOfLabels",
+							"Value": "{NumOfLabels}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MoveValuationType",
+							"Value": "{MoveValuationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GoodsRecipient",
+							"Value": "{GoodsRecipient}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NetworkActivity",
+							"Value": "{NetworkActivity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationCategory",
+							"Value": "{ValuationCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AutoGenerateSerialNumbers",
+							"Value": "{AutoGenerateSerialNumbers}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ResvRecordType",
+							"Value": "{ResvRecordType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageBin",
+							"Value": "{StorageBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MovementIndicator",
+							"Value": "{MovementIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MovementReason",
+							"Value": "{MovementReason}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MovementType",
+							"Value": "{MovementType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderItemNumber",
+							"Value": "{OrderItemNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseOrderItem",
+							"Value": "{PurchaseOrderItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Quantity",
+							"Value": "{Quantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReservationItemNumber",
+							"Value": "{ReservationItemNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrderItem",
+							"Value": "{SalesOrderItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SpecialStockInd",
+							"Value": "{SpecialStockInd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockType",
+							"Value": "{StockType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLocation",
+							"Value": "{StorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnloadingPoint",
+							"Value": "{UnloadingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationType",
+							"Value": "{ValuationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryItem",
+							"Value": "{DeliveryItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntryQuantity",
+							"Value": "{EntryQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinalIssue",
+							"Value": "{FinalIssue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemText",
+							"Value": "{ItemText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MoveBatch",
+							"Value": "{MoveBatch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MovePlant",
+							"Value": "{MovePlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MoveStorageLocation",
+							"Value": "{MoveStorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MatDocItem",
+							"Value": "{MatDocItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderNumber",
+							"Value": "{OrderNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Material",
+							"Value": "{Material}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Network",
+							"Value": "{Network}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseOrderNumber",
+							"Value": "{PurchaseOrderNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReservationNumber",
+							"Value": "{ReservationNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrderNumber",
+							"Value": "{SalesOrderNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockWBSElement",
+							"Value": "{StockWBSElement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UOM",
+							"Value": "{UOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plannofoper",
+							"Value": "{Plannofoper}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter",
+							"Value": "{Counter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReturnPost",
+							"Value": "{ReturnPost}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "SerialNum",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SerialNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{UniversalItemId}",
+						"Footnote": "{MaterialDocYear}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{MaterialDocNumber}",
+						"Subhead": "{MatDocItem}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MatDocItemSerialNums/NavToMatDocItemSerialNums_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/SerialNum",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MatDocItemSerialNums"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MaterialDocItems_Detail"
+}

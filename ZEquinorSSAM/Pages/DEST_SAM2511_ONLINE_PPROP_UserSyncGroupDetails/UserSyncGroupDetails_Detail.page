@@ -1,0 +1,104 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "UserSyncGroupDetails",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,UserSyncGroupDetail_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EntitySetName}",
+						"Subhead": "{SyncPriority}",
+						"BodyText": "",
+						"Footnote": "{Creatable}",
+						"Description": "{Addressable}",
+						"StatusText": "{Deletable}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Pageable}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SyncPriority",
+							"Value": "{SyncPriority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Addressable",
+							"Value": "{Addressable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Creatable",
+							"Value": "{Creatable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Deletable",
+							"Value": "{Deletable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Pageable",
+							"Value": "{Pageable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Searchable",
+							"Value": "{Searchable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Subscribable",
+							"Value": "{Subscribable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Updatable",
+							"Value": "{Updatable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntitySetName",
+							"Value": "{EntitySetName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SyncGroupId",
+							"Value": "{SyncGroupId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserGUID",
+							"Value": "{UserGUID}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "UserSyncGroupDetails_Detail"
+}

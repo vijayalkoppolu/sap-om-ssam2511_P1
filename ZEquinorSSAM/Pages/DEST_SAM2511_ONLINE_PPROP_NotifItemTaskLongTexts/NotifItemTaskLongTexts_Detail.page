@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "NotifItemTaskLongTexts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,NotifItemTaskLongText_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{TextId}",
+						"Subhead": "{ItemNumber}",
+						"BodyText": "",
+						"Footnote": "{TaskSequenceNumber}",
+						"Description": "{NotificationNumber}",
+						"StatusText": "{NewTextString}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ObjectKey}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ItemNumber",
+							"Value": "{ItemNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationNumber",
+							"Value": "{NotificationNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TaskSequenceNumber",
+							"Value": "{TaskSequenceNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NewTextString",
+							"Value": "{NewTextString}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextId",
+							"Value": "{TextId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextObjType",
+							"Value": "{TextObjType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextString",
+							"Value": "{TextString}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "NotifItemTaskLongTexts_Detail"
+}

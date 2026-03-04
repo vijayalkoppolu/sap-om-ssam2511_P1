@@ -1,0 +1,134 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "GuidedFlowHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,GuidedFlowHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ObjectGroup1Name}",
+						"Subhead": "{FlowID}",
+						"BodyText": "",
+						"Footnote": "{Feature}",
+						"Description": "{Default}",
+						"StatusText": "{FlowDescription}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ObjectGroup1Entity}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "FlowID",
+							"Value": "{FlowID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Default",
+							"Value": "{Default}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Feature",
+							"Value": "{Feature}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FlowDescription",
+							"Value": "{FlowDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup1Entity",
+							"Value": "{ObjectGroup1Entity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup1EntityProerty",
+							"Value": "{ObjectGroup1EntityProerty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup1Name",
+							"Value": "{ObjectGroup1Name}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup1Nav",
+							"Value": "{ObjectGroup1Nav}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup1Value",
+							"Value": "{ObjectGroup1Value}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroupEntity",
+							"Value": "{ObjectGroupEntity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroupEntityProperty",
+							"Value": "{ObjectGroupEntityProperty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroupName",
+							"Value": "{ObjectGroupName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroupNav",
+							"Value": "{ObjectGroupNav}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroupValue",
+							"Value": "{ObjectGroupValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Persona",
+							"Value": "{Persona}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Role",
+							"Value": "{Role}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "GuidedFlowHeaders_Detail"
+}

@@ -1,0 +1,204 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMObjects",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMObject_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ObjectName}",
+						"Subhead": "{TemplateObjectType}",
+						"BodyText": "",
+						"Footnote": "{Usage}",
+						"Description": "{BlockStatGrp}",
+						"StatusText": "{DisplayDialogBox}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{TemplateSubObjectType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "TemplateObjectType",
+							"Value": "{TemplateObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BlockStatGrp",
+							"Value": "{BlockStatGrp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Usage",
+							"Value": "{Usage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DisplayDialogBox",
+							"Value": "{DisplayDialogBox}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TemplateSubObjectType",
+							"Value": "{TemplateSubObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortText",
+							"Value": "{ShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BORObjectType",
+							"Value": "{BORObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CatalogProfile",
+							"Value": "{CatalogProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ListType2",
+							"Value": "{ListType2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Catalog2",
+							"Value": "{Catalog2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ListType1",
+							"Value": "{ListType1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Catalog1",
+							"Value": "{Catalog1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfile",
+							"Value": "{StatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnDetProc",
+							"Value": "{PartnDetProc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ExtNoRange",
+							"Value": "{ExtNoRange}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IntNoRange",
+							"Value": "{IntNoRange}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectName",
+							"Value": "{ObjectName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BlAppStatGrp",
+							"Value": "{BlAppStatGrp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Client",
+							"Value": "{Client}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMObjectType",
+							"Value": "{WCMObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CanBeCreated",
+							"Value": "{CanBeCreated}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangePossible",
+							"Value": "{ChangePossible}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CMRestricted",
+							"Value": "{CMRestricted}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Direction",
+							"Value": "{Direction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Create",
+							"Value": "{Create}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Change",
+							"Value": "{Change}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Display",
+							"Value": "{Display}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Choose",
+							"Value": "{Choose}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PriorityType",
+							"Value": "{PriorityType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMObjects_Detail"
+}

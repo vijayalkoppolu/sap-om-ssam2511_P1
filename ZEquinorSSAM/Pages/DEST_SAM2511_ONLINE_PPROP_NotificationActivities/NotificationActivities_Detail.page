@@ -1,0 +1,197 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "NotificationActivities",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,NotificationActivity_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ActivitySequenceNumber}",
+						"Subhead": "{NotificationNumber}",
+						"BodyText": "",
+						"Footnote": "{ActivityCode}",
+						"Description": "{ActivityCatalogType}",
+						"StatusText": "{ActivityCodeGroup}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ActivitySortNumber}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ActivitySequenceNumber",
+							"Value": "{ActivitySequenceNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationNumber",
+							"Value": "{NotificationNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityCatalogType",
+							"Value": "{ActivityCatalogType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityCode",
+							"Value": "{ActivityCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityCodeGroup",
+							"Value": "{ActivityCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivitySortNumber",
+							"Value": "{ActivitySortNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityText",
+							"Value": "{ActivityText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedBy",
+							"Value": "{ChangedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedDate",
+							"Value": "{ChangedDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedTime",
+							"Value": "{ChangedTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedBy",
+							"Value": "{CreatedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationDate",
+							"Value": "{CreationDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationTime",
+							"Value": "{CreationTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Deleted",
+							"Value": "{Deleted}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongTextFlag",
+							"Value": "{LongTextFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedFinishDate",
+							"Value": "{PlannedFinishDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedFinishTime",
+							"Value": "{PlannedFinishTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedStartDate",
+							"Value": "{PlannedStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedStartTime",
+							"Value": "{PlannedStartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QuantityFactor",
+							"Value": "{QuantityFactor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Version",
+							"Value": "{Version}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "ActivityLongText",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{NotificationNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{TextId}",
+						"Footnote": "{NewTextString}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ObjectKey}",
+						"Subhead": "{ActivitySequenceNumber}",
+						"SubstatusText": "{TextObjType}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/NotifActivityLongTexts/NavToNotifActivityLongTexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ActivityLongText",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"NotifActivityLongTexts"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "NotificationActivities_Detail"
+}

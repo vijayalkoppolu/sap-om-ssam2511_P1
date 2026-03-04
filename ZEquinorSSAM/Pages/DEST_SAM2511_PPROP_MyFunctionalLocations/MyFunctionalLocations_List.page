@@ -1,0 +1,69 @@
+{
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyFunctionalLocations)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Header": {
+						"UseTopPadding": false,
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Location}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyFunctionalLocations/NavToMyFunctionalLocations_Detail.action",
+						"StatusImage": "",
+						"Title": "{SuperiorFuncLocInternId}",
+						"Footnote": "{LongTextIndicator}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{LAMTableKey}",
+						"Subhead": "{ConstType}",
+						"SubstatusText": "{LAMObjectType}",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "Item Search",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "Loading more items, please wait..."
+					},
+					"Target": {
+						"EntitySet": "MyFunctionalLocations",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+						"QueryOptions": ""
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading, please wait..."
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyFunctionalLocations_List"
+}

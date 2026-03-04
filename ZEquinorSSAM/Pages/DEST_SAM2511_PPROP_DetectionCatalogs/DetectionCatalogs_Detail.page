@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "DetectionCatalogs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,DetectionCatalog_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DetectionCatalog}",
+						"Subhead": "{DetectionCatalogDesc}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{NotifType}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "DetectionCatalog",
+							"Value": "{DetectionCatalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DetectionCatalogDesc",
+							"Value": "{DetectionCatalogDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifType",
+							"Value": "{NotifType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "DetectionCatalogs_Detail"
+}

@@ -1,0 +1,109 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "S4BPSalesAreas",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,S4BPSalesArea_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SalesOfficeShort}",
+						"Subhead": "{SalesRespOrgShort}",
+						"BodyText": "",
+						"Footnote": "{BusinessPartner}",
+						"Description": "{ProcessType}",
+						"StatusText": "{SalesOrg}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{DistributionChannel}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SalesOfficeShort",
+							"Value": "{SalesOfficeShort}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesRespOrgShort",
+							"Value": "{SalesRespOrgShort}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProcessType",
+							"Value": "{ProcessType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BusinessPartner",
+							"Value": "{BusinessPartner}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrg",
+							"Value": "{SalesOrg}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DistributionChannel",
+							"Value": "{DistributionChannel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Division",
+							"Value": "{Division}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesRespOrg",
+							"Value": "{SalesRespOrg}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesGroup",
+							"Value": "{SalesGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOffice",
+							"Value": "{SalesOffice}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrgShort",
+							"Value": "{SalesOrgShort}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesGroupShort",
+							"Value": "{SalesGroupShort}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "S4BPSalesAreas_Detail"
+}

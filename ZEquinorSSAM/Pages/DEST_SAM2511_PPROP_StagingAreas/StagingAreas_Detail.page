@@ -1,0 +1,69 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "StagingAreas",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,StagingArea_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{StagingAreaText}",
+						"Subhead": "{DoorNum}",
+						"BodyText": "",
+						"Footnote": "{StagingArea}",
+						"Description": "{WarehouseNum}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "StagingAreaText",
+							"Value": "{StagingAreaText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DoorNum",
+							"Value": "{DoorNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseNum",
+							"Value": "{WarehouseNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StagingArea",
+							"Value": "{StagingArea}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "StagingAreas_Detail"
+}

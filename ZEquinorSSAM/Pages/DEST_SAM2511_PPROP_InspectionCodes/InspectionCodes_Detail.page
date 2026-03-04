@@ -1,0 +1,104 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "InspectionCodes",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,InspectionCode_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Plant}",
+						"Subhead": "{SelectedSet}",
+						"BodyText": "",
+						"Footnote": "{Catalog}",
+						"Description": "{QualityScore}",
+						"StatusText": "{CodeGroup}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Code}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SelectedSet",
+							"Value": "{SelectedSet}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QualityScore",
+							"Value": "{QualityScore}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Catalog",
+							"Value": "{Catalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CodeGroup",
+							"Value": "{CodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Code",
+							"Value": "{Code}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CodeDesc",
+							"Value": "{CodeDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CodeGroupDesc",
+							"Value": "{CodeGroupDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectClass",
+							"Value": "{DefectClass}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationStatus",
+							"Value": "{ValuationStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Version",
+							"Value": "{Version}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "InspectionCodes_Detail"
+}

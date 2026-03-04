@@ -1,0 +1,134 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "Forms",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,Form_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DisplayId}",
+						"Subhead": "{Status}",
+						"BodyText": "",
+						"Footnote": "{ObjectCount}",
+						"Description": "{UpdatedOn}",
+						"StatusText": "{Ownership}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Source}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DisplayId",
+							"Value": "{DisplayId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UpdatedOn",
+							"Value": "{UpdatedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectCount",
+							"Value": "{ObjectCount}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Ownership",
+							"Value": "{Ownership}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Source",
+							"Value": "{Source}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusText",
+							"Value": "{StatusText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Type",
+							"Value": "{Type}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TypeDescription",
+							"Value": "{TypeDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongDescription",
+							"Value": "{LongDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MatrixDisplayID",
+							"Value": "{MatrixDisplayID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MobileStatus",
+							"Value": "{MobileStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Client",
+							"Value": "{Client}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FormId",
+							"Value": "{FormId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedOn",
+							"Value": "{CreatedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortDescription",
+							"Value": "{ShortDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Forms_Detail"
+}

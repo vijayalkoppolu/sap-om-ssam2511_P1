@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "UserPersonas",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,UserPersona_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{UserGUID}",
+						"Subhead": "{FlagExternal}",
+						"BodyText": "",
+						"Footnote": "{FlagStandard}",
+						"Description": "{PersonaCodeDesc}",
+						"StatusText": "{PersonaCode}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{FlagDefault}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "FlagExternal",
+							"Value": "{FlagExternal}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonaCodeDesc",
+							"Value": "{PersonaCodeDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FlagStandard",
+							"Value": "{FlagStandard}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonaCode",
+							"Value": "{PersonaCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FlagDefault",
+							"Value": "{FlagDefault}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserGUID",
+							"Value": "{UserGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserPersona",
+							"Value": "{UserPersona}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonaType",
+							"Value": "{PersonaType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "UserPersonas_Detail"
+}

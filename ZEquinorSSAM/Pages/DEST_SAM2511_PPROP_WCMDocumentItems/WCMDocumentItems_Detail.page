@@ -1,0 +1,398 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMDocumentItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMDocumentItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Name}",
+						"Subhead": "{IsSelVar}",
+						"BodyText": "",
+						"Footnote": "{WCMDocument}",
+						"Description": "{Client}",
+						"StatusText": "{WCMDocumentItem}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ObjectNumber}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "IsSelVar",
+							"Value": "{IsSelVar}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Client",
+							"Value": "{Client}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMDocument",
+							"Value": "{WCMDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMDocumentItem",
+							"Value": "{WCMDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemCategory",
+							"Value": "{ItemCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Sequence",
+							"Value": "{Sequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Predecessor",
+							"Value": "{Predecessor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Successor",
+							"Value": "{Successor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TechObject",
+							"Value": "{TechObject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemCategoryCC",
+							"Value": "{ItemCategoryCC}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortText",
+							"Value": "{ShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OpGroup",
+							"Value": "{OpGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TaggingStep",
+							"Value": "{TaggingStep}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TaggingCond",
+							"Value": "{TaggingCond}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TaggingType",
+							"Value": "{TaggingType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TagSequence",
+							"Value": "{TagSequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TaggingComment",
+							"Value": "{TaggingComment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UntaggingStep",
+							"Value": "{UntaggingStep}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UntagCond",
+							"Value": "{UntagCond}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UntaggingType",
+							"Value": "{UntaggingType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UntSequence",
+							"Value": "{UntSequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UntagComment",
+							"Value": "{UntagComment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysBlocking",
+							"Value": "{PhysBlocking}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BlockingType",
+							"Value": "{BlockingType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LockNumber",
+							"Value": "{LockNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TagRequired",
+							"Value": "{TagRequired}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLoc",
+							"Value": "{FuncLoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Equipment",
+							"Value": "{Equipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FCODE",
+							"Value": "{FCODE}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PrintFormatTag",
+							"Value": "{PrintFormatTag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Tag",
+							"Value": "{Tag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PrintFormatUntag",
+							"Value": "{PrintFormatUntag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TestTag",
+							"Value": "{TestTag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SwitchingLoc",
+							"Value": "{SwitchingLoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Location",
+							"Value": "{Location}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongText",
+							"Value": "{LongText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentLink",
+							"Value": "{DocumentLink}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Template",
+							"Value": "{Template}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name",
+							"Value": "{Name}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentItemAttachments",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{WCMDocumentItemObjNr}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{RelationshipID}",
+						"Footnote": "{DocumentID}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WCMDocument}",
+						"Subhead": "{ObjectKey}",
+						"SubstatusText": "{WCMDocumentItem}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentItemAttachments/NavToWCMDocumentItemAttachments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentItemAttachments",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentItemLongtexts",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{TextObject}",
+						"Footnote": "{TextType}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WCMDocument}",
+						"Subhead": "{TextString}",
+						"SubstatusText": "{WCMDocumentItem}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentItemLongtexts/NavToWCMDocumentItemLongtexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentItemLongtexts",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMSystemStatuses",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{WCMApplication}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ChangeNumber}",
+						"Footnote": "{WCMDocument}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WCMDocumentItem}",
+						"Subhead": "{WCMApproval}",
+						"SubstatusText": "{StatusInact}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMSystemStatuses/NavToWCMSystemStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMSystemStatuses",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMUserStatuses",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectType}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ChangeNumber}",
+						"Footnote": "{StatusProfile}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Status}",
+						"Subhead": "{ObjectNumber}",
+						"SubstatusText": "{StatusInact}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMUserStatuses/NavToWCMUserStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMUserStatuses",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WCMDocumentItemAttachments",
+				"WCMDocumentItemLongtexts",
+				"WCMSystemStatuses",
+				"WCMUserStatuses"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMDocumentItems_Detail"
+}

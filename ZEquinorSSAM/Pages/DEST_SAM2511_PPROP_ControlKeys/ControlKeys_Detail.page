@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ControlKeys",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ControlKey_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ConfirmationIndicator}",
+						"Subhead": "{InspCharRequired}",
+						"BodyText": "",
+						"Footnote": "{Application}",
+						"Description": "{ControlKeyDescription}",
+						"StatusText": "{ControlKey}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ConfirmationIndicator",
+							"Value": "{ConfirmationIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspCharRequired",
+							"Value": "{InspCharRequired}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControlKeyDescription",
+							"Value": "{ControlKeyDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Application",
+							"Value": "{Application}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControlKey",
+							"Value": "{ControlKey}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ControlKeys_Detail"
+}

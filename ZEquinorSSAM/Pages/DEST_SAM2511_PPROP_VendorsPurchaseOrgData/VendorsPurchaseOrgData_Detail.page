@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "VendorsPurchaseOrgData",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,VendorPurchaseOrgData_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PurchaseOrgBlock}",
+						"Subhead": "{PurchasingOrg}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{Vendor}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PurchaseOrgBlock",
+							"Value": "{PurchaseOrgBlock}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchasingOrg",
+							"Value": "{PurchasingOrg}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Vendor",
+							"Value": "{Vendor}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "VendorsPurchaseOrgData_Detail"
+}

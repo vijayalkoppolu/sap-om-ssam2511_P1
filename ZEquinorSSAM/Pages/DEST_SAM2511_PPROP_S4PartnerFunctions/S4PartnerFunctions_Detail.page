@@ -1,0 +1,94 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "S4PartnerFunctions",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,S4PartnerFunction_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ObjectType}",
+						"Subhead": "{PartnerFunction}",
+						"BodyText": "",
+						"Footnote": "{Usage}",
+						"Description": "{FunctionCategory}",
+						"StatusText": "{RelatshpCat}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{RelationshpType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerFunction",
+							"Value": "{PartnerFunction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FunctionCategory",
+							"Value": "{FunctionCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Usage",
+							"Value": "{Usage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RelatshpCat",
+							"Value": "{RelatshpCat}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RelationshpType",
+							"Value": "{RelationshpType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HidePartnerFunc",
+							"Value": "{HidePartnerFunc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortDescription",
+							"Value": "{ShortDescription}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "S4PartnerFunctions_Detail"
+}

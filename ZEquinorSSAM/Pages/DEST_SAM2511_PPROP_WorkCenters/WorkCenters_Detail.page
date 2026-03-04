@@ -1,0 +1,463 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WorkCenters",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WorkCenter_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{WorkCenterName}",
+						"Subhead": "{LockedFlag}",
+						"BodyText": "",
+						"Footnote": "{ReportType}",
+						"Description": "{ControllingArea}",
+						"StatusText": "{ReportTypeDesc}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{QNotifTypeFlag}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "LockedFlag",
+							"Value": "{LockedFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterName",
+							"Value": "{WorkCenterName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControllingArea",
+							"Value": "{ControllingArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReportType",
+							"Value": "{ReportType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReportTypeDesc",
+							"Value": "{ReportTypeDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QNotifTypeFlag",
+							"Value": "{QNotifTypeFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CatalogProfile",
+							"Value": "{CatalogProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PMEquipFlag",
+							"Value": "{PMEquipFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PMFuncLocFlag",
+							"Value": "{PMFuncLocFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefaultActivityType",
+							"Value": "{DefaultActivityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ExternalWorkCenterId",
+							"Value": "{ExternalWorkCenterId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterId",
+							"Value": "{WorkCenterId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenter",
+							"Value": "{CostCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlantId",
+							"Value": "{PlantId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterDescr",
+							"Value": "{WorkCenterDescr}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "MyEquipments_Main_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{StartDate}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{CopyEquipId}",
+						"Footnote": "{Weight}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ConstYear}",
+						"Subhead": "{Size}",
+						"SubstatusText": "{ConstMonth}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyEquipments/NavToMyEquipments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyEquipments_Main_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MyEquipments_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{StartDate}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{CopyEquipId}",
+						"Footnote": "{Weight}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ConstYear}",
+						"Subhead": "{Size}",
+						"SubstatusText": "{ConstMonth}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyEquipments/NavToMyEquipments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyEquipments_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MyFunctionalLocations_Main_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Location}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SuperiorFuncLocInternId}",
+						"Footnote": "{LongTextIndicator}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{LAMTableKey}",
+						"Subhead": "{ConstType}",
+						"SubstatusText": "{LAMObjectType}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyFunctionalLocations/NavToMyFunctionalLocations_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyFunctionalLocations_Main_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MyFunctionalLocations_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Location}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{SuperiorFuncLocInternId}",
+						"Footnote": "{LongTextIndicator}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{LAMTableKey}",
+						"Subhead": "{ConstType}",
+						"SubstatusText": "{LAMObjectType}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyFunctionalLocations/NavToMyFunctionalLocations_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyFunctionalLocations_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "NotificationHistory_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{MalfunctionEndTime}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{PersonRespName}",
+						"Footnote": "{PM_OBJTY}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{PlannerGroup}",
+						"Subhead": "{Description}",
+						"SubstatusText": "{PlanningPlant}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/NotificationHistories/NavToNotificationHistories_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/NotificationHistory_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApplication_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{WCMApproval}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{ValidFrom}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ValidTo}",
+						"Subhead": "{Extension}",
+						"SubstatusText": "{Priority}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApplications/NavToWCMApplications_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApplication_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApproval_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{WCMApplication}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{WorkCenterID}",
+						"Footnote": "{Usage}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ShortText}",
+						"Subhead": "{CatalogTwoExists}",
+						"SubstatusText": "{LongText}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovals/NavToWCMApprovals_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApproval_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentHeader_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{TimeEF}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{EquipId}",
+						"Footnote": "{DateLS}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{DateEF}",
+						"Subhead": "{IsSelVar}",
+						"SubstatusText": "{TimeES}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentHeaders/NavToWCMDocumentHeaders_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentHeader_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WorkOrderHistory_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PM_OBJTY}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{PersonsName}",
+						"Footnote": "{PlanningPlant}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WorkCenter}",
+						"Subhead": "{PriorityType}",
+						"SubstatusText": "{PlannerGroup}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WorkOrderHistories/NavToWorkOrderHistories_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WorkOrderHistory_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MyEquipments",
+				"MyEquipments",
+				"MyFunctionalLocations",
+				"MyFunctionalLocations",
+				"NotificationHistories",
+				"WCMApplications",
+				"WCMApprovals",
+				"WCMDocumentHeaders",
+				"WorkOrderHistories"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WorkCenters_Detail"
+}

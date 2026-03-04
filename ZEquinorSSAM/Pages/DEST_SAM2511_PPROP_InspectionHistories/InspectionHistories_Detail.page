@@ -1,0 +1,169 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "InspectionHistories",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,InspectionHistory_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{FuncLocIdIntern}",
+						"BodyText": "",
+						"Footnote": "{InspectionLot}",
+						"Description": "{MeanValue}",
+						"StatusText": "{InspectionNode}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{InspectionChar}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocIdIntern",
+							"Value": "{FuncLocIdIntern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MeanValue",
+							"Value": "{MeanValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionLot",
+							"Value": "{InspectionLot}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionNode",
+							"Value": "{InspectionNode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionChar",
+							"Value": "{InspectionChar}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SampleNum",
+							"Value": "{SampleNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartDate",
+							"Value": "{StartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EndDate",
+							"Value": "{EndDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangedDate",
+							"Value": "{LastChangedDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InputValue",
+							"Value": "{InputValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Valuation",
+							"Value": "{Valuation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NumOfDefects",
+							"Value": "{NumOfDefects}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NumOfInspected",
+							"Value": "{NumOfInspected}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectClass",
+							"Value": "{DefectClass}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectCode",
+							"Value": "{DefectCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectCodeGroup",
+							"Value": "{DefectCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectCatalog",
+							"Value": "{DefectCatalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Inspector",
+							"Value": "{Inspector}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectSelectedSet",
+							"Value": "{DefectSelectedSet}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DefectPlant",
+							"Value": "{DefectPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterInspChar",
+							"Value": "{MasterInspChar}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterInspVersion",
+							"Value": "{MasterInspVersion}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "InspectionHistories_Detail"
+}

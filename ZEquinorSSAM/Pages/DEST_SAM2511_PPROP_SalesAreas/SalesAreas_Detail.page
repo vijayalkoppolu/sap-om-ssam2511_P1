@@ -1,0 +1,79 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "SalesAreas",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,SalesArea_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SalesOrgID}",
+						"Subhead": "{SalesOrgUnit}",
+						"BodyText": "",
+						"Footnote": "{SalesGroup}",
+						"Description": "{SalesOffice}",
+						"StatusText": "{Division}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{DistributionChannel}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SalesOrgUnit",
+							"Value": "{SalesOrgUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrgID",
+							"Value": "{SalesOrgID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOffice",
+							"Value": "{SalesOffice}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesGroup",
+							"Value": "{SalesGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Division",
+							"Value": "{Division}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DistributionChannel",
+							"Value": "{DistributionChannel}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SalesAreas_Detail"
+}

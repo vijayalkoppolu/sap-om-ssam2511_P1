@@ -1,0 +1,99 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "EquipmentWarranties",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,EquipmentWarranty_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{WarrantyType}",
+						"BodyText": "",
+						"Footnote": "{CreateTime}",
+						"Description": "{CreateDate}",
+						"StatusText": "{MasterWarrantyNum}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ObjectNum}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarrantyType",
+							"Value": "{WarrantyType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreateDate",
+							"Value": "{CreateDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreateTime",
+							"Value": "{CreateTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MasterWarrantyNum",
+							"Value": "{MasterWarrantyNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNum",
+							"Value": "{ObjectNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarrantyDate",
+							"Value": "{WarrantyDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarrantyDesc",
+							"Value": "{WarrantyDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarrantyEnd",
+							"Value": "{WarrantyEnd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarrantyTypeDesc",
+							"Value": "{WarrantyTypeDesc}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "EquipmentWarranties_Detail"
+}

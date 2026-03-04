@@ -1,0 +1,147 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WarehouseTaskConfirmations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WarehouseTaskConfirmation_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Batch}",
+						"Subhead": "{WarehouseNo}",
+						"BodyText": "",
+						"Footnote": "{ActualQuantity}",
+						"Description": "{DestinationBin}",
+						"StatusText": "{WithdrawHU}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{WithdrawHUManual}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseNo",
+							"Value": "{WarehouseNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestinationBin",
+							"Value": "{DestinationBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualQuantity",
+							"Value": "{ActualQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WithdrawHU",
+							"Value": "{WithdrawHU}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WithdrawHUManual",
+							"Value": "{WithdrawHUManual}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MultiExceptionCodes",
+							"Value": "{MultiExceptionCodes}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseTask",
+							"Value": "{WarehouseTask}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SrcHU",
+							"Value": "{SrcHU}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestHU",
+							"Value": "{DestHU}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseTaskItem",
+							"Value": "{WarehouseTaskItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseOrder",
+							"Value": "{WarehouseOrder}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WarehouseTaskConfSerialNumber_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SerialNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{WarehouseNo}",
+						"Footnote": "{WarehouseTask}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Product}",
+						"Subhead": "{UII}",
+						"SubstatusText": "{WarehouseTaskItem}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WarehouseTaskConfSerialNumbers/NavToWarehouseTaskConfSerialNumbers_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WarehouseTaskConfSerialNumber_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WarehouseTaskConfSerialNumbers"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WarehouseTaskConfirmations_Detail"
+}

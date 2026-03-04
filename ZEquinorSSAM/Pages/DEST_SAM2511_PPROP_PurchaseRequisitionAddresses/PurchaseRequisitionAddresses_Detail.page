@@ -1,0 +1,319 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PurchaseRequisitionAddresses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PurchaseRequisitionAddress_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Title}",
+						"Subhead": "{Floor}",
+						"BodyText": "",
+						"Footnote": "{Country}",
+						"Description": "{RoomNumber}",
+						"StatusText": "{Language}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Region}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Floor",
+							"Value": "{Floor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RoomNumber",
+							"Value": "{RoomNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Country",
+							"Value": "{Country}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Region",
+							"Value": "{Region}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SearchTerm1",
+							"Value": "{SearchTerm1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SearchTerm2",
+							"Value": "{SearchTerm2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TimeZone",
+							"Value": "{TimeZone}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TaxJurisdiction",
+							"Value": "{TaxJurisdiction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Notes",
+							"Value": "{Notes}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CommMethod",
+							"Value": "{CommMethod}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Telephone",
+							"Value": "{Telephone}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Extension",
+							"Value": "{Extension}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Fax",
+							"Value": "{Fax}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Extension1",
+							"Value": "{Extension1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Street1",
+							"Value": "{Street1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "District1",
+							"Value": "{District1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostalCode",
+							"Value": "{PostalCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "POBoxPostCde",
+							"Value": "{POBoxPostCde}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompanyPostCd",
+							"Value": "{CompanyPostCd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "POBox",
+							"Value": "{POBox}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "POBoxCity",
+							"Value": "{POBoxCity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryDist",
+							"Value": "{DeliveryDist}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Street",
+							"Value": "{Street}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StreetCode",
+							"Value": "{StreetCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StreetAbbrev",
+							"Value": "{StreetAbbrev}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HouseNumber",
+							"Value": "{HouseNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Street2",
+							"Value": "{Street2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Street3",
+							"Value": "{Street3}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Street5",
+							"Value": "{Street5}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Buildingcode",
+							"Value": "{Buildingcode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CheckStatus",
+							"Value": "{CheckStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CityCode1",
+							"Value": "{CityCode1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransportZone",
+							"Value": "{TransportZone}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Supplement",
+							"Value": "{Supplement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EmailAddress",
+							"Value": "{EmailAddress}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Street4",
+							"Value": "{Street4}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Title",
+							"Value": "{Title}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ISOCode",
+							"Value": "{ISOCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LanguageCode",
+							"Value": "{LanguageCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BuildingCode",
+							"Value": "{BuildingCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StructureGroup",
+							"Value": "{StructureGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseReqNo",
+							"Value": "{PurchaseReqNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseReqItemNo",
+							"Value": "{PurchaseReqItemNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AddressNumber",
+							"Value": "{AddressNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FormOfAddress",
+							"Value": "{FormOfAddress}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name",
+							"Value": "{Name}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name2",
+							"Value": "{Name2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name3",
+							"Value": "{Name3}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name4",
+							"Value": "{Name4}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "COName",
+							"Value": "{COName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "City",
+							"Value": "{City}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "District",
+							"Value": "{District}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CityCode",
+							"Value": "{CityCode}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PurchaseRequisitionAddresses_Detail"
+}

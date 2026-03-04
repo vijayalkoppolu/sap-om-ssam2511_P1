@@ -1,0 +1,214 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FSMFormInstances",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FSMFormInstance_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Id}",
+						"Subhead": "{S4ServiceOrderId}",
+						"BodyText": "",
+						"Footnote": "{S4ObjectType}",
+						"Description": "{S4ServiceItemNumber}",
+						"StatusText": "{Description}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{OrgLevel}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "S4ServiceOrderId",
+							"Value": "{S4ServiceOrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "S4ServiceItemNumber",
+							"Value": "{S4ServiceItemNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "S4ObjectType",
+							"Value": "{S4ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Id",
+							"Value": "{Id}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrgLevel",
+							"Value": "{OrgLevel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Owners",
+							"Value": "{Owners}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Content",
+							"Value": "{Content}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SyncObjectKPIs",
+							"Value": "{SyncObjectKPIs}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Template",
+							"Value": "{Template}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Mandatory",
+							"Value": "{Mandatory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Inactive",
+							"Value": "{Inactive}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DataVersion",
+							"Value": "{DataVersion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChanged",
+							"Value": "{LastChanged}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatePerson",
+							"Value": "{CreatePerson}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ExternalId",
+							"Value": "{ExternalId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Groups",
+							"Value": "{Groups}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Branches",
+							"Value": "{Branches}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Version",
+							"Value": "{Version}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedTimeStamp",
+							"Value": "{CreatedTimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ResponsiblePerson",
+							"Value": "{ResponsiblePerson}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UdfMetaGroups",
+							"Value": "{UdfMetaGroups}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Closed",
+							"Value": "{Closed}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Location",
+							"Value": "{Location}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UdfValues",
+							"Value": "{UdfValues}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangedBy",
+							"Value": "{LastChangedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChecklistId",
+							"Value": "{ChecklistId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SyncStatus",
+							"Value": "{SyncStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityId",
+							"Value": "{ActivityId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkOrder",
+							"Value": "{WorkOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Operation",
+							"Value": "{Operation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangedTimestamp",
+							"Value": "{LastChangedTimestamp}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FSMFormInstances_Detail"
+}

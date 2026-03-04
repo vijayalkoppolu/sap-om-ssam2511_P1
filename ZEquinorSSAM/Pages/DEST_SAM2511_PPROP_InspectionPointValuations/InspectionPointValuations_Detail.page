@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "InspectionPointValuations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,InspectionPointValuation_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{AcceptedCodeGroup}",
+						"Subhead": "{AcceptedCode}",
+						"BodyText": "",
+						"Footnote": "{RejectedCode}",
+						"Description": "{RejectedCodeGroup}",
+						"StatusText": "{FieldCombination}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{InspectionPointType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "AcceptedCodeGroup",
+							"Value": "{AcceptedCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AcceptedCode",
+							"Value": "{AcceptedCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RejectedCodeGroup",
+							"Value": "{RejectedCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RejectedCode",
+							"Value": "{RejectedCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FieldCombination",
+							"Value": "{FieldCombination}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionPointType",
+							"Value": "{InspectionPointType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SelectedSet",
+							"Value": "{SelectedSet}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "InspectionPointValuations_Detail"
+}

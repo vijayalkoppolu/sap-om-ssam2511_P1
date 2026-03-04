@@ -1,0 +1,159 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "StockTransportOrderHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,StockTransportOrderHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{StockTransportOrderId}",
+						"Subhead": "{Vendor}",
+						"BodyText": "",
+						"Footnote": "{DocumentType}",
+						"Description": "{SupplyingPlant}",
+						"StatusText": "{DocumentStatus}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{DocumentCategory}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Vendor",
+							"Value": "{Vendor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SupplyingPlant",
+							"Value": "{SupplyingPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentType",
+							"Value": "{DocumentType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentStatus",
+							"Value": "{DocumentStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentCategory",
+							"Value": "{DocumentCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockTransportOrderId",
+							"Value": "{StockTransportOrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentDate",
+							"Value": "{DocumentDate}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "StockTransportOrderHeaderLongText_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{StockTransportOrderId}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{TextId}",
+						"Footnote": "{NewTextString}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{TextString}",
+						"Subhead": "{ObjectKey}",
+						"SubstatusText": "{TextObjType}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/StockTransportOrderHeaderLongTexts/NavToStockTransportOrderHeaderLongTexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/StockTransportOrderHeaderLongText_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "StockTransportOrderItem_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ValuationType}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{StockTransportOrderId}",
+						"Footnote": "{ValuationCategory}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{OrderUOM}",
+						"Subhead": "{StorageBin}",
+						"SubstatusText": "{StorageLoc}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/StockTransportOrderItems/NavToStockTransportOrderItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/StockTransportOrderItem_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"StockTransportOrderHeaderLongTexts",
+				"StockTransportOrderItems"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "StockTransportOrderHeaders_Detail"
+}

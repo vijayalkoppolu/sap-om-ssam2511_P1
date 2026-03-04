@@ -1,0 +1,179 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MaterialDocuments",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MaterialDocument_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{UserName}",
+						"Subhead": "{BillOfLading}",
+						"BodyText": "",
+						"Footnote": "{RefDocumentNumber}",
+						"Description": "{GMCode}",
+						"StatusText": "{HeaderText}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{GoodsReceiptIssueNumber}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "BillOfLading",
+							"Value": "{BillOfLading}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GMCode",
+							"Value": "{GMCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserName",
+							"Value": "{UserName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefDocumentNumber",
+							"Value": "{RefDocumentNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HeaderText",
+							"Value": "{HeaderText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GoodsReceiptIssueNumber",
+							"Value": "{GoodsReceiptIssueNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostingDate",
+							"Value": "{PostingDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentDate",
+							"Value": "{DocumentDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialDocNumber",
+							"Value": "{MaterialDocNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialDocYear",
+							"Value": "{MaterialDocYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "MatDocAttachment_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{DocumentID}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{RelationShipID}",
+						"Footnote": "{MatDocYear}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{MaterialDoc}",
+						"Subhead": "{ObjectKey}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MatDocAttachments/NavToMatDocAttachments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MatDocAttachment_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "RelatedItem",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ReferenceDocYear}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{MaterialDocYear}",
+						"Footnote": "{ReferenceDocItem}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Vendor}",
+						"Subhead": "{ReferenceDocHdr}",
+						"SubstatusText": "{WBSElement}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MaterialDocItems/NavToMaterialDocItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/RelatedItem",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MatDocAttachments",
+				"MaterialDocItems"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MaterialDocuments_Detail"
+}

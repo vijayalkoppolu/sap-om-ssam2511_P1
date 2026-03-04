@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "EquipmentSystemStatuses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,EquipmentSystemStatus_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{ObjectNum}",
+						"BodyText": "",
+						"Footnote": "{SequencePosition}",
+						"Description": "{Status}",
+						"StatusText": "{SequencePriority}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{StatusInact}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ObjectNum",
+							"Value": "{ObjectNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequencePosition",
+							"Value": "{SequencePosition}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequencePriority",
+							"Value": "{SequencePriority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusInact",
+							"Value": "{StatusInact}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusText",
+							"Value": "{StatusText}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "EquipmentSystemStatuses_Detail"
+}

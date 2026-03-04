@@ -1,0 +1,104 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "DigitalSignatureLinks",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,DigitalSignatureLink_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SignatureId}",
+						"Subhead": "{Strategy}",
+						"BodyText": "",
+						"Footnote": "{Application}",
+						"Description": "{ObjectNumber}",
+						"StatusText": "{Object}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ObjectGroup}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Strategy",
+							"Value": "{Strategy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Application",
+							"Value": "{Application}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Object",
+							"Value": "{Object}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup",
+							"Value": "{ObjectGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectGroup1",
+							"Value": "{ObjectGroup1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SignatureId",
+							"Value": "{SignatureId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Order",
+							"Value": "{Order}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Notification",
+							"Value": "{Notification}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Operation",
+							"Value": "{Operation}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "DigitalSignatureLinks_Detail"
+}

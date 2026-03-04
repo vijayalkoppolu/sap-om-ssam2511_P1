@@ -1,0 +1,79 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "EquipmentBOMs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,EquipmentBOM_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{BOMId}",
+						"Subhead": "{BOMCategory}",
+						"BodyText": "",
+						"Footnote": "{BOMUsage}",
+						"Description": "{Plant}",
+						"StatusText": "{AlternativeBOM}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{EquipId}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "BOMCategory",
+							"Value": "{BOMCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BOMUsage",
+							"Value": "{BOMUsage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AlternativeBOM",
+							"Value": "{AlternativeBOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BOMId",
+							"Value": "{BOMId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "EquipmentBOMs_Detail"
+}

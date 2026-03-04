@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "COActivityTypes",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,COActivityType_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{IsOvertime}",
+						"Subhead": "{CostCenterDescription}",
+						"BodyText": "",
+						"Footnote": "{FiscalYear}",
+						"Description": "{ActivityTypeDescription}",
+						"StatusText": "{CostCenter}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ControllingArea}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "IsOvertime",
+							"Value": "{IsOvertime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenterDescription",
+							"Value": "{CostCenterDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityTypeDescription",
+							"Value": "{ActivityTypeDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FiscalYear",
+							"Value": "{FiscalYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenter",
+							"Value": "{CostCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControllingArea",
+							"Value": "{ControllingArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityType",
+							"Value": "{ActivityType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "COActivityTypes_Detail"
+}

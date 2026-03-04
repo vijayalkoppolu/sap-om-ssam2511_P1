@@ -1,0 +1,69 @@
+{
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyWorkOrderComponentMatDocs)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Header": {
+						"UseTopPadding": false,
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ItemNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyWorkOrderComponentMatDocs/NavToMyWorkOrderComponentMatDocs_Detail.action",
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{OperationNo}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{MaterialDocYear}",
+						"Subhead": "{MatDocItem}",
+						"SubstatusText": "{MaterialDocNumber}",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "Item Search",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "Loading more items, please wait..."
+					},
+					"Target": {
+						"EntitySet": "MyWorkOrderComponentMatDocs",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+						"QueryOptions": ""
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading, please wait..."
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyWorkOrderComponentMatDocs_List"
+}

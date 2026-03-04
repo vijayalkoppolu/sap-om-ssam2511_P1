@@ -1,0 +1,99 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "MaterialProjectStocks",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MaterialProjectStock_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{QualityInspectionQty}",
+						"Subhead": "{BlockedQty}",
+						"BodyText": "",
+						"Footnote": "{WBSElement}",
+						"Description": "{UnrestrictedQty}",
+						"StatusText": "{SpecialStock}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{RestrictedUseQty}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "QualityInspectionQty",
+							"Value": "{QualityInspectionQty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BlockedQty",
+							"Value": "{BlockedQty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnrestrictedQty",
+							"Value": "{UnrestrictedQty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WBSElement",
+							"Value": "{WBSElement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SpecialStock",
+							"Value": "{SpecialStock}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RestrictedUseQty",
+							"Value": "{RestrictedUseQty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLocation",
+							"Value": "{StorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialNum",
+							"Value": "{MaterialNum}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MaterialProjectStocks_Detail"
+}

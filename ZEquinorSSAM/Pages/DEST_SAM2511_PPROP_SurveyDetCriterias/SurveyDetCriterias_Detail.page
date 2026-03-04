@@ -1,0 +1,104 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "SurveyDetCriterias",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,SurveyDetCriteria_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SalesOrgID}",
+						"Subhead": "{CriteriaSet}",
+						"BodyText": "",
+						"Footnote": "{Systemstatus}",
+						"Description": "{Category}",
+						"StatusText": "{DistributionChannel}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Division}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "CriteriaSet",
+							"Value": "{CriteriaSet}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Category",
+							"Value": "{Category}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Systemstatus",
+							"Value": "{Systemstatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrgID",
+							"Value": "{SalesOrgID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DistributionChannel",
+							"Value": "{DistributionChannel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Division",
+							"Value": "{Division}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TERRITORY",
+							"Value": "{TERRITORY}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TARGETGROUP",
+							"Value": "{TARGETGROUP}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SurveyDetCriterias_Detail"
+}

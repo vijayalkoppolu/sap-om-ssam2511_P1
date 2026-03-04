@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "WarehouseResources",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WarehouseResource_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{WarehouseNo}",
+						"Subhead": "{Resource}",
+						"BodyText": "",
+						"Footnote": "{User}",
+						"Description": "{ResourceType}",
+						"StatusText": "{Queue}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{StandardBin}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "WarehouseNo",
+							"Value": "{WarehouseNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Resource",
+							"Value": "{Resource}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ResourceType",
+							"Value": "{ResourceType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "User",
+							"Value": "{User}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Queue",
+							"Value": "{Queue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StandardBin",
+							"Value": "{StandardBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ResourceGroup",
+							"Value": "{ResourceGroup}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WarehouseResources_Detail"
+}

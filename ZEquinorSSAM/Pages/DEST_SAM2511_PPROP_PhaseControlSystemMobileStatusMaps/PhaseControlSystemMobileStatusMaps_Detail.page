@@ -1,0 +1,64 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PhaseControlSystemMobileStatusMaps",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PhaseControlSystemMobileStatusMap_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Entity}",
+						"Subhead": "{SystemStatus}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{MobileObjectStatus}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Entity",
+							"Value": "{Entity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SystemStatus",
+							"Value": "{SystemStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MobileObjectStatus",
+							"Value": "{MobileObjectStatus}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PhaseControlSystemMobileStatusMaps_Detail"
+}

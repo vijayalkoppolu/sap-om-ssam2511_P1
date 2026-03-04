@@ -1,0 +1,398 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PartnerFunctions",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PartnerFunction_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Description}",
+						"Subhead": "{PartnerType}",
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{PartnerFunction}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerType",
+							"Value": "{PartnerType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerFunction",
+							"Value": "{PartnerFunction}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "MyEquipPartner_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{EquipId}",
+						"Footnote": "{Counter}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{PartnerFunction}",
+						"Subhead": "{PersonnelNum}",
+						"SubstatusText": "{AddressNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyEquipPartners/NavToMyEquipPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyEquipPartner_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MyFuncLocPartner_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectCategory}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{PersonnelNum}",
+						"Footnote": "{Counter}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{FuncLocIdIntern}",
+						"Subhead": "{ObjectNum}",
+						"SubstatusText": "{AddressNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyFuncLocPartners/NavToMyFuncLocPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyFuncLocPartner_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MyNotifPartner_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{AddressNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Counter}",
+						"Footnote": "{ObjectCategory}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{NotificationNumber}",
+						"Subhead": "{PartnerFunction}",
+						"SubstatusText": "{BPNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyNotificationPartners/NavToMyNotificationPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyNotifPartner_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MyWorkOrderPartner_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{Counter}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{AddressNum}",
+						"Subhead": "{ObjectCategory}",
+						"SubstatusText": "{OldPartner}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyWorkOrderPartners/NavToMyWorkOrderPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MyWorkOrderPartner_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "NotifPartnerDetProc_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{NotifOrigin}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{MaintainAppointments}",
+						"Footnote": "{NotifCategoryDesc}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{NotifCategory}",
+						"Subhead": "{IsUnique}",
+						"SubstatusText": "{Sequence}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/NotifPartnerDetProcs/NavToNotifPartnerDetProcs_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/NotifPartnerDetProc_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "PartnerDetProc_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PartnerDeterminationProcedure}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Sequence}",
+						"Footnote": "{PartnerIsMandatory}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{IsUnique}",
+						"Subhead": "{PartnerDeterminationDescription}",
+						"SubstatusText": "{MaintainAppointments}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/PartnerDetProcs/NavToPartnerDetProcs_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/PartnerDetProc_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApplicationPartner_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{AddressNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ObjectCategory}",
+						"Footnote": "{BPNum}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{PersonNum}",
+						"Subhead": "{PartnerNum}",
+						"SubstatusText": "{OldPartner}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApplicationPartners/NavToWCMApplicationPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApplicationPartner_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalPartner_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{OldPartner}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{AddressNumber}",
+						"Footnote": "{PersonnelNum}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{AddressExists}",
+						"Subhead": "{BPNum}",
+						"SubstatusText": "{PersonNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalPartners/NavToWCMApprovalPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalPartner_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentPartner_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PersonnelNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{BPNum}",
+						"Footnote": "{AddressExists}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{OldPartner}",
+						"Subhead": "{PersonNum}",
+						"SubstatusText": "{ObjectNumber}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentHeaderPartners/NavToWCMDocumentHeaderPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentPartner_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MyEquipPartners",
+				"MyFuncLocPartners",
+				"MyNotificationPartners",
+				"MyWorkOrderPartners",
+				"NotifPartnerDetProcs",
+				"PartnerDetProcs",
+				"WCMApplicationPartners",
+				"WCMApprovalPartners",
+				"WCMDocumentHeaderPartners"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PartnerFunctions_Detail"
+}

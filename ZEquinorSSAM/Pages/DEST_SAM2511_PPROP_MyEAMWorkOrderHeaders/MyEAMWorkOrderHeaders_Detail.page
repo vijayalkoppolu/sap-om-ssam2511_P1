@@ -1,0 +1,239 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyEAMWorkOrderHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyEAMWorkOrderHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{AccountingIndicator}",
+						"BodyText": "",
+						"Footnote": "{BusinessArea}",
+						"Description": "{AddressNum}",
+						"StatusText": "{ControllingArea}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{CostCenter}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AccountingIndicator",
+							"Value": "{AccountingIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AddressNum",
+							"Value": "{AddressNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BusinessArea",
+							"Value": "{BusinessArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControllingArea",
+							"Value": "{ControllingArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenter",
+							"Value": "{CostCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationDate",
+							"Value": "{CreationDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationTime",
+							"Value": "{CreationTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DueDate",
+							"Value": "{DueDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HeaderEquipment",
+							"Value": "{HeaderEquipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HeaderFunctionLocation",
+							"Value": "{HeaderFunctionLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangeTime",
+							"Value": "{LastChangeTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenter",
+							"Value": "{MainWorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenterPlant",
+							"Value": "{MainWorkCenterPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenanceActivityType",
+							"Value": "{MaintenanceActivityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenancePlant",
+							"Value": "{MaintenancePlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationNumber",
+							"Value": "{NotificationNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderCategory",
+							"Value": "{OrderCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderCurrency",
+							"Value": "{OrderCurrency}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderDescription",
+							"Value": "{OrderDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderProcessingContext",
+							"Value": "{OrderProcessingContext}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderType",
+							"Value": "{OrderType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Phase",
+							"Value": "{Phase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannerGroup",
+							"Value": "{PlannerGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Priority",
+							"Value": "{Priority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PriorityType",
+							"Value": "{PriorityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequestStartDate",
+							"Value": "{RequestStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequestStartTime",
+							"Value": "{RequestStartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ScheduledStartDate",
+							"Value": "{ScheduledStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ScheduledStartTime",
+							"Value": "{ScheduledStartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Subphase",
+							"Value": "{Subphase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterInternalId",
+							"Value": "{WorkCenterInternalId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TechnicalObject",
+							"Value": "{TechnicalObject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TechnicalObjectType",
+							"Value": "{TechnicalObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyEAMWorkOrderHeaders_Detail"
+}

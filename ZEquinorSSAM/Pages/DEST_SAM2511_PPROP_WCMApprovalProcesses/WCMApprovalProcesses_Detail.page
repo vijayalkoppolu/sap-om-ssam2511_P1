@@ -1,0 +1,147 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMApprovalProcesses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMApprovalProcess_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PermitCategory}",
+						"Subhead": "{Longtext}",
+						"BodyText": "",
+						"Footnote": "{CreatedBy}",
+						"Description": "{CreatedOn}",
+						"StatusText": "{ChangedOn}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ChangedBy}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PermitCategory",
+							"Value": "{PermitCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Longtext",
+							"Value": "{Longtext}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedOn",
+							"Value": "{CreatedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedBy",
+							"Value": "{CreatedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedOn",
+							"Value": "{ChangedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedBy",
+							"Value": "{ChangedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMApplication",
+							"Value": "{WCMApplication}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMDocument",
+							"Value": "{WCMDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter",
+							"Value": "{Counter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Permit",
+							"Value": "{Permit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsAuthorized",
+							"Value": "{IsAuthorized}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalProcessSegments",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SegmentCounter}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ObjectNumber}",
+						"Footnote": "{EnteredBy}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{CreatedOn}",
+						"Subhead": "{Counter}",
+						"SubstatusText": "{EnteredAt}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalProcessSegments/NavToWCMApprovalProcessSegments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalProcessSegments",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WCMApprovalProcessSegments"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMApprovalProcesses_Detail"
+}

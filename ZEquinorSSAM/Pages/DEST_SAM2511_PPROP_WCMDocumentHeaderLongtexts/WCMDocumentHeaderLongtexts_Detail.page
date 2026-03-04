@@ -1,0 +1,79 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMDocumentHeaderLongtexts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMDocumentHeaderLongtext_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{NewTextString}",
+						"Subhead": "{TextObject}",
+						"BodyText": "",
+						"Footnote": "{ObjectNumber}",
+						"Description": "{TextString}",
+						"StatusText": "{TextType}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{WCMDocument}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "NewTextString",
+							"Value": "{NewTextString}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextObject",
+							"Value": "{TextObject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextString",
+							"Value": "{TextString}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextType",
+							"Value": "{TextType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMDocument",
+							"Value": "{WCMDocument}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMDocumentHeaderLongtexts_Detail"
+}

@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "UsageUoMs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,UsageUoM_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Description}",
+						"Subhead": "{ExternalUoM}",
+						"BodyText": "",
+						"Footnote": "{UoM}",
+						"Description": "{Dimension}",
+						"StatusText": "{Denominator}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Numerator}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ExternalUoM",
+							"Value": "{ExternalUoM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Dimension",
+							"Value": "{Dimension}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UoM",
+							"Value": "{UoM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Denominator",
+							"Value": "{Denominator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Numerator",
+							"Value": "{Numerator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DecimalPlaces",
+							"Value": "{DecimalPlaces}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "UsageUoMs_Detail"
+}

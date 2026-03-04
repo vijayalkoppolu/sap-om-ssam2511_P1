@@ -1,0 +1,177 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "OutboundDeliveries",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,OutboundDelivery_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{GoodsMvtStatus}",
+						"Subhead": "{NumPackages}",
+						"BodyText": "",
+						"Footnote": "{ReceivingPlant}",
+						"Description": "{OverallStatus}",
+						"StatusText": "{ShippingConditions}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ShippingPoint}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "GoodsMvtStatus",
+							"Value": "{GoodsMvtStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NumPackages",
+							"Value": "{NumPackages}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OverallStatus",
+							"Value": "{OverallStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReceivingPlant",
+							"Value": "{ReceivingPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShippingConditions",
+							"Value": "{ShippingConditions}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShippingPoint",
+							"Value": "{ShippingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TotalWeight",
+							"Value": "{TotalWeight}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnloadingPoint",
+							"Value": "{UnloadingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualGoodsMvtDate",
+							"Value": "{ActualGoodsMvtDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryNum",
+							"Value": "{DeliveryNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryBlock",
+							"Value": "{DeliveryBlock}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryDate",
+							"Value": "{DeliveryDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryPriority",
+							"Value": "{DeliveryPriority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryType",
+							"Value": "{DeliveryType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentCategory",
+							"Value": "{DocumentCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShipToParty",
+							"Value": "{ShipToParty}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Vendor",
+							"Value": "{Vendor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WeightUnit",
+							"Value": "{WeightUnit}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "Items_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Plant}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{StorageBin}",
+						"Footnote": "{Quantity}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ReasonForMovement}",
+						"Subhead": "{ValuationType}",
+						"SubstatusText": "{StorageLocation}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/OutboundDeliveryItems/NavToOutboundDeliveryItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/Items_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"OutboundDeliveryItems"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "OutboundDeliveries_Detail"
+}

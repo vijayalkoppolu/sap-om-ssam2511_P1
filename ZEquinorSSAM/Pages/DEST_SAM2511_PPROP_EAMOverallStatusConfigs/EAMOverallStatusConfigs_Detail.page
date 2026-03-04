@@ -1,0 +1,266 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "EAMOverallStatusConfigs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,EAMOverallStatusConfig_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Phase}",
+						"Subhead": "{PhaseDesc}",
+						"BodyText": "",
+						"Footnote": "{SubphaseDesc}",
+						"Description": "{Subphase}",
+						"StatusText": "{TransitionTextKey}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{StatusAttribute2}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Phase",
+							"Value": "{Phase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhaseDesc",
+							"Value": "{PhaseDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Subphase",
+							"Value": "{Subphase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubphaseDesc",
+							"Value": "{SubphaseDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransitionTextKey",
+							"Value": "{TransitionTextKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusAttribute2",
+							"Value": "{StatusAttribute2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfile",
+							"Value": "{StatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SystemStatus",
+							"Value": "{SystemStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserStatus",
+							"Value": "{UserStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequenceNum",
+							"Value": "{SequenceNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMOverallStatusProfile",
+							"Value": "{EAMOverallStatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OverallStatusLabel",
+							"Value": "{OverallStatusLabel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MobileStatus",
+							"Value": "{MobileStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusAttribute1",
+							"Value": "{StatusAttribute1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsSkippable",
+							"Value": "{IsSkippable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsLogged",
+							"Value": "{IsLogged}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EntityType",
+							"Value": "{EntityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMOverallStatus",
+							"Value": "{EAMOverallStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "NextOverallStatusSeq_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{EAMOverallStatus}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{FeatureId}",
+						"Footnote": "{CannotBeSkipped}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{EAMNextOverallStatus}",
+						"Subhead": "{ToEAMOverallStatusProfile}",
+						"SubstatusText": "{UserPersona}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/EAMOverallStatusSeqs/NavToEAMOverallStatusSeqs_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/NextOverallStatusSeq_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "OverallStatusSeq_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{EAMOverallStatus}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{FeatureId}",
+						"Footnote": "{CannotBeSkipped}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{EAMNextOverallStatus}",
+						"Subhead": "{ToEAMOverallStatusProfile}",
+						"SubstatusText": "{UserPersona}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/EAMOverallStatusSeqs/NavToEAMOverallStatusSeqs_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/OverallStatusSeq_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "PMMobileStatus_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PhaseDesc}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{S4ObjectID}",
+						"Footnote": "{Subphase}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{SubphaseDesc}",
+						"Subhead": "{Phase}",
+						"SubstatusText": "{BusinessObjectType}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/PMMobileStatuses/NavToPMMobileStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/PMMobileStatus_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"EAMOverallStatusSeqs",
+				"EAMOverallStatusSeqs",
+				"PMMobileStatuses"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "EAMOverallStatusConfigs_Detail"
+}

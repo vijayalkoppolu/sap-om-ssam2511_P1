@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ProductStatistics",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ProductStatistic_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PRODUCTNAME}",
+						"Subhead": "{STATSDATE}",
+						"BodyText": "",
+						"Footnote": "{SYSTEMINSTANCE}",
+						"Description": "{PRODUCTIONSYSTEM}",
+						"StatusText": "{VALUEDAYTOTAL}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{STATSNAME}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "STATSDATE",
+							"Value": "{STATSDATE}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PRODUCTNAME",
+							"Value": "{PRODUCTNAME}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PRODUCTIONSYSTEM",
+							"Value": "{PRODUCTIONSYSTEM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SYSTEMINSTANCE",
+							"Value": "{SYSTEMINSTANCE}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VALUEDAYTOTAL",
+							"Value": "{VALUEDAYTOTAL}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "STATSNAME",
+							"Value": "{STATSNAME}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "STATSCATEGORY",
+							"Value": "{STATSCATEGORY}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ProductStatistics_Detail"
+}

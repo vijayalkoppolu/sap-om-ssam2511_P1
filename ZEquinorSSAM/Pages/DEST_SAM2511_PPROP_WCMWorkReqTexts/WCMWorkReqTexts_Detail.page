@@ -1,0 +1,84 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMWorkReqTexts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMWorkReqText_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{GroupTitle}",
+						"Subhead": "{PlanningPlant}",
+						"BodyText": "",
+						"Footnote": "{PropertyName}",
+						"Description": "{UsageType}",
+						"StatusText": "{PropertyLabel}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PropertyVisible}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UsageType",
+							"Value": "{UsageType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GroupTitle",
+							"Value": "{GroupTitle}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PropertyName",
+							"Value": "{PropertyName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PropertyLabel",
+							"Value": "{PropertyLabel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PropertyVisible",
+							"Value": "{PropertyVisible}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GroupId",
+							"Value": "{GroupId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMWorkReqTexts_Detail"
+}

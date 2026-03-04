@@ -1,0 +1,99 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "S4LongTextDeterminations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,S4LongTextDetermination_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Description}",
+						"Subhead": "{AccessSequence}",
+						"BodyText": "",
+						"Footnote": "{TextDeterminationProc}",
+						"Description": "{TextObject}",
+						"StatusText": "{TextType}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Sequence}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AccessSequence",
+							"Value": "{AccessSequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextObject",
+							"Value": "{TextObject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextDeterminationProc",
+							"Value": "{TextDeterminationProc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextType",
+							"Value": "{TextType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Sequence",
+							"Value": "{Sequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Changes",
+							"Value": "{Changes}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransferType",
+							"Value": "{TransferType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Redetermination",
+							"Value": "{Redetermination}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObligatoryText",
+							"Value": "{ObligatoryText}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "S4LongTextDeterminations_Detail"
+}

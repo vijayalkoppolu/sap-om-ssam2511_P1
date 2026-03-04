@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "MobileClientSynchronizationSessions",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MobileClientSynchronizationSession_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SessionGUID}",
+						"Subhead": "{UserGUID}",
+						"BodyText": "",
+						"Footnote": "{SessionCloseTimeStamp}",
+						"Description": "{SessionBeginTimeStamp}",
+						"StatusText": "{CreatedBy}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SessionGUID",
+							"Value": "{SessionGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserGUID",
+							"Value": "{UserGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SessionBeginTimeStamp",
+							"Value": "{SessionBeginTimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SessionCloseTimeStamp",
+							"Value": "{SessionCloseTimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedBy",
+							"Value": "{CreatedBy}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MobileClientSynchronizationSessions_Detail"
+}

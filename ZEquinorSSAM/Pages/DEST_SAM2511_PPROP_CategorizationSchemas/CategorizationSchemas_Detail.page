@@ -1,0 +1,119 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "CategorizationSchemas",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,CategorizationSchema_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{CategoryName}",
+						"Subhead": "{SchemaID}",
+						"BodyText": "",
+						"Footnote": "{CategoryDescription}",
+						"Description": "{CategoryID}",
+						"StatusText": "{CategoryLevel}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{NodeLeaf}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SchemaID",
+							"Value": "{SchemaID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CategoryID",
+							"Value": "{CategoryID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CategoryName",
+							"Value": "{CategoryName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CategoryDescription",
+							"Value": "{CategoryDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CategoryLevel",
+							"Value": "{CategoryLevel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NodeLeaf",
+							"Value": "{NodeLeaf}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubjectProfile",
+							"Value": "{SubjectProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CodeText",
+							"Value": "{CodeText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CodeCatalog",
+							"Value": "{CodeCatalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CodeGroup",
+							"Value": "{CodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PareGuid32",
+							"Value": "{PareGuid32}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CategoryGuid32",
+							"Value": "{CategoryGuid32}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SchemaGuid32",
+							"Value": "{SchemaGuid32}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Code",
+							"Value": "{Code}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "CategorizationSchemas_Detail"
+}

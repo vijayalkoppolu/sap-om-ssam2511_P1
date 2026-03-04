@@ -1,0 +1,174 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "OrderTypes",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,OrderType_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{IsFlightType}",
+						"Subhead": "{ShopPaper}",
+						"BodyText": "",
+						"Footnote": "{EAMNotifType}",
+						"Description": "{AutObjectListGen}",
+						"StatusText": "{PlantDescription}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ObjectListAssignment}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "IsFlightType",
+							"Value": "{IsFlightType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShopPaper",
+							"Value": "{ShopPaper}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AutObjectListGen",
+							"Value": "{AutObjectListGen}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMNotifType",
+							"Value": "{EAMNotifType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlantDescription",
+							"Value": "{PlantDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectListAssignment",
+							"Value": "{ObjectListAssignment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionType",
+							"Value": "{InspectionType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QMNotifType",
+							"Value": "{QMNotifType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UDSelectedSet",
+							"Value": "{UDSelectedSet}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OneQNotifPerLotFlag",
+							"Value": "{OneQNotifPerLotFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderTypeDesc",
+							"Value": "{OrderTypeDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControlKey",
+							"Value": "{ControlKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValauationArea",
+							"Value": "{ValauationArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ServiceType",
+							"Value": "{ServiceType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PriorityType",
+							"Value": "{PriorityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintActType",
+							"Value": "{MaintActType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderType",
+							"Value": "{OrderType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UDCodeVersion",
+							"Value": "{UDCodeVersion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhaseModelActive",
+							"Value": "{PhaseModelActive}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifType",
+							"Value": "{NotifType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentType",
+							"Value": "{DocumentType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageCategory",
+							"Value": "{StorageCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EAMOverallStatusProfile",
+							"Value": "{EAMOverallStatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AutChecklistGen",
+							"Value": "{AutChecklistGen}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "OrderTypes_Detail"
+}

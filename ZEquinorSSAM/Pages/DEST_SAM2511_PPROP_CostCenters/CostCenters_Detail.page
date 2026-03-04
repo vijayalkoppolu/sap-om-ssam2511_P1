@@ -1,0 +1,124 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "CostCenters",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,CostCenter_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Language}",
+						"Subhead": "{COArea}",
+						"BodyText": "",
+						"Footnote": "{ValidTo}",
+						"Description": "{CostCenter}",
+						"StatusText": "{ValidFrom}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{LockActPCosts}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "COArea",
+							"Value": "{COArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenter",
+							"Value": "{CostCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidTo",
+							"Value": "{ValidTo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidFrom",
+							"Value": "{ValidFrom}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LockActPCosts",
+							"Value": "{LockActPCosts}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Planpricosts",
+							"Value": "{Planpricosts}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompanyCode",
+							"Value": "{CompanyCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BusinessArea",
+							"Value": "{BusinessArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CCtrCategory",
+							"Value": "{CCtrCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonResp",
+							"Value": "{PersonResp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserResponsible",
+							"Value": "{UserResponsible}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name1",
+							"Value": "{Name1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortText",
+							"Value": "{ShortText}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "CostCenters_Detail"
+}

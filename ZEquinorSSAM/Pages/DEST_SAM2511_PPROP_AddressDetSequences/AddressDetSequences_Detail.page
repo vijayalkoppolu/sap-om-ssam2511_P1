@@ -1,0 +1,79 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "AddressDetSequences",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,AddressDetSequence_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{BusinessObject}",
+						"Subhead": "{PMObjectType}",
+						"BodyText": "",
+						"Footnote": "{SrcObjectType}",
+						"Description": "{SrcObjectTechEntityType}",
+						"StatusText": "{SequenceNo}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Active}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "BusinessObject",
+							"Value": "{BusinessObject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PMObjectType",
+							"Value": "{PMObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SrcObjectTechEntityType",
+							"Value": "{SrcObjectTechEntityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SrcObjectType",
+							"Value": "{SrcObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SequenceNo",
+							"Value": "{SequenceNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Active",
+							"Value": "{Active}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "AddressDetSequences_Detail"
+}

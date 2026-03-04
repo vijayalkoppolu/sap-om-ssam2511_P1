@@ -1,0 +1,127 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "Plants",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,Plant_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Plant}",
+						"Subhead": "{CompanyCode}",
+						"BodyText": "",
+						"Footnote": "{Division}",
+						"Description": "{DistributionChannel}",
+						"StatusText": "{PlanningPlant}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PlantDescription}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompanyCode",
+							"Value": "{CompanyCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DistributionChannel",
+							"Value": "{DistributionChannel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Division",
+							"Value": "{Division}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlantDescription",
+							"Value": "{PlantDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrganization",
+							"Value": "{SalesOrganization}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationArea",
+							"Value": "{ValuationArea}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "PhysicalInventoryDocItem_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{BaseUOM}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Batch}",
+						"Footnote": "{BaseQuantity}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{PhysInvDoc}",
+						"Subhead": "{BookQuantity}",
+						"SubstatusText": "{CountDate}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/PhysicalInventoryDocItems/NavToPhysicalInventoryDocItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/PhysicalInventoryDocItem_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"PhysicalInventoryDocItems"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Plants_Detail"
+}

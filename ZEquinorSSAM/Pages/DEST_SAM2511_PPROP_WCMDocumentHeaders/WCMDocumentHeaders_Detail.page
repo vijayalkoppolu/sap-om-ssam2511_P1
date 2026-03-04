@@ -1,0 +1,766 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMDocumentHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMDocumentHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{EquipId}",
+						"Subhead": "{IsSelVar}",
+						"BodyText": "",
+						"Footnote": "{DateLS}",
+						"Description": "{TimeEF}",
+						"StatusText": "{DateEF}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{TimeES}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "IsSelVar",
+							"Value": "{IsSelVar}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TimeEF",
+							"Value": "{TimeEF}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DateLS",
+							"Value": "{DateLS}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DateEF",
+							"Value": "{DateEF}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TimeES",
+							"Value": "{TimeES}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DateES",
+							"Value": "{DateES}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TimeLS",
+							"Value": "{TimeLS}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DateLF",
+							"Value": "{DateLF}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TimeLF",
+							"Value": "{TimeLF}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DatePS",
+							"Value": "{DatePS}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TimePS",
+							"Value": "{TimePS}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinishTime",
+							"Value": "{FinishTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Activity",
+							"Value": "{Activity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubnetworkOf",
+							"Value": "{SubnetworkOf}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WBSElement",
+							"Value": "{WBSElement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangedat",
+							"Value": "{LastChangedat}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedOn",
+							"Value": "{ChangedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedBy",
+							"Value": "{ChangedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedAt",
+							"Value": "{CreatedAt}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedOn",
+							"Value": "{CreatedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedBy",
+							"Value": "{CreatedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Train",
+							"Value": "{Train}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipId",
+							"Value": "{EquipId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjListExists",
+							"Value": "{ObjListExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Approvedon",
+							"Value": "{Approvedon}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Approvaltime",
+							"Value": "{Approvaltime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMDocument",
+							"Value": "{WCMDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortText",
+							"Value": "{ShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterID",
+							"Value": "{WorkCenterID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Application",
+							"Value": "{Application}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DatePF",
+							"Value": "{DatePF}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TimePF",
+							"Value": "{TimePF}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualStartDate",
+							"Value": "{ActualStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualStartTime",
+							"Value": "{ActualStartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualFinishDate",
+							"Value": "{ActualFinishDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualFinishTime",
+							"Value": "{ActualFinishTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RevisionPhase",
+							"Value": "{RevisionPhase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentLink",
+							"Value": "{DocumentLink}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfile",
+							"Value": "{StatusProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StatusProfileItem",
+							"Value": "{StatusProfileItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Template",
+							"Value": "{Template}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RemarksMt",
+							"Value": "{RemarksMt}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RemarksOp",
+							"Value": "{RemarksOp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OpCardNo",
+							"Value": "{OpCardNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShiftChief",
+							"Value": "{ShiftChief}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OTGuardian",
+							"Value": "{OTGuardian}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OTOperator",
+							"Value": "{OTOperator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OnDutyResponsible",
+							"Value": "{OnDutyResponsible}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OTStarton",
+							"Value": "{OTStarton}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OTEndon",
+							"Value": "{OTEndon}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EndTime",
+							"Value": "{EndTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Usage",
+							"Value": "{Usage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongText",
+							"Value": "{LongText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Delete",
+							"Value": "{Delete}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UGTextExists",
+							"Value": "{UGTextExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TGTextExists",
+							"Value": "{TGTextExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CatalogFirstExists",
+							"Value": "{CatalogFirstExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CatalogSecondExists",
+							"Value": "{CatalogSecondExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterObjectType",
+							"Value": "{WorkCenterObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AuthorizGroup",
+							"Value": "{AuthorizGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidFromTime",
+							"Value": "{ValidFromTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidToTime",
+							"Value": "{ValidToTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OverallCondtn",
+							"Value": "{OverallCondtn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecallTime",
+							"Value": "{RecallTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Unit",
+							"Value": "{Unit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Priority",
+							"Value": "{Priority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocIdIntern",
+							"Value": "{FuncLocIdIntern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TrafficLight",
+							"Value": "{TrafficLight}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualSystemStatus",
+							"Value": "{ActualSystemStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannerGroup",
+							"Value": "{PlannerGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidFromDate",
+							"Value": "{ValidFromDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidToDate",
+							"Value": "{ValidToDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Basstartdate",
+							"Value": "{Basstartdate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartTime",
+							"Value": "{StartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BasicFinDate",
+							"Value": "{BasicFinDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BasicFinTime",
+							"Value": "{BasicFinTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SchedStart",
+							"Value": "{SchedStart}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SchedStartTime",
+							"Value": "{SchedStartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SchedFinish",
+							"Value": "{SchedFinish}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Timest",
+							"Value": "{Timest}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApplicationDocuments",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{WCMApplication}",
+						"Footnote": "",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{WCMDocument}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApplicationDocuments/NavToWCMApplicationDocuments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApplicationDocuments",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApprovalProcesses",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{CreatedOn}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{PermitCategory}",
+						"Footnote": "{CreatedBy}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ChangedOn}",
+						"Subhead": "{Longtext}",
+						"SubstatusText": "{ChangedBy}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApprovalProcesses/NavToWCMApprovalProcesses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApprovalProcesses",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentHeaderAttachments",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{DocumentID}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{RelationshipID}",
+						"Footnote": "{WCMDocument}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{ObjectKey}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentHeaderAttachments/NavToWCMDocumentHeaderAttachments_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentHeaderAttachments",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentHeaderLongtexts",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{TextString}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{NewTextString}",
+						"Footnote": "{ObjectNumber}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{TextType}",
+						"Subhead": "{TextObject}",
+						"SubstatusText": "{WCMDocument}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentHeaderLongtexts/NavToWCMDocumentHeaderLongtexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentHeaderLongtexts",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentItems",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Client}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Name}",
+						"Footnote": "{WCMDocument}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WCMDocumentItem}",
+						"Subhead": "{IsSelVar}",
+						"SubstatusText": "{ObjectNumber}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentItems/NavToWCMDocumentItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentItems",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMDocumentPartners",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PersonnelNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{BPNum}",
+						"Footnote": "{AddressExists}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{OldPartner}",
+						"Subhead": "{PersonNum}",
+						"SubstatusText": "{ObjectNumber}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMDocumentHeaderPartners/NavToWCMDocumentHeaderPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMDocumentPartners",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMSystemStatuses",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{WCMApplication}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ChangeNumber}",
+						"Footnote": "{WCMDocument}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WCMDocumentItem}",
+						"Subhead": "{WCMApproval}",
+						"SubstatusText": "{StatusInact}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMSystemStatuses/NavToWCMSystemStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMSystemStatuses",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WCMUserStatuses",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectType}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ChangeNumber}",
+						"Footnote": "{StatusProfile}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Status}",
+						"Subhead": "{ObjectNumber}",
+						"SubstatusText": "{StatusInact}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMUserStatuses/NavToWCMUserStatuses_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMUserStatuses",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WCMApplicationDocuments",
+				"WCMApprovalProcesses",
+				"WCMDocumentHeaderAttachments",
+				"WCMDocumentHeaderLongtexts",
+				"WCMDocumentItems",
+				"WCMDocumentHeaderPartners",
+				"WCMSystemStatuses",
+				"WCMUserStatuses"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMDocumentHeaders_Detail"
+}

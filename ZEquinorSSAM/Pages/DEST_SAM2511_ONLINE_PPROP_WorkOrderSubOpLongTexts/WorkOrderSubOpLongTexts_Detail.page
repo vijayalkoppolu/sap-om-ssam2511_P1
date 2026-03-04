@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "WorkOrderSubOpLongTexts",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WorkOrderSubOpLongText_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{OperationNo}",
+						"BodyText": "",
+						"Footnote": "{NewTextString}",
+						"Description": "{SubOperationNo}",
+						"StatusText": "{ObjectKey}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{TextId}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "OperationNo",
+							"Value": "{OperationNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubOperationNo",
+							"Value": "{SubOperationNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NewTextString",
+							"Value": "{NewTextString}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextId",
+							"Value": "{TextId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextObjType",
+							"Value": "{TextObjType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TextString",
+							"Value": "{TextString}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WorkOrderSubOpLongTexts_Detail"
+}

@@ -1,0 +1,219 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "WarehouseTasks",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WarehouseTask_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DocumentID}",
+						"Subhead": "{SourceBin}",
+						"BodyText": "",
+						"Footnote": "{Quantity}",
+						"Description": "{UoM}",
+						"StatusText": "{EWMOutDel}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{EWMOutDelItem}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SourceBin",
+							"Value": "{SourceBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UoM",
+							"Value": "{UoM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Quantity",
+							"Value": "{Quantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EWMOutDel",
+							"Value": "{EWMOutDel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EWMOutDelItem",
+							"Value": "{EWMOutDelItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EWMInbDel",
+							"Value": "{EWMInbDel}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EWMInbDelItem",
+							"Value": "{EWMInbDelItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenanceOrder",
+							"Value": "{MaintenanceOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintOrdItem",
+							"Value": "{MaintOrdItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurOrder",
+							"Value": "{PurOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "POItem",
+							"Value": "{POItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDoc",
+							"Value": "{ReferenceDoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WTStatus",
+							"Value": "{WTStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DelDateFrom",
+							"Value": "{DelDateFrom}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DelDateTo",
+							"Value": "{DelDateTo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseNo",
+							"Value": "{WarehouseNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseTask",
+							"Value": "{WarehouseTask}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WhseProcType",
+							"Value": "{WhseProcType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProcCategory",
+							"Value": "{ProcCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageProcess",
+							"Value": "{StorageProcess}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedBy",
+							"Value": "{CreatedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationTime",
+							"Value": "{CreationTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Product",
+							"Value": "{Product}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SourceHU",
+							"Value": "{SourceHU}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestStorTy",
+							"Value": "{DestStorTy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestinationBin",
+							"Value": "{DestinationBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestinationHU",
+							"Value": "{DestinationHU}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentID",
+							"Value": "{DocumentID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityArea",
+							"Value": "{ActivityArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Queue",
+							"Value": "{Queue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseOrder",
+							"Value": "{WarehouseOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Delivery",
+							"Value": "{Delivery}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryItem",
+							"Value": "{DeliveryItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentID_ext",
+							"Value": "{DocumentID_ext}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WarehouseTasks_Detail"
+}

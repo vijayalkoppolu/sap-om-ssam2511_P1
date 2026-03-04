@@ -1,0 +1,159 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WorkOrderHistories",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WorkOrderHistory_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PersonsName}",
+						"Subhead": "{PriorityType}",
+						"BodyText": "",
+						"Footnote": "{PlanningPlant}",
+						"Description": "{PM_OBJTY}",
+						"StatusText": "{WorkCenter}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PlannerGroup}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PriorityType",
+							"Value": "{PriorityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PM_OBJTY",
+							"Value": "{PM_OBJTY}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenter",
+							"Value": "{WorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannerGroup",
+							"Value": "{PlannerGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenter",
+							"Value": "{MainWorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TechObject",
+							"Value": "{TechObject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongTextExists",
+							"Value": "{LongTextExists}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Priority",
+							"Value": "{Priority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonsName",
+							"Value": "{PersonsName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderType",
+							"Value": "{OrderType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderDescription",
+							"Value": "{OrderDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FunctionalLocation",
+							"Value": "{FunctionalLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartDate",
+							"Value": "{StartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EndDate",
+							"Value": "{EndDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceType",
+							"Value": "{ReferenceType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Equipment",
+							"Value": "{Equipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifNum",
+							"Value": "{NotifNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceWorkOrder",
+							"Value": "{ReferenceWorkOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonalNumber",
+							"Value": "{PersonalNumber}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WorkOrderHistories_Detail"
+}

@@ -1,0 +1,241 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "MaterialSLocs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MaterialSLoc_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{LongManufacturerPartNum}",
+						"Subhead": "{NATOStockNum}",
+						"BodyText": "",
+						"Footnote": "{StorageLocation}",
+						"Description": "{PlantDescription}",
+						"StatusText": "{MaterialNum}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Manufacturer}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "LongManufacturerPartNum",
+							"Value": "{LongManufacturerPartNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NATOStockNum",
+							"Value": "{NATOStockNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlantDescription",
+							"Value": "{PlantDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLocation",
+							"Value": "{StorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialNum",
+							"Value": "{MaterialNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Manufacturer",
+							"Value": "{Manufacturer}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OnOrderQuantity",
+							"Value": "{OnOrderQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TransferSlocQuantity",
+							"Value": "{TransferSlocQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ManufacturerPartNum",
+							"Value": "{ManufacturerPartNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialDesc",
+							"Value": "{MaterialDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageLocationDesc",
+							"Value": "{StorageLocationDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BatchIndicator",
+							"Value": "{BatchIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageBin",
+							"Value": "{StorageBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnrestrictedQuantity",
+							"Value": "{UnrestrictedQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SearchNonSerializedOnly",
+							"Value": "{SearchNonSerializedOnly}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "MaterialBatchStock_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{MaterialNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{UnrestrictedQuantity}",
+						"Footnote": "{Plant}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{StorageLocation}",
+						"Subhead": "{Batch}",
+						"SubstatusText": "",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/MaterialBatchStockSet/NavToMaterialBatchStockSet_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MaterialBatchStock_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MaterialProjectStock",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{UnrestrictedQty}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{QualityInspectionQty}",
+						"Footnote": "{WBSElement}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{SpecialStock}",
+						"Subhead": "{BlockedQty}",
+						"SubstatusText": "{RestrictedUseQty}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/MaterialProjectStocks/NavToMaterialProjectStocks_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MaterialProjectStock",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "MaterialVendorConsignmentStock",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{StorageLocation}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{MaterialNum}",
+						"Footnote": "{Batch}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{SpecialStock}",
+						"Subhead": "{Plant}",
+						"SubstatusText": "{Supplier}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/MaterialVendorConsignmentStocks/NavToMaterialVendorConsignmentStocks_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MaterialVendorConsignmentStock",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MaterialBatchStockSet",
+				"MaterialProjectStocks",
+				"MaterialVendorConsignmentStocks"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MaterialSLocs_Detail"
+}

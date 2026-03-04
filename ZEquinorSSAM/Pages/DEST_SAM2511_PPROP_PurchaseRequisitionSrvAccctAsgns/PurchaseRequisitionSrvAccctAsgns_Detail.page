@@ -1,0 +1,114 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PurchaseRequisitionSrvAccctAsgns",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PurchaseRequisitionSrvAccctAsgn_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SeqNoAccAss}",
+						"Subhead": "{HighestPackageNo}",
+						"BodyText": "",
+						"Footnote": "{InvoiceQuantity}",
+						"Description": "{Enteredvalue}",
+						"StatusText": "{FinalAccAsgn}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{FinalAccAsgnQuantity}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SeqNoAccAss",
+							"Value": "{SeqNoAccAss}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HighestPackageNo",
+							"Value": "{HighestPackageNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Enteredvalue",
+							"Value": "{Enteredvalue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InvoiceQuantity",
+							"Value": "{InvoiceQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinalAccAsgn",
+							"Value": "{FinalAccAsgn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinalAccAsgnQuantity",
+							"Value": "{FinalAccAsgnQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinalAccAsgnReason",
+							"Value": "{FinalAccAsgnReason}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Line",
+							"Value": "{Line}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackageNo",
+							"Value": "{PackageNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualQuantity",
+							"Value": "{ActualQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NetValue",
+							"Value": "{NetValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Quantity",
+							"Value": "{Quantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SeqNoAA",
+							"Value": "{SeqNoAA}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PurchaseRequisitionSrvAccctAsgns_Detail"
+}

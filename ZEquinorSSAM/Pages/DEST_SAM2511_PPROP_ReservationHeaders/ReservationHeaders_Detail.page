@@ -1,0 +1,199 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ReservationHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ReservationHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PurchaseOrderId}",
+						"Subhead": "{ControllingArea}",
+						"BodyText": "",
+						"Footnote": "{SalesOrderItem}",
+						"Description": "{DocumentStatus}",
+						"StatusText": "{SalesOrderSchedule}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ReceivingPlant}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ControllingArea",
+							"Value": "{ControllingArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentStatus",
+							"Value": "{DocumentStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrderItem",
+							"Value": "{SalesOrderItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrderSchedule",
+							"Value": "{SalesOrderSchedule}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReceivingPlant",
+							"Value": "{ReceivingPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenter",
+							"Value": "{CostCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseOrderId",
+							"Value": "{PurchaseOrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WBSElement",
+							"Value": "{WBSElement}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Network",
+							"Value": "{Network}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SalesOrder",
+							"Value": "{SalesOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReservationDate",
+							"Value": "{ReservationDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReceivingStorageLocation",
+							"Value": "{ReceivingStorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjType",
+							"Value": "{ObjType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReservationNum",
+							"Value": "{ReservationNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "ReservationItem_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{UnloadingPoint}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{GoodsRecipient}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{QuantityUnE}",
+						"Subhead": "{DebitCreditIndicator}",
+						"SubstatusText": "{UnitOfEntry}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/ReservationItems/NavToReservationItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ReservationItem_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "ScheduleLine_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ItemNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{PurchaseOrderId}",
+						"Footnote": "{Batch}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{DeliveredQuantity}",
+						"Subhead": "{ReservationNum}",
+						"SubstatusText": "{DeliveryDate}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/ScheduleLines/NavToScheduleLines_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ScheduleLine_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"ReservationItems",
+				"ScheduleLines"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ReservationHeaders_Detail"
+}

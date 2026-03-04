@@ -1,0 +1,217 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "WarehouseInboundDeliveries",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WarehouseInboundDelivery_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DocumentID}",
+						"Subhead": "{MaintenanceOrder}",
+						"BodyText": "",
+						"Footnote": "{PackingStatusValue}",
+						"Description": "{CompletionStatusValue}",
+						"StatusText": "{GRStatusValue}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PutawayPlannedStatusValue}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "MaintenanceOrder",
+							"Value": "{MaintenanceOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompletionStatusValue",
+							"Value": "{CompletionStatusValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackingStatusValue",
+							"Value": "{PackingStatusValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GRStatusValue",
+							"Value": "{GRStatusValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PutawayPlannedStatusValue",
+							"Value": "{PutawayPlannedStatusValue}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HUNumber",
+							"Value": "{HUNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentID",
+							"Value": "{DocumentID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ASN",
+							"Value": "{ASN}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BillOfLading",
+							"Value": "{BillOfLading}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Carrier",
+							"Value": "{Carrier}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompletionStatus",
+							"Value": "{CompletionStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocCategory",
+							"Value": "{DocCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DocumentType",
+							"Value": "{DocumentType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EWMDeliveryNum",
+							"Value": "{EWMDeliveryNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GRStatus",
+							"Value": "{GRStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LEDeliveryNum",
+							"Value": "{LEDeliveryNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ManufactOrder",
+							"Value": "{ManufactOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackingStatus",
+							"Value": "{PackingStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlannedDeliveryDate",
+							"Value": "{PlannedDeliveryDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseOrder",
+							"Value": "{PurchaseOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PutawayPlannedStatus",
+							"Value": "{PutawayPlannedStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnloadingPoint",
+							"Value": "{UnloadingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Vendor",
+							"Value": "{Vendor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseNum",
+							"Value": "{WarehouseNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefDocNum",
+							"Value": "{RefDocNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NumOfOpenItems",
+							"Value": "{NumOfOpenItems}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WarehouseTask_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{UoM}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{DocumentID}",
+						"Footnote": "{Quantity}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{EWMOutDel}",
+						"Subhead": "{SourceBin}",
+						"SubstatusText": "{EWMOutDelItem}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/WarehouseTasks/NavToWarehouseTasks_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WarehouseTask_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WarehouseTasks"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WarehouseInboundDeliveries_Detail"
+}

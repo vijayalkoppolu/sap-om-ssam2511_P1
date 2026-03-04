@@ -1,0 +1,134 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ChecklistAssessmentQuestions",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ChecklistAssessmentQuestion_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DisplayId}",
+						"Subhead": "{Status}",
+						"BodyText": "",
+						"Footnote": "{Comments}",
+						"Description": "{SelectedAnswerOptionId}",
+						"StatusText": "{AnswerId}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{QuestionId}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DisplayId",
+							"Value": "{DisplayId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SelectedAnswerOptionId",
+							"Value": "{SelectedAnswerOptionId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Comments",
+							"Value": "{Comments}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AnswerId",
+							"Value": "{AnswerId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QuestionId",
+							"Value": "{QuestionId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChecklistType",
+							"Value": "{ChecklistType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FormId",
+							"Value": "{FormId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CLTemplateId",
+							"Value": "{CLTemplateId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectId",
+							"Value": "{ObjectId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GroupId",
+							"Value": "{GroupId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AssessmentId",
+							"Value": "{AssessmentId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TemplateId",
+							"Value": "{TemplateId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SortNumber",
+							"Value": "{SortNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AINObjectId",
+							"Value": "{AINObjectId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Version",
+							"Value": "{Version}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ChecklistAssessmentQuestions_Detail"
+}

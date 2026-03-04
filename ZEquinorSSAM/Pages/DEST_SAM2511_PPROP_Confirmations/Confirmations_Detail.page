@@ -1,0 +1,252 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "Confirmations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,Confirmation_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderID}",
+						"Subhead": "{WorkCenter}",
+						"BodyText": "",
+						"Footnote": "{LAMTableKey}",
+						"Description": "{LAMObjectType}",
+						"StatusText": "{StartTimeStamp}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{OrderType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "WorkCenter",
+							"Value": "{WorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LAMObjectType",
+							"Value": "{LAMObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LAMTableKey",
+							"Value": "{LAMTableKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartTimeStamp",
+							"Value": "{StartTimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderType",
+							"Value": "{OrderType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedTime",
+							"Value": "{CreatedTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualWork",
+							"Value": "{ActualWork}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReverseIndicator",
+							"Value": "{ReverseIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VarianceReason",
+							"Value": "{VarianceReason}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartTime",
+							"Value": "{StartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualDuration",
+							"Value": "{ActualDuration}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AccountingIndicator",
+							"Value": "{AccountingIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompleteFlag",
+							"Value": "{CompleteFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonnelNumber",
+							"Value": "{PersonnelNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinalConfirmation",
+							"Value": "{FinalConfirmation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedBy",
+							"Value": "{CreatedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinishTime",
+							"Value": "{FinishTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedDate",
+							"Value": "{CreatedDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostingDate",
+							"Value": "{PostingDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityType",
+							"Value": "{ActivityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FinishDate",
+							"Value": "{FinishDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StartDate",
+							"Value": "{StartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ConfirmationNum",
+							"Value": "{ConfirmationNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CapacityCategory",
+							"Value": "{CapacityCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SplitNumber",
+							"Value": "{SplitNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ConfirmationCounter",
+							"Value": "{ConfirmationCounter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderID",
+							"Value": "{OrderID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Operation",
+							"Value": "{Operation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubOperation",
+							"Value": "{SubOperation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualWorkUOM",
+							"Value": "{ActualWorkUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualDurationUOM",
+							"Value": "{ActualDurationUOM}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "LongText",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ConfirmationCounter}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{TextId}",
+						"Footnote": "{ObjectKey}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{TextObjType}",
+						"Subhead": "{TextString}",
+						"SubstatusText": "{ConfirmationNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/ConfirmationLongTexts/NavToConfirmationLongTexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/LongText",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"ConfirmationLongTexts"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Confirmations_Detail"
+}

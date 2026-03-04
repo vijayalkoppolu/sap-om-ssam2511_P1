@@ -1,0 +1,229 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "WorkOrderSubOperations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WorkOrderSubOperation_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{OperationNo}",
+						"BodyText": "",
+						"Footnote": "{ActivityType}",
+						"Description": "{SubOperationNo}",
+						"StatusText": "{ControlKey}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Duration}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "OperationNo",
+							"Value": "{OperationNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubOperationNo",
+							"Value": "{SubOperationNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityType",
+							"Value": "{ActivityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControlKey",
+							"Value": "{ControlKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Duration",
+							"Value": "{Duration}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DurationUOM",
+							"Value": "{DurationUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenter",
+							"Value": "{MainWorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenterPlant",
+							"Value": "{MainWorkCenterPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenancePlant",
+							"Value": "{MaintenancePlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifNum",
+							"Value": "{NotifNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NumberOfCapacities",
+							"Value": "{NumberOfCapacities}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationEquipment",
+							"Value": "{OperationEquipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationFunctionLocation",
+							"Value": "{OperationFunctionLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationShortText",
+							"Value": "{OperationShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonNum",
+							"Value": "{PersonNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Work",
+							"Value": "{Work}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterInternalId",
+							"Value": "{WorkCenterInternalId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkUnit",
+							"Value": "{WorkUnit}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "LongText",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SubOperationNo}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{NewTextString}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ObjectKey}",
+						"Subhead": "{OperationNo}",
+						"SubstatusText": "{TextId}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/WorkOrderSubOpLongTexts/NavToWorkOrderSubOpLongTexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/LongText",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "ObjectList",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ObjectListNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{OperationNo}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{SubOperationNo}",
+						"Subhead": "{ObjectListCounter}",
+						"SubstatusText": "{Assembly}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/WorkOrderObjectLists/NavToWorkOrderObjectLists_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ObjectList",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WorkOrderSubOpLongTexts",
+				"WorkOrderObjectLists"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WorkOrderSubOperations_Detail"
+}

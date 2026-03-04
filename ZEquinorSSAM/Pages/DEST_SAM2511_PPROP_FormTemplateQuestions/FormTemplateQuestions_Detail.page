@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FormTemplateQuestions",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FormTemplateQuestion_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DisplayId}",
+						"Subhead": "{Status}",
+						"BodyText": "",
+						"Footnote": "{Version}",
+						"Description": "{AnswerId}",
+						"StatusText": "{QuestionId}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{TemplateId}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DisplayId",
+							"Value": "{DisplayId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AnswerId",
+							"Value": "{AnswerId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Version",
+							"Value": "{Version}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QuestionId",
+							"Value": "{QuestionId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TemplateId",
+							"Value": "{TemplateId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GroupId",
+							"Value": "{GroupId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SortNumber",
+							"Value": "{SortNumber}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FormTemplateQuestions_Detail"
+}

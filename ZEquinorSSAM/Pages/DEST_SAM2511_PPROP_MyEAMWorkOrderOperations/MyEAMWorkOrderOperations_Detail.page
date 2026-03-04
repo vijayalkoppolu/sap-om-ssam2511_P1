@@ -1,0 +1,189 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyEAMWorkOrderOperations",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyEAMWorkOrderOperation_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{OperationNo}",
+						"BodyText": "",
+						"Footnote": "{ControlKey}",
+						"Description": "{ActivityType}",
+						"StatusText": "{Duration}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{DurationUOM}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "OperationNo",
+							"Value": "{OperationNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActivityType",
+							"Value": "{ActivityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControlKey",
+							"Value": "{ControlKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Duration",
+							"Value": "{Duration}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DurationUOM",
+							"Value": "{DurationUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenter",
+							"Value": "{MainWorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenterPlant",
+							"Value": "{MainWorkCenterPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenancePlant",
+							"Value": "{MaintenancePlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifNum",
+							"Value": "{NotifNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NumberOfCapacities",
+							"Value": "{NumberOfCapacities}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectType",
+							"Value": "{ObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationCategory",
+							"Value": "{OperationCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationEquipment",
+							"Value": "{OperationEquipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationFunctionLocation",
+							"Value": "{OperationFunctionLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationShortText",
+							"Value": "{OperationShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonNum",
+							"Value": "{PersonNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Phase",
+							"Value": "{Phase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Subphase",
+							"Value": "{Subphase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Work",
+							"Value": "{Work}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkCenterInternalId",
+							"Value": "{WorkCenterInternalId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WorkUnit",
+							"Value": "{WorkUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualWork",
+							"Value": "{ActualWork}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ForecastWork",
+							"Value": "{ForecastWork}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TechnicalObject",
+							"Value": "{TechnicalObject}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TechnicalObjectType",
+							"Value": "{TechnicalObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyEAMWorkOrderOperations_Detail"
+}

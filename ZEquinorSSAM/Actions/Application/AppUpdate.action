@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/ZEquinorSSAM/Rules/Application/AppUpdateFailure.js",
+    "OnSuccess": "/ZEquinorSSAM/Rules/Application/AppUpdateSuccess.js"
+}

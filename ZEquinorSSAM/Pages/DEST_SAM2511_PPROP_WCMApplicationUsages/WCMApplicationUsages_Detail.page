@@ -1,0 +1,147 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMApplicationUsages",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMApplicationUsage_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{IntNoRange}",
+						"Subhead": "{ExtNoRange}",
+						"BodyText": "",
+						"Footnote": "{UsageAutGen}",
+						"Description": "{ViewProfile}",
+						"StatusText": "{DescriptUsage}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{MaxExtension}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "IntNoRange",
+							"Value": "{IntNoRange}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ExtNoRange",
+							"Value": "{ExtNoRange}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ViewProfile",
+							"Value": "{ViewProfile}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UsageAutGen",
+							"Value": "{UsageAutGen}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DescriptUsage",
+							"Value": "{DescriptUsage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaxExtension",
+							"Value": "{MaxExtension}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UsageType",
+							"Value": "{UsageType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Offset",
+							"Value": "{Offset}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Validity",
+							"Value": "{Validity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Extension",
+							"Value": "{Extension}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Usage",
+							"Value": "{Usage}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "WCMApplications",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{WCMApproval}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{ValidFrom}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{ValidTo}",
+						"Subhead": "{Extension}",
+						"SubstatusText": "{Priority}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WCMApplications/NavToWCMApplications_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WCMApplications",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"WCMApplications"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMApplicationUsages_Detail"
+}

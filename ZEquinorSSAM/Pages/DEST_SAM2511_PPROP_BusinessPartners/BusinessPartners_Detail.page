@@ -1,0 +1,104 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "BusinessPartners",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,BusinessPartner_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{FullName}",
+						"Subhead": "{AddressNum}",
+						"BodyText": "",
+						"Footnote": "{FirstName}",
+						"Description": "{LastName}",
+						"StatusText": "{BPNum}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PersonNum}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "AddressNum",
+							"Value": "{AddressNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FullName",
+							"Value": "{FullName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastName",
+							"Value": "{LastName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FirstName",
+							"Value": "{FirstName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BPNum",
+							"Value": "{BPNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonNum",
+							"Value": "{PersonNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrgName1",
+							"Value": "{OrgName1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserName",
+							"Value": "{UserName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BPType",
+							"Value": "{BPType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CostCenter",
+							"Value": "{CostCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrgName2",
+							"Value": "{OrgName2}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "BusinessPartners_Detail"
+}

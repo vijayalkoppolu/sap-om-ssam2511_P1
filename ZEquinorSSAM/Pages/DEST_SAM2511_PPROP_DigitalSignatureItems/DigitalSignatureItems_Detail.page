@@ -1,0 +1,119 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "DigitalSignatureItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,DigitalSignatureItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SignatoryFirstName}",
+						"Subhead": "{TimeStamp}",
+						"BodyText": "",
+						"Footnote": "{Comment}",
+						"Description": "{AuthorizationGroup}",
+						"StatusText": "{IndividualSignature}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Remark}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "TimeStamp",
+							"Value": "{TimeStamp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AuthorizationGroup",
+							"Value": "{AuthorizationGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Comment",
+							"Value": "{Comment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IndividualSignature",
+							"Value": "{IndividualSignature}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Remark",
+							"Value": "{Remark}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SignatoryFirstName",
+							"Value": "{SignatoryFirstName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SignatoryLastName",
+							"Value": "{SignatoryLastName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SignerObjectOwner",
+							"Value": "{SignerObjectOwner}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "State",
+							"Value": "{State}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Step",
+							"Value": "{Step}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Process",
+							"Value": "{Process}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SignatureId",
+							"Value": "{SignatureId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Index",
+							"Value": "{Index}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "DigitalSignatureItems_Detail"
+}

@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PurchaseRequisitionSrvLimitItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PurchaseRequisitionSrvLimitItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PackageNo}",
+						"Subhead": "{ShortText}",
+						"BodyText": "",
+						"Footnote": "{SubPackageNo}",
+						"Description": "{PurchasingDoc}",
+						"StatusText": "{InternalLineNo}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{PurchasingDocItem}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "PackageNo",
+							"Value": "{PackageNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortText",
+							"Value": "{ShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchasingDoc",
+							"Value": "{PurchasingDoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubPackageNo",
+							"Value": "{SubPackageNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InternalLineNo",
+							"Value": "{InternalLineNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchasingDocItem",
+							"Value": "{PurchasingDocItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OverallLimit",
+							"Value": "{OverallLimit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualValue",
+							"Value": "{ActualValue}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PurchaseRequisitionSrvLimitItems_Detail"
+}

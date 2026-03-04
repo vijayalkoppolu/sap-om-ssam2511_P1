@@ -1,0 +1,79 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyTechObjects",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyTechObject_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{FuncLocID}",
+						"Subhead": "{RouteID}",
+						"BodyText": "",
+						"Footnote": "{EquipDesc}",
+						"Description": "{StopID}",
+						"StatusText": "{FuncLocDesc}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Equipment}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "FuncLocID",
+							"Value": "{FuncLocID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RouteID",
+							"Value": "{RouteID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StopID",
+							"Value": "{StopID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EquipDesc",
+							"Value": "{EquipDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FuncLocDesc",
+							"Value": "{FuncLocDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Equipment",
+							"Value": "{Equipment}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyTechObjects_Detail"
+}

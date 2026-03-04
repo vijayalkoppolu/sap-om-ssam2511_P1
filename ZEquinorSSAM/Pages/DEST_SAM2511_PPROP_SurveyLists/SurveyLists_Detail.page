@@ -1,0 +1,204 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "SurveyLists",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,SurveyList_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SurveyValuesGUID}",
+						"Subhead": "{BW}",
+						"BodyText": "",
+						"Footnote": "{Delete}",
+						"Description": "{VersCreation}",
+						"StatusText": "{Change}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Callback}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "BW",
+							"Value": "{BW}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VersCreation",
+							"Value": "{VersCreation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Delete",
+							"Value": "{Delete}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Change",
+							"Value": "{Change}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Callback",
+							"Value": "{Callback}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Callback1",
+							"Value": "{Callback1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Public",
+							"Value": "{Public}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidFrom",
+							"Value": "{ValidFrom}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValidTo",
+							"Value": "{ValidTo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SchemaVersion",
+							"Value": "{SchemaVersion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Appl",
+							"Value": "{Appl}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyValuesGUID",
+							"Value": "{SurveyValuesGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyVersion1",
+							"Value": "{SurveyVersion1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TestRanCorrectly",
+							"Value": "{TestRanCorrectly}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreatedOn",
+							"Value": "{CreatedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Createdby",
+							"Value": "{Createdby}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedOn",
+							"Value": "{ChangedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Changedby",
+							"Value": "{Changedby}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TRANSL_EXIST",
+							"Value": "{TRANSL_EXIST}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language1",
+							"Value": "{Language1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Status",
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortDescriptn",
+							"Value": "{ShortDescriptn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyQuestionText",
+							"Value": "{SurveyQuestionText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Client",
+							"Value": "{Client}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyID",
+							"Value": "{SurveyID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyVersion",
+							"Value": "{SurveyVersion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyGUID",
+							"Value": "{SurveyGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Persistent",
+							"Value": "{Persistent}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Query",
+							"Value": "{Query}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SurveyLists_Detail"
+}

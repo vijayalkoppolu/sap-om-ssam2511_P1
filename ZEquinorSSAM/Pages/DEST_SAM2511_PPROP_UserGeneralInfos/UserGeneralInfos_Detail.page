@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "UserGeneralInfos",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,UserGeneralInfo_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SAPUserName}",
+						"Subhead": "{CPMSRegistrationID}",
+						"BodyText": "",
+						"Footnote": "{MobileApp}",
+						"Description": "{CPMSUserName}",
+						"StatusText": "{UserGuid}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SAPUserName",
+							"Value": "{SAPUserName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CPMSRegistrationID",
+							"Value": "{CPMSRegistrationID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CPMSUserName",
+							"Value": "{CPMSUserName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MobileApp",
+							"Value": "{MobileApp}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserGuid",
+							"Value": "{UserGuid}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "UserGeneralInfos_Detail"
+}

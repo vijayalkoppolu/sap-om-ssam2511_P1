@@ -1,0 +1,129 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "NotifPartnerDetProcs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,NotifPartnerDetProc_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{MaintainAppointments}",
+						"Subhead": "{IsUnique}",
+						"BodyText": "",
+						"Footnote": "{NotifCategoryDesc}",
+						"Description": "{NotifOrigin}",
+						"StatusText": "{NotifCategory}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Sequence}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "MaintainAppointments",
+							"Value": "{MaintainAppointments}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsUnique",
+							"Value": "{IsUnique}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifOrigin",
+							"Value": "{NotifOrigin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifCategoryDesc",
+							"Value": "{NotifCategoryDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifCategory",
+							"Value": "{NotifCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Sequence",
+							"Value": "{Sequence}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifType",
+							"Value": "{NotifType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SourceFunction",
+							"Value": "{SourceFunction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerFunction",
+							"Value": "{PartnerFunction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerIsMandatory",
+							"Value": "{PartnerIsMandatory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerDeterminationProcedure",
+							"Value": "{PartnerDeterminationProcedure}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerDeterminationDescription",
+							"Value": "{PartnerDeterminationDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PartnerDetAtEnd",
+							"Value": "{PartnerDetAtEnd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OriginTable",
+							"Value": "{OriginTable}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifTypeDesc",
+							"Value": "{NotifTypeDesc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NoChangePossible",
+							"Value": "{NoChangePossible}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "NotifPartnerDetProcs_Detail"
+}

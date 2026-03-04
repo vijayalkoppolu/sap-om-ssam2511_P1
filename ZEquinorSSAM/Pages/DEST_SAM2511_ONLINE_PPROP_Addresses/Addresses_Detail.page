@@ -1,0 +1,124 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
+		"EntitySet": "Addresses",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,Address_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Name}",
+						"Subhead": "{AddressNum}",
+						"BodyText": "",
+						"Footnote": "{City}",
+						"Description": "{Building}",
+						"StatusText": "{Country}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{CountryVersionFlag}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "AddressNum",
+							"Value": "{AddressNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Building",
+							"Value": "{Building}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "City",
+							"Value": "{City}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Country",
+							"Value": "{Country}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CountryVersionFlag",
+							"Value": "{CountryVersionFlag}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FirstName",
+							"Value": "{FirstName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Floor",
+							"Value": "{Floor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HouseNum",
+							"Value": "{HouseNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastName",
+							"Value": "{LastName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Name",
+							"Value": "{Name}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PersonalAddress",
+							"Value": "{PersonalAddress}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PostalCode",
+							"Value": "{PostalCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Region",
+							"Value": "{Region}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RoomNum",
+							"Value": "{RoomNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Street",
+							"Value": "{Street}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Addresses_Detail"
+}

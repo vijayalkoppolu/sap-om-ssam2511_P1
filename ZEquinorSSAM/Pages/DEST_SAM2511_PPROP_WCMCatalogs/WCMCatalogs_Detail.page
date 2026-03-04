@@ -1,0 +1,154 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "WCMCatalogs",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,WCMCatalog_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{DatabaseAction}",
+						"Subhead": "{ObjectNumber}",
+						"BodyText": "",
+						"Footnote": "{Counter1}",
+						"Description": "{Counter}",
+						"StatusText": "{Sortfield}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Catalog}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "DatabaseAction",
+							"Value": "{DatabaseAction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter",
+							"Value": "{Counter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter1",
+							"Value": "{Counter1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Sortfield",
+							"Value": "{Sortfield}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Catalog",
+							"Value": "{Catalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CodeGroup",
+							"Value": "{CodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Code",
+							"Value": "{Code}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShortText",
+							"Value": "{ShortText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LongText",
+							"Value": "{LongText}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Checkbox",
+							"Value": "{Checkbox}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Signature",
+							"Value": "{Signature}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Valuation",
+							"Value": "{Valuation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Createdby",
+							"Value": "{Createdby}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Createdon",
+							"Value": "{Createdon}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Createdat",
+							"Value": "{Createdat}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedBy",
+							"Value": "{ChangedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Changedon",
+							"Value": "{Changedon}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangedat",
+							"Value": "{LastChangedat}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMApplication",
+							"Value": "{WCMApplication}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WCMDocumentHeader",
+							"Value": "{WCMDocumentHeader}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WCMCatalogs_Detail"
+}

@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ScheduleLines",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ScheduleLine_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{PurchaseOrderId}",
+						"Subhead": "{ReservationNum}",
+						"BodyText": "",
+						"Footnote": "{Batch}",
+						"Description": "{ItemNum}",
+						"StatusText": "{DeliveredQuantity}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{DeliveryDate}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ReservationNum",
+							"Value": "{ReservationNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchaseOrderId",
+							"Value": "{PurchaseOrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNum",
+							"Value": "{ItemNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveredQuantity",
+							"Value": "{DeliveredQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryDate",
+							"Value": "{DeliveryDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IssuedQuantity",
+							"Value": "{IssuedQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ScheduleLine",
+							"Value": "{ScheduleLine}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ScheduleLines_Detail"
+}

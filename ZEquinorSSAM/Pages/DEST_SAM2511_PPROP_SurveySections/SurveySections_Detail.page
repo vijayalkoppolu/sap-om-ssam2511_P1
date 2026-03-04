@@ -1,0 +1,89 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "SurveySections",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,SurveySection_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{SurveyID}",
+						"Subhead": "{SurveyVersion}",
+						"BodyText": "",
+						"Footnote": "{SurveyGUID}",
+						"Description": "{Language}",
+						"StatusText": "{NodeNum}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{NodeNum1}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SurveyID",
+							"Value": "{SurveyID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyVersion",
+							"Value": "{SurveyVersion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Language",
+							"Value": "{Language}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyGUID",
+							"Value": "{SurveyGUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NodeNum",
+							"Value": "{NodeNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NodeNum1",
+							"Value": "{NodeNum1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SectionPattern",
+							"Value": "{SectionPattern}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SurveyQuestionText",
+							"Value": "{SurveyQuestionText}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SurveySections_Detail"
+}

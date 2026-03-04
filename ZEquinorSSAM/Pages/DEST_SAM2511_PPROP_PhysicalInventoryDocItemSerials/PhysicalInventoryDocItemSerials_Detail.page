@@ -1,0 +1,74 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "PhysicalInventoryDocItemSerials",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,PhysicalInventoryDocItemSerial_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{UniversalItemId}",
+						"Subhead": "{Item}",
+						"BodyText": "",
+						"Footnote": "{PhysInvDoc}",
+						"Description": "{SerialNumber}",
+						"StatusText": "{FiscalYear}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Item",
+							"Value": "{Item}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SerialNumber",
+							"Value": "{SerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PhysInvDoc",
+							"Value": "{PhysInvDoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FiscalYear",
+							"Value": "{FiscalYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UniversalItemId",
+							"Value": "{UniversalItemId}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PhysicalInventoryDocItemSerials_Detail"
+}

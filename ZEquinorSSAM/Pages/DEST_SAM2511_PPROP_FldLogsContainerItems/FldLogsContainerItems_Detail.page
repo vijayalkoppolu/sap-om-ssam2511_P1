@@ -1,0 +1,484 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "FldLogsContainerItems",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,FldLogsContainerItem_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ContainerID}",
+						"Subhead": "{DispatchDate}",
+						"BodyText": "",
+						"Footnote": "{HandlingUnitID}",
+						"Description": "{DispatchLoc}",
+						"StatusText": "{ReferenceDocNumber}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{TripCounter}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ContainerID",
+							"Value": "{ContainerID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DispatchDate",
+							"Value": "{DispatchDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DispatchLoc",
+							"Value": "{DispatchLoc}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HandlingUnitID",
+							"Value": "{HandlingUnitID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDocNumber",
+							"Value": "{ReferenceDocNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "TripCounter",
+							"Value": "{TripCounter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualDispatchPlant",
+							"Value": "{ActualDispatchPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActualReceivingPlant",
+							"Value": "{ActualReceivingPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ChangedOn",
+							"Value": "{ChangedOn}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Comments",
+							"Value": "{Comments}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Comments1",
+							"Value": "{Comments1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ContainerItemStatus",
+							"Value": "{ContainerItemStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ContainerUnitID",
+							"Value": "{ContainerUnitID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryDocumentItem",
+							"Value": "{DeliveryDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestStorLocID",
+							"Value": "{DestStorLocID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DestinationStage",
+							"Value": "{DestinationStage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "GoodsReceivingPoint",
+							"Value": "{GoodsReceivingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HandlingDecision",
+							"Value": "{HandlingDecision}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HandlingUnitQuantity",
+							"Value": "{HandlingUnitQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InboundDeliveryItem",
+							"Value": "{InboundDeliveryItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InventorySpecialStockType",
+							"Value": "{InventorySpecialStockType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsInternalBatchManaged",
+							"Value": "{IsInternalBatchManaged}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsMarkedForDeletion",
+							"Value": "{IsMarkedForDeletion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemType",
+							"Value": "{ItemType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "KitIdentifier",
+							"Value": "{KitIdentifier}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "KitItmRefDocument1",
+							"Value": "{KitItmRefDocument1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MatDocItem",
+							"Value": "{MatDocItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OutboundDeliveryItem",
+							"Value": "{OutboundDeliveryItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackagingType",
+							"Value": "{PackagingType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProcessType",
+							"Value": "{ProcessType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchasingDocumentItem",
+							"Value": "{PurchasingDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RcvdHndlgUnitCnctntdID",
+							"Value": "{RcvdHndlgUnitCnctntdID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReceivingPlant",
+							"Value": "{ReceivingPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecipientLocationCode",
+							"Value": "{RecipientLocationCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecommendedAction",
+							"Value": "{RecommendedAction}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDocCategory",
+							"Value": "{ReferenceDocCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceDocumentLongNumber",
+							"Value": "{ReferenceDocumentLongNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceSDDocumentItem",
+							"Value": "{ReferenceSDDocumentItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefrbmtOrderReservation",
+							"Value": "{RefrbmtOrderReservation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefrbmtOrderResvnItem",
+							"Value": "{RefrbmtOrderResvnItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RemoteStorageLocation",
+							"Value": "{RemoteStorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Reservation",
+							"Value": "{Reservation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReservationItem",
+							"Value": "{ReservationItem}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetPOOutbDelivIsCreated",
+							"Value": "{RetPOOutbDelivIsCreated}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyInBaseUnit",
+							"Value": "{RetblQtyInBaseUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyInOrderUnit",
+							"Value": "{RetblQtyInOrderUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReturnStatus",
+							"Value": "{ReturnStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShipmentItemID",
+							"Value": "{ShipmentItemID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ShippingPoint",
+							"Value": "{ShippingPoint}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SourceStage",
+							"Value": "{SourceStage}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SrceStorLocID",
+							"Value": "{SrceStorLocID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageType",
+							"Value": "{StorageType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubcontrgPOIsCreated",
+							"Value": "{SubcontrgPOIsCreated}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SuplrItemUUID",
+							"Value": "{SuplrItemUUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SupplyProcess",
+							"Value": "{SupplyProcess}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ValuationType",
+							"Value": "{ValuationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VisualInspection",
+							"Value": "{VisualInspection}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageNumber",
+							"Value": "{VoyageNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "VoyageUUID",
+							"Value": "{VoyageUUID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WBSElementExternalID",
+							"Value": "{WBSElementExternalID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseNo",
+							"Value": "{WarehouseNo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseStorageBin",
+							"Value": "{WarehouseStorageBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ActionType",
+							"Value": "{ActionType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DeliveryDocument",
+							"Value": "{DeliveryDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "FldLogsRetServicePurOrd",
+							"Value": "{FldLogsRetServicePurOrd}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HandlingUnitExternalID",
+							"Value": "{HandlingUnitExternalID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HandlingUnitQuantityUnit",
+							"Value": "{HandlingUnitQuantityUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InboundDelivery",
+							"Value": "{InboundDelivery}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionLot",
+							"Value": "{InspectionLot}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenanceOrder",
+							"Value": "{MaintenanceOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MatDocYear",
+							"Value": "{MatDocYear}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Material",
+							"Value": "{Material}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialDocument",
+							"Value": "{MaterialDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OutboundDelivery",
+							"Value": "{OutboundDelivery}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PackagingMaterial",
+							"Value": "{PackagingMaterial}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PurchasingDocument",
+							"Value": "{PurchasingDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceOrder",
+							"Value": "{ReferenceOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferencePurchasingDocument",
+							"Value": "{ReferencePurchasingDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceSDDocument",
+							"Value": "{ReferenceSDDocument}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefurbishmentOrder",
+							"Value": "{RefurbishmentOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyBaseUnit",
+							"Value": "{RetblQtyBaseUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RetblQtyOrderUnit",
+							"Value": "{RetblQtyOrderUnit}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SerialNumber",
+							"Value": "{SerialNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StockTransportOrder",
+							"Value": "{StockTransportOrder}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SubcontractingPO",
+							"Value": "{SubcontractingPO}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WarehouseTask",
+							"Value": "{WarehouseTask}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FldLogsContainerItems_Detail"
+}

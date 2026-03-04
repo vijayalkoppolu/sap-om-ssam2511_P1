@@ -1,0 +1,589 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "MyNotificationHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,MyNotificationHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{UTCSign}",
+						"BodyText": "",
+						"Footnote": "{DSTDifference}",
+						"Description": "{UTCDifference}",
+						"StatusText": "{RequiredStartTime}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{RequiredEndTime}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "UTCSign",
+							"Value": "{UTCSign}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UTCDifference",
+							"Value": "{UTCDifference}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DSTDifference",
+							"Value": "{DSTDifference}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequiredStartTime",
+							"Value": "{RequiredStartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequiredEndTime",
+							"Value": "{RequiredEndTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifTimeZone",
+							"Value": "{NotifTimeZone}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenterPlant",
+							"Value": "{MainWorkCenterPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaintenancePlant",
+							"Value": "{MaintenancePlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationDescription",
+							"Value": "{NotificationDescription}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationType",
+							"Value": "{NotificationType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderCurrency",
+							"Value": "{OrderCurrency}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningGroup",
+							"Value": "{PlanningGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PlanningPlant",
+							"Value": "{PlanningPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Priority",
+							"Value": "{Priority}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BusinessArea",
+							"Value": "{BusinessArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ControllingArea",
+							"Value": "{ControllingArea}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationDate",
+							"Value": "{CreationDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CreationTime",
+							"Value": "{CreationTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DateForCompletion",
+							"Value": "{DateForCompletion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SortField",
+							"Value": "{SortField}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HeaderFunctionLocation",
+							"Value": "{HeaderFunctionLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "HeaderEquipment",
+							"Value": "{HeaderEquipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotificationNumber",
+							"Value": "{NotificationNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "AddressNum",
+							"Value": "{AddressNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Assembly",
+							"Value": "{Assembly}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReferenceNumber",
+							"Value": "{ReferenceNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DetectionCode",
+							"Value": "{DetectionCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DetectionCatalog",
+							"Value": "{DetectionCatalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Phase",
+							"Value": "{Phase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LAMTableKey",
+							"Value": "{LAMTableKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LAMObjectType",
+							"Value": "{LAMObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MalfunctionStartDate",
+							"Value": "{MalfunctionStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MalfunctionStartTime",
+							"Value": "{MalfunctionStartTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequiredEndDate",
+							"Value": "{RequiredEndDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequiredStartDate",
+							"Value": "{RequiredStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "LastChangeTime",
+							"Value": "{LastChangeTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MainWorkCenter",
+							"Value": "{MainWorkCenter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "NotifProcessingContext",
+							"Value": "{NotifProcessingContext}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefObjectKey",
+							"Value": "{RefObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BreakdownIndicator",
+							"Value": "{BreakdownIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QMCodeGroup",
+							"Value": "{QMCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QMCode",
+							"Value": "{QMCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QMCatalog",
+							"Value": "{QMCatalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ExternalWorkCenterId",
+							"Value": "{ExternalWorkCenterId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RefObjectType",
+							"Value": "{RefObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ReportedBy",
+							"Value": "{ReportedBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MalfunctionEndDate",
+							"Value": "{MalfunctionEndDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MalfunctionEndTime",
+							"Value": "{MalfunctionEndTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "PriorityType",
+							"Value": "{PriorityType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectKey",
+							"Value": "{ObjectKey}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "InspectionLot",
+							"Value": "{InspectionLot}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Subphase",
+							"Value": "{Subphase}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Effect",
+							"Value": "{Effect}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "DetectionCodeGroup",
+							"Value": "{DetectionCodeGroup}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "Activities",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PlannedFinishDate}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{NotificationNumber}",
+						"Footnote": "{PlannedFinishTime}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{PlannedStartDate}",
+						"Subhead": "{LongTextFlag}",
+						"SubstatusText": "{PlannedStartTime}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyNotificationActivities/NavToMyNotificationActivities_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/Activities",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "HeaderLongText",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{TextString}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{TextId}",
+						"Footnote": "{ObjectKey}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{TextObjType}",
+						"Subhead": "{NewTextString}",
+						"SubstatusText": "{NotificationNumber}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyNotifHeaderLongTexts/NavToMyNotifHeaderLongTexts_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/HeaderLongText",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "Items",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{MaterialNumber}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{OperationNo}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Assembly}",
+						"Subhead": "{NotificationNumber}",
+						"SubstatusText": "{DefectValuationUnit}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyNotificationItems/NavToMyNotificationItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/Items",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "NotifHistory_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{MalfunctionEndTime}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{PersonRespName}",
+						"Footnote": "{PM_OBJTY}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{PlannerGroup}",
+						"Subhead": "{Description}",
+						"SubstatusText": "{PlanningPlant}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/NotificationHistories/NavToNotificationHistories_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/NotifHistory_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "Partners",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{AddressNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{Counter}",
+						"Footnote": "{ObjectCategory}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{NotificationNumber}",
+						"Subhead": "{PartnerFunction}",
+						"SubstatusText": "{BPNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyNotificationPartners/NavToMyNotificationPartners_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/Partners",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "RelatedWO_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PM_OBJTY}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{PersonsName}",
+						"Footnote": "{PlanningPlant}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{WorkCenter}",
+						"Subhead": "{PriorityType}",
+						"SubstatusText": "{PlannerGroup}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/WorkOrderHistories/NavToWorkOrderHistories_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/RelatedWO_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "WOObjectList_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SerialNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{NotifNum}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Assembly}",
+						"Subhead": "{SubOperationNo}",
+						"SubstatusText": "{OperationNo}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MyWorkOrderObjectLists/NavToMyWorkOrderObjectLists_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/WOObjectList_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MyNotificationActivities",
+				"MyNotifHeaderLongTexts",
+				"MyNotificationItems",
+				"NotificationHistories",
+				"MyNotificationPartners",
+				"WorkOrderHistories",
+				"MyWorkOrderObjectLists"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MyNotificationHeaders_Detail"
+}

@@ -1,0 +1,278 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ProductionOrderHeaders",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ProductionOrderHeader_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{UserStatusCode}",
+						"BodyText": "",
+						"Footnote": "{ScheduledStartDate}",
+						"Description": "{SystemStatus}",
+						"StatusText": "{Reservation}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{RoutingNumber}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "UserStatusCode",
+							"Value": "{UserStatusCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SystemStatus",
+							"Value": "{SystemStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ScheduledStartDate",
+							"Value": "{ScheduledStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Reservation",
+							"Value": "{Reservation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RoutingNumber",
+							"Value": "{RoutingNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SystemStatusCode",
+							"Value": "{SystemStatusCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UserStatus",
+							"Value": "{UserStatus}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderType",
+							"Value": "{OrderType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderCategory",
+							"Value": "{OrderCategory}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "EnteredBy",
+							"Value": "{EnteredBy}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "CompanyCode",
+							"Value": "{CompanyCode}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ProductionPlant",
+							"Value": "{ProductionPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ObjectNumber",
+							"Value": "{ObjectNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BasicStartDate",
+							"Value": "{BasicStartDate}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "ProductionOrderComponent_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{SupplyStorageLocation}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{Batch}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{SpecialStock}",
+						"Subhead": "{SupplyPlant}",
+						"SubstatusText": "{RequirementDate}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/ProductionOrderComponents/NavToProductionOrderComponents_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ProductionOrderComponent_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "ProductionOrderItem_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ItemNum}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderId}",
+						"Footnote": "{OrderQuantity}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{OrderUOM}",
+						"Subhead": "{StorageBin}",
+						"SubstatusText": "{MaterialNum}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/ProductionOrderItems/NavToProductionOrderItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ProductionOrderItem_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "ProductionOrderOperation_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Counter}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderID}",
+						"Footnote": "{Sequence}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{TaskNode}",
+						"Subhead": "{RoutingNumber}",
+						"SubstatusText": "{OperationNumber}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/ProductionOrderOperations/NavToProductionOrderOperations_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ProductionOrderOperation_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"Header": {
+						"Caption": "ProductionOrderSequence_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Counter}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{OrderID}",
+						"Footnote": "{TaskListType}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Sequence}",
+						"Subhead": "{RoutingNumber}",
+						"SubstatusText": "{SequenceDesc}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/ProductionOrderSequences/NavToProductionOrderSequences_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/ProductionOrderSequence_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"ProductionOrderComponents",
+				"ProductionOrderItems",
+				"ProductionOrderOperations",
+				"ProductionOrderSequences"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ProductionOrderHeaders_Detail"
+}

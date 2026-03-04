@@ -1,0 +1,197 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
+		"EntitySet": "ProductionOrderComponents",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [],
+		"Caption": "$(L,ProductionOrderComponent_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{OrderId}",
+						"Subhead": "{SupplyPlant}",
+						"BodyText": "",
+						"Footnote": "{Batch}",
+						"Description": "{SupplyStorageLocation}",
+						"StatusText": "{SpecialStock}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{RequirementDate}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "SupplyPlant",
+							"Value": "{SupplyPlant}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SupplyStorageLocation",
+							"Value": "{SupplyStorageLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Batch",
+							"Value": "{Batch}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "SpecialStock",
+							"Value": "{SpecialStock}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequirementDate",
+							"Value": "{RequirementDate}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "QuantityUnE",
+							"Value": "{QuantityUnE}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "UnitOfEntry",
+							"Value": "{UnitOfEntry}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OrderId",
+							"Value": "{OrderId}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MovementType",
+							"Value": "{MovementType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "WithdrawalQuantity",
+							"Value": "{WithdrawalQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequirementQuantity",
+							"Value": "{RequirementQuantity}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RequirementUOM",
+							"Value": "{RequirementUOM}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RoutingNumber",
+							"Value": "{RoutingNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "OperationNumber",
+							"Value": "{OperationNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Counter",
+							"Value": "{Counter}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "BackFlushIndicator",
+							"Value": "{BackFlushIndicator}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "StorageBin",
+							"Value": "{StorageBin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Reservation",
+							"Value": "{Reservation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ItemNum",
+							"Value": "{ItemNum}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "RecordType",
+							"Value": "{RecordType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Completed",
+							"Value": "{Completed}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "MaterialNum",
+							"Value": "{MaterialNum}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "MaterialDocItem_Nav",
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{ReferenceDocYear}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{MaterialDocYear}",
+						"Footnote": "{ReferenceDocItem}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Vendor}",
+						"Subhead": "{ReferenceDocHdr}",
+						"SubstatusText": "{WBSElement}",
+						"OnPress": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/MaterialDocItems/NavToMaterialDocItems_Detail.action",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Target": {
+						"EntitySet": "{@odata.readLink}/MaterialDocItem_Nav",
+						"Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"MaterialDocItems"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ProductionOrderComponents_Detail"
+}
