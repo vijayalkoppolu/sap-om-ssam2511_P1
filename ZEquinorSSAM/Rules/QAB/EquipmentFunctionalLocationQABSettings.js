@@ -1,0 +1,131 @@
+import QABSettings from '../../../SAPAssetManager/Rules/QAB/QABSettings';
+import libPersona from '../../../SAPAssetManager/Rules/Persona/PersonaLibrary';
+import libCom from '../../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
+import GetAddOrderButtonTitle from '../../../SAPAssetManager/Rules/QAB/GetAddOrderButtonTitle';
+import EquipmentTakeReadingIsVisible from '../../../SAPAssetManager/Rules/Equipment/EquipmentTakeReadingIsVisible';
+import IsGISEnabled from '../../../SAPAssetManager/Rules/Maps/IsGISEnabled';
+import IsViewMapButtonVisible from '../../../SAPAssetManager/Rules/QAB/IsViewMapButtonVisible';
+import IsClassicLayoutEnabled from '../../../SAPAssetManager/Rules/Common/IsClassicLayoutEnabled';
+import IsOnlineFunctionalLocation from '../../../SAPAssetManager/Rules/FunctionalLocation/IsOnlineFunctionalLocation';
+
+
+export default class EquipmentFunctionalLocationQABSettings extends QABSettings {
+    constructor(context, isS4) {
+        super(context, `${libPersona.getActivePersona(context)}-${libCom.getPageName(context)}${isS4 ? '-S4' : ''}`);
+        this._isEquipment = context.binding['@odata.type'] === context.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/Equipment.global').getValue();
+        this._isOnlineEquipment = context.binding['@odata.type'] === context.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/OnlineEquipment.global').getValue();
+        this._isS4 = isS4;
+        this._isOnlineFloc = IsOnlineFunctionalLocation(context);
+    }
+
+    async generateChips() {
+        let chips = [];
+
+        if (this._isOnlineEquipment || this._isOnlineFloc) {
+            chips = [
+                this._createAddWorkOrderChip(),
+                this._createAddNotificationChip(),
+                //GAP-NGE-96829:Interlink SSAM and STID
+                this._createSTIDChip(),
+                //GAP-NGE-96829:Interlink SSAM and ECHO
+                this._createEcho3DChip(),
+            ];
+        } else {
+            chips = [
+                this._createAddWorkOrderChip(),
+                this._createAddNotificationChip(),
+                //GAP-NGE-96829:Interlink SSAM and STID
+                this._createSTIDChip(),
+                //GAP-NGE-96829:Interlink SSAM and ECHO
+                this._createEcho3DChip(),
+                this._createAddServiceOrderChip({ 'Label': this._context.localizeText('add_service_order') }),
+                this._createAddServiceRequestChip({ 'Label': this._context.localizeText('add_service_request') }),
+                await this._createTakeReadingsChip(),
+                this._createHierarchyChip(),
+                await this._createDownloadDocumentsChip(),
+                await this._createViewMapChip(),
+                this._createSDFChip(),
+            ];
+        }
+
+        return super.generateChips(chips);
+    }
+
+    _createAddWorkOrderChip() {
+        const parameters = {
+            'Label': GetAddOrderButtonTitle(this._context),
+        };
+
+        if (this._isS4) {
+            parameters.IsEnabled = false;
+            parameters.IsButtonEnabled = false;
+            parameters.IsButtonVisible = false;
+        }
+
+        return super._createAddWorkOrderChip(parameters);
+    }
+
+    _createAddNotificationChip() {
+        const parameters = {
+            'Label': this._context.localizeText('add_notification'),
+        };
+
+        if (this._isS4) {
+            parameters.IsEnabled = false;
+            parameters.IsButtonEnabled = false;
+            parameters.IsButtonVisible = false;
+        }
+
+        return super._createAddNotificationChip(parameters);
+    }
+
+            _createSTIDChip() {
+        return this._createChip({
+            'Label': this._context.localizeText('Zstid'),
+            'Icon': '$(PLT,/SAPAssetManager/Images/search.png,/SAPAssetManager/Images/search.android.png)',
+            'IsEnabled': true,
+            'Action': '/ZEquinorSSAM/Rules/QAB/ZSTIDOpenURL.js',
+            '_Name': 'stid',
+        });
+    }
+        _createEcho3DChip() {
+        return this._createChip({
+            'Label': this._context.localizeText('Zecho_3d'),
+            'Icon': '$(PLT,/SAPAssetManager/Images/ewm.prodlookup.side.png,/SAPAssetManager/Images/ewm.prodlookup.side.android.png)',
+            'IsEnabled': true,
+            'Action': '/ZEquinorSSAM/Rules/QAB/ZEcho3DOpenURL.js',
+            '_Name': 'ECHO_3D',
+        });
+    }
+
+    async _createTakeReadingsChip() {
+        return super._createTakeReadingsChip({
+            'IsButtonEnabled': await EquipmentTakeReadingIsVisible(this._context),
+        });
+    }
+
+    _createHierarchyChip() {
+        const isEnabled = !IsClassicLayoutEnabled(this._context);
+
+        return this._createChip({
+            'Label': this._context.localizeText('hierarchy'),
+            'Icon': '$(PLT,/SAPAssetManager/Images/QABHierarchy.png,/SAPAssetManager/Images/QABHierarchy.android.png)',
+            'IsEnabled': isEnabled,
+            'Action': this._isEquipment ? 
+                '/SAPAssetManager/Rules/Equipment/EquipmentHierarchyPageNav.js' :
+                '/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationHierarchyPageNav.js',
+            '_Name': 'HIERARCHY',
+        });
+    }
+
+    async _createViewMapChip() {
+        return super._createViewMapChip({
+            'IsEnabled': IsGISEnabled(this._context),
+            'IsButtonEnabled': await IsViewMapButtonVisible(this._context),
+            'IsButtonVisible': IsGISEnabled(this._context),
+            'Action': this._isEquipment ?
+                '/SAPAssetManager/Rules/Equipment/EquipmentMapNav.js' :
+                '/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationMapNav.js',
+        });
+    }
+}

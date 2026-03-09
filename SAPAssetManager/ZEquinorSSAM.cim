@@ -1,0 +1,59 @@
+{
+"ProjectName": "ZEquinorSSAM",
+"ApplicationName": "ZEquinorSSAM",
+"IntegrationPoints": [
+{
+"Source": "/ZEquinorSSAM/i18n/i18n_nb.properties",
+"Target": "/SAPAssetManager/i18n/i18n_nb.properties"
+},
+{
+"Source": "/ZEquinorSSAM/i18n/i18n.properties",
+"Target": "/SAPAssetManager/i18n/i18n.properties"
+},
+{
+"Source": "/ZEquinorSSAM/i18n/i18n_en.properties",
+"Target": "/SAPAssetManager/i18n/i18n_en.properties"
+},
+{
+"Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/RequiredFields.js",
+"Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/RequiredFields.js"
+},
+{
+"Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnPageLoad.js",
+"Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnPageLoad.js"
+},
+{
+"Source":"/ZEquinorSSAM/Rules/Notifications/CreateUpdate/ShowTemplateButton.js",
+"Target":"/SAPAssetManager/Rules/Notifications/CreateUpdate/ShowTemplateButton.js"
+},
+{
+"Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationCreateUpdateTypeOnValueChange.js",
+"Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateTypeOnValueChange.js"
+},
+{
+"Source": "/ZEquinorSSAM/Rules/QAB/EquipmentFunctionalLocationQABSettings.js",
+"Target": "/SAPAssetManager/Rules/QAB/EquipmentFunctionalLocationQABSettings.js"
+},
+{
+"Source": "/ZEquinorSSAM/Actions/Equipment/EquipmentPopover.action",
+"Target": "/SAPAssetManager/Actions/Equipment/EquipmentPopover.action"
+},
+{
+"Source": "/ZEquinorSSAM/Actions/FunctionalLocation/FunctionalLocationPopover.action",
+"Target": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationPopover.action"
+},
+{
+"Source": "/ZEquinorSSAM/Rules/SideDrawer/EnabledChecklistSideMenu.js",
+"Target": "/SAPAssetManager/Rules/SideDrawer/EnabledChecklistSideMenu.js"
+},
+{
+"Source": "/ZEquinorSSAM/Rules/WorkOrders/InspectionLot/IsCheckListEnabled.js",
+"Target": "/SAPAssetManager/Rules/WorkOrders/InspectionLot/IsCheckListEnabled.js"
+},
+{
+"Source": "/ZEquinorSSAM/Rules/InspectionCharacteristics/InspectionCharacteristicsPageMetadataGenerator.js",
+"Target": "/SAPAssetManager/Rules/InspectionCharacteristics/InspectionCharacteristicsPageMetadataGenerator.js"
+}
+
+]
+}
