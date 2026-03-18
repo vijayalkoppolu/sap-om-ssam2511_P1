@@ -1,9 +1,0 @@
-{
-    "Service": "/ZEquinorSSAM/Services/DEST_SAM2511_PPROP.service",
-    "_Type": "Action.Type.OfflineOData.Upload",
-    "ActionResult": {
-        "_Name": "sync"
-    },
-    "OnSuccess": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/Service/DownloadStartedMessage.action",
-    "OnFailure": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/Service/SyncFailureMessage.action"
-}
