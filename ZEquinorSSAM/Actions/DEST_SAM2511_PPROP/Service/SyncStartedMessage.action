@@ -1,8 +1,0 @@
-{
-    "Message": "Upload in progress...",
-    "CompletionMessage": "Sync completed",
-    "CompletionTimeout": 7,
-    "OnSuccess": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/Service/UploadOffline.action",
-    "OnFailure": "/ZEquinorSSAM/Actions/DEST_SAM2511_PPROP/Service/SyncFailureMessage.action",
-    "_Type": "Action.Type.ProgressBanner"
-}

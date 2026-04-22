@@ -1,9 +1,0 @@
-{
-    "Service": "/ZEquinorSSAM/Services/DEST_SAM2511_ONLINE_PPROP.service",
-    "_Type": "Action.Type.ODataService.Initialize",
-    "ShowActivityIndicator": true,
-    "OnFailure": "/ZEquinorSSAM/Actions/DEST_SAM2511_ONLINE_PPROP/Service/InitializeOnlineFailureMessage.action",
-    "ActionResult": {
-        "_Name": "init"
-    }
-}
