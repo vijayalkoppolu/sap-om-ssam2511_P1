@@ -53,7 +53,31 @@
 {
 "Source": "/ZEquinorSSAM/Rules/InspectionCharacteristics/InspectionCharacteristicsPageMetadataGenerator.js",
 "Target": "/SAPAssetManager/Rules/InspectionCharacteristics/InspectionCharacteristicsPageMetadataGenerator.js"
-}
+},
+{
+    "Source": "/ZEquinorSSAM/Pages/Notifications/NotificationCreateUpdate.page",
+    "Target": "/SAPAssetManager/Pages/Notifications/NotificationCreateUpdate.page"
+},
+{
+    "Source": "/ZEquinorSSAM/Actions/Notifications/CreateUpdate/NotificationCreateUpdateNav.action",
+    "Target": "/SAPAssetManager/Actions/Notifications/CreateUpdate/NotificationCreateUpdateNav.action"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js",
+    "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js"
+},
 
+{
+"Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js",
+"Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js"
+},
+{
+"Source": "/ZEquinorSSAM/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment",
+"Target": "/SAPAssetManager/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment"
+},
+{
+   "Source": "/ZEquinorSSAM/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment",
+    "Target": "/SAPAssetManager/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment"
+}
 ]
 }

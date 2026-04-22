@@ -1,0 +1,6 @@
+{
+    "_Type" : "Action.Type.Navigation",
+	"ModalPage" : true,
+    "ModalPageFullscreen": true,
+    "PageToOpen" : "/ZEquinorSSAM/Pages/Notifications/NotificationCreateUpdate.page"
+}
