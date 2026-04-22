@@ -15,6 +15,8 @@ import NotificationItemPartGroupPickerItems from '../../../../SAPAssetManager/Ru
 import { ValueIfExists } from '../../../../SAPAssetManager/Rules/Common/Library/Formatter';
 import ODataLibrary from '../../../../SAPAssetManager/Rules/OData/ODataLibrary';
 import InsertTemplate from '../../../../SAPAssetManager/Rules/Notifications/InsertTemplate';
+import FailureEffectGroupPickerItems from './ZFailureEffectCodeGroupPickerItems';
+
 
 export default async function NotificationCreateUpdateOnPageLoad(context) {
     // Create empty promise in the event of QM creation. Forces rule to wait until read is completed.
@@ -128,8 +130,42 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
             if (pickerItems[2]?.length === 1) {
                 context.evaluateTargetPath('#Control:CauseGroupLstPkr').setValue(pickerItems[2][0].ReturnValue, true);
             }
+            if (pickerItems[3]?.length === 1) {
+                context.getControl('FormCellContainer').getControl('FailureEffectGroupListPicker').setValue(pickerItems[3][0].ReturnValue, true);
+            }
         } catch (error) {
             Logger.error('NotificationCreateUpdateOnPageLoad', error);
+        }
+
+        // Equinor: In edit mode, load Failure Effect Code picker items based on existing code group
+        if (!onCreate && binding && binding.FailureEffectCodeGrp) {
+            const codeGroup = binding.FailureEffectCodeGrp;
+            const codePickerControl = context.getControl('FormCellContainer').getControl('FailureEffectListPicker');
+            context.read(
+                '/SAPAssetManager/Services/AssetManager.service',
+                'PMCatalogCodes',
+                ['Code', 'CodeDescription'],
+                `$filter=CodeGroup eq '${codeGroup}' and Catalog eq '6'&$orderby=Code`
+            ).then(results => {
+                if (results && results.length > 0) {
+                    const items = [];
+                    for (let i = 0; i < results.length; i++) {
+                        const item = results.getItem(i);
+                        items.push({
+                            ReturnValue: item.Code,
+                            DisplayValue: `${item.Code} - ${item.CodeDescription}`,
+                        });
+                    }
+                    codePickerControl.setPickerItems(items);
+                    codePickerControl.setEditable(true);
+                    // Set the code value after items are loaded
+                    if (binding.FailureEffectCode) {
+                        codePickerControl.setValue(binding.FailureEffectCode, false);
+                    }
+                }
+            }).catch(error => {
+                Logger.error('NotificationCreateUpdateOnPageLoad - load failure effect codes', error);
+            });
         }
     });
   
@@ -236,12 +272,13 @@ function setGroupPickersItems(formCellContainer) {
     const partGroupPicker = formCellContainer.getControl('PartGroupLstPkr');
     const damageGroupPicker = formCellContainer.getControl('DamageGroupLstPkr');
     const causeGroupPicker = formCellContainer.getControl('CauseGroupLstPkr');
-
-    return Promise.all([NotificationItemPartGroupPickerItems(partGroupPicker),  NotificationItemPartGroupPickerItems(damageGroupPicker), NotificationItemPartGroupPickerItems(causeGroupPicker)])
+    const failureEffectGroupPicker = formCellContainer.getControl('FailureEffectGroupListPicker');
+    return Promise.all([NotificationItemPartGroupPickerItems(partGroupPicker),  NotificationItemPartGroupPickerItems(damageGroupPicker), NotificationItemPartGroupPickerItems(causeGroupPicker), FailureEffectGroupPickerItems(failureEffectGroupPicker)])
         .then((pickerItems) => {
             partGroupPicker.setPickerItems(pickerItems[0]);
             damageGroupPicker.setPickerItems(pickerItems[1]);
             causeGroupPicker.setPickerItems(pickerItems[2]);
+             failureEffectGroupPicker.setPickerItems(pickerItems[3]);
             return Promise.resolve(pickerItems);
         })
         .catch((error) => {
