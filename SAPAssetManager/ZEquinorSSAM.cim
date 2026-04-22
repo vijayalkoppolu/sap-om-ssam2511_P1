@@ -74,10 +74,6 @@
 {
 "Source": "/ZEquinorSSAM/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment",
 "Target": "/SAPAssetManager/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment"
-},
-{
-   "Source": "/ZEquinorSSAM/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment",
-    "Target": "/SAPAssetManager/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment"
 }
 ]
 }
