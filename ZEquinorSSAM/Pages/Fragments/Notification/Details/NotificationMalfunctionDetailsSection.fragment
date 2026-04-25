@@ -1,3 +1,4 @@
+
 {
     "Header": {
         "Caption": "$(L,malfunction_details)"
@@ -35,7 +36,7 @@
             "Value": "/SAPAssetManager/Rules/Notifications/Details/NotificationDetailsDetectionGroupAndMethod.js",
             "Visible": "/SAPAssetManager/Rules/Common/IsPhaseModelEnabled.js"
         },
-        {
+                {
             "_Name": "FailureEffectCodeGroup",
             "KeyName": "$(L,failure_effect_codegroup)",
             "Value": "/ZEquinorSSAM/Rules/Notifications/Details/ZNotificationFailureEffectCodeGroupDescription.js"

@@ -49,7 +49,7 @@ function getConfirmationsDataPromises(context, selectedOperations, persNum) {
             }
 
             return keyGenerationAction.then(key => {
-                return ClockInClockOutLibrary.getElapsedClockTime(context, selectedContext.binding.OrderId, selectedContext.binding.OperationNo).then(async (time) => {
+                return ClockInClockOutLibrary.getElapsedClockTime(context, selectedContext.binding.OrderId, selectedContext.binding.OperationNo, selectedContext.binding.SubOperationNo).then(async (time) => {
                     let binding = selectedContext.binding;
                     const duration = calculateDuration(context, time);
                     let startTime = new Date();
@@ -69,9 +69,10 @@ function getConfirmationsDataPromises(context, selectedOperations, persNum) {
 
                     let confirmCreateProperties = {
                         ...binding,
-                        OperationReadlink: binding['@odata.readLink'],
+                        SubOperationReadlink: binding.SubOperationNo ? binding['@odata.readLink'] : '',
+                        OperationReadlink: binding.SubOperationNo ? binding.WorkOrderOperation['@odata.readLink'] : binding['@odata.readLink'],
                         ConfirmationNum: key,
-                        SubOperation: binding.SubOperation || '',
+                        SubOperation: binding.SubOperation || binding.SubOperationNo || '',
                         VarianceReason: '',
                         ConfirmationCounter: await GenerateConfirmationCounter(context, binding),
                         StartTime: startTime,
@@ -90,7 +91,7 @@ function getConfirmationsDataPromises(context, selectedOperations, persNum) {
                         PersonnelNumber: persNum,
                         Plant: binding.MainWorkCenterPlant || '',
                         ReverseIndicator: '',
-                        OrderType: binding.WOHeader && binding.WOHeader.OrderType,
+                        OrderType: binding.WOHeader?.OrderType || binding.WorkOrderOperation?.WOHeader?.OrderType,
                         OperationMobileStatus_Nav: binding.OperationMobileStatus_Nav,
                         OperationShortText: binding.OperationShortText,
                         isReviewRequired: isReviewRequired,
@@ -99,7 +100,7 @@ function getConfirmationsDataPromises(context, selectedOperations, persNum) {
                     let operationsToConfirm = libCommon.getStateVariable(context, 'OperationsToConfirm') || [];
                     operationsToConfirm.push({
                         ...confirmCreateProperties,
-                        WorkOrderHeader: binding.WOHeader,
+                        WorkOrderHeader: binding.WOHeader || binding.WorkOrderOperation?.WOHeader,
                     });
                     libCommon.setStateVariable(context, 'OperationsToConfirm', operationsToConfirm);
                 });

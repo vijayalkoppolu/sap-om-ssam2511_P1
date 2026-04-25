@@ -3,6 +3,8 @@
 */
 import libCom from '../../../Common/Library/CommonLibrary';
 import { SplitReadLink } from '../../../Common/Library/ReadLinkUtils';
+import EnableMultipleTechnician from '../../../SideDrawer/EnableMultipleTechnician';
+
 export default async function UpdateAvailableQuantity(clientAPI) {
         let materialNumControlValue = libCom.getControlProxy(clientAPI.getPageProxy(), 'MaterialLstPkr').getValue()[0].ReturnValue;
         let plantValue = SplitReadLink(materialNumControlValue).Plant;
@@ -22,6 +24,9 @@ export default async function UpdateAvailableQuantity(clientAPI) {
                                 availableQuantity.setValue(availableQuantityalue.getItem(0).UnrestrictedQuantity);
                                 quantityControl.setEditable(true);
                                 availableQuantity.redraw();
+                                if (EnableMultipleTechnician(clientAPI) && (libCom.getPageName(clientAPI) === 'VehicleIssueOrReceiptCreatePage')) {
+                                    quantityControl.setValue(clientAPI.binding?.EntryQuantity || clientAPI.binding?.SerialNum?.length || 0);
+                                }
                                 quantityControl.redraw();
                         }
                 } else {
@@ -31,7 +36,11 @@ export default async function UpdateAvailableQuantity(clientAPI) {
                             });
                 }
             } catch (err) {
-                quantityControl.setValue('');
+                if (EnableMultipleTechnician(clientAPI) && (libCom.getPageName(clientAPI) === 'VehicleIssueOrReceiptCreatePage')) {
+                    quantityControl.setValue(clientAPI.binding?.EntryQuantity || clientAPI.binding?.SerialNum?.length || 0);
+                } else {
+                    quantityControl.setValue('');
+                }
                 quantityControl.redraw();
             }
 }

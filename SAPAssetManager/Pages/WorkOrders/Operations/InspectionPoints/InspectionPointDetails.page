@@ -142,7 +142,7 @@
 			}
 		}],
 		"_Type": "Control.Type.SectionedTable",
-		"DataSubscriptions": ["InspectionCharacteristics", "InspectionResultValuations", "InspectionCodes"]
+		"DataSubscriptions": ["InspectionCharacteristics", "InspectionResultValuations", "InspectionCodes", "MyNotificationHeaders"]
 	}],
 	"_Name": "InspectionPointDetails",
 	"_Type": "Page"

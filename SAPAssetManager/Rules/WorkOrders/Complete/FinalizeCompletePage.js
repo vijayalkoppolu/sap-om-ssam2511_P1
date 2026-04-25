@@ -412,40 +412,40 @@ async function beforeOperationComplete(context, isReviewRequired) {
     }
 
     libCom.removeStateVariable(context, 'OperationFinalConfirmation');
-
-    if (libMobile.isOperationStatusChangeable(context)) { //Handle clock out create for operation
-        const odataDate = new ODataDate();
-        actions.push(context.executeAction({
-            'Name': '/SAPAssetManager/Actions/ClockInClockOut/WorkOrderClockInOut.action', 'Properties': {
-                'Properties': {
-                    'RecordId': generateGUID(),
-                    'UserGUID': libCom.getUserGuid(context),
-                    'OperationNo': binding.OperationNo,
-                    'OrderId': binding.OrderId,
-                    'PreferenceGroup': libClock.isCICOEnabled(context) ? 'CLOCK_OUT' : 'END_TIME',
-                    'PreferenceName': binding.OrderId,
-                    'PreferenceValue': odataDate.toDBDateTimeString(context),
-                    'UserId': libCom.getSapUserName(context),
-                    'CapacityRequirement': binding.CapacityRequirement || '',
-                    'CapacityRecordCounter': binding.CapacityRecordCounter || '',
-                    'InternalCounter': binding.InternalCounter || '',
-                },
-                'CreateLinks': [{
-                    'Property': linkProperties.linkProperty,
-                    'Target':
-                    {
-                        'EntitySet': linkProperties.linkEntitySet,
-                        'ReadLink': binding['@odata.readLink'],
+    return Promise.all(actions).then(() => {
+        if (libMobile.isOperationStatusChangeable(context)) { //Handle clock out create for operation
+            const odataDate = new ODataDate();
+            return context.executeAction({
+                'Name': '/SAPAssetManager/Actions/ClockInClockOut/WorkOrderClockInOut.action', 'Properties': {
+                    'Properties': {
+                        'RecordId': generateGUID(),
+                        'UserGUID': libCom.getUserGuid(context),
+                        'OperationNo': binding.OperationNo,
+                        'OrderId': binding.OrderId,
+                        'PreferenceGroup': libClock.isCICOEnabled(context) ? 'CLOCK_OUT' : 'END_TIME',
+                        'PreferenceName': binding.OrderId,
+                        'PreferenceValue': odataDate.toDBDateTimeString(context),
+                        'UserId': libCom.getSapUserName(context),
+                        'CapacityRequirement': binding.CapacityRequirement || '',
+                        'CapacityRecordCounter': binding.CapacityRecordCounter || '',
+                        'InternalCounter': binding.InternalCounter || '',
                     },
-                }],
-                'Headers': {
-                    'OfflineOData.TransactionID': binding.ObjectKey,
+                    'CreateLinks': [{
+                        'Property': linkProperties.linkProperty,
+                        'Target':
+                        {
+                            'EntitySet': linkProperties.linkEntitySet,
+                            'ReadLink': binding['@odata.readLink'],
+                        },
+                    }],
+                    'Headers': {
+                        'OfflineOData.TransactionID': binding.ObjectKey,
+                    },
                 },
-            },
-        }));
-    }
-
-    return Promise.all(actions);
+            });
+        }
+        return Promise.resolve();
+    });
 }
 
 async function beforeSubOperationComplete(context) {

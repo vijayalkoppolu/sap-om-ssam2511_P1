@@ -304,7 +304,7 @@ export default class ManageDeepLink {
             this.resetLink();
 
             if (callbackUri !== undefined) {
-                URLModuleLibrary.openUrl(callbackUri + `://message?action=${action}&result=${result}`);
+                URLModuleLibrary.openUrl(clientAPI, callbackUri + `://message?action=${action}&result=${result}`);
             }
         }, 2000);
     }

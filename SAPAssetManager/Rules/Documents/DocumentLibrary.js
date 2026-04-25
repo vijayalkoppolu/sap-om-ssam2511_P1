@@ -791,6 +791,8 @@ export default class {
      * nestedObjectNav is name of nav link where nested object or list of nested objects can be taken.
      * Example: need to get documents for Operational Item and linked tech object (FLOC). FuncLocIdIntern it is not a property of WCMDocumentItems entity set but we can get this value from MyFunctionalLocations nav link.
      *
+     * For a nested object, combineResults flag might be specified to indicate that all documents under this nested object should be displayed in one section rather than in separate ones.
+     * Example: when downloading documents from the work order details screen, documents from operation and PRT are shown in one section.
      *
      * @param {ClientAPI} context MDK context
      * @param {string} dataType object data type
@@ -951,9 +953,17 @@ export default class {
                     nestedObjects: [
                         {
                             nestedObjectNav: 'Operations',
+                            combineResults: true,
                             filterEntitySets: [
                                 {
                                     docEntitySetNav: 'WODocuments',
+                                    filterProperties: {
+                                        OrderId: 'OrderId',
+                                        OperationNo: 'OperationNo',
+                                    },
+                                },
+                                {
+                                    docEntitySetNav: 'PRTDocuments',
                                     filterProperties: {
                                         OrderId: 'OrderId',
                                         OperationNo: 'OperationNo',
@@ -983,6 +993,13 @@ export default class {
                             docEntitySetNav: 'EquipDocuments',
                             filterProperties: {
                                 EquipId: 'OperationEquipment',
+                            },
+                        },
+                        {
+                            docEntitySetNav: 'PRTDocuments',
+                            filterProperties: {
+                                OrderId: 'OrderId',
+                                OperationNo: 'OperationNo',
                             },
                         },
                     ],
@@ -1155,12 +1172,19 @@ export default class {
             mapping.nestedObjects.forEach(nestedMapping => {
                 const nestedObjValue = item[nestedMapping.nestedObjectNav];
                 if (nestedObjValue) {
+                    const processItem = (nestedItem) => {
+                        const combinedFilters = [];
+                        const filtersToAddTo = nestedMapping.combineResults ? combinedFilters : filters;
+                        self.collectFiltersForDownloadDocuments(nestedItem, nestedMapping, filtersToAddTo);
+                        if (combinedFilters.length > 0) {
+                            filters.push(combinedFilters);
+                        }
+                    };
+
                     if (Array.isArray(nestedObjValue) && !ValidationLibrary.evalIsEmpty(nestedObjValue)) {
-                        nestedObjValue.forEach(nestedItem => {
-                            self.collectFiltersForDownloadDocuments(nestedItem, nestedMapping, filters);
-                        });
+                        nestedObjValue.forEach(processItem);
                     } else {
-                        self.collectFiltersForDownloadDocuments(nestedObjValue, nestedMapping, filters);
+                        processItem(nestedObjValue);
                     }
                 }
             });
@@ -1215,24 +1239,16 @@ export default class {
         let documents = [];
         let readDocPromises = [];
         filters.forEach(filter => {
-            let doc = {
-                'parentEntitySet': filter.entitySet,
-                'isMainObject': filter.isMain,
-            };
-
-            if (!doc.isMainObject) {
-                let splitedString = filter.filter.split('\'');
-
-                if (splitedString.length > 2) {
-                    doc.ids = [splitedString[1], splitedString[splitedString.length - 2]];
-                } else {
-                    doc.ids = [splitedString[splitedString.length - 2]];
-                }
+            let queryOptions = '';
+            // If current item is an Array, this means that filters in it should be combined with OR operator
+            if (Array.isArray(filter)) {
+                this.createDocumentsSectionBinding(filter[0], documents);
+                queryOptions = this.getQueryOptionsForDocumentsSection(filter);
+            } else {
+                this.createDocumentsSectionBinding(filter, documents);
+                queryOptions = this.getQueryOptionsForDocumentsSection([filter]);
             }
 
-            documents.push(doc);
-
-            const queryOptions = `$orderby=FileName&$filter=ObjectType ne 'URL' and FileName ne '' and FileName ne null and ${filter.entitySet}/any(doc: ${filter.filter})`;
             readDocPromises.push(context.read('/SAPAssetManager/Services/AssetManager.service', 'Documents', [], queryOptions));
         });
 
@@ -1271,5 +1287,44 @@ export default class {
                     return results.every(result => result.documents.length === 0) || statuses.every(status => status === 'all_downloaded');
                 });
             });
+    }
+
+    /**
+     * Get query options for documents section
+     * @param {Array} parentEntityFilters Array of entity filters containing entitySet and filter properties
+     * @returns {string} Formatted OData query string with $orderby and $filter parameters
+     */
+    static getQueryOptionsForDocumentsSection(parentEntityFilters) {
+        const orderby = 'FileName';
+        const commonFilter = 'ObjectType ne \'URL\' and FileName ne \'\' and FileName ne null';
+        const filter = parentEntityFilters.map(entityFilter => {
+            return `${entityFilter.entitySet}/any(doc: ${entityFilter.filter})`;
+        }).join(' or ');
+
+        return `$orderby=${orderby}&$filter=${commonFilter} and (${filter})`;
+    }
+
+    /**
+     * Create documents section binding configuration
+     * @param {object} filter Filter object
+     * @param {Array} documents Array to push the created document binding configuration to
+     */
+    static createDocumentsSectionBinding(filter, documents) {
+        let doc = {
+            'parentEntitySet': filter.entitySet,
+            'isMainObject': filter.isMain,
+        };
+
+        if (!doc.isMainObject) {
+            let splitedString = filter.filter.split('\'');
+
+            if (splitedString.length > 2) {
+                doc.ids = [splitedString[1], splitedString[splitedString.length - 2]];
+            } else {
+                doc.ids = [splitedString[splitedString.length - 2]];
+            }
+        }
+
+        documents.push(doc);
     }
 }

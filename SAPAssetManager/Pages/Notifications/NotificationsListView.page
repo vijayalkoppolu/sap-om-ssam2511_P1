@@ -50,6 +50,15 @@
 					"Placeholder": "$(L,search)",
 					"BarcodeScanner": true
 				},
+				"ObjectCell": {
+					"Footnote": "/SAPAssetManager/Rules/WorkOrders/ObjectCellTechObjects.js",
+					"Tags": [
+						{
+							"Text": "/SAPAssetManager/Rules/DateTime/DueDate.js",
+							"Color": "/SAPAssetManager/Rules/DateTime/IsPastDueDate.js"
+						}
+					]
+				},
 				"Target":
 				{
 					"EntitySet" : "/SAPAssetManager/Rules/Notifications/NotificationEntitySet.js",

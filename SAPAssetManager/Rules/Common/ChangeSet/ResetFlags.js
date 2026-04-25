@@ -3,6 +3,7 @@ import libNotif from '../../Notifications/NotificationLibrary';
 import AssignmentType from '../Library/AssignmentType';
 import Logger from '../../Log/Logger';
 import libS4 from '../../ServiceOrders/S4ServiceLibrary';
+
 export default function ResetFlags(pageProxy) {
     libCommon.setOnCreateUpdateFlag(pageProxy, '');
     libCommon.setOnChangesetFlag(pageProxy, false);
@@ -18,6 +19,7 @@ export default function ResetFlags(pageProxy) {
     libS4.setServiceItemBasicMode(pageProxy);
     libCommon.setStateVariable(pageProxy, 'createdEquipSuperior', '');
     libCommon.setStateVariable(pageProxy, 'createdEquipID', '');
+    libCommon.removeStateVariable(pageProxy, 'skipToastAndClosePageOnDocumentCreate');
     try {
         AssignmentType.removeWorkOrderDefaultOverride();
     } catch (error) {

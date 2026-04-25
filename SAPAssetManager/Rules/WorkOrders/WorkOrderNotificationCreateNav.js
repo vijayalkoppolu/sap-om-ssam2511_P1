@@ -68,7 +68,6 @@ export default async function WorkOrderNotificationCreateNav(context) {
                     },
                 });
             } else { //Header notif already exists, so add to object list instead
-                binding.NotificationNumber = localId;
                 if (userFeaturesLib.isFeatureEnabled(context, context.getGlobalDefinition('/SAPAssetManager/Globals/Features/ObjectList.global').getValue())) {
                     return context.executeAction({
                         'Name': '/SAPAssetManager/Actions/ObjectList/CreateUpdate/ObjectListCreateNotificationForWorkOrder.action', 'Properties': {

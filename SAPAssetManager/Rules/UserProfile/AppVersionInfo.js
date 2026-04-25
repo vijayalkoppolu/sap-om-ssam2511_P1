@@ -1,5 +1,5 @@
 /**
-* Describe this function...
+* Gets AppVersion from MDKProject.json
 * @param {IClientAPI} clientAPI
 */
 export default function AppVersionInfo(clientAPI) {

@@ -2,17 +2,23 @@ import Logger from '../../Log/Logger';
 
 export const slugRegex = /<[^:<>]+:[^:<>]+>/;
 
+/**
+ * Generates a slug header. An empty slug header will be returned if the parent object type is unknown or unable to be determined
+ * 
+ * @param {*} clientAPI 
+ * @returns {Promise<string>} the correct Slug header based on the parent object type. 
+ */
 export default async function FormInstanceCreateUpdateSlug(clientAPI) {
     let context = clientAPI;
 
-    // find parent object context
-    while (context.binding['@odata.type'] === '#sap_mobile.DynamicFormLinkage') {
-        context = context.evaluateTargetPath('#Page:-Previous').context._clientAPI;
+    // attempt to find the parent object context
+    while (context?.binding?.['@odata.type'] === '#sap_mobile.DynamicFormLinkage') {
+        context = context.evaluateTargetPath('#Page:-Previous')?.context?._clientAPI;
     }
 
-    let readLink = context.binding['@odata.readLink'];
+    const readLink = context?.binding?.['@odata.readLink'];
     const headers = [];
-    const type = context.binding['@odata.type'];
+    const type = context?.binding?.['@odata.type'];
 
     switch (type) {
         case '#sap_mobile.MyWorkOrderSubOperation':
@@ -45,10 +51,10 @@ export default async function FormInstanceCreateUpdateSlug(clientAPI) {
             headers.push(['S4ObjectType', `<${readLink}:ObjectType>`]);
             headers.push(['S4ObjectID', `<${readLink}:ObjectID>`]);
             break;
-        case context.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/WCMApplication.global').getValue():
+        case clientAPI.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/WCMApplication.global').getValue():
             headers.push(['ObjectKey', `<${readLink}:WCMApplication>`]);
             break;
-        case context.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/WCMDocumentHeader.global').getValue():
+        case clientAPI.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/WCMDocumentHeader.global').getValue():
             headers.push(['ObjectKey', `<${readLink}:WCMDocument>`]);
             break;
         default:

@@ -88,25 +88,40 @@ export class Reminder {
      * Handle inline error processing for Reminder create/update
      */
     static reminderCreateUpdateValidation(context) {
-        let validationPassed = true;
-        let nameControl = libCommon.getTargetPathValue(context, '#Control:Name');
-        let descControl = libCommon.getTargetPathValue(context, '#Control:Description');
-        let nameValue = nameControl.getValue();
-        let descValue = descControl.getValue();
-
-        //clear previous validation message.
+        const nameControl = libCommon.getTargetPathValue(context, '#Control:Name');
+        const descControl = libCommon.getTargetPathValue(context, '#Control:Description');
+        
+        // Clear previous validation messages
         nameControl.clearValidation();
         descControl.clearValidation();
 
-        //Trim spaces
-        if (!libVal.evalIsEmpty(nameValue)) {
-            nameValue = nameValue.trim();
-            nameControl.setValue(nameValue, undefined, true);
+        // Get and trim values
+        const nameValue = Reminder.trimAndSetValue(nameControl);
+        const descValue = Reminder.trimAndSetValue(descControl);
+
+        // Validate both fields and return combined result
+        return Reminder.validateNameLength(context, nameControl, nameValue) && 
+               Reminder.validateDescriptionLength(context, descControl, descValue);
+    }
+
+    /**
+     * Helper method to trim and set control value
+     */
+    static trimAndSetValue(control) {
+        const value = control.getValue();
+        if (!libVal.evalIsEmpty(value)) {
+            const trimmedValue = value.trim();
+            control.setValue(trimmedValue, undefined, true);
+            return trimmedValue;
         }
-        if (!libVal.evalIsEmpty(descValue)) {
-            descValue = descValue.trim();
-            descControl.setValue(descValue, undefined, true);
-        }
+        return value;
+    }
+
+    /**
+     * Validate name field requirements and length
+     */
+    static validateNameLength(context, nameControl, nameValue) {
+        let validationPassed = true;
 
         //Validate Name is not blank. Show required field message.
         if (libVal.evalIsEmpty(nameValue)) {
@@ -124,9 +139,18 @@ export class Reminder {
             validationPassed = false;
         }
 
+        return validationPassed;
+    }
+
+    /**
+     * Validate description field length
+     */
+    static validateDescriptionLength(context, descControl, descValue) {
+        let validationPassed = true;
+
         //Validate description length is less than max limit. Show max limit inline error message if needed.
         let descMaxLength = libCommon.getAppParam(context, 'REMAINDER', 'Descriptionlength');
-        if (descValue.length > Number(descMaxLength)) {
+        if (descValue?.length > Number(descMaxLength)) {
             let dynamicParams = [descMaxLength];
             let message = context.localizeText('validation_maximum_field_length', dynamicParams);
             libCommon.executeInlineControlError(context, descControl, message);

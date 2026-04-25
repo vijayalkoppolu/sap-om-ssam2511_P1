@@ -6,5 +6,5 @@ export default function StartDate(context) {
     let date = new Date(dateTime);
     let odataDate = new ODataDate(date);
 
-    return odataDate.toDBDateString(context);
+    return odataDate.toLocalDateString(context);
 }

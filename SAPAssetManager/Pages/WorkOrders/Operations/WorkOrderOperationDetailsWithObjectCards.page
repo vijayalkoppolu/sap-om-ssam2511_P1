@@ -90,7 +90,7 @@
                                 "_Name": "SuboperationsIssueAll",
                                 "Title": "$(L,confirm_all)",
                                 "Position": "Right",
-                                "OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/SubOperationObjectCard/SubOperationsConfirmAllOnPress.js",
+                                "OnPress": "/SAPAssetManager/Rules/Operations/OperationsObjectCardCollection/ConfirmAllButtonOnPress.js",
                                 "Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/SubOperationObjectCard/SubOperationsConfirmAllVisible.js",
                                 "Styles": {
                                     "Button": "HeaderItemButtonText"

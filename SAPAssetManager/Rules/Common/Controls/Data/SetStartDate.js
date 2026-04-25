@@ -1,12 +1,8 @@
-import ODataDate from '../../Date/ODataDate';
+import CommonLibrary from '../../Library/CommonLibrary';
 
 export default function SetStartDate(context) {
     const binding = context.binding || {};
-    const startDate = binding.StartDate;
+    const date = binding.StartDate ? new Date(binding.StartDate) : new Date();
 
-    if (startDate) {
-        return new ODataDate(startDate).toLocalDateString();
-    }
-
-    return new Date();
+    CommonLibrary.getControlProxy(context, 'StartDatePicker').setValue(date);
 }

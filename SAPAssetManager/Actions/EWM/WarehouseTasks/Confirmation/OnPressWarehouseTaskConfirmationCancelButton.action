@@ -1,6 +1,7 @@
 {
+    "Title": "$(L, discard_changes_title)",
     "Message": "$(L, confirm_cancel)",
-    "OKCaption": "$(L,continue_text)",
+    "OKCaption": "$(L, discard)",
     "CancelCaption": "$(L,cancel)",
     "_Type": "Action.Type.Message",
     "OnOK": "/SAPAssetManager/Actions/Page/CancelPage.action"

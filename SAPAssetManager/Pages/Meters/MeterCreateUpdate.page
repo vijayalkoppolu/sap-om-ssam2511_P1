@@ -314,6 +314,7 @@
                             "_Type": "Control.Type.FormCell.ListPicker",
                             "IsPickerDismissedOnSelection": true,
                             "IsSearchCancelledAfterSelection": true,
+                            "AllowDefaultValueIfOneItem": true,
                             "IsVisible": false,
                             "_Name": "ReceivingPlantLstPkr"
                         },

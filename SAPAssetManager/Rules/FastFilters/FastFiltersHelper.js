@@ -1,4 +1,6 @@
 
+import OffsetODataDate from '../Common/Date/OffsetODataDate';
+
 export default class FastFiltersHelper {
 
     static getFilterItem(displayValue = '', returnValue = '', filterProperty = '', customQueryGroup = '') {
@@ -47,13 +49,16 @@ export default class FastFiltersHelper {
             
             const startIndex2 = filterString.indexOf("datetime'", endIndex1) + 9; // Start of the second date (after "datetime'")
             const endIndex2 = filterString.indexOf("'", startIndex2); // End of the second date (before the next apostrophe)
-    
-    
+
             // Extract the dates using substring
             const date1 = filterString.substring(startIndex1, endIndex1);
             const date2 = filterString.substring(startIndex2, endIndex2);
+
+            // Convert to local date time strings using OffsetODataDate
+            let date3 = new OffsetODataDate(context, new Date(date1)).toLocalDateTimeString();
+            let date4 = new OffsetODataDate(context, new Date(date2)).toLocalDateTimeString();
     
-            return [date1, date2];
+            return [date3, date4];
         }
     
         return [];

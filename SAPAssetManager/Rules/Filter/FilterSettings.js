@@ -93,23 +93,37 @@ export default class {
         }
 
         const pageProxy = context.getPageProxy();
-        const clientData = pageProxy.getClientData();
         const preferenceName = libThis.getPreferenceName(context);
 
         try {
             pageProxy.showActivityIndicator();
 
-            clientData.PreferenceName = preferenceName;
-            clientData.PreferenceValue = JSON.stringify(filterCriteria);
-
             const settingsRecord = await libThis.readFilterSettingsByPreferenceName(context, preferenceName);
             let saveAction;
 
             if (!libCom.isDefined(settingsRecord)) {
-                saveAction = '/SAPAssetManager/Actions/Filter/FilterSettingsCreate.action';
+                saveAction = {
+                    'Name': '/SAPAssetManager/Actions/Filter/FilterSettingsCreate.action',
+                    'Properties': {
+                        'Properties': {
+                            'PreferenceName': preferenceName,
+                            'PreferenceValue': JSON.stringify(filterCriteria),
+                        },
+                    },
+                };
             } else {
-                clientData.ReadLink = settingsRecord['@odata.readLink'];
-                saveAction = '/SAPAssetManager/Actions/Filter/FilterSettingsUpdate.action';
+                saveAction = {
+                    'Name': '/SAPAssetManager/Actions/Filter/FilterSettingsUpdate.action',
+                    'Properties': {
+                        'Target': {
+                            'ReadLink': settingsRecord['@odata.readLink'],
+                        },
+                        'Properties': {
+                            'PreferenceName': preferenceName,
+                            'PreferenceValue': JSON.stringify(filterCriteria),
+                        },
+                    },
+                };
             }
 
             await pageProxy.executeAction(saveAction);

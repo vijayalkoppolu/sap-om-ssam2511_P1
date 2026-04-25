@@ -5,6 +5,7 @@ import CommonLibrary from '../../Common/Library/CommonLibrary';
 import Logger from '../../Log/Logger';
 import FSMCrewLibrary from '../../Crew/FSMCrewLibrary';
 import IsS4ServiceOrderFeatureDisabled from '../../ServiceOrders/IsS4ServiceOrderFeatureDisabled';
+import { sortObjectsByStatus } from './MyWorkSectionQueryOption';
 
 export default function MyWorkSectionS4QueryOption(context) {
     if (IsS4ServiceOrderFeatureDisabled(context)) return [];
@@ -16,6 +17,7 @@ export default function MyWorkSectionS4QueryOption(context) {
     let top = '$top=50';
     let entitySet;
     let startedquery = `$filter=MobileStatus_Nav/MobileStatus eq '${STARTED}'`;
+    let array = [];
     CommonLibrary.setStateVariable(context, 'StartedCount', 0);
     if (IsServiceOrderLevel(context)) {
         entitySet = 'S4ServiceOrders';
@@ -28,9 +30,9 @@ export default function MyWorkSectionS4QueryOption(context) {
                 filter = filter + '&' + orderBy + '&' + expand + '&' + top;
                 return context.read('/SAPAssetManager/Services/AssetManager.service', entitySet, [], filter).then(result => {
                     if (result) {
-                        return result;
+                        array = sortObjectsByStatus(context, result, 'MobileStatus_Nav');
                     }
-                    return [];
+                    return array;
                 }).catch(error => {
                     Logger.error(error);
                 });
@@ -47,9 +49,9 @@ export default function MyWorkSectionS4QueryOption(context) {
                 filter = filter + '&' + orderBy + '&' + expand + '&' + top;
                 return context.read('/SAPAssetManager/Services/AssetManager.service', entitySet, [], filter).then(result => {
                     if (result) {
-                        return result;
+                        array = sortObjectsByStatus(context, result, 'MobileStatus_Nav');
                     }
-                    return [];
+                    return array;
                 }).catch(error => {
                     Logger.error(error);
                 });

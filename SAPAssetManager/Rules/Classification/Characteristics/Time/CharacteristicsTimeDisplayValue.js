@@ -3,7 +3,7 @@ import fixTime from './CharacteristicFixTime';
 import ODataDate from '../../../Common/Date/ODataDate';
 
 export default function CharacteristicsTimeDisplayValue(context, time) {
-    if (!time) return '0';
+    if (time === 0) return '0';
 
     let timeStamp = ODataDate.fromTimestamp(time, context);
     let localTime = timeStamp.toLocalTimeString(context).replace(/:/g,'');

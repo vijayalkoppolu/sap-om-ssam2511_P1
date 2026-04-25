@@ -3,7 +3,7 @@ import OffsetODataDate from '../Common/Date/OffsetODataDate';
 
 export default function DueDate(context) {
     const binding = context.binding;
-    let dueDate = binding.DueDate || binding.DueBy;
+    let dueDate = binding.DueDate || binding.DueBy || binding.RequiredEndDate;
     if (libVal.evalIsEmpty(dueDate)) {
         return context.localizeText('no_due_date');
     }

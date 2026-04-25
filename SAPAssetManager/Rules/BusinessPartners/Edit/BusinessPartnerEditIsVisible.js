@@ -1,35 +1,35 @@
 import {GlobalVar as globals} from '../../Common/Library/GlobalCommon';
 import libComm from '../../Common/Library/CommonLibrary';
 import {BusinessPartnerWrapper} from '../BusinessPartnerWrapper';
-import userFeaturesLib from '../../UserFeatures/UserFeaturesLibrary';
 import IsEditS4RelatedObjectEnabled from '../../ServiceOrders/IsEditS4RelatedObjectEnabled';
+import IsMeterComponentEnabled from '../../ComponentsEnablement/IsMeterComponentEnabled';
+import IsEditParentObjectEnabled from './IsEditParentObjectEnabled';
 
 export default function BusinessPartnerEditIsVisible(context) {
-    let wrapper = new BusinessPartnerWrapper(context.getBindingObject());
-    if (wrapper.onlinePartner) {
-        return context.setActionBarItemVisible(0, false);
+    const binding = context.getBindingObject() || {};
+    const wrapper = new BusinessPartnerWrapper(binding);
+
+    if (wrapper.onlinePartner || IsMeterComponentEnabled(context)) {
+        return false;
     }
 
-    if (context.binding.PartnerFunction_Nav?.S4ItemPartnerFunc_Nav || context.binding.PartnerFunction_Nav?.S4PartnerFunc_Nav || context.binding.S4PartnerFunc_Nav) {
-        if (context.binding.BusinessPartner_Nav?.AddressNum) {
-            return context.setActionBarItemVisible(0, IsEditS4RelatedObjectEnabled(context)); 
+    // Handle S4 FSM case
+    if (binding.PartnerFunction_Nav?.S4ItemPartnerFunc_Nav || binding.PartnerFunction_Nav?.S4PartnerFunc_Nav || binding.S4PartnerFunc_Nav) {
+        if (binding.BusinessPartner_Nav?.AddressNum) {
+            return IsEditS4RelatedObjectEnabled(context); 
         }
-        return context.setActionBarItemVisible(0, false); 
+        return false; 
     }
 
     let address = wrapper.address();
-    /// Address creation is not supported on the backend. Edit button is disable if address does not exists.
+    // Edit button is disable if address does not exists.
     if (!libComm.isDefined(address)) {
-        context.setActionBarItemVisible(0, false);
+        return false;
     }
 
-    if (context.binding.PartnerFunction_Nav && context.binding.PartnerFunction_Nav.PartnerType === globals.getAppParam().PARTNERFUNCTION.PersonelNumber) {
-        context.setActionBarItemVisible(0, false);
-    } else {
-        context.setActionBarItemVisible(0, true);
+    if (binding.PartnerFunction_Nav?.PartnerType === globals.getAppParam().PARTNERFUNCTION.PersonelNumber) {
+        return false;
     }
-    if (userFeaturesLib.isFeatureEnabled(context, context.getGlobalDefinition('/SAPAssetManager/Globals/Features/Meter.global').getValue())) {
-        // By default, don't allow editing BPs on Meter
-        context.setActionBarItemVisible(0, false);
-    }
+
+    return IsEditParentObjectEnabled(context, binding);
 }

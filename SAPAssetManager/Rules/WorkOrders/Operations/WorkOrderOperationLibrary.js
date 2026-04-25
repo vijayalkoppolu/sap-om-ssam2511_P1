@@ -1189,7 +1189,7 @@ export class OperationConstants {
     }
 
     static notFinallyConfirmedFilter() {
-        return 'Confirmations/all(wp : wp/FinalConfirmation ne \'X\')';
+        return 'not Confirmations/any(wp : wp/FinalConfirmation eq \'X\' and (wp/SubOperation eq \'\' or wp/SubOperation eq null))';
     }
 }
 

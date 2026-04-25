@@ -1,5 +1,6 @@
 {
 	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnReturning.js",
 	"Caption": "/SAPAssetManager/Rules/ServiceOrders/ServiceRequests/ServiceRequestsListViewCaption.js",
 	"ActionBar": {
 		"Items": [

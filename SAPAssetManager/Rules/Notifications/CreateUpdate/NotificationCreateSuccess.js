@@ -281,6 +281,10 @@ export default function NotificationCreateSuccess(context, createdNotif) {
     }).then(() => {
         context.dismissActivityIndicator();
         if (context.binding && context.binding['@odata.type'] === '#sap_mobile.InspectionCharacteristic') {
+            const recordResultPage = context.evaluateTargetPathForAPI('#Page:-Previous');
+            const recordedDefects = recordResultPage.getClientData().RecordedDefects || [];
+            recordedDefects.push(createdNotif['@odata.readLink']);
+            recordResultPage.getClientData().RecordedDefects = recordedDefects;
             return ExecuteActionWithAutoSync(context, '/SAPAssetManager/Actions/InspectionCharacteristics/Update/InspectionCharacteristicsNotificationSuccessMessageClosePage.action');
         }
 

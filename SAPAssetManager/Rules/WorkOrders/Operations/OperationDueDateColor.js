@@ -1,15 +1,18 @@
+import libCommon from '../../Common/Library/CommonLibrary';
+import OffsetODataDate from '../../Common/Date/OffsetODataDate';
+
 /**
-* Describe this function...
+* Pick the due date color for display
 * @param {IClientAPI} context
 */
-import OperationDueDate from './OperationDueDate';
 export default function OperationDueDateColor(context) {
-    let dueDateStr = OperationDueDate(context);
-    let dueDate = new Date(dueDateStr);
-    let today = new Date();
-    if (dueDate < today) {
-        return 'Red';
-    } else {
-        return 'Green';
+    if (libCommon.isDefined(context.binding.DisplayEndDateTime)) {
+        let schedEnd = new OffsetODataDate(context, context.binding.DisplayEndDateTime, undefined, false, true);
+        let now = new Date();
+        if (schedEnd.date() < now) {
+            return 'Red';
+        } else {
+            return 'Green';
+        }
     }
 }

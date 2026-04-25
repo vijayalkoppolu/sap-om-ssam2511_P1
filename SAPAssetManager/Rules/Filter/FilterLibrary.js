@@ -330,4 +330,18 @@ export default class {
         });
         return sorter;
     }
+
+    static formatObjectCellListPickerDisplayFilterResult(filterResult, displayPropertyName = 'Subhead') {
+        if (filterResult.filterItemsDisplayValue?.length && typeof filterResult.filterItemsDisplayValue[0] === 'object') {
+            const formattedDisplayValue = []; 
+
+            filterResult.filterItemsDisplayValue.forEach(displayObject => {
+                formattedDisplayValue.push(displayObject[displayPropertyName]);
+            });
+
+            filterResult._filterItemsDisplayValue = formattedDisplayValue;
+        }
+
+        return filterResult;
+    }
 }

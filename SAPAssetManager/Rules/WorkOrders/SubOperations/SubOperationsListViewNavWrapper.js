@@ -7,3 +7,10 @@ export default function SubOperationsListViewNavWrapper(context) {
         context.getGlobalDefinition('/SAPAssetManager/Globals/Features/PMWorkOrder.global').getValue(),
         TelemetryLibrary.PAGE_TYPE_SUB_LIST);
 }
+
+export function MyWorkSubOperationsListViewNavWrapper(context) {
+    return TelemetryLibrary.executeActionWithLogPageEvent(context,
+        '/SAPAssetManager/Actions/WorkOrders/SubOperations/MyWorkSubOperationsListViewNav.action',
+        context.getGlobalDefinition('/SAPAssetManager/Globals/Features/PMWorkOrder.global').getValue(),
+        TelemetryLibrary.PAGE_TYPE_SUB_LIST);
+}

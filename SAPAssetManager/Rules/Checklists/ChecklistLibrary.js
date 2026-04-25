@@ -443,7 +443,7 @@ export class ChecklistLibrary {
 
         let checklistEnabled = userFeaturesLib.isFeatureEnabled(context, context.getGlobalDefinition('/SAPAssetManager/Globals/Features/IAMChecklist.global').getValue());
 
-        if (!checklistEnabled || (libVal.evalIsEmpty(equipment) && libVal.evalIsEmpty(functionalLocation))) { //Only process this method if the checklists feature is enabled and equipment or functional location is populated
+        if (!checklistEnabled || !(equipment || functionalLocation)) { //Only process this method if the checklists feature is enabled and equipment or functional location is populated
             return Promise.resolve(true);
         }
         

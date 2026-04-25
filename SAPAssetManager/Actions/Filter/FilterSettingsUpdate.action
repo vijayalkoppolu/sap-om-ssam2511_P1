@@ -3,11 +3,11 @@
     "Target": {
       "EntitySet": "UserPreferences",
       "Service": "/SAPAssetManager/Services/AssetManager.service",
-		  "ReadLink": "{#ClientData/ReadLink}"
+		  "ReadLink": ""
     },
     "Properties": {
-      "PreferenceName": "{#ClientData/PreferenceName}",
-      "PreferenceValue": "{#ClientData/PreferenceValue}"
+      "PreferenceName": "",
+      "PreferenceValue": ""
     },
 	"OnSuccess": "/SAPAssetManager/Actions/Filter/FilterSettingsUpdatedSuccess.action"
 }

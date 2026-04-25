@@ -42,7 +42,7 @@ export default async function ConfirmationCreateUpdateOnPageLoad(context) {
 }
 
 function returnLaborTimeMinuteInterval(context, formCellContainerProxy) {
-    return LaborTimeMinuteInterval(context, context.getBindingObject().OrderID, context.getBindingObject().Operation, context.getBindingObject().Operation).then(duration => { //Handle clock in/out processing if necessary
+    return LaborTimeMinuteInterval(context, context.getBindingObject().OrderID, context.getBindingObject().Operation, context.getBindingObject().SubOperation).then(duration => { //Handle clock in/out processing if necessary
         let durationControl = formCellContainerProxy.getControl('DurationPkr');
         durationControl.setValue(duration);
 

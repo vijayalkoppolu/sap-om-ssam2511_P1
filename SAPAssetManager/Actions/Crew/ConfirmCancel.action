@@ -1,7 +1,8 @@
 {
 	"_Type": "Action.Type.Message",
+    "Title": "$(L, discard_changes_title)",
 	"Message": "$(L, confirm_cancel)",
-    "OKCaption": "$(L,ok)",
+    "OKCaption": "$(L,discard)",
     "CancelCaption": "$(L,cancel)",
     "OnOK": "/SAPAssetManager/Rules/Crew/ClearFlagsAndClose.js"
 }

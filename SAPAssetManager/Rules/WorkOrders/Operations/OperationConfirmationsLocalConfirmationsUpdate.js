@@ -12,7 +12,14 @@ export default function OperationConfirmationsLocalConfirmationsUpdate(clientAPI
     const updatedItem = libCom.getStateVariable(clientAPI, 'OperationConfirmationsUpdatePayload');
     if (updatedItem) {
         const confirmOperations = libCom.getStateVariable(clientAPI, 'OperationsToConfirm');
-        let updatedConfirmation = confirmOperations.find(item => item.OperationReadlink === updatedItem.OperationReadlink);
+        let updatedConfirmation;
+        
+        if (updatedItem.SubOperationReadlink) {
+            updatedConfirmation = confirmOperations.find(item => item.SubOperationReadlink === updatedItem.SubOperationReadlink);
+        } else {
+            updatedConfirmation = confirmOperations.find(item => item.OperationReadlink === updatedItem.OperationReadlink);
+        }
+
         if (updatedConfirmation) {
             updatedConfirmation = { 
                 ...updatedConfirmation,
@@ -39,7 +46,12 @@ export default function OperationConfirmationsLocalConfirmationsUpdate(clientAPI
                 PersonnelNumber: updatedItem.PersonnelNumber,
                 ControllerArea: updatedItem.ControllerArea,
             };
-            const newConfirmOperations = confirmOperations.filter(item => item.OperationReadlink !== updatedConfirmation.OperationReadlink);
+            let newConfirmOperations;
+            if (updatedItem.SubOperationReadlink) { 
+                newConfirmOperations = confirmOperations.filter(item => item.SubOperationReadlink !== updatedConfirmation.SubOperationReadlink);
+            } else {
+                newConfirmOperations = confirmOperations.filter(item => item.OperationReadlink !== updatedConfirmation.OperationReadlink);
+            }
             newConfirmOperations.push(updatedConfirmation);
             libCom.setStateVariable(clientAPI, 'OperationsToConfirm', newConfirmOperations);
         }

@@ -3,11 +3,8 @@ import getFileInfo from './DocumentEditorGetFileInfo';
 import libCom from '../Common/Library/CommonLibrary';
 import DocumentEditorIsAutoResizeEnabled from './DocumentEditorIsAutoResizeEnabled';
 import DocumentLibrary from './DocumentLibrary';
+import { isValidDocument } from './DocumentEditorVisible';
 
-/**
-* Describe this function...
-* @param {IClientAPI} context
-*/
 export default function DocumentEditorResizeVisible(context) {
     const documentBinding = DocumentLibrary.getDocumentFromBinding(context.binding);
 
@@ -24,7 +21,7 @@ export default function DocumentEditorResizeVisible(context) {
     }
     const fileInfo = getFileInfo(context);
     if (fileInfo) {
-        return isImageFormat(fileInfo.FileName);
+        return isImageFormat(fileInfo.FileName) && isValidDocument(context, fileInfo);
     }
     return false;
 }

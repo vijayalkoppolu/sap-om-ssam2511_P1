@@ -3,5 +3,6 @@
     "Duration": 9999,
     "Animated": true,
     "DismissBannerOnAction": true,
+    "Semantic": "Tint",
     "_Type": "Action.Type.BannerMessage"
 }

@@ -407,6 +407,7 @@ export class NoteLibrary {
     static didSetNoteTypeTransactionFlagForPage(clientAPI, page) {
         switch (page) {
             case 'MeasuringPointDetailsPage':
+            case 'PRTDocumentDetailsPage':
             case 'PRTMaterialDetailsPage':
             case 'PRTEquipmentDetailsPage':
             case 'PRTMiscellaneousDetailsPage':

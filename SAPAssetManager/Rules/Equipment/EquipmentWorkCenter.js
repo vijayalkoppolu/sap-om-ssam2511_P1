@@ -26,4 +26,3 @@ export default async function EquipmentWorkCenter(context) {
 
     return '-';
 }
-

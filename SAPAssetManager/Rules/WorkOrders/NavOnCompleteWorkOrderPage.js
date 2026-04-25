@@ -13,7 +13,7 @@ export default function NavOnCompleteWorkOrderPage(context, actionBinding) {
     return ChecklistLibrary.allowWorkOrderComplete(context, binding.HeaderEquipment, binding.HeaderFunctionLocation).then(async results => { //Check for non-complete checklists and ask for confirmation
         if (results === true) {
             WorkOrderCompletionLibrary.getInstance().setCompletionFlow('');
-            await WorkOrderCompletionLibrary.getInstance().initSteps(context);
+            await WorkOrderCompletionLibrary.getInstance().initSteps(context, binding);
             WorkOrderCompletionLibrary.getInstance().setBinding(context, binding);
             return IsWONotificationVisible(context, binding, 'Notification').then((notification) => {
                 if (notification && IsNotificationEditable(context)) { //Respect user authorizations

@@ -2,6 +2,7 @@ import IsWONotificationVisible from '../Complete/Notification/IsWONotificationVi
 import WorkOrderCompletionLibrary, { runComplete } from '../Complete/WorkOrderCompletionLibrary';
 import libCommon from '../../Common/Library/CommonLibrary';
 import libConfirm from '../../ConfirmationScenarios/ConfirmationScenariosLibrary';
+import { ChecklistLibrary } from '../../Checklists/ChecklistLibrary';
 
 export default async function NavOnCompleteSubOperationPage(context, actionBinding) {
     context.dismissActivityIndicator(); // RunMobileStatusUpdateSequence triggers showActivityIndicator which may result in infinite loading when CheckRequiredFields action is executed.
@@ -13,6 +14,9 @@ export default async function NavOnCompleteSubOperationPage(context, actionBindi
     if (checkFailed) { //Display validation error dialog and exit
         return await libCommon.showErrorDialog(context, context.localizeText('double_check_required_operation'));
     }
+    //Check for non-complete checklists and ask for confirmation
+    const proceedComplete = await ChecklistLibrary.allowWorkOrderComplete(context, binding.OperationEquipment, binding.OperationFunctionLocation);
+    if (proceedComplete === false) return Promise.resolve();
 
     WorkOrderCompletionLibrary.getInstance().setCompletionFlow('suboperation');
     await WorkOrderCompletionLibrary.getInstance().initSteps(context);

@@ -10,8 +10,8 @@ export default function HandleMeasuringPointsEDTFiltersResetButtonEnabled(contro
         return;
     }
 
-    const visibleControls = formCellContainer.getControls().filter(control => control.visible !== false && control.getName() !== 'ResetButton');
-    const controlsWithValue = visibleControls.filter(control => !!CommonLibrary.getControlValue(control));
+    const visibleControls = formCellContainer.getControls().filter(control => control.visible === true && control.getName() !== 'ResetButton');
+    const controlsWithValue = visibleControls.filter(control => CommonLibrary.getControlValue(control));
 
     resetButton.setEnabled(controlsWithValue.length > 0);
 }

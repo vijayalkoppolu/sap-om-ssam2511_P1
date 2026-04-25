@@ -2,6 +2,7 @@
 	"_Name": "FSMS4CrewPage",
 	"_Type": "Page",
 	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnReturning.js",
 	"Caption": "/SAPAssetManager/Rules/Crew/FSM/FSMCrewCaption.js",
 	"ActionBar": {
 		"Items": [

@@ -375,7 +375,11 @@ export default async function OnMovementTypeValueChanged(context) {
     }
 // Disable fields for Cancellation only when reversal movement type is posted against a Material Document (GMCode=6).
 GetMovementTypeData(context, selectedMovementType).then((movementTypeData) => {
-    if (movementTypeData && movementTypeData.RevMvmtTypeInd && objectType !== InventoryAdhoc.ADHOC && context.binding['@odata.type'] === '#sap_mobile.MaterialDocItem') {
+    const hasMovementTypeData = !!movementTypeData?.RevMvmtTypeInd;
+    const isNotAdhoc = objectType !== InventoryAdhoc.ADHOC;
+    const isMaterialDocItem = context.binding?.['@odata.type'] === '#sap_mobile.MaterialDocItem';
+    
+    if (hasMovementTypeData && isNotAdhoc && isMaterialDocItem) {
         accountAssignmentSection.forEach(c => c.setEditable(false));
         movementReason.setEditable(false);
         goodsRecepient.setEditable(false);

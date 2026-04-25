@@ -2,6 +2,7 @@
 	"_Type": "Page",
 	"_Name": "EquipmentListViewPage",
 	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnReturning.js",
 	"ActionBar":
 	{
 		"_Name": "EquipmentList",

@@ -41,6 +41,7 @@ export default function MeasuringPointsEDTValuationCodeControl(context) {
                 'MinimumCharacterThreshold': 3,
                 'Placeholder': context.localizeText('search'),
                 'BarcodeScanner': true,
+                'SearchProperties': ['Code', 'CodeDescription'],
             },
             'ItemsPerPage': 20,
             'CachedItemsToLoad': 2,

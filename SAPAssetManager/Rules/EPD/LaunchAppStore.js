@@ -6,7 +6,7 @@ import URLModuleLibrary from '../../Extensions/URLModule/URLModuleLibrary';
 */
 export default function LaunchAppStore(context) {
     if (IsAndroid(context)) {
-        return URLModuleLibrary.openUrl(context.getGlobalDefinition('/SAPAssetManager/Globals/EPD/PlayStoreURL.global').getValue());
+        return URLModuleLibrary.openUrl(context, context.getGlobalDefinition('/SAPAssetManager/Globals/EPD/PlayStoreURL.global').getValue());
     }
-    return URLModuleLibrary.openUrl(context.getGlobalDefinition('/SAPAssetManager/Globals/EPD/AppStoreURL.global').getValue());
+    return URLModuleLibrary.openUrl(context, context.getGlobalDefinition('/SAPAssetManager/Globals/EPD/AppStoreURL.global').getValue());
 }

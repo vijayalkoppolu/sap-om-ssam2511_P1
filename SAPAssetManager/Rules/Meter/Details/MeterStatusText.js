@@ -1,14 +1,23 @@
-export default function MeterStatusText(context) {
-    let curReadLink = '/Equipment_Nav/ObjectStatus_Nav/SystemStatus_Nav';
-    if (context.getPageProxy().binding.Device_Nav) {
-        curReadLink = context.getPageProxy().binding['@odata.readLink'] + '/Device_Nav' + curReadLink;
-    } else {
-        curReadLink = context.getPageProxy().binding['@odata.readLink'] + curReadLink;
+import libCom from '../../Common/Library/CommonLibrary';
+import Logger from '../../Log/Logger';
+
+export default async function MeterStatusText(context, binding = context.getPageProxy().binding) {
+    let device = binding;
+    if (binding.Device_Nav) {
+        device = binding.Device_Nav;
     }
-    return context.read('/SAPAssetManager/Services/AssetManager.service', curReadLink, [], '').then(result => {
-        if (result && result.length > 0) {
-            return result.getItem(0).StatusText;
-        }
-        return '';
-    });
+    const status = device?.Equipment_Nav?.ObjectStatus_Nav?.Status;
+    
+    if (!status) {
+        return '-';
+    }
+    
+    try {
+        // Reading directly from SystemStatuses as we are not updating links to SystemStatus_Nav so that requests are not dependent on each other, when sent to the BE
+        const systemStatus = await context.read('/SAPAssetManager/Services/AssetManager.service', 'SystemStatuses', ['StatusText'], `$filter=SystemStatus eq '${status}'`);
+        return libCom.isDefined(systemStatus) ? systemStatus.getItem(0).StatusText : '-';
+    } catch (error) {
+        Logger.error('Error in MeterStatusText:', error);
+        return '-';
+    }
 }

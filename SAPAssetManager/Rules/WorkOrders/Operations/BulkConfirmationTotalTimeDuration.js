@@ -12,8 +12,10 @@ export default function BulkConfirmationTotalTimeDuration(context) {
 
         const operations = CommonLibrary.getStateVariable(context, 'OperationsToConfirm');
         const currentOperation = operations.find(operation => operation.OperationReadlink === context.binding['@odata.readLink']);
-
-        if (currentOperation) {
+        const currentSubOperation = operations.find(operation => operation.SubOperationReadlink === context.binding['@odata.readLink']);
+        if (currentSubOperation) {
+            hours += TimeSheetLibrary.getActualHours(context, currentSubOperation.Hours);
+        } else if (currentOperation) {
             hours += TimeSheetLibrary.getActualHours(context, currentOperation.Hours);
         }
     

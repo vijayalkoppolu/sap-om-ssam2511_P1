@@ -1,6 +1,5 @@
 {
 	"Caption": "$(L,get_one_time_passcode)",
-    "OnLoaded": "/SAPAssetManager/Rules/DigitalSignature/GetTOTPOnloaded.js",
 	"ActionBar": {
         "_Name": "PasscodeTOTP",
 		"Items": [
@@ -29,13 +28,13 @@
                 },
                 {
                   "Controls": [
-                      {
-                        "Value": "",
-                        "_Name": "Seed",
-                        "IsAutoResizing": true,
-                        "_Type": "Control.Type.FormCell.Note",
-                        "HelperText": "$(L,register_totp_help_text)"
-                    }
+                        {
+                            "Value": "/SAPAssetManager/Rules/DigitalSignature/GetTOTP.js",
+                            "_Name": "Seed",
+                            "IsAutoResizing": true,
+                            "_Type": "Control.Type.FormCell.Note",
+                            "HelperText": "$(L,register_totp_help_text)"
+                        }
                     ]
                 }
             ],

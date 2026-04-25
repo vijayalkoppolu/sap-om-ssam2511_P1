@@ -15,4 +15,6 @@ export default async function UpdatePlanningGroup(context) {
 			plannerGroupListPickerControl.setValue(plannerGroup);
 		}
 	}
+
+	return Promise.resolve();
 }

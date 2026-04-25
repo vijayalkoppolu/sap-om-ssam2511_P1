@@ -22,6 +22,10 @@ export default function DocumentActionBinding(pageProxy) {
     if (!actionBinding || !actionBinding.Document ) {
         actionBinding = pageProxy.getPendingDownload('FunctionalLocationDetails');
     }
+    if (!actionBinding || !actionBinding.Document) {
+        actionBinding = pageProxy.getPendingDownload('PRTDocumentDetailsPage');
+        return actionBinding;
+    }
     if (!actionBinding || !actionBinding.Document) { 
         if (pageProxy.currentPage && pageProxy.currentPage.context) {
             actionBinding = pageProxy.currentPage.context.clientData.ReportTemplate;

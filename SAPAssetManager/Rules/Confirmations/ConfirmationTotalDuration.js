@@ -103,6 +103,10 @@ export default function ConfirmationTotalDuration(context, passedDate = undefine
 function getOperationsStateConfirmations(context) {
     const operations = CommonLibrary.getStateVariable(context, 'OperationsToConfirm');
     const currentOperation = operations.find(operation => operation.OperationReadlink === context.binding['@odata.readLink']);
+    const currentSubOperation = operations.find(operation => operation.SubOperationReadlink === context.binding['@odata.readLink']);
+    if (currentSubOperation) {
+        return [currentSubOperation];
+    }
     if (currentOperation) {
         return [currentOperation];
     }

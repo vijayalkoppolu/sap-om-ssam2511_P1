@@ -13,13 +13,7 @@
                 "OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/PRTEquipmentUpdateNav.js",
 				"Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js"
             },
-			{
-                "Position": "Right",
-				"_Name": "Add",
-                "Icon": "sap-icon://add",
-				"Caption": "$(L,add)",
-                "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTAddNotePopover.action"
-            }
+			"/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderOperations/PRT/PRTAddNoteActionBarItem.fragment"
         ]
     },
 	"Controls": [
@@ -61,18 +55,8 @@
 					]
 				},
 				{
-                    "SimplePropertyCells": [
-                        {
-                            "SimplePropertyCell": {
-                                "AccessoryType": "DisclosureIndicator",
-                                "KeyName": "$(L,notes)",
-                                "Value": "/SAPAssetManager/Rules/Notes/NotesCount.js",
-                                "OnPress": "/SAPAssetManager/Rules/Notes/NotesViewNav.js"
-                            }
-                        }
-                    ],
-                    "DataSubscriptions": ["MyWorkOrderTools", "MyWorkOrderToolLongTexts"],
-                    "_Type" : "Section.Type.SimplePropertyCollection"
+                    "_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderOperations/PRT/PRTNotesSection.fragment"
                 }
 			]
 		}

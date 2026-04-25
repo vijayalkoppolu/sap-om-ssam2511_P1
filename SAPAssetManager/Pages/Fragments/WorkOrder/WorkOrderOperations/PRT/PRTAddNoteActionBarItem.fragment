@@ -1,0 +1,7 @@
+{
+    "Position": "Right",
+    "_Name": "Add",
+    "Icon": "sap-icon://add",
+    "Caption": "$(L,add)",
+    "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTAddNotePopover.action"
+}

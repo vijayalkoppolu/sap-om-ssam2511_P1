@@ -1,7 +1,7 @@
 import IsMetadataParsingFeatureEnabled from './IsMetadataParsingFeatureEnabled';
 import FindPropertiesByAttribute from './FindPropertiesByAttribute';
 import FetchMetadata from './FetchMetadata';
-import ODataDate from '../Common/Date/ODataDate';
+import OffsetODataDate from '../Common/Date/OffsetODataDate';
 
 /*
    Modify the key value section by adding or hiding fields.
@@ -99,8 +99,8 @@ async function getVisibleCustomKeyValueFields(clientAPI, jsonString, binding) {
             let value = bindingObject[attributesObject.Name];
 
             if (attributesObject.Type === 'Edm.DateTime' && value !== '-') {
-                let odataDate = new ODataDate(value);
-                value = clientAPI.formatDate(odataDate.date());
+                let odataDate = new OffsetODataDate(clientAPI, value);
+                value = clientAPI.formatDatetime(odataDate.date());
             }
             
             keyValues.push({

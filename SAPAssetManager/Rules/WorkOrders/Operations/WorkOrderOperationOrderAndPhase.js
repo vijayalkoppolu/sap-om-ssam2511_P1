@@ -3,6 +3,10 @@ import Logger from '../../Log/Logger';
 
 export default async function WorkOrderOperationOrderAndPhase(context) {
     const binding = context.binding;
+    if (binding?.SubOperationNo) {
+        return '{OrderId} ({OperationNo})';
+    }
+
     const orderId = binding?.OrderId || '';
     const orderType = binding?.OrderType || binding?.WOHeader.OrderType || '';
 

@@ -30,5 +30,12 @@ export default async function FormAttachmentCreateSlug(clientAPI) {
     })
     .join(',');
 
-    return `${prefix},${headerstring}`;
+    let delimiter = ',';
+
+    // in the case of no keys in the base slug
+    if (prefix.endsWith(':')) {
+        delimiter = '';
+    }
+
+    return `${prefix}${delimiter}${headerstring}`;
 }

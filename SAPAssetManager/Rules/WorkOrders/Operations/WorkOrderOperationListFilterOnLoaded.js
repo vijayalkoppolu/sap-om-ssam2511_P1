@@ -25,11 +25,16 @@ export default function WorkOrderOperationListFilterOnLoaded(context) {
     let scheduledEarliestEndDateSwitch = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:ScheduledEarliestEndDateSwitch');
     let scheduledLatestStartDateSwitch = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:ScheduledLatestStartDateSwitch');
     let scheduledLatestEndDateSwitch = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:ScheduledLatestEndDateSwitch');
+    let startDueDateSwitch = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:StartDueDateSwitch');
+    let endDueDateSwitch = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:EndDueDateSwitch');
 
     const schedEarliestStartDate = FastFiltersHelper.getAppliedDateFilterValueFromContext(context, 'SchedEarliestStartDate');
     const schedEarliestEndDateFilter = FastFiltersHelper.getAppliedDateFilterValueFromContext(context, 'SchedEarliestEndDate');
     const schedLatestStartDateFilter = FastFiltersHelper.getAppliedDateFilterValueFromContext(context, 'SchedLatestStartDate');
     const schedLatestEndDateFilter = FastFiltersHelper.getAppliedDateFilterValueFromContext(context, 'SchedLatestEndDate');
+
+    const startDueDateFilter = FastFiltersHelper.getAppliedDateFilterValueFromContext(context, 'DisplayStartDateTime');
+    const endDueDateFilter = FastFiltersHelper.getAppliedDateFilterValueFromContext(context, 'DisplayEndDateTime');
 
     if (schedEarliestStartDate.length) {
         let startDateControl = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:ScheduledEarliestStartDateStartFilter');
@@ -79,6 +84,30 @@ export default function WorkOrderOperationListFilterOnLoaded(context) {
         endDateControl.setVisible(Boolean(schedLatestEndDateFilter));
     }
 
+    if (startDueDateFilter.length) {
+        let startDateControl = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:StartDueDateStartFilter');
+        let endDateControl = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:StartDueDateEndFilter');
+
+        startDueDateSwitch.setValue(Boolean(startDueDateFilter));
+        startDateControl.setValue(new Date(startDueDateFilter[0]));
+        endDateControl.setValue(new Date(startDueDateFilter[1]));
+
+        startDateControl.setVisible(Boolean(startDueDateFilter));
+        endDateControl.setVisible(Boolean(startDueDateFilter));
+    }
+
+    if (endDueDateFilter.length) {
+        let startDateControl = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:EndDueDateStartFilter');
+        let endDateControl = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:EndDueDateEndFilter');
+
+        endDueDateSwitch.setValue(Boolean(endDueDateFilter));
+        startDateControl.setValue(new Date(endDueDateFilter[0]));
+        endDateControl.setValue(new Date(endDueDateFilter[1]));
+
+        startDateControl.setVisible(Boolean(endDueDateFilter));
+        endDateControl.setVisible(Boolean(endDueDateFilter));
+    }
+
     if (clientData && clientData.predefinedStatus) {
         context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:MobileStatusFilter').setValue(clientData.predefinedStatus);
         clientData.predefinedStatus = '';
@@ -89,4 +118,3 @@ export default function WorkOrderOperationListFilterOnLoaded(context) {
         clientData.OperationFastFiltersClass.setFastFilterValuesToFilterPage(context);
     }
 }
-

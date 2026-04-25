@@ -7,7 +7,7 @@ import SubOperationChangeStatusOptions from '../../SubOperations/SubOperationCha
 import WorkOrderChangeStatusOptions from '../../WorkOrders/MobileStatus/WorkOrderChangeStatusOptions';
 
 export default function ToolbarGetStatusOptions(context) {
-    switch (context.binding['@odata.type']) {
+    switch (context?.binding?.['@odata.type']) {
         case '#sap_mobile.MyWorkOrderHeader':
             return WorkOrderChangeStatusOptions(context, context.binding, true);
         case '#sap_mobile.S4ServiceRequest':

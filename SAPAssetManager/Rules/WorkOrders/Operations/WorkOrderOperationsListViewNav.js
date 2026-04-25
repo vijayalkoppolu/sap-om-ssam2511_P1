@@ -6,3 +6,10 @@ export default function WorkOrderOperationsListViewNav(context) {
         context.getGlobalDefinition('/SAPAssetManager/Globals/Features/PMWorkOrder.global').getValue(),
         TelemetryLibrary.PAGE_TYPE_ITEM_LIST);
 }
+
+export function MyWorkOperationsListViewNav(context) {
+    return TelemetryLibrary.executeActionWithLogPageEvent(context,
+        '/SAPAssetManager/Actions/WorkOrders/Operations/MyWorkOperationsListViewNav.action',
+        context.getGlobalDefinition('/SAPAssetManager/Globals/Features/PMWorkOrder.global').getValue(),
+        TelemetryLibrary.PAGE_TYPE_ITEM_LIST);
+}

@@ -14,7 +14,7 @@ export default function WorkOrderTodayList(context) {
     } else {
         return libWO.dateOrdersFilter(context, defaultDates, 'ScheduledStartDate').then(dateFilter => {
             return WorkOrdersFSMQueryOption(context).then(types => {
-                const queryOptions = `$expand=OrderMobileStatus_Nav,WOPriority&$filter=${dateFilter} and ${types}&$top=2`;
+                const queryOptions = `$expand=OrderMobileStatus_Nav/OverallStatusCfg_Nav/OverallStatusSeq_Nav/NextOverallStatusCfg_Nav,WOPriority&$filter=${dateFilter} and ${types}&$top=2`;
                 return libWO.attachWorkOrdersFilterByAssgnTypeOrWCM(context, queryOptions);
             });
         });

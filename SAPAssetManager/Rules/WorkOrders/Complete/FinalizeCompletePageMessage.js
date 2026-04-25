@@ -32,7 +32,11 @@ export function checkMeterComponentBeforeCompletion(context, customBinding) {
         noStatusMessage = 'meter_action_has_not_been_performed_for_suboperation';
     }
     if (customBinding) {
-        title = `${context.localizeText('completion_operation_title')} - ${customBinding.OperationShortText} (${customBinding.OperationNo})`;
+        if (customBinding.SubOperationNo) {
+            title = `${context.localizeText('completion_sub_operation_title')} - ${customBinding.OperationShortText} (${customBinding.SubOperationNo})`;
+        } else {
+            title = `${context.localizeText('completion_operation_title')} - ${customBinding.OperationShortText} (${customBinding.OperationNo})`;
+        }
     }
 
     if (IsMeterComponentEnabled(context)) {

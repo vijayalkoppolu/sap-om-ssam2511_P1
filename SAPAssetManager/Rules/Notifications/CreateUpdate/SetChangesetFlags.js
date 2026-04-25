@@ -26,6 +26,12 @@ function notificationCreateOrItemAdd(context, notificationResults) {
             context.setActionBinding(actionBinding);
             common.setOnChangesetFlag(context, true);
             return context.executeAction('/SAPAssetManager/Actions/Notifications/CreateUpdate/NotificationQMCreateChangeSet.action').then(() => {
+                if (context.binding && context.binding['@odata.type'] === '#sap_mobile.InspectionCharacteristic') {
+                    const recordResultPage = context.evaluateTargetPathForAPI('#Page:-Previous');
+                    const recordedDefects = recordResultPage.getClientData().RecordedDefects || [];
+                    recordedDefects.push(`MyNotificationHeaders('${newNotificationID}')`);
+                    recordResultPage.getClientData().RecordedDefects = recordedDefects;
+                }
                 return context.executeAction('/SAPAssetManager/Rules/Common/ChangeSet/ChangeSetOnSuccess.js');
             });
         });

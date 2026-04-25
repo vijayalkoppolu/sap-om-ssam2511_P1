@@ -9,7 +9,7 @@ export default function WorkOrderOperationIsFinalConfirmation(context) {
   }
 
   let operations = libCom.getStateVariable(context, 'OperationsToConfirm');
-  let finalConfirmation = operations.find(operation => operation.OrderID === context.binding.OrderId && operation.Operation === context.binding.OperationNo).FinalConfirmation;
+  let finalConfirmation = operations.find(operation => operation.OrderID === context.binding.OrderId && operation.Operation === context.binding.OperationNo && operation.SubOperationNo === context.binding.SubOperationNo).FinalConfirmation;
   if (finalConfirmation) {
     return context.localizeText('final_confirmation');
   } else {

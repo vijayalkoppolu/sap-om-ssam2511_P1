@@ -20,7 +20,7 @@
             }
         ]
     },
-    "Caption":"/SAPAssetManager/Rules/EWM/Fetch/GetPageCaption.js",
+    "Caption": "$(L, fetch_results)",
     "Controls":
     [{
         "Sections":

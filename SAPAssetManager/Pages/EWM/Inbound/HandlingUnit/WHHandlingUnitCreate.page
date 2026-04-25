@@ -82,6 +82,8 @@
 							"KeyboardType": "Number",
 							"Value": "1",
 							"OnValueChange": "/SAPAssetManager/Rules/EWM/Inbound/Items/HandlingUnit/WHHandlingUnitCreateQtyChange.js",
+							"IsEditable": "/SAPAssetManager/Rules/EWM/Inbound/Items/HandlingUnit/IsHUCountEditable.js",
+							"HelperText": "/SAPAssetManager/Rules/EWM/Inbound/Items/HandlingUnit/WHHandlingUnitQtyHelperText.js",
 							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "NumberOfHUs"
 						},

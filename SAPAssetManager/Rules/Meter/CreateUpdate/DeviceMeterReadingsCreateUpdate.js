@@ -129,16 +129,6 @@ export default function DeviceMeterReadingsCreateUpdate(context) {
                 const meterReadingDocID = String(new Date().getTime()) + '_' + sectionBinding.RegisterNum;
                 const DocID = 'LOCAL_' + meterReadingDocID.substring(meterReadingDocID.length - 10);
 
-                const readingTransactionMdoHeader = (() => {
-                    let meterTransactionType = libMeter.getMeterTransactionType(context);
-                    if (meterTransactionType.startsWith('INSTALL') || meterTransactionType.startsWith('REMOVE') || meterTransactionType.startsWith('REPLACE') || meterTransactionType.startsWith('REP_INST')) {
-                        return context.getGlobalDefinition('/SAPAssetManager/Globals/Meter/DeviceOmdoID.global').getValue();
-                    } else if (meterTransactionType.startsWith('PERIODIC')) {
-                        return context.getGlobalDefinition('/SAPAssetManager/Globals/Meter/MeterReadingPeriodicOmdoID.global').getValue();
-                    }
-                    return context.getGlobalDefinition('/SAPAssetManager/Globals/Meter/MeterReadingOmdoID.global').getValue();
-                })();
-
                 const peakDateValue = (() => {
                     let date = null;
                     if (isPeakReading) {
@@ -241,7 +231,7 @@ export default function DeviceMeterReadingsCreateUpdate(context) {
                             {
                                 'OfflineOData.RemoveAfterUpload': '/SAPAssetManager/Rules/Common/RemoveAfterUploadValue.js',
                                 'OfflineOData.TransactionID': context.binding.BatchEquipmentNum,
-                                'transaction.omdo_id': readingTransactionMdoHeader,
+                                'transaction.omdo_id': '/SAPAssetManager/Rules/Meter/Reading/ReadingTransactionMdoHeader.js',
                             },
                             'CreateLinks':
                             [{

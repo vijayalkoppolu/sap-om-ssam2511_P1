@@ -72,7 +72,7 @@
                         "Icons": "/SAPAssetManager/Rules/Operations/OperationsListViewIconImages.js",
                         "AccessoryType": "DisclosureIndicator",
                         "Title": "{{#Property:OperationShortText}} ({{#Property:OperationNo}})",
-                        "Footnote": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderDueDate.js",
+                        "Footnote": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationDueDate.js",
                         "OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/WorkOrderOperationDetailsNav.js",
                         "Subhead": "{OrderId}",
                         "StatusText": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsListViewFormat.js"

@@ -1,3 +1,4 @@
+import ODataDate from '../../Common/Date/ODataDate';
 import libVal from '../../Common/Library/ValidationLibrary';
 
 export default function CharacteristicValueFrom(context) {
@@ -14,6 +15,10 @@ export default function CharacteristicValueFrom(context) {
         if (value.includes(',')) {
             return value.replace(',', '.');
         }
+    } else if (dataType === 'TIME' && value) {
+        let timeStamp = ODataDate.fromTimestamp(value, context);
+        value = timeStamp.toLocalTimeString(context).replace(/:/g,'');
     }
+
     return value;
 }

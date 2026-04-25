@@ -1,6 +1,5 @@
 import { GetIBDSerialNumbers } from './IBDSerialNumberLib';
 import Logger from '../../../../Log/Logger';
-import CommonLibrary from '../../../../Common/Library/CommonLibrary';
 
 export default function IBDSerialNumberDeleteEntity(context) {
     
@@ -36,7 +35,6 @@ export default function IBDSerialNumberDeleteEntity(context) {
             });
             return Promise.all(promises).then(result => { 
                 Logger.debug(result);
-                CommonLibrary.setStateVariable(context, 'IBDSerialsChanged', true);
                 return Promise.resolve(result);
             }).catch(error => { 
                 Logger.error('InboundDeliveryItemSerialNumberDelete', error); 

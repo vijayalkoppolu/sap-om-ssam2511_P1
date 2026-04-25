@@ -41,6 +41,7 @@ import { OperationLibrary as libOperations } from '../../WorkOrders/Operations/W
 import libConfirm from '../../ConfirmationScenarios/ConfirmationScenariosLibrary';
 import FindSplitForCurrentTechnician from '../../WorkOrders/Operations/FindSplitForCurrentTechnician';
 import FindAllSplitsForOperation from '../../WorkOrders/Operations/FindAllSplitsForOperation';
+import IsPhaseModelEnabled from '../../Common/IsPhaseModelEnabled';
 
 export default class {
 
@@ -1112,7 +1113,7 @@ export default class {
         const userId = libCommon.getSapUserName(context);
         let startedStatus = libCommon.getAppParam(context, 'MOBILESTATUS', context.getGlobalDefinition('/SAPAssetManager/Globals/MobileStatus/ParameterNames/StartParameterName.global').getValue());
         let queryOption = "$expand=OperationMobileStatus_Nav&$filter=OperationMobileStatus_Nav/MobileStatus eq '" + startedStatus + "'";
-        if (libClock.isCICOEnabled(context)) {
+        if (libClock.isCICOEnabled(context) || IsPhaseModelEnabled(context)) {
             queryOption += " and OperationMobileStatus_Nav/CreateUserId eq '" + userId + "'"; //Only find operations that we started
         }
         if (EnableFieldServiceTechnician(context)) {

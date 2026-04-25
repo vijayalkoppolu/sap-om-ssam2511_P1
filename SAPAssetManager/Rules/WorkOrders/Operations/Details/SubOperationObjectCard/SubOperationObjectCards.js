@@ -2,7 +2,6 @@ import CommonLibrary from '../../../../Common/Library/CommonLibrary';
 import MobileStatusLibrary from '../../../../MobileStatus/MobileStatusLibrary';
 import { NoteLibrary } from '../../../../Notes/NoteLibrary';
 import PersonaLibrary from '../../../../Persona/PersonaLibrary';
-import SubOperationMobileStatusLibrary from '../../../../SubOperations/MobileStatus/SubOperationMobileStatusLibrary';
 import { SubOperationUpdate } from '../../../../SubOperations/SubOperationUpdateNav';
 import SubOperationsListViewQueryOption from '../../../../SubOperations/SubOperationsListViewQueryOption';
 import EnableNotificationCreate from '../../../../UserAuthorizations/Notifications/EnableNotificationCreate';
@@ -174,12 +173,6 @@ export class SubOperationObjectCards {
         ]).then(([isSubOpAssnmnt, confirmableSuboperation]) => {
             return !isSubOpAssnmnt && (0 < confirmableSuboperation.length);
         });
-    }
-
-    /** @param {IPageProxy & {binding: MyWorkOrderOperation}} context  */
-    static SubOperationsConfirmAllOnPress(context) {
-        return SubOperationObjectCards._GetSubOperationsConfirmableSuboperations(context, context.getPageProxy().binding)
-            .then(subOperationsToConfirm => SubOperationMobileStatusLibrary.completeSubOperations(context, subOperationsToConfirm));
     }
 
     /** @returns {Promise<MyWorkOrderSubOperation[]>} */

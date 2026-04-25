@@ -124,6 +124,12 @@
         },
         {
             "Controls": [
+                "/SAPAssetManager/Pages/Fragments/Filter/FunctionalLocationFilterListPkr.fragment",
+                "/SAPAssetManager/Pages/Fragments/Filter/EquipmentFilterListPkr.fragment"
+            ]
+        },
+        {
+            "Controls": [
                 {
                     "_Type": "Control.Type.FormCell.Switch",
                     "_Name": "RequestStartDateSwitch",

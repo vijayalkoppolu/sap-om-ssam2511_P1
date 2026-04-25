@@ -95,6 +95,9 @@
                     "_Type": "Fragment",
                     "Fragment": "/SAPAssetManager/Pages/Fragments/Equipment/ObjectTableSection.fragment",
                     "Properties": {
+                        "Header": {
+                            "UseTopPadding": true
+                        },
                         "ObjectCell": {
                             "PreserveIconStackSpacing": true,
                             "StatusText": ""

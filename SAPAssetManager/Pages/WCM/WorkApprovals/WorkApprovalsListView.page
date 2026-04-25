@@ -1,6 +1,7 @@
 {
 	"Caption": "$(L,wcm_work_approvals)",
 	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnReturning.js",
 	"ActionBar":
 	{
 		"Items": [

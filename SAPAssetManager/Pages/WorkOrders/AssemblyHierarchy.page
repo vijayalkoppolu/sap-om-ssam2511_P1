@@ -37,7 +37,7 @@
 							]
 						},
 						"OnPress": {
-							"Action": "",
+							"Action": "/SAPAssetManager/Actions/WorkOrders/AssemblyDetailsNav.action",
 							"Target": {
 								"EntitySet": "Materials",
 								"Service": "/SAPAssetManager/Services/AssetManager.service",

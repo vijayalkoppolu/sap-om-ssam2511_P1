@@ -1,17 +1,15 @@
 {
 	"_Type": "Action.Type.ODataService.CreateEntity",
-	"Target":{
+	"Target": {
 		"Service": "/SAPAssetManager/Services/OnlineAssetManager.service",
-		"EntitySet":"TOTPDevices"
+		"EntitySet": "TOTPDevices"
 	},
-	 "Properties":
-    {
+	"Properties": {
         "DeviceId": "0"
     },
-	"ActionResult":{
+	"ActionResult": {
 		"_Name": "result"
 	},
 	"ShowActivityIndicator": true,
-	"OnSuccess":"/SAPAssetManager/Rules/DigitalSignature/CreateSignatureSuccess.js",
 	"OnFailure":"/SAPAssetManager/Actions/OData/DigitalSignature/CreateSignatureFailure.action"
 }

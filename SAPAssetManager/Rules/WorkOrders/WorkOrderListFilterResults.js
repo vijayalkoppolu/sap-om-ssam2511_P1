@@ -4,6 +4,7 @@ import phaseFilterResult from '../PhaseModel/PhaseModelFilterPickerResult';
 import IsPhaseModelEnabled from '../Common/IsPhaseModelEnabled';
 import PhaseLibrary from '../PhaseModel/PhaseLibrary';
 import FilterLibrary from '../Filter/FilterLibrary';
+import EnableTechObjectsFacet from '../SideDrawer/EnableTechObjectsFacet';
 
 const cachedWorkOrderListFilterResults = (context) => FilterLibrary.cacheFilterResultIntoClientData(context, WorkOrderListFilterResults);
 export default cachedWorkOrderListFilterResults;
@@ -49,6 +50,16 @@ function GetWorkOrderListFilterCriteria(context, saveToClientData = false) {
 
         PhaseLibrary.addPhaseControlFilterResult(context, 'WorkOrderFilterPage', filterResults);
         PhaseLibrary.addPhaseControlKeyFilterResult(context, 'WorkOrderFilterPage', filterResults);
+    }
+
+    if (EnableTechObjectsFacet(context)) {
+        const flocResult = context.evaluateTargetPath('#Page:WorkOrderFilterPage/#Control:FunctionalLocationFilter/#FilterValue');
+        const formattedFlocResult = FilterLibrary.formatObjectCellListPickerDisplayFilterResult(flocResult);
+        filterResults.push(formattedFlocResult);
+
+        const equipmentResult = context.evaluateTargetPath('#Page:WorkOrderFilterPage/#Control:EquipmentFilter/#FilterValue');
+        const formattedEquipmentResult = FilterLibrary.formatObjectCellListPickerDisplayFilterResult(equipmentResult);
+        filterResults.push(formattedEquipmentResult);
     }
 
     const {
@@ -142,15 +153,14 @@ function GetDateFilterProps(context, switchCtrlName, startCtrlName, endCtrlName,
         let sdate = (libCom.isDefined(startDate)) ? new Date(startDate) : new Date();
         sdate.setHours(0, 0, 0, 0);
         let odataStartDate = new ODataDate(sdate);
-        let odataBackendStartDate = odataStartDate.toDBDateString(context);
+        let odataBackendStartDate = odataStartDate.toLocalDateTimeString();
 
 
         let endDate = libCom.getFieldValue(context, endCtrlName);
         let edate = (libCom.isDefined(endDate)) ? new Date(endDate) : new Date();
         edate.setHours(23, 59, 59);
         let odataEndDate = new ODataDate(edate);
-        let odataBackendEndDate = odataEndDate.toDBDateString(context);
-        odataBackendEndDate = odataBackendEndDate.substring(0, 10) + 'T23:59:59';
+        let odataBackendEndDate = odataEndDate.toLocalDateTimeString();
 
         let dateFilter = [`${filterProp} ge datetime'${odataBackendStartDate}' and ${filterProp} le datetime'${odataBackendEndDate}'`];
         let dateFilterResult = context.createFilterCriteria(context.filterTypeEnum.Filter, undefined, undefined, dateFilter, true, fastFilterLabel, [`${context.formatDatetime(sdate)} - ${context.formatDatetime(edate)}`]);
@@ -158,8 +168,8 @@ function GetDateFilterProps(context, switchCtrlName, startCtrlName, endCtrlName,
         return {
             dateFilterResult,
             dateSwitch: dateSwitch.getValue(),
-            startDate: odataStartDate.toLocalDateString(),
-            endDate: odataEndDate.toLocalDateString().substring(0, 10) + 'T23:59:59',
+            startDate: odataBackendStartDate,
+            endDate: odataBackendEndDate,
         };
     }
 

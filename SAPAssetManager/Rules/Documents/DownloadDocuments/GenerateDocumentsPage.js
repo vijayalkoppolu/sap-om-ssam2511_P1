@@ -34,6 +34,7 @@ export default async function GenerateDocumentsPage(clientAPI) {
                     'Title': '/SAPAssetManager/Rules/Documents/DocumentFileName.js',
                     'Subhead': '/SAPAssetManager/Rules/Documents/DocumentDescription.js',
                     'StatusText': '/SAPAssetManager/Rules/Documents/DocumentFileSizeWrapper.js',
+                    'SubstatusText': '/SAPAssetManager/Rules/Documents/DownloadDocumentsCellSubstatusText.js',
                     'Selected': '/SAPAssetManager/Rules/Documents/DownloadDocuments/DownloadDocumentsCellSelected.js',
                 },
                 'Target': `{documentsList/${index}/documents}`,
@@ -110,6 +111,9 @@ async function generateSectionCaption(clientAPI, documentSectionInfo) {
             params.unshift(id);
             break;
         }
+        case 'PRT': 
+            key = 'prt_documents_section_title_x';
+            break;
         default: break;
     }
 

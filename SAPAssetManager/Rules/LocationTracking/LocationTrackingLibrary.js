@@ -12,7 +12,7 @@ import ApplicationSettings from '../Common/Library/ApplicationSettings';
 import isAndroid from '../Common/IsAndroid';
 import { LocationServiceManager } from 'extension-LocationService';
 import IsS4ServiceIntegrationEnabled from '../ServiceOrders/IsS4ServiceIntegrationEnabled';
-import AppVersionInfo from '../UserProfile/AppVersionInfo';
+import GetMdoId from '../UserProfile/GetMdoId';
 
 export default class LocationTrackingLibrary {
 
@@ -198,7 +198,7 @@ export default class LocationTrackingLibrary {
         return Promise.resolve();
     }
 
-    static createLocationEntitySet(context, service, geoValue) {
+    static async createLocationEntitySet(context, service, geoValue) {
         let userGUID = libCommon.getUserGuid(context);
         let headers = {
             'OfflineOData.NonMergeable': true,
@@ -206,12 +206,11 @@ export default class LocationTrackingLibrary {
         if (libFeature.isFeatureEnabled(context,
             context.getGlobalDefinition('/SAPAssetManager/Globals/Features/FSMIntegration.global').getValue())) {
                 if (IsS4ServiceIntegrationEnabled(context)) {
-                    const s4OmdoId = context.getGlobalDefinition('/SAPAssetManager/Globals/Features/GeolocationFSMS4.global').getValue();
-                    if (s4OmdoId) {
-                        headers['transaction.omdo_id'] = s4OmdoId.replace('XX', `SAM${AppVersionInfo(context).split('.')[0]}`);
-                    }
+                    const s4OmdoId = await GetMdoId(context, context.getGlobalDefinition('/SAPAssetManager/Globals/Features/GeolocationFSMS4.global').getValue());
+                    headers['transaction.omdo_id'] = s4OmdoId;
                 } else {
-                    headers['transaction.omdo_id'] = context.getGlobalDefinition('/SAPAssetManager/Globals/Features/GeolocationFSM.global').getValue();
+                    const omdoId = await GetMdoId(context, context.getGlobalDefinition('/SAPAssetManager/Globals/Features/GeolocationFSM.global').getValue());
+                    headers['transaction.omdo_id'] = omdoId;
                 }
         }
         return context.executeAction({'Name': '/SAPAssetManager/Actions/LocationTracking/LocationCreate.action', 'Properties': {

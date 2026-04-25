@@ -28,7 +28,7 @@
             "Controls": [{
                 "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/MultiSortByFilter.fragment",
-				"Properties": {
+                "Properties": {
                     "Items": [
                         {
                             "ReturnValue":"OperationShortText",
@@ -54,9 +54,19 @@
                             "ReturnValue":"SchedLatestEndDate,SchedLatestEndTime",
                             "DisplayValue":"$(L,scheduled_latest_end_date)",
                             "Name": "SchedLatestEndDate"
+                        },
+                        {
+                            "ReturnValue":"DisplayStartDateTime",
+                            "DisplayValue":"$(L,sched_start)",
+                            "Name": "DisplayStartDate"
+                        },
+                        {
+                            "ReturnValue":"DisplayEndDateTime",
+                            "DisplayValue":"$(L,sched_end)",
+                            "Name": "DisplayEndDate"
                         }
                     ]
-				}
+                }
             }]
         },
         {
@@ -64,27 +74,28 @@
             [{
                 "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/FilterByFilter.fragment",
-				"Properties": {
+                "Properties": {
                     "_Name": "MyOperationsFilter",
                     "FilterProperty":"/SAPAssetManager/Rules/WorkOrders/WorkOrderMyOperationsFilter.js",
                     "IsVisible" : "/SAPAssetManager/Rules/WorkOrders/WorkOrderMyOperationsFilterVisible.js"
-				}
+                }
             },
             {
                 "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/AssignedToFilterListPkr.fragment",
-				"Properties": {
+                "Properties": {
                     "_Name": "AssignmentFilter",
                     "PickerItems": "/SAPAssetManager/Rules/Supervisor/Assign/UserRolesFilterListPickerItems.js",
                     "FilterProperty": "PersonNum",
                     "IsVisible" : "/SAPAssetManager/Rules/Supervisor/isSupervisorFeatureEnabled.js"
-				}
+                }
             },
             {
                 "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/MobileStatusFilter.fragment",
                 "Properties": {
-                    "FilterProperty":"/SAPAssetManager/Rules/WorkOrders/WorkOrderOperationMobileStatusFilter.js"
+                    "FilterProperty":"/SAPAssetManager/Rules/WorkOrders/WorkOrderOperationMobileStatusFilter.js",
+                    "IsVisible": "/SAPAssetManager/Rules/WorkOrders/Operations/IsOperationLevelAssigmentType.js"
                 }
             },
             {
@@ -105,17 +116,9 @@
             {
                 "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/TypeFilter.fragment",
-				"Properties": {
+                "Properties": {
                     "Value": "{OrderType}",
-                    "PickerItems": {
-                        "DisplayValue": "{{#Property:OrderType}} - {{#Property:OrderTypeDesc}}",
-                        "ReturnValue": "{OrderType}",
-                        "Target": {
-                            "EntitySet": "OrderTypes",
-                            "Service": "/SAPAssetManager/Services/AssetManager.service",
-                            "QueryOptions": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderTypesPickerItems.js"
-                        }
-                    },
+                    "PickerItems": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderTypePickerItems.js",
                     "OnValueChange": "/SAPAssetManager/Rules/WorkOrders/Operations/Filter/WorkOrderOperationsTypeValueChanged.js",
                     "FilterProperty": "WOHeader/OrderType"
                 }
@@ -123,14 +126,14 @@
             {
                 "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/PhaseFilter.fragment",
-				"Properties": {
+                "Properties": {
                     "PickerItems": "/SAPAssetManager/Rules/WorkOrders/WorkOrderOperationPhaseModelFilterPickerItems.js"
-				}
+                }
             },
             {
                 "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/PhaseControlFilter.fragment",
-				"Properties": {
+                "Properties": {
                     "PickerItems": {
                         "DisplayValue": "{PhaseControl} - {Description}",
                         "ReturnValue": "{PhaseControl}",
@@ -140,9 +143,27 @@
                             "QueryOptions": "/SAPAssetManager/Rules/WorkOrders/Operations/Filter/PhaseControlCodesQueryOptions.js"
                         }
                     }
-				}
+                }
             },
             "/SAPAssetManager/Pages/Fragments/Filter/PhaseControlKeyFilter.fragment"
+            ]
+        },
+        {
+            "Controls": [
+                {
+                    "_Type": "Fragment",
+                    "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/FunctionalLocationFilterListPkr.fragment",
+                    "Properties": {
+                        "FilterProperty": "OperationFunctionLocation"
+                    }
+                },
+                {
+                    "_Type": "Fragment",
+                    "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/EquipmentFilterListPkr.fragment",
+                    "Properties": {
+                        "FilterProperty": "OperationEquipment"
+                    }
+                }
             ]
         },
         {
@@ -252,7 +273,62 @@
                     "OnValueChange": "/SAPAssetManager/Rules/Filter/RedrawFilterToolbar.js"
                 }
             ]
-        }],
+        },
+        {
+            "Controls": [
+                {
+                    "_Type": "Control.Type.FormCell.Switch",
+                    "_Name": "StartDueDateSwitch",
+                    "Caption":"$(L,sched_start)",
+                    "Value": false,
+                    "OnValueChange": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationStartDueDateFilter.js"
+                },
+                {
+                    "_Type": "Control.Type.FormCell.DatePicker",
+                    "_Name": "StartDueDateStartFilter",
+                    "Caption": "$(L,from)",
+                    "Mode": "Datetime",
+                    "IsVisible": false,
+                    "OnValueChange": "/SAPAssetManager/Rules/Filter/RedrawFilterToolbar.js"
+                },
+                {
+                    "_Type": "Control.Type.FormCell.DatePicker",
+                    "_Name": "StartDueDateEndFilter",
+                    "Caption": "$(L,to)",
+                    "Mode": "Datetime",
+                    "IsVisible": false,
+                    "OnValueChange": "/SAPAssetManager/Rules/Filter/RedrawFilterToolbar.js"
+                }
+            ]
+        },
+        {
+            "Controls": [
+                {
+                    "_Type": "Control.Type.FormCell.Switch",
+                    "_Name": "EndDueDateSwitch",
+                    "Caption":"$(L,sched_end)",
+                    "Value": false,
+                    "OnValueChange": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationEndDueDateFilter.js"
+                },
+                {
+                    "_Type": "Control.Type.FormCell.DatePicker",
+                    "_Name": "EndDueDateStartFilter",
+                    "Caption": "$(L,from)",
+                    "Mode": "Datetime",
+                    "IsVisible": false,
+                    "OnValueChange": "/SAPAssetManager/Rules/Filter/RedrawFilterToolbar.js"
+                },
+                {
+                    "_Type": "Control.Type.FormCell.DatePicker",
+                    "_Name": "EndDueDateEndFilter",
+                    "Caption": "$(L,to)",
+                    "Mode": "Datetime",
+                    "IsVisible": false,
+                    "OnValueChange": "/SAPAssetManager/Rules/Filter/RedrawFilterToolbar.js"
+                }
+            ]
+        }
+        ],
         "_Name":"FormCellContainer",
         "_Type":"Control.Type.FormCellContainer"
     }],
@@ -261,12 +337,12 @@
         "_Type": "Control.Type.FioriToolbar",
         "Items": [
             {
-				"_Type": "Fragment",
+                "_Type": "Fragment",
                 "Fragment": "/SAPAssetManager/Pages/Fragments/Filter/ResetFilterToolbarItem.fragment",
-				"Properties": {
+                "Properties": {
                    "OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationListFilterReset.js"
-				}
-			}
+                }
+            }
         ]
     },
     "_Type":"Page",

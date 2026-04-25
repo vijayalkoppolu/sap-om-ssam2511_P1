@@ -19,12 +19,11 @@ export default function AddAnotherPurchaseRequisitionItemNav(context) {
 		return context.read('/SAPAssetManager/Services/AssetManager.service', `PurchaseRequisitionItems(PurchaseReqNo='${headerId}',PurchaseReqItemNo='${itemId}')`, [], '').then(result => {
 			if (result && result.length) {
 				let item = result.getItem(0);
-				// material, batch, quantity must not be filled
-				item.Material = '';
-				item.ItemQuantity = '';
-				item.Batch = '';
-				item.ValuationPrice = '';
-				item.Currency = '';
+				// these fields must not be filled
+				const propertiesToReset = ['Material', 'ItemQuantity', 'Batch', 'ValuationPrice', 'ValuationPriceUnit', 'PurchaseGroup', 'Currency'];
+				propertiesToReset.forEach(property => {
+					item[property] = '';
+				});
 				context.getPageProxy().setActionBinding(item);
 			}
 

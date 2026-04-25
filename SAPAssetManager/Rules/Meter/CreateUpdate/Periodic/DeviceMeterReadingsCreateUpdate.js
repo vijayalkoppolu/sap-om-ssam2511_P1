@@ -1,6 +1,5 @@
 import {FDCSectionHelper} from '../../../FDC/DynamicPageGenerator';
 import localization from '../../../Common/Library/LocalizationLibrary';
-import libMeter from '../../Common/MeterLibrary';
 import libCommon from '../../../Common/Library/CommonLibrary';
 import libVal from '../../../Common/Library/ValidationLibrary';
 import libTelemetry from '../../../Extensions/EventLoggers/Telemetry/TelemetryLibrary';
@@ -97,16 +96,6 @@ export default function DeviceMeterReadingsCreateUpdate(context) {
 
                 const reading = localization.toNumber(context, section.getControl('ReadingValue').getValue(), '', false);
 
-                const readingTransactionMdoHeader = (() => {
-                    let meterTransactionType = libMeter.getMeterTransactionType(context);
-                    if (meterTransactionType.startsWith('INSTALL') || meterTransactionType.startsWith('REMOVE') || meterTransactionType.startsWith('REPLACE') || meterTransactionType.startsWith('REP_INST')) {
-                        return context.getGlobalDefinition('/SAPAssetManager/Globals/Meter/DeviceOmdoID.global').getValue();
-                    } else if (meterTransactionType.startsWith('PERIODIC')) {
-                        return context.getGlobalDefinition('/SAPAssetManager/Globals/Meter/MeterReadingPeriodicOmdoID.global').getValue();
-                    }
-                    return context.getGlobalDefinition('/SAPAssetManager/Globals/Meter/MeterReadingOmdoID.global').getValue();
-                })();
-
                 const peakDateValue = (() => {
                     let date = null;
                     if (isPeakReading) {
@@ -164,7 +153,7 @@ export default function DeviceMeterReadingsCreateUpdate(context) {
                     'Headers':
                     {
                         'OfflineOData.TransactionID': equipmentNum,
-                        'transaction.omdo_id': readingTransactionMdoHeader,
+                        'transaction.omdo_id': '/SAPAssetManager/Rules/Meter/Reading/ReadingTransactionMdoHeader.js',
                     },
                     'RequestOptions': {
                         'UpdateMode': 'Replace',

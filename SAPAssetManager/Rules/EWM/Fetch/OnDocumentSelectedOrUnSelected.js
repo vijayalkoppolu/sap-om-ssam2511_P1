@@ -5,8 +5,8 @@
 import libCom from '../../Common/Library/CommonLibrary';
 import libVal from '../../Common/Library/ValidationLibrary';
 import { DocumentTypes,EWMType } from '../Common/EWMLibrary';
-export default function OnDocumentSelectedOrUnSelected(context) {
 
+export default function OnDocumentSelectedOrUnSelected(context) {
     const documentType = libCom.getListPickerValue(context.evaluateTargetPath('#Page:EWMFetchDocumentsPage/#Control:DocumentTypeListPicker').getValue());
     const documentSection = {
         WHO : 'EWMOrderOnlineDocumentsListViewSection',

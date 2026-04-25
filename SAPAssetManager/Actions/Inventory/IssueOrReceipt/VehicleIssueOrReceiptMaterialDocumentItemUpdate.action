@@ -16,7 +16,8 @@
         "Batch": "#ClientData/#Property:TempLine_Batch",
         "MovePlant": "#ClientData/#Property:TempLine_ToPlant",
         "MoveStorageLocation": "#ClientData/#Property:TempLine_ToStorageLocation",
-        "MoveBatch": "#ClientData/#Property:TempLine_ToBatch"
+        "MoveBatch": "#ClientData/#Property:TempLine_ToBatch",
+        "ValuationType": "#ClientData/#Property:TempLine_ValuationType"
     },
     "RequestOptions": {
         "UpdateMode": "Replace"

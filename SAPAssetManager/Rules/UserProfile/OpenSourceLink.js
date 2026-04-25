@@ -12,5 +12,5 @@ export default function OpenSourceLink(clientAPI) {
     } else {
         url = clientAPI.getGlobalDefinition('/SAPAssetManager/Globals/OslnIOS.global').getValue();
     }
-    return URLModuleLibrary.openUrl(url);
+    return URLModuleLibrary.openUrl(clientAPI, url);
 }

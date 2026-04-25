@@ -181,6 +181,25 @@ export default class FastFilters {
 
         this._setTimeFilterValuesToClientData(context, fastFilters, clientData);
 
+        // Handle default descending sort on operations list for scheduled start.
+        // Match by property name and down-arrow in display value
+        if (CommonLibrary.getPageName(context) === 'WorkOrderOperationsFilterPage') {
+            const hasDefaultSchedStartSort = fastFilters.some(filter => {
+                if (!Array.isArray(filter.filterItems) || !Array.isArray(filter.filterItemsDisplayValue)) {
+                    return false;
+                }
+                const idx = filter.filterItems.indexOf('DisplayStartDateTime'); //Look for our target sort filter
+                const displayValue = idx >= 0 ? filter.filterItemsDisplayValue[idx] : undefined;
+                return typeof displayValue === 'string' && displayValue.includes('▼'); //Check to see if it is set for descending
+            });
+            if (hasDefaultSchedStartSort) {
+                const sorter = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:SortFilter/#Value');
+                if (sorter?.filterItemsDisplayValue?.[0]) {
+                    sorter.filterItemsDisplayValue[0].ascending = false; // Match default fast filter's descending sort
+                }
+            }
+        }
+
         let formCellContainer = context.getControl('FormCellContainer');
         formCellContainer.redraw();
     }

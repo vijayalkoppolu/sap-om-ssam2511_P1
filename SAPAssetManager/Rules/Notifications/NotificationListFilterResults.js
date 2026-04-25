@@ -4,6 +4,7 @@ import ODataDate from '../Common/Date/ODataDate';
 import phaseFilterResult from '../PhaseModel/PhaseModelFilterPickerResult';
 import IsPhaseModelEnabled from '../Common/IsPhaseModelEnabled';
 import FilterLibrary from '../Filter/FilterLibrary';
+import EnableTechObjectsFacet from '../SideDrawer/EnableTechObjectsFacet';
 
 const cachedNotificationListFilterResults = (context) => FilterLibrary.cacheFilterResultIntoClientData(context, NotificationListFilterResults);
 export default cachedNotificationListFilterResults;
@@ -43,6 +44,16 @@ function GetNotificationListFilterCriteria(context, dateFilter = null) {
         if (result) {
             filterResults.push(result);
         }
+    }
+
+    if (EnableTechObjectsFacet(context)) {
+        const flocResult = context.evaluateTargetPath('#Page:NotificationFilterPage/#Control:FunctionalLocationFilter/#FilterValue');
+        const formattedFlocResult = FilterLibrary.formatObjectCellListPickerDisplayFilterResult(flocResult);
+        filterResults.push(formattedFlocResult);
+
+        const equipmentResult = context.evaluateTargetPath('#Page:NotificationFilterPage/#Control:EquipmentFilter/#FilterValue');
+        const formattedEquipmentResult = FilterLibrary.formatObjectCellListPickerDisplayFilterResult(equipmentResult);
+        filterResults.push(formattedEquipmentResult);
     }
 
     if (!dateFilter) {

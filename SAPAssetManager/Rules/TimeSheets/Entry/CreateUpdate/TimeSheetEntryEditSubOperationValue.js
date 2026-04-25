@@ -1,5 +1,9 @@
   
 export default function TimeSheetEntryEditSubOperationValue(context) {
+    if (context.binding?.SubOperationReadlink) {
+        return Promise.resolve(context.binding.SubOperationReadlink);
+    }
+
     return context.read('/SAPAssetManager/Services/AssetManager.service', context.binding['@odata.readLink'] + '/MyWOSubOperation', [], '').then(function(results) {
         let target = context.getTargetSpecifier();
         target.setDisplayValue('{{#Property:SubOperationNo}} - {{#Property:OperationShortText}}');

@@ -2,8 +2,37 @@ import { ValidateSerialQuantity } from './SerialNumber/IBDSerialNumberLib';
 import CommonLibrary from '../../../Common/Library/CommonLibrary';
 import libVal from '../../../Common/Library/ValidationLibrary';
 
+export default async function OnPressSingleEditDoneButton(context, pageProxy = context.getPageProxy?.() || context, binding = pageProxy.getBindingObject()) {
+  
 
-export default async function OnPressSingleEditDoneButton(context, pageProxy = (context.getPageProxy?.() || context), binding = pageProxy.binding) {
+  const formCellSection = pageProxy.getControl('EditInboundDeliveryTable');
+  const quantityCtrl = formCellSection.getControl('QuantityInput');
+
+  const validationFlag = validateEditScreen(context, pageProxy, binding);
+  if (validationFlag === 'quantity') {
+    return context.executeAction('/SAPAssetManager/Actions/EWM/Inbound/Validation/QuantityErrorMessage.action');
+  } else if (validationFlag === 'noChanges') {
+    return context.executeAction('/SAPAssetManager/Actions/Page/ClosePage.action');
+  }
+
+  if (binding.Serialized) {
+    const isValid = await ValidateSerialQuantity(context);
+    if (!isValid) {
+      CommonLibrary.executeInlineControlError(context, quantityCtrl, context.localizeText('quantity_validation'));
+      return null;
+    }
+    return context.executeAction('/SAPAssetManager/Actions/EWM/Inbound/IBDSaveEditSingleItemCS.action').then(() => {
+      CommonLibrary.setStateVariable(context, 'IBDSerialsChanged', false);
+      return context.executeAction('/SAPAssetManager/Actions/Page/ClosePage.action');
+    });
+  }
+
+  return context.executeAction('/SAPAssetManager/Rules/EWM/InboundDelivery/SingleEdit/SaveInboundItem.js').then(() => {
+    return context.executeAction('/SAPAssetManager/Actions/Page/ClosePage.action');
+  });
+}
+
+export function validateEditScreen(context, pageProxy = context.getPageProxy?.() || context, binding = pageProxy.getBindingObject()) {
   const formCellSection = pageProxy.getControl('EditInboundDeliveryTable');
   const quantityCtrl = formCellSection.getControl('QuantityInput');
   const uomCtrl = formCellSection.getControl('UOM');
@@ -18,7 +47,7 @@ export default async function OnPressSingleEditDoneButton(context, pageProxy = (
   const batch = batchCtrl.getValue()?.[0]?.ReturnValue ?? '';
 
   if (quantity < packedQty || libVal.evalIsEmpty(rawQuantity)) {
-    return context.executeAction('/SAPAssetManager/Actions/EWM/Inbound/Validation/QuantityErrorMessage.action');
+    return 'quantity';
   }
 
   const quantityChanged = quantity !== Number(binding.Quantity || 0);
@@ -29,23 +58,9 @@ export default async function OnPressSingleEditDoneButton(context, pageProxy = (
   const anyHeaderChange = quantityChanged || uomChanged || stockTypeChanged || batchChanged;
 
   if ((!binding.Serialized && !anyHeaderChange) || (binding.Serialized && !anyHeaderChange && !serialsChanged)) {
-    return context.executeAction('/SAPAssetManager/Actions/Page/ClosePage.action');
+    return 'noChanges';
   }
 
-    if (binding.Serialized) {
-        return ValidateSerialQuantity(context).then(isValid => {
-        if (!isValid) {
-            CommonLibrary.executeInlineControlError(context, quantityCtrl, context.localizeText('accept_all_error'));
-            return Promise.reject();
-        } else {
-            return context.executeAction('/SAPAssetManager/Actions/EWM/Inbound/IBDSaveEditSingleItemCS.action');
-        }
-        });
-    } else if (binding.BatchManaged && libVal.evalIsEmpty(batch)) {
-        CommonLibrary.executeInlineControlError(context, batchCtrl, context.localizeText('ewm_batch_number_missing'));
-        return Promise.reject();
-    } else {
-        return context.executeAction('/SAPAssetManager/Rules/EWM/InboundDelivery/SingleEdit/SaveInboundItem.js');
-    }
+  return 'valid';
 }
 
