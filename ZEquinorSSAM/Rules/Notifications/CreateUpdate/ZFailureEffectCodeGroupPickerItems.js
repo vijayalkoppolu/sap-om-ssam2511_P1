@@ -3,7 +3,7 @@ import libCom from '../../../../SAPAssetManager/Rules/Common/Library/CommonLibra
 
 /**
  * Returns picker items for Failure Effect Codegroup (Catalog = '6') from PMCatalogProfiles
- * Filtered by CatalogProfile = 'PM-' + NotificationType when a type is selected
+ * Filtered by CatalogProfile from the selected NotificationType entity
  * @param {IClientAPI} context
  */
 export default async function ZFailureEffectCodeGroupPickerItems(context) {
@@ -25,11 +25,27 @@ export default async function ZFailureEffectCodeGroupPickerItems(context) {
         Logger.error('ZFailureEffectCodeGroupPickerItems - getting notification type', e);
     }
 
-    // Build filter: always Catalog = 6, add CatalogProfile filter when type is available
+    // Build filter: always Catalog = 6, add CatalogProfile filter from NotificationType entity
     let filter = "Catalog eq '6'";
     if (notifType) {
-        const catalogProfile = 'PM-' + notifType;
-        filter += ` and CatalogProfile eq '${catalogProfile}'`;
+        try {
+            // Read the NotificationTypes entity to get the actual CatalogProfile
+            const pageProxy = context.getPageProxy ? context.getPageProxy() : context;
+            const result = await pageProxy.read(
+                '/SAPAssetManager/Services/AssetManager.service',
+                'NotificationTypes',
+                [],
+                `$filter=NotificationType eq '${notifType}'`
+            );
+            if (result && result.length > 0) {
+                const catalogProfile = result.getItem(0).CatalogProfile;
+                if (catalogProfile) {
+                    filter += ` and CatalogProfile eq '${catalogProfile}'`;
+                }
+            }
+        } catch (e) {
+            Logger.error('ZFailureEffectCodeGroupPickerItems - reading CatalogProfile from NotificationType', e);
+        }
     }
 
     return context.read(
