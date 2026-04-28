@@ -234,11 +234,15 @@ export default class {
         let buildControlDictionaryForSubControls = function(subcontrols, dict) {
             let childControls;
             for (let control of subcontrols) {
-                if (dict[control.getName()] && control.getParent()) {
-                    dict[control.getParent().getName() + '-' + control.getName()] = control;
-                } else {
-                    dict[control.getName()] = control;
+                let name = control.getName();
+                if (Object.prototype.hasOwnProperty.call(dict, name)) { //FDC page has multiple controls with identical name, so add index to name
+                    let i = 2;
+                    while (Object.prototype.hasOwnProperty.call(dict, `${name}#${i}`)) {
+                        i++;
+                    }
+                    name = `${name}#${i}`;
                 }
+                dict[name] = control;
                 if (control.isContainer()) {
                     childControls = control.getControls();
                     if (childControls.length > 0) buildControlDictionaryForSubControls(childControls, dict);

@@ -2,6 +2,7 @@ import MDKVersionInfo from '../UserProfile/MDKVersionInfo';
 import ApplicationSettings from '../Common/Library/ApplicationSettings';
 import PersonaLibrary from '../Persona/PersonaLibrary';
 import ValidationLibrary from '../Common/Library/ValidationLibrary';
+import AppVersionInfo from '../UserProfile/AppVersionInfo';
 
 const EMPTY_KEY = 'empty';
 
@@ -22,7 +23,7 @@ export default async function UpdateAppInformation(context) {
 
     const userSystemInfos = readUserSystemInfos(context);
     const appName = 'SAP Service and Asset Manager'; // This should be the hardcoded app name
-    const appVersion = context.getVersionInfo()['Application Version'];
+    const appVersion = AppVersionInfo(context);
     const systemClientRole = getSystemClientRole(context, userSystemInfos);
     const backendVersion = getBackendVersion(context, userSystemInfos);
     const mdkVersion = MDKVersionInfo(context);

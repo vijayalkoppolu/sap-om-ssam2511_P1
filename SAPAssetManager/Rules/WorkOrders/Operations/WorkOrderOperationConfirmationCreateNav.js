@@ -14,7 +14,9 @@ export default async function WorkOrderOperationConfirmationCreateNav(context) {
     }
     const data = libCommon.getStateVariable(context, 'OperationsToConfirm');
     //gets the correct binding when executing rule from context swipe menu
-    const selectedItem = data.find(item => item.OperationReadlink === binding['@odata.readLink']);
+    const selectedOperationItem = data.find(item => item.OperationReadlink === binding['@odata.readLink']);
+    const selectedSubOperationItem = data.find(item => item.SubOperationReadlink === binding['@odata.readLink']);
+    const selectedItem = selectedSubOperationItem || selectedOperationItem;
     if (selectedItem) {
         let override = {
             'WorkOrderHeader': selectedItem.WorkOrderHeader,
@@ -33,11 +35,13 @@ export default async function WorkOrderOperationConfirmationCreateNav(context) {
             'Plant': selectedItem.Plant,
             'IsFinal': selectedItem.FinalConfirmation === 'X',
             'OperationReadlink': selectedItem.OperationReadlink,
+            'SubOperationReadlink': selectedItem.SubOperationReadlink,
             'PersonnelNumber': selectedItem.PersonnelNumber,
+            'SubOperation': selectedItem.SubOperationNo,
         };
 
         //Check for mandatory double-check confirmation
-        const checkFailed = await libConfirm.isDoubleCheckRequiredForThisOperation(context, selectedItem.OrderId, selectedItem.OperationNo);
+        const checkFailed = await libConfirm.isDoubleCheckRequiredForThisOperation(context, selectedItem.OrderId, selectedItem.OperationNo, selectedItem.SubOperationNo);
         if (checkFailed) { //Display validation error dialog and exit
             return await libCommon.showErrorDialog(context, context.localizeText('double_check_required_operation'));
         }
@@ -61,6 +65,10 @@ export default async function WorkOrderOperationConfirmationCreateNav(context) {
                 'AttendAbsenceType': selectedItem.AttendAbsenceType,
                 'OperationReadlink': selectedItem.OperationReadlink,
                 'PersonnelNumber': selectedItem.PersonnelNumber,
+                'SubOperation': selectedItem.SubOperationNo,
+                'OperationNo': selectedItem.OperationNo,
+                'SubOperationNo': selectedItem.SubOperationNo,
+                'SubOperationReadlink': selectedItem.SubOperationReadlink,
             };
 
             context.getPageProxy().getClientData().timesheetArgs = override;

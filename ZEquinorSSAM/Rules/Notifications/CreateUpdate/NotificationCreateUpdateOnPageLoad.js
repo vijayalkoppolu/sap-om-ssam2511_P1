@@ -130,9 +130,6 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
             if (pickerItems[2]?.length === 1) {
                 context.evaluateTargetPath('#Control:CauseGroupLstPkr').setValue(pickerItems[2][0].ReturnValue, true);
             }
-            if (pickerItems[3]?.length === 1) {
-                context.getControl('FormCellContainer').getControl('FailureEffectGroupListPicker').setValue(pickerItems[3][0].ReturnValue, true);
-            }
         } catch (error) {
             Logger.error('NotificationCreateUpdateOnPageLoad', error);
         }

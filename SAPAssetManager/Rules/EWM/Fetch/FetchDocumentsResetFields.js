@@ -1,5 +1,4 @@
 import libCom from '../../Common/Library/CommonLibrary';
-import GetSAPUserId from '../../MobileStatus/GetSAPUserId';
 import { DocumentTypes } from '../Common/EWMLibrary';
 
 /**
@@ -37,10 +36,9 @@ function ResetSectionFields(sectionTableProxy,documentType) {
 
 function ResetWarehouseOrderFields(section) {
     const [warehouseOrder,queue,activityArea,warehouseProcessType,createdBy,creationDateSwitch,creationStartDate,creationEndDate,refDocNumber] = ['WarehouseOrder','QueueListPicker','ActivityAreaListPicker','ProcessTypeListPicker','CreatedByListPicker','CreationDateRangeSwitch','CreationStartDate','CreationEndDate','RefDocNumber'].map(control => section.getControl(control));
-    [warehouseOrder,queue,activityArea,warehouseProcessType,refDocNumber].map((control) => control.setValue(''));
-    createdBy.setValue(GetSAPUserId(section));
+    [warehouseOrder,queue,activityArea,warehouseProcessType,createdBy,refDocNumber].forEach((control) => control.setValue(''));
     creationDateSwitch.setValue(false);
-    [creationStartDate,creationEndDate].map((control) => control.setValue(new Date()));
+    [creationStartDate,creationEndDate].forEach((control) => control.setValue(new Date()));
 }
 
 function ResetWarehouseTaskFields(section) {

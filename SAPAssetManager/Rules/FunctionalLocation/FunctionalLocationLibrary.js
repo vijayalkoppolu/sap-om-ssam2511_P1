@@ -5,6 +5,8 @@ import libDoc from '../Documents/DocumentLibrary';
 import IsOnCreate from '../Common/IsOnCreate';
 import IsEditTechObjectFeatureEnabled from '../UserFeatures/IsEditTechObjectFeatureEnabled';
 import ODataLibrary from '../OData/ODataLibrary';
+import SetStartDate from '../Common/Controls/Data/SetStartDate';
+import ManufactureDate from '../Common/Controls/Data/ManufactureDate';
 
 /**
  * This stores the Functional Location Create/Update page's event related methods
@@ -64,12 +66,8 @@ import ODataLibrary from '../OData/ODataLibrary';
             });
         }
 
-        if (pageProxy.binding.ConstMonth && pageProxy.binding.ConstYear) {
-            let date = new Date();
-            date.setFullYear(pageProxy.binding.ConstYear);
-            date.setMonth(pageProxy.binding.ConstMonth - 1);
-            libCommon.getControlProxy(pageProxy, 'ManufactureDatePicker').setValue(date);
-        }
+        ManufactureDate(pageProxy);
+        SetStartDate(pageProxy);
 
         const locationPicker = libCommon.getControlProxy(pageProxy, 'LocationLstPkr');
 

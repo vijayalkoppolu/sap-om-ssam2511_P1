@@ -23,5 +23,11 @@
         "normalAssetName": "ZoomExtent",
         "isVisible": true,
         "isEnabled": true
+    },
+    {
+      "name": "drawMode",
+      "normalAssetName": "drawMode",
+      "isVisible": true,
+      "isEnabled": true
     }
 ]

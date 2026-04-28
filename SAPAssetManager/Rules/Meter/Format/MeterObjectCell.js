@@ -23,8 +23,9 @@ export default async function MeterObjectCell(context) {
         case 'StatusText':
             return context.read('/SAPAssetManager/Services/AssetManager.service', 'MyEquipObjectStatuses', [], `$filter=EquipId eq '${context.binding.EquipmentNum}'`).then(result => {
                 if (result && result.length > 0) {
-                    let EquiStatusLink = result.getItem(0)['@odata.readLink'];
-                    return context.read('/SAPAssetManager/Services/AssetManager.service', `${EquiStatusLink}` + '/SystemStatus_Nav', [], '').then(value => {
+                    let equipStatus = result.getItem(0).Status;
+                    // Reading directly from SystemStatuses as we are not updating links to SystemStatus_Nav so that requests are not dependent on each other, when sent to the BE
+                    return context.read('/SAPAssetManager/Services/AssetManager.service', 'SystemStatuses', ['StatusText'], `$filter=SystemStatus eq '${equipStatus}'`).then(value => {
                         if (value && value.length > 0) {
                             return `${value.getItem(0).StatusText}`;
                         } else {

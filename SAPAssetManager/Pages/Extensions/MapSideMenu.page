@@ -24,6 +24,7 @@
 				"OnDataChanged": "/SAPAssetManager/Rules/Maps/MapRedraw.js",
 				"ItemsPerPage": 100,
 				"LifeCycleEntrance": "SideMenu",
+				"OnMapModeChanged": "/SAPAssetManager/Rules/Maps/Utils/OnMapModeChanged.js",
 				"Config": "/SAPAssetManager/Pages/Fragments/Map/MapConfig.fragment",
 				"EditMode": "/SAPAssetManager/Pages/Fragments/Map/MapEditMode.fragment",
 				"TokenAuthentication": {

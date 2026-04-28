@@ -63,11 +63,6 @@
     "Target": "/SAPAssetManager/Actions/Notifications/CreateUpdate/NotificationCreateUpdateNav.action"
 },
 {
-    "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js",
-    "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js"
-},
-
-{
 "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js",
 "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnCommit.js"
 },

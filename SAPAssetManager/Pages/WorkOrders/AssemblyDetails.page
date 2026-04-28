@@ -1,0 +1,75 @@
+{
+    "_Type": "Page",
+    "_Name": "AssemblyDetails",
+    "Caption": "{Description}",
+    "Controls": [
+        {
+            "_Type": "Control.Type.SectionedTable",
+            "_Name": "SectionedTable",
+            "Sections": [
+                {
+                    "Header": {
+                        "Caption": "$(L,details)"
+                    },
+                    "KeyAndValues": [
+                        {
+                            "_Name": "MaterialNum",
+                            "KeyName": "$(L,material_number)",
+                            "Value": "{MaterialNum}"
+                        },
+                        {
+                            "_Name": "BaseUOM",
+                            "KeyName": "$(L,unit_of_measure)",
+                            "Value": "$(DV,{BaseUOM}, '-')"
+                        },
+                        {
+                            "_Name": "MaterialGroup",
+                            "KeyName": "$(L,material_group)",
+                            "Value": "$(DV,{MaterialGroup}, '-')"
+                        },
+                        {
+                            "_Name": "Division",
+                            "KeyName": "$(L,division)",
+                            "Value": "$(DV,{Division}, '-')"
+                        },
+                        {
+                            "_Name": "GrossWeight",
+                            "KeyName": "$(L,gross_weight)",
+                            "Value": "{{#Property:GrossWeight}} {{#Property:WeightUnit}}"
+                        },
+                        {
+                            "_Name": "NetWeight",
+                            "KeyName": "$(L,net_weight)",
+                            "Value": "{{#Property:NetWeight}} {{#Property:WeightUnit}}"
+                        },
+                        {
+                            "_Name": "Volume",
+                            "KeyName": "$(L,volume)",
+                            "Value": "{{#Property:Volume}} {{#Property:VolumeUnit}}"
+                        },
+                        {
+                            "_Name": "ManufacturerPartNum",
+                            "KeyName": "$(L,mpn)",
+                            "Value": "{ManufacturerPartNum}",
+                            "Visible": "/SAPAssetManager/Rules/Defense/isDefenseEnabled.js"
+                        },
+                        {
+                            "_Name": "LongManufacturerPartNum",
+                            "KeyName": "$(L,lmpn)",
+                            "Value": "{LongManufacturerPartNum}",
+                            "Visible": "/SAPAssetManager/Rules/Defense/isDefenseEnabled.js"
+                        },
+                        {
+                            "_Name": "NATOStockNumber",
+                            "KeyName": "$(L,nsn)",
+                            "Value": "{NATOStockNumber}",
+                            "Visible": "/SAPAssetManager/Rules/Defense/isDefenseEnabled.js"
+                        }
+                    ],
+                    "_Type": "Section.Type.KeyValue",
+                    "_Name": "KeyValuePairs"
+                }
+            ]
+        }
+    ]
+}

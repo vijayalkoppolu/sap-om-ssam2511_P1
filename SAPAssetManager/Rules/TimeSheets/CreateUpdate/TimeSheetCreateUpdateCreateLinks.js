@@ -11,7 +11,7 @@ export default function TimeSheetCreateUpdateCreateLinks(pageProxy, actionBindin
         binding = actionBinding;
     }
 
-    let woReadLink = isBulkConfirmation ? binding.WOHeader['@odata.readLink'] :
+    let woReadLink = isBulkConfirmation ? binding.WOHeader?.['@odata.readLink'] || binding.WorkOrderHeader?.['@odata.readLink'] :
         libCom.getListPickerValue(libCom.getTargetPathValue(pageProxy, '#Control:RecOrderLstPkr/#Value'));
     let opReadLink = isBulkConfirmation ? binding.OperationReadlink :
         libCom.getListPickerValue(libCom.getTargetPathValue(pageProxy, '#Control:OperationLstPkr/#Value'));

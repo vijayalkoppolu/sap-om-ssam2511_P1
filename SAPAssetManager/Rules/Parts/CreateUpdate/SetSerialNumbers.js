@@ -2,6 +2,7 @@ import SetMaterialUoM from './SetMaterialUoM';
 import Logger from '../../Log/Logger';
 import SetBatch from '../../Inventory/IssueOrReceipt/SetBatch';
 import libCom from '../../Common/Library/CommonLibrary';
+import EnableMultipleTechnician from '../../SideDrawer/EnableMultipleTechnician';
 
 /**
 * Describe this function...
@@ -17,7 +18,11 @@ export default function SetSerialNumbers(clientAPI) {
     serialNumButton.setValue('');
     serialNumButton.setVisible(false);
     valuationTypeControl.setVisible(false);
-    valuationTypeControl.setValue('');
+    if (EnableMultipleTechnician(clientAPI) && (libCom.getPageName(clientAPI) === 'VehicleIssueOrReceiptCreatePage')) {
+        valuationTypeControl.setValue(clientAPI.binding?.ValuationType || '');
+    } else {
+        valuationTypeControl.setValue('');
+    }
     valuationTypeControl.setEditable(false);
     if (clientAPI.getValue().length) {
         let materialPickerValue = clientAPI.getValue()[0].ReturnValue;

@@ -21,9 +21,7 @@ export default function SubOperationFastFiltersItems(context) {
 export function prepareDataForSubOperationFastFilters(context, SubOperationFastFiltersClass) {
     let promises = [];
 
-    if (SubOperationFastFiltersClass.isConfirmedStatusFilterVisible(context)) {
-        promises.push(context.read('/SAPAssetManager/Services/AssetManager.service', 'Confirmations', ['OrderID', 'Operation', 'SubOperation', 'ConfirmationCounter', 'FinalConfirmation'], '$orderby=ConfirmationCounter desc&$filter=FinalConfirmation eq \'X\' and SubOperation ne \'\''));
-    }
+    promises.push(context.read('/SAPAssetManager/Services/AssetManager.service', 'Confirmations', ['OrderID', 'Operation', 'SubOperation', 'ConfirmationCounter', 'FinalConfirmation'], '$orderby=ConfirmationCounter desc&$filter=FinalConfirmation eq \'X\' and SubOperation ne \'\''));
 
     return Promise.all(promises).then(([confirmations]) => {
         context.getPageProxy().getClientData().SubOperationFastFiltersClass = SubOperationFastFiltersClass;

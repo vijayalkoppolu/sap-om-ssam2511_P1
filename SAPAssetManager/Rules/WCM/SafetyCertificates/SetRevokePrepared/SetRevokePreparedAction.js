@@ -1,5 +1,5 @@
 import ODataDate from '../../../Common/Date/ODataDate';
-import BackendAppVersionNumber from '../../../UserProfile/BackendAppVersionNumber';
+import GetMdoId from '../../../UserProfile/GetMdoId';
 import { SafetyCertificateEventTypes } from '../Details/SafetyCertificatesOnCustomEventDataReceived';
 import { WCMCertificateMobileStatuses, WCMDocumentHeaderMobileStatusType } from '../SafetyCertificatesLibrary';
 
@@ -37,51 +37,19 @@ export function SetCertificateMobileStatus(context, certificate, newStatus) {
  * @param {WCMDocumentHeader | WCMDocumentItem} entity
  * @param {IClientAPI} context
  * @param {string} newStatus   */
-export function SetCurrentMobileStatus(context, entity, newStatus, mobileStatusObjectType) {
-    return context.read('/SAPAssetManager/Services/AssetManager.service', 'EAMOverallStatusConfigs', [], `$filter=ObjectType eq '${mobileStatusObjectType}' and MobileStatus eq '${newStatus}'`)
-        .then(async (/** @type {ObservableArray<EAMOverallStatusConfig>} */ eamstatus) => {
-            const backendVersion = await BackendAppVersionNumber(context);
-
-            return context.executeAction({
-                'Name': '/SAPAssetManager/Actions/Common/GenericUpdate.action',
-                'Properties': {
-                    'Target': {
-                        'EntitySet': 'PMMobileStatuses',
-                        'ReadLink': entity.PMMobileStatus['@odata.readLink'],
-                        'Service': '/SAPAssetManager/Services/AssetManager.service',
-                    },
-                    'Properties': {
-                        'MobileStatus': newStatus,
-                        'Status': eamstatus.getItem(0).Status,
-                        'EffectiveTimestamp': new ODataDate().toDBDateTimeString(context),
-                    },
-                    'RequestOptions': {
-                        'RemoveCreatedEntityAfterUpload': true,
-                        'TransactionID': entity.WCMDocument,
-                        'UnmodifiableRequest': true,
-                    },
-                    'Headers': {
-                        'transaction.omdo_id': `SAM${backendVersion}_WCM_MOBILE_STATUS`,
-                    },
-                    'UpdateLinks': [
-                        {
-                            'Property': 'OverallStatusCfg_Nav',
-                            'Target': {
-                                'EntitySet': 'EAMOverallStatusConfigs',
-                                'QueryOptions': `$filter=ObjectType eq '${mobileStatusObjectType}' and MobileStatus eq '${newStatus}'`,
-                            },
-                        },
-                    ],
-                },
-            });
-        });
+export async function SetCurrentMobileStatus(context, entity, newStatus, mobileStatusObjectType) {
+    return context.executeAction(await GetCurrentMobileStatusUpdateAction(context, entity, newStatus, mobileStatusObjectType));
 }
 
 /** this is just for local show, after delta sync the here created item will be ignored
  * @param {WCMDocumentHeader | WCMDocumentItem} certificate
  * @param {IClientAPI} context */
 export function AddCurrentMobileStatusToHistory(context, certificate) {
-    return context.executeAction({
+    return context.executeAction(GetCurrentMobileStatusHistoryCreateAction(certificate));
+}
+
+export function GetCurrentMobileStatusHistoryCreateAction(certificate) {
+    return {
         'Name': '/SAPAssetManager/Actions/Common/GenericCreate.action',
         'Properties': {
             'Target': {
@@ -104,5 +72,42 @@ export function AddCurrentMobileStatusToHistory(context, certificate) {
                 'TransactionID': certificate.WCMDocument,
             },
         },
-    });
+    };
+}
+
+export async function GetCurrentMobileStatusUpdateAction(context, entity, newStatus, mobileStatusObjectType) {
+    const omdoId = await GetMdoId(context, 'XX_WCM_MOBILE_STATUS');
+    const eamstatus = await context.read('/SAPAssetManager/Services/AssetManager.service', 'EAMOverallStatusConfigs', [], `$filter=ObjectType eq '${mobileStatusObjectType}' and MobileStatus eq '${newStatus}'`);
+    return {
+        'Name': '/SAPAssetManager/Actions/Common/GenericUpdate.action',
+        'Properties': {
+            'Target': {
+                'EntitySet': 'PMMobileStatuses',
+                'ReadLink': entity.PMMobileStatus['@odata.readLink'],
+                'Service': '/SAPAssetManager/Services/AssetManager.service',
+            },
+            'Properties': {
+                'MobileStatus': newStatus,
+                'Status': eamstatus.getItem(0).Status,
+                'EffectiveTimestamp': new ODataDate().toDBDateTimeString(context),
+            },
+            'RequestOptions': {
+                'RemoveCreatedEntityAfterUpload': true,
+                'TransactionID': entity.WCMDocument,
+                'UnmodifiableRequest': true,
+            },
+            'Headers': {
+                'transaction.omdo_id': omdoId,
+            },
+            'UpdateLinks': [
+                {
+                    'Property': 'OverallStatusCfg_Nav',
+                    'Target': {
+                        'EntitySet': 'EAMOverallStatusConfigs',
+                        'QueryOptions': `$filter=ObjectType eq '${mobileStatusObjectType}' and MobileStatus eq '${newStatus}'`,
+                    },
+                },
+            ],
+        },
+    };
 }

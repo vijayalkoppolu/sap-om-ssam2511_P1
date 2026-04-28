@@ -1,0 +1,52 @@
+{
+	"_Type": "Page",
+	"_Name": "PRTDocumentDetailsPage",
+	"Caption": "$(L,document)",
+	"ActionBar": {
+		"_Name": "PRTDocumentDetails",
+        "Items": [
+            "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderOperations/PRT/PRTAddNoteActionBarItem.fragment"
+        ]
+    },
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "PRTMaterialDetailsSectionedTable",
+			"Sections": [
+				{
+                    "Header": {
+                        "Caption": "$(L,document_details)"
+                    },
+                    "ObjectCells": [
+						{
+                            "ObjectCell": {
+								"Icons": "/SAPAssetManager/Rules/Documents/DocumentListViewIconImages.js",
+								"ProgressIndicator": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTSetIndicatorStateWrapper.js",
+								"AvatarStack": {
+									"Avatars": [{
+									"Image": "sap-icon://documents",
+									"Style": "$(PLT, Thumbnail, ThumbnailAndroid)"
+								}],
+								"ImageHasBorder": true,
+								"ImageIsCircular": false
+								},
+								"DetailImageIsCircular": false,
+								"Title": "{{#Property:PRTDocument/#Property:FileName}}",
+								"Subhead": "{{#Property:PRTDocument/#Property:Description}}",
+								"Footnote": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentFileSizeWrapper.js",
+								"OnAccessoryButtonPress": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDownloadOrOpenDocumentWrapper.js"
+							}
+						}
+					],
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "DocumentSection",
+                    "DataSubscriptions": ["Documents"]
+                },
+				{
+                    "_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderOperations/PRT/PRTNotesSection.fragment"
+                }
+			]
+		}
+	]
+}

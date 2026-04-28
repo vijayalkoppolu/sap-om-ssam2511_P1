@@ -165,12 +165,9 @@
                             "_Type": "Control.Type.FormCell.ListPicker",
                             "Caption": "$(L,ewm_created_by)",
                             "AllowMultipleSelection": false,
-                            "AllowDefaultValueIfOneItem": true,
                             "IsPickerDismissedOnSelection" : true,
                             "IsSearchCancelledAfterSelection": true,
-                            "IsSelectedSectionEnabled": true,
                             "AllowEmptySelection": true,
-                            "Value": "/SAPAssetManager/Rules/MobileStatus/GetSAPUserId.js",
                             "Search": {
                                 "Enabled": true,
                                 "Delay": 500,

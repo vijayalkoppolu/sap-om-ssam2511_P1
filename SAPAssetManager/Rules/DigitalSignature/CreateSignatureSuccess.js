@@ -1,27 +1,21 @@
-/**
-* Describe this function...
-* @param {IClientAPI} context
-*/
-
 import Logger from '../Log/Logger';
 import libCommon from '../Common/Library/CommonLibrary';
 import libTelemetry from '../Extensions/EventLoggers/Telemetry/TelemetryLibrary';
 
-export default function CreateSignatureSuccess(context) {
+export default function CreateSignatureSuccess(context, result) {
+    context.dismissActivityIndicator();
 
     libTelemetry.logUserEvent(context,
         context.getGlobalDefinition('/SAPAssetManager/Globals/Features/DigitalSignature.global').getValue(),
         libTelemetry.EVENT_TYPE_COMPLETE);
 
-    let data = context.actionResults.result.data;
-    let seed = context.evaluateTargetPath('#Control:Seed');
     try {
-        let response = JSON.parse(data);
+        let response = JSON.parse(result.data);
         libCommon.setStateVariable(context, 'TOTPReadLink',response['@odata.readLink']);
         libCommon.setStateVariable(context,'TOTPKeyURI', response.KeyURI);
         libCommon.setStateVariable(context, 'TOTPDeviceId', response.DeviceId);
         if (response.Seed) {
-            seed.setValue(response.Seed);
+            return response.Seed;
         } else {
             Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryDigitalSignature/DigitalSignature.global').getValue(), 'Missing seed for TOTP');
         }
@@ -29,4 +23,5 @@ export default function CreateSignatureSuccess(context) {
         Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryDigitalSignature/DigitalSignature.global').getValue(), e);
     }
 
+    return '';
 }

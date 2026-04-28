@@ -1,0 +1,17 @@
+{
+    "SimplePropertyCells": [
+        {
+            "SimplePropertyCell": {
+                "AccessoryType": "DisclosureIndicator",
+                "KeyName": "$(L,notes)",
+                "Value": "/SAPAssetManager/Rules/Notes/NotesCount.js",
+                "OnPress": "/SAPAssetManager/Rules/Notes/NotesViewNav.js"
+            }
+        }
+    ],
+    "Layout": {
+        "NumberOfColumns": 1
+    },
+    "DataSubscriptions": ["MyWorkOrderTools", "MyWorkOrderToolLongTexts"],
+    "_Type" : "Section.Type.SimplePropertyCollection"
+}

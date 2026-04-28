@@ -72,56 +72,8 @@
 		},
 		"Sections":
 		[{
-			"Search":
-			{
-				"Enabled" : true,
-				"Delay": 500,
-				"MinimumCharacterThreshold": 3,
-				"Placeholder": "$(L,search)",
-				"BarcodeScanner": true
-			},
-			"Header": {
-				"Items": [
-					{
-						"_Type": "SectionHeaderItem.Type.Label",
-						"Title": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationListViewSectionCaption.js",
-						"_Name": "OperationsListHeaderLabel",
-						"Position": "Left",
-						"Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsSelectModeButtonVisible.js"
-					}
-				],
-		 		"UseTopPadding": false
-			},
-			"EmptySection": {
-				"Caption": "$(L,no_operations_available)"
-			},
-			"ObjectCell":
-			{
-				"_Type": "Fragment",
-        		"Fragment": "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderOperations/WorkOrderOperationsObjectCell.fragment",
-				"Properties":{
-					"ContextMenu": {
-						"PerformFirstActionWithFullSwipe": true,
-						"Items":"/SAPAssetManager/Rules/Operations/WorkOrderOperationObjectCellContextMenuItems.js",
-						"LeadingItems": "/SAPAssetManager/Rules/ContextMenuLeadingItems.js",
-						"TrailingItems": "/SAPAssetManager/Rules/ContextMenuTrailingItems.js"
-					}
-				}
-			},
-			"Target": {
-				"EntitySet": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationsEntitySet.js",
-				"Service": "/SAPAssetManager/Services/AssetManager.service",
-				"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsListViewQueryOptionWrapper.js"
-			},
-			"OnSelectionChanged": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsOnSelectionChanged.js",
-			"Selection": {
-				"LongPressToEnable": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsLongPress.js",
-                "ExitOnLastDeselect": false,
-                "Mode": "None"
-			},
-			"_Type" : "Section.Type.ObjectTable",
-			"_Name" : "WorkOrderOperationListSection"
-
+			"_Type": "Fragment",
+			"Fragment": "/SAPAssetManager/Pages/Fragments/ListView/WorkOrderOperationsListView.fragment"
 		}],
 		"FilterFeedbackBar": {
 			"_Type": "Control.Type.FilterFeedbackBar",

@@ -22,7 +22,7 @@ export default function LaunchPMV(context) {
             let url = context.getGlobalDefinition('/SAPAssetManager/Globals/EPD/PMVDeepLink.global').getValue() +
                         'sceneId=' + sceneId + '&title=' + title;
             Logger.debug('EPD', 'deep link url = ' + url);
-            let canOpen =  URLModuleLibrary.openUrl(url);
+            let canOpen =  URLModuleLibrary.openUrl(context, url);
             if (!canOpen) {
                 // show alert
                 context.executeAction('/SAPAssetManager/Actions/EPD/PMVAppNotFound.action');

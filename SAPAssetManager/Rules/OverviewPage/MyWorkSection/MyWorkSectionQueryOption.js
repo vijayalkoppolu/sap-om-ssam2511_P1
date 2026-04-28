@@ -112,7 +112,11 @@ export function prepareDataForMyWorkSection(context) {
         if (isCICOEnabled) {
             queryOption += " and OperationMobileStatus_Nav/CreateUserId eq '" + userId + "'"; //Only find operations that we started
         }
-        startedCountPromise = Promise.resolve(0);
+        if (CommonLibrary.getAppParam(context, 'USER_AUTHORIZATIONS', 'AllowMultipleStartedOperations') === 'Y') {
+            startedCountPromise = Promise.resolve(0);
+        } else {
+            startedCountPromise = context.count('/SAPAssetManager/Services/AssetManager.service', 'MyWorkOrderOperations', queryOption);
+        }
     } else if (IsSubOperationLevelAssigmentType(context)) {
         isAnythingStartedStateVar = 'isAnySubOperationStarted';
         queryOption = `$filter=SubOpMobileStatus_Nav/MobileStatus eq '${STARTED}'`;

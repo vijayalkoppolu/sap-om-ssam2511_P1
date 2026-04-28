@@ -32,6 +32,7 @@ export default async function DownloadDocumentsOnSuccess(context) {
         Logger.error(`Download streams action failed: ${error}`);
         errors.push({
             errorText: error.replace(/\[(.*)\]\s*/g, ''),
+            failedDocument: selectedDocumentsList.filter(doc => error.includes(doc['@odata.readLink']))[0],
         });
     }).finally(() => {
         QABRedrawExtension(context, true);

@@ -1,6 +1,7 @@
 {
 	"_Type": "Action.Type.Message",
 	"Message": "$(L, confirm_cancel)",
-    "OKCaption": "$(L,continue_text)",
-    "CancelCaption": "$(L,cancel)"
+    "OKCaption": "$(L,discard)",
+    "CancelCaption": "$(L,cancel)",
+    "Title": "$(L, discard_changes_title)"
 }

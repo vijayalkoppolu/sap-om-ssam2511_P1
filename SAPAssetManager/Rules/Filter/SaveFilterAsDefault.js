@@ -1,4 +1,3 @@
-import FilterSettings from './FilterSettings';
 import EquipmentListFilterResults from '../Equipment/EquipmentListFilterResults';
 import libCom from '../Common/Library/CommonLibrary';
 import { GetConfirmationListFilterCriteria } from '../Confirmations/List/Filter/ConfirmationListFilterResults';
@@ -188,5 +187,5 @@ export default async function SaveFilterAsDefault(context) {
             filterResults = [];
     }
 
-    await FilterSettings.onSettingsSave(context, filterResults);
+    return filterResults;
 }

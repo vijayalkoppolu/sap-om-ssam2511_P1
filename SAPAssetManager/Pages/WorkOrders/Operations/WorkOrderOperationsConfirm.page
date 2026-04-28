@@ -36,10 +36,10 @@
 			{
 				"PreserveIconStackSpacing": false,
 				"AccessoryType": "DisclosureIndicator",
-				"Title": "{{#Property:OperationShortText}} ({{#Property:OperationNo}})",
+				"Title": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationToConfirmTitle.js",
 				"Subhead": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationOrderAndPhase.js",
 				"StatusText": "/SAPAssetManager/Rules/WorkOrders/Operations/BulkConfirmationTotalTimeDuration.js",
-				"SubstatusText": "/SAPAssetManager/Rules/MobileStatus/OperationMobileStatusWrapper.js",
+				"SubstatusText": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationToConfirmStatus.js",
 				"Footnote": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationIsFinalConfirmation.js",
 				"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationConfirmationCreateNav.js"
 			},

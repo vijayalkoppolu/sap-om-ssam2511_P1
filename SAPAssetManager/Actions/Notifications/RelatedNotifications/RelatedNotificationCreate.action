@@ -1,7 +1,6 @@
 {
 	"Properties":
 	{
-		"NotificationNumber" : "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js",
 		"Description" : "#Control:NotificationDescription/#Value",
 		"Priority" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePrioritySegValue.js",
 		"FuncLocIdIntern" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateFunctionalLocationLstPkrValue.js",

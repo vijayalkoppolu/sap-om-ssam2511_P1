@@ -153,7 +153,6 @@
                     "MaxItemCount": 2,
                     "ObjectCell": {
                         "Icons": "/SAPAssetManager/Rules/Documents/DocumentListViewIconImages.js",
-                        "ProgressIndicator": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTSetIndicatorStateWrapper.js",
                         "AvatarStack": {
                             "Avatars": [{
                             "Image": "sap-icon://documents",
@@ -166,7 +165,14 @@
                         "Title": "{{#Property:PRTDocument/#Property:FileName}}",
                         "Subhead": "{{#Property:PRTDocument/#Property:Description}}",
                         "Footnote": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentFileSizeWrapper.js",
-                        "OnAccessoryButtonPress": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDownloadOrOpenDocumentWrapper.js"
+                        "AccessoryType": "DisclosureIndicator",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTDocumentDetailsNav.action",
+                        "StatusImage": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentStatusImage.js",
+                        "AccessoryButtonText": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentAccessoryButtonText.js",
+                        "OnAccessoryButtonPress": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDownloadOrOpenDocumentWrapper.js",
+                        "Styles": {
+                            "StatusImage": "AccessoryButtonIcon"
+                        }
                     },
                     "Footer": {
                         "Caption": "$(L,see_all)",

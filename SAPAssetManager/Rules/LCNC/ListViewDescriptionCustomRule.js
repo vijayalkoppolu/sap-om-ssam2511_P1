@@ -1,7 +1,7 @@
 import { ValueResolver } from 'mdk-core/utils/ValueResolver';
 import Logger from '../Log/Logger';
 import ExtendedPropertiesStore from './ExtendedPropertiesStore';
-import ODataDate from '../Common/Date/ODataDate';
+import OffsetODataDate from '../Common/Date/OffsetODataDate';
 
 export default async function ListViewDescriptionCustomRule(context) {
     let result;
@@ -20,8 +20,8 @@ export default async function ListViewDescriptionCustomRule(context) {
                 let propertyLabel = attributesObject['sap:custom_label'] || attributesObject['sap:label'];
                 let propertyValue = context.binding[attributesObject.Name] || '-';
                 if (attributesObject.Type === 'Edm.DateTime' && propertyValue !== '-') {
-                    let odataDate = new ODataDate(propertyValue);
-                    propertyValue = context.formatDate(odataDate.date());
+                    let odataDate = new OffsetODataDate(context, propertyValue);
+                    propertyValue = context.formatDatetime(odataDate.date());
 
                 }
                 result = joinDescriptions(result, propertyLabel, propertyValue);

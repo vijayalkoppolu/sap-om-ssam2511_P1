@@ -60,7 +60,6 @@ export default class NotificationQABSettings extends QABSettings {
             'IsButtonVisibleBySettings': false,
         }),
         this._createAddReminderChip({
-            'IsButtonEnabled': isCreateEditEnabled,
             'IsButtonVisibleBySettings': false,
         }),
         this._createViewRelatedOrdersListChip(),

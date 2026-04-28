@@ -1,4 +1,3 @@
-import CommonLibrary from '../../../Common/Library/CommonLibrary';
 import Logger from '../../../Log/Logger';
 import libVal from '../../../Common/Library/ValidationLibrary';
 
@@ -37,8 +36,6 @@ export default async function SaveInboundItem(context) {
                 },
             },
         });
-        CommonLibrary.setStateVariable(context, 'IBDSerialsChanged', false);
-        return context.executeAction('/SAPAssetManager/Actions/Page/ClosePage.action');
     } catch (error) {
         Logger.error('InboundDeliveryItemUpdate', error);
     }

@@ -73,7 +73,7 @@ export default class WorkOrderCompletionLibrary {
         return this.getCompletionFlow() === OPERATION_SPLIT_FLOW_CONST;
     }
 
-    async initSteps(context) {
+    async initSteps(context, binding = context.binding) {
         let steps = {};
         const names = lib.getStepNames();
 
@@ -115,7 +115,7 @@ export default class WorkOrderCompletionLibrary {
                     break;
                 }
                 case 'note': {
-                    steps[name].visible = await EnableWorkOrderEdit(context); //Respect user authorizations
+                    steps[name].visible = await EnableWorkOrderEdit(context, binding); //Respect user authorizations
                     break;
                 }
                 case 'sapdynamicforms': {
@@ -143,8 +143,8 @@ export default class WorkOrderCompletionLibrary {
             steps.digit_signature.visible = libDigSig.isWODigitalSignatureEnabled(context);
             steps.digit_signature.isMandatory = libDigSig.isWODigitalSignatureMandatory(context);
 
-            if (context.binding && context.binding.WOHeader && sdfIsFeatureEnabled(context)) {
-                let count = await FormInstanceCount(context, true, context.binding.WOHeader['@odata.readLink']).catch((error) => {
+            if (binding && binding.WOHeader && sdfIsFeatureEnabled(context)) {
+                let count = await FormInstanceCount(context, true, binding.WOHeader['@odata.readLink']).catch((error) => {
                     Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategorySAPDynamicForms.global').getValue(), error);
                     return 0;
                 });

@@ -5,36 +5,38 @@ import OperationsListViewWithResetFiltersNav from '../../WorkOrders/Operations/O
 import IsSubOperationLevelAssigmentType from '../../WorkOrders/SubOperations/IsSubOperationLevelAssigmentType';
 import OperationsListViewNav from '../../WorkOrders/SubOperations/SubOperationsListViewNav';
 import libPersona from '../../Persona/PersonaLibrary';
+import { MyWorkSubOperationsListViewNavWrapper } from '../../WorkOrders/SubOperations/SubOperationsListViewNavWrapper';
+import { MyWorkOperationsListViewNav } from '../../WorkOrders/Operations/WorkOrderOperationsListViewNav';
 
 export default function MyWorkSectionSeeAll(context) {
     if (libPersona.isFieldServiceTechnician(context)) { 
         if (IsOperationLevelAssigmentType(context)) {
             //My Operation list view nav
-            return context.executeAction('/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsListViewNav.js');
+            return MyWorkOperationsListViewNav(context);
         } else if (IsSubOperationLevelAssigmentType(context)) {
             //SupOpertaion list view nav
-            return context.executeAction('/SAPAssetManager/Rules/WorkOrders/SubOperations/SubOperationsListViewNavWrapper.js');
+            return MyWorkSubOperationsListViewNavWrapper(context);
         } else {
             //My Work Order list view nav
             let actionBinding = {
                 isInitialFilterNeeded: true,
             };
             context.getPageProxy().setActionBinding(actionBinding);
-            return context.executeAction('/SAPAssetManager/Actions/WorkOrders/WorkOrdersListViewNav.action');
+            return context.executeAction('/SAPAssetManager/Actions/WorkOrders/MyWorkWorkOrdersListViewNav.action');
         }
     } else {
         if (IsOperationLevelAssigmentType(context)) {
             //My Operation list view nav
             libComm.setStateVariable(context, 'MyOperationListView', true);
-            return OperationsListViewWithResetFiltersNav(context);
+            return OperationsListViewWithResetFiltersNav(context, true);
         } else if (IsSubOperationLevelAssigmentType(context)) {
             //SupOpertaion list view nav
             libComm.setStateVariable(context, 'MySubOperationListView', true);
-            return OperationsListViewNav(context);
+            return OperationsListViewNav(context, true);
         } else {
             //My Work Order list view nav
             libComm.setStateVariable(context, 'MyWorkOrderListView', true);
-            return WorkOrdersListViewNav(context);
+            return WorkOrdersListViewNav(context, true);
         }
     }
 }

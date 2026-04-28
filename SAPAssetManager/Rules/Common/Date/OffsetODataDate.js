@@ -7,10 +7,11 @@ import ODataDate from './ODataDate';
  * @param {*} date - (optional) Representation of the Date - default is current date
  * @param {*} time - (optional) Representation of the time
  * @param {boolean} reverseOffset - (optional) If true, it will reverse the offset. Used to handle notifications with a time zone before saving to db
+ * @param {boolean} isUTC - (optional) If true, we are overriding the normal backend system offset calculation and just returning the offset to UTC time. This is used for handling date time values from the backend that are in UTC time, but should be displayed in local time.
  * @returns {ODataDate} - ODataDate object with the offset applied
  */
-export default function OffsetODataDate(context, date, time, reverseOffset) {
-    return new ODataDate(date, time, offset(context, date, reverseOffset));
+export default function OffsetODataDate(context, date, time, reverseOffset, isUTC=false) {
+    return new ODataDate(date, time, offset(context, date, reverseOffset, isUTC));
 }
 
 /**
@@ -20,9 +21,10 @@ export default function OffsetODataDate(context, date, time, reverseOffset) {
  * @param {*} context 
  * @param {*} date - (optional) Representation of the Date - default is current date
  * @param {boolean} reverseOffset - (optional) If true, it will reverse the offset. Used to handle notifications with a time zone before saving to db
+ * @param {boolean} isUTC - (optional) If true, we are overriding the normal backend system offset calculation and just returning the offset to UTC time. This is used for handling date time values from the backend that are in UTC time, but should be displayed in local time.
  * @returns {number} - It will return the offset
  */
-function offset(context, date, reverseOffset) {
+function offset(context, date, reverseOffset, isUTC=false) {
     let providedDate;
     let reverse = 1;
 
@@ -41,6 +43,8 @@ function offset(context, date, reverseOffset) {
         backendOffset = -1 * libCom.getBackendOffsetFromObjectProperty(context);
         timezoneOffset = ODataDate.isDST(providedDate) ? timezoneOffset + ODataDate.getSingleDigitHoursFromString(context.binding.DSTDifference) : timezoneOffset;
     }
+
+    if (isUTC) return (0 - timezoneOffset) * reverse;
 
     return (backendOffset - timezoneOffset) * reverse;
 }

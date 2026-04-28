@@ -1,0 +1,51 @@
+{
+    "Caption": "/SAPAssetManager/Rules/WorkOrders/SubOperations/SubOperationsListViewCaption.js",
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/SubOperations/WorkOrderSubOperationListViewOnLoaded.js",
+    "OnReturning": "/SAPAssetManager/Rules/WorkOrders/SubOperations/SubOperationListViewOnReturning.js",
+    "ActionBar": {
+        "_Name": "SubOperationsList",
+        "Items": [
+            "/SAPAssetManager/Pages/Fragments/SyncButton.fragment",
+            {
+                "Position": "Right",
+                "_Name": "Add",
+                "Icon": "sap-icon://add",
+                "Text": "$(L,add)",
+                "Visible": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableSubOperation.js",
+                "OnPress": "/SAPAssetManager/Rules/SubOperations/CreateUpdate/SubOperationCreateNav.js"
+            },
+            {
+                "Position": "Right",
+                "_Name": "Filter",
+                "Icon": "$(PLT,sap-icon://filter,sap-icon://filter, '',sap-icon://filter)",
+                "Caption": "/SAPAssetManager/Rules/Filter/FilterButtonCaption.js",
+                "OnPress": "/SAPAssetManager/Actions/WorkOrders/SubOperations/SubOperationsFilter.action"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "LoadingIndicator": {
+			    "Enabled": true
+		    },
+            "Sections": [
+                {
+                    "_Type": "Fragment",
+                    "Fragment": "/SAPAssetManager/Pages/Fragments/ListView/SubOperationsListView.fragment"
+                }
+            ],
+            "FilterFeedbackBar": {
+                "_Type": "Control.Type.FilterFeedbackBar",
+                "_Name": "FilterFeedback",
+                "ShowAllFilters": true,
+                "FastFilters": "/SAPAssetManager/Rules/WorkOrders/SubOperations/SubOperationFastFiltersItems.js"
+            },
+            "Filters": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderSubOperationsListViewDefaultFilters.js",
+            "_Type": "Control.Type.SectionedTable",
+            "_Name" : "SectionedTable"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "MyWork_SubOperationsListViewPage",
+    "DataSubscriptions": ["MyWorkOrderSubOperations", "MyWorkOrderSubOpLongTexts", "PMMobileStatuses", "Confirmations","/SAPAssetManager/Services/AssetManager.service"]
+}

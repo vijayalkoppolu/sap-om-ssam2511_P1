@@ -163,7 +163,7 @@ export default function InspectionCharacteristicsDynamicPageNav(context) {
                 'Position': 'left',
                 'SystemItem': 'Cancel',
                 'Caption': '$(L,cancel)',
-                'OnPress': '/SAPAssetManager/Rules/Common/CheckForChangesBeforeClose.js',
+                'OnPress': '/SAPAssetManager/Rules/InspectionCharacteristics/RecordResultCheckForChangesBeforeClose.js',
             },
             {
                 'Position': 'right',

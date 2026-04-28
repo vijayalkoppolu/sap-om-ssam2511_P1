@@ -9,5 +9,9 @@ export default function WorkOrderOperationConfirmCaption(context) {
     if (!selectedOperations.length) {
         selectedOperations = libCommon.getStateVariable(context, 'selectedOperations') || [];
     }
+
+    if (selectedOperations[0]['@odata.type'] === '#sap_mobile.MyWorkOrderSubOperation') {
+        return context.localizeText('confirm_sub_operations_x', [selectedOperations.length]);
+    }
     return context.localizeText('confirm_operations_x', [selectedOperations.length]);
 }

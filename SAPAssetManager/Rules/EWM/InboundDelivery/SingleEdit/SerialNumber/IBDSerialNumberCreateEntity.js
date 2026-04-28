@@ -1,6 +1,5 @@
 import { GetIBDSerialNumbers } from './IBDSerialNumberLib';
 import Logger from '../../../../Log/Logger';
-import CommonLibrary from '../../../../Common/Library/CommonLibrary';
 
 export default function IBDSerialNumberCreateEntity(context, binding = context.getPageProxy().binding) {
     if (binding?.Serialized) {
@@ -47,7 +46,6 @@ export default function IBDSerialNumberCreateEntity(context, binding = context.g
             });
                 return Promise.all(promises).then(result => { 
                 Logger.debug(result);
-                CommonLibrary.setStateVariable(context, 'IBDSerialsChanged', true);
                 return Promise.resolve(result);
             }).catch(error => { 
                 Logger.error('InboundDeliveryItemSerialNumberCreate', error); 

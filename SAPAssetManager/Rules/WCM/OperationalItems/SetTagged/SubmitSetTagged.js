@@ -2,11 +2,9 @@ import IsWCMSignatureEnabled from '../SignatureAttachment/IsWCMSignatureEnabled'
 import DocumentCreateDelete from '../../../Documents/Create/DocumentCreateDelete';
 import CommonLibrary from '../../../Common/Library/CommonLibrary';
 import Logger from '../../../Log/Logger';
-import { TagStates } from '../libWCMDocumentItem';
+import { TagStates, WCMCertificateMobileStatuses, OpItemMobileStatusCodes } from '../libWCMDocumentItem';
 import ValidationLibrary from '../../../Common/Library/ValidationLibrary';
-import { OpItemMobileStatusCodes } from '../libWCMDocumentItem';
-import { AddCurrentMobileStatusToHistory, SetCertificateMobileStatus, SetCurrentMobileStatus } from '../../SafetyCertificates/SetRevokePrepared/SetRevokePreparedAction';
-import { WCMCertificateMobileStatuses } from '../../SafetyCertificates/SafetyCertificatesLibrary';
+import { AddCurrentMobileStatusToHistory, GetCurrentMobileStatusHistoryCreateAction, GetCurrentMobileStatusUpdateAction, SetCertificateMobileStatus, SetCurrentMobileStatus } from '../../SafetyCertificates/SetRevokePrepared/SetRevokePreparedAction';
 
 export const TaggingStateMap = Object.freeze({
     [TagStates.SetTagged]: SubmitSetTagged,
@@ -26,12 +24,21 @@ export const SuccessToastMessageMap = Object.freeze({
 /**
  * @param {IClientAPI & {binding: WCMDocumentItem}} context */
 export default async function SubmitSetTagged(context) {
-    return Promise.all([
-        UpdateLockNumber(context),
-        UpdateMobileStatusToTagged(context),
-        IsWCMSignatureEnabled(context) ? context.executeAction('/SAPAssetManager/Actions/WCM/OperationalItems/SignatureAttachment/SignatureControlCreateSignature.action') : Promise.resolve(),
-        CreateAttachments(context),
-    ])
+
+    const objectType = context.getGlobalDefinition('/SAPAssetManager/Globals/ObjectTypes/WCMDocumentItem.global').getValue();
+    const tagged = context.getGlobalDefinition('/SAPAssetManager/Globals/MobileStatus/ParameterNames/WCM/TaggedParameterName.global').getValue();
+    return context.executeAction({
+        Name: '/SAPAssetManager/Actions/Common/GenericChangeSet.action',
+        Properties: {
+            Actions: [
+                UpdateLockNumberAction(),
+                GetCurrentMobileStatusHistoryCreateAction(context.binding),
+                await GetCurrentMobileStatusUpdateAction(context, context.binding, tagged, objectType),
+                '/SAPAssetManager/Rules/WCM/OperationalItems/SetTagged/CreateAttachments.js',
+                '/SAPAssetManager/Rules/WCM/OperationalItems/SetTagged/CreateSignatureIfEnabled.js',
+            ],
+        },
+    })
         .then(() => context.read('/SAPAssetManager/Services/AssetManager.service', `WCMDocumentHeaders('${context.binding.WCMDocument}')`, [], '$expand=PMMobileStatus,WCMDocumentItems,WCMDocumentItems/PMMobileStatus'))
         .then((/** @type {ObservableArray<WCMDocumentHeader} */ result) => {
             if (ValidationLibrary.evalIsEmpty(result)) {
@@ -53,7 +60,7 @@ export function SubmitSetUntagged(context) {
     return Promise.all([
         UpdateLockNumber(context),
         UpdateMobileStatusToUntagged(context),
-        IsWCMSignatureEnabled(context) ? context.executeAction('/SAPAssetManager/Actions/WCM/OperationalItems/SignatureAttachment/SignatureControlCreateSignature.action') : Promise.resolve(),
+        CreateSignatureIfEnabled(context),
         CreateAttachments(context),
     ])
         .then(() => context.read('/SAPAssetManager/Services/AssetManager.service', `WCMDocumentHeaders('${context.binding.WCMDocument}')`, [], '$expand=PMMobileStatus,WCMDocumentItems,WCMDocumentItems/PMMobileStatus'))
@@ -73,9 +80,10 @@ export function SubmitSetUntagged(context) {
         });
 }
 
-export function UpdateMobileStatusToTagged(context) {
-    return UpdateMobileStatusToStatus(context, context.getGlobalDefinition('/SAPAssetManager/Globals/MobileStatus/ParameterNames/WCM/TaggedParameterName.global').getValue());
+export function CreateSignatureIfEnabled(context) {
+    return IsWCMSignatureEnabled(context) ? context.executeAction('/SAPAssetManager/Actions/WCM/OperationalItems/SignatureAttachment/SignatureControlCreateSignature.action') : Promise.resolve();
 }
+
 export function UpdateMobileStatusToUntagged(context) {
     return UpdateMobileStatusToStatus(context, context.getGlobalDefinition('/SAPAssetManager/Globals/MobileStatus/ParameterNames/WCM/UntaggedParameterName.global').getValue());
 }
@@ -93,14 +101,26 @@ export function CreateAttachments(context) {
 }
 
 export function UpdateLockNumber(context) {
-    return context.executeAction({
-        'Name': '/SAPAssetManager/Actions/WCM/OperationalItems/OperationalItemUpdate.action',
-        'Properties': {
-            'Properties': {
-                'LockNumber': '#Control:LockNumber/#Value',
+    return context.executeAction(UpdateLockNumberAction());
+}
+
+function UpdateLockNumberAction() {
+    return {
+        Name: '/SAPAssetManager/Actions/Common/GenericUpdate.action',
+        Properties: {
+            Target: {
+                EntitySet: 'WCMDocumentItems',
+                Service: '/SAPAssetManager/Services/AssetManager.service',
+                ReadLink: '{@odata.readLink}',
+            },
+            Properties: {
+                LockNumber: '#Control:LockNumber/#Value',
+            },
+            Headers: {
+                'OfflineOData.TransactionID': '{ObjectNumber}',
             },
         },
-    });
+    };
 }
 
 export function SubmitTagConfirmDialog(context, message) {

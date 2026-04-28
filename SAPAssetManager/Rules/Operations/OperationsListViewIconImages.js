@@ -53,7 +53,7 @@ export default async function OperationsListViewIconImages(pageProxy) {
         hasLocalTools(binding) ||
         hasLocalComponents(binding) ||
         (!libMobile.isOperationStatusChangeable(pageProxy) ? hasLocalFinalConfirmations(binding) : false) ||
-        (split ? ODataLibrary.hasAnyPendingChanges(split.PMMobileStatus_Nav) : false)) {
+        ODataLibrary.hasAnyPendingChanges(split ? split.PMMobileStatus_Nav : binding.OperationMobileStatus_Nav)) {
 
         iconImage.push(CommonLibrary.GetSyncIcon(pageProxy));
     }

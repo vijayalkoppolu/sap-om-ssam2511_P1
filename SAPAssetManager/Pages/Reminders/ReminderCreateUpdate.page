@@ -38,7 +38,7 @@
                         {
                             "PlaceHolder": "$(L,description)",
                             "Value": "",
-                            "OnValueChange": "/SAPAssetManager/Rules/Common/Validation/ResetValidationOnInput.js",
+                            "OnValueChange": "/SAPAssetManager/Rules/Reminders/ReminderDescriptionOnValueChange.js",
                             "IsAutoResizing": true,
                             "_Name": "Description",
                             "_Type": "Control.Type.FormCell.Note",

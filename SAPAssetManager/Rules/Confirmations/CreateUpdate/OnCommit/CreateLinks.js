@@ -4,7 +4,7 @@ export default function CreateLinks(context, actionBinding) {
     let binding = context.getBindingObject() || {};
 
     if (binding.selectedOperations) {
-        binding = context.getActionBinding();
+        binding = context.getActionBinding() || {};
         for (const [key, value] of Object.entries(binding)) {
             binding[key] = value;
         }

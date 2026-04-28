@@ -23,7 +23,7 @@ function prepareDataForFastFilters(context, OperationFastFiltersClass) {
     let promises = [];
 
     promises.push(context.read(service, 'MyWorkOrderDocuments', ['OrderId', 'OperationNo'], '$filter=sap.hasPendingChanges()'));    
-    promises.push(context.read(service, 'PMMobileStatuses', ['OrderId', 'OperationNo'], '$filter=sap.hasPendingChanges() and sap.entityexists(WOOperation_Nav)'));
+    promises.push(context.read(service, 'PMMobileStatuses', ['OrderId', 'OperationNo'], '$filter=sap.hasPendingChanges() and (sap.entityexists(WOOperation_Nav) or sap.entityexists(MyWorkOrderOperationCapacityRequirement_))'));
     
     if (OperationFastFiltersClass.isConfirmedStatusFilterVisible(context)) {
         promises.push(context.read(service, 'MyWorkOrderOperations', ['OrderId', 'OperationNo', 'Confirmations/ConfirmationCounter', 'Confirmations/FinalConfirmation'], '$orderby=Confirmations/ConfirmationCounter desc&$expand=Confirmations&$filter=sap.entityexists(Confirmations) and Confirmations/any(confirmation:confirmation/FinalConfirmation eq \'X\')'));

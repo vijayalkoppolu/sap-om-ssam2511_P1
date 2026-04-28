@@ -1379,7 +1379,7 @@ export default class {
         let temp = false;
         if (!libVal.evalIsEmpty(dict.Decimal)) {
             if (libLocal.toNumber(context, dict.Decimal) === 0) {
-                temp = (libThis.evalPrecision(dict.ReadingSim.getValue()) > 0);
+                temp = (libThis.evalPrecision(libLocal.toNumber(context, dict.ReadingSim.getValue())) > 0);
             }
         }
         return temp;

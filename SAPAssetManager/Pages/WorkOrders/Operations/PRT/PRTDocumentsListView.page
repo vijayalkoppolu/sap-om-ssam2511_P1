@@ -1,6 +1,7 @@
 {
 	"Caption": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentListViewCaption.js",
 	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnReturning.js",
 	"ActionBar":
 	{
 		"_Name": "DocumentsList",
@@ -34,13 +35,19 @@
 			"ObjectCell":
 			{
                 "Icons": "/SAPAssetManager/Rules/Documents/DocumentListViewIconImages.js",
-                "ProgressIndicator": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTSetIndicatorStateWrapper.js",
                 "DetailImage": "/SAPAssetManager/Rules/Documents/DocumentTypeIcon.js",
                 "DetailImageIsCircular": false,
                 "Title": "{{#Property:PRTDocument/#Property:FileName}}",
                 "Subhead": "{{#Property:PRTDocument/#Property:Description}}",
                 "Footnote": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentFileSizeWrapper.js",
-                "OnAccessoryButtonPress": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDownloadOrOpenDocumentWrapper.js"
+				"AccessoryType": "DisclosureIndicator",
+				"OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTDocumentDetailsNav.action",
+				"AccessoryButtonText": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentAccessoryButtonText.js",
+				"OnAccessoryButtonPress": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDownloadOrOpenDocumentWrapper.js",
+				"StatusImage": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentStatusImage.js",
+				"Styles": {
+					"StatusImage": "AccessoryButtonIcon"
+				}
             },
 			"Target":
 			{

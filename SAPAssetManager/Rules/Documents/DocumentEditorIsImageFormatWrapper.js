@@ -1,6 +1,7 @@
 import isImageFormat from './DocumentEditorIsImageFormat';
 import getFileInfo from './DocumentEditorGetFileInfo';
 import DocumentLibrary from './DocumentLibrary';
+import { isValidDocument } from './DocumentEditorVisible';
 
 export default function DocumentEditorIsImageFormatWrapper(context) {
     const documentBinding = DocumentLibrary.getDocumentFromBinding(context.binding);
@@ -13,7 +14,7 @@ export default function DocumentEditorIsImageFormatWrapper(context) {
     }
     const fileInfo = getFileInfo(context);
     if (fileInfo) {
-        return isImageFormat(fileInfo.FileName);
+        return isImageFormat(fileInfo.FileName) && isValidDocument(context, fileInfo);
     }
     return false;
 }

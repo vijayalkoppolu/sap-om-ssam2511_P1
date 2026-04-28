@@ -10,6 +10,8 @@ import OperationMobileStatusLibrary from '../../Operations/MobileStatus/Operatio
 export default async function WorkOrderOperationsListViewDefaultFilters(context) {
     let filters = [];
     const { COMPLETED, STARTED, HOLD, REVIEW, DISAPPROVED, APPROVED, RECEIVED, ACCEPTED, ONSITE, TRAVEL } = libMobile.getMobileStatusValueConstants(context);
+    const downArrowSymbol = '▼'; // to show descending sorting order
+    const schedStartDisplay = `${context.localizeText('sched_start')} ${downArrowSymbol}`;
 
     if (libCom.getStateVariable(context, 'KPI-InProgress')) {
         libCom.removeStateVariable(context, 'KPI-InProgress');
@@ -60,7 +62,9 @@ export default async function WorkOrderOperationsListViewDefaultFilters(context)
         filters.push(context.createFilterCriteria(context.filterTypeEnum.Filter, 'OperationMobileStatus_Nav/MobileStatus', undefined, [REVIEW, DISAPPROVED, APPROVED], false, undefined, [context.localizeText(REVIEW), context.localizeText(DISAPPROVED), context.localizeText(APPROVED)]));
     }
 
-    filters.push(context.createFilterCriteria(context.filterTypeEnum.Sorter, undefined, undefined, ['SchedEarliestStartDate desc,SchedEarliestStartTime desc'], false, context.localizeText('sort_filter_prefix'), [context.localizeText('scheduled_earliest_start_date')]));
+    //Set the default sort to scheduled start date descending for operation list view
+    filters.push(context.createFilterCriteria(context.filterTypeEnum.Sorter, undefined, undefined, ['DisplayStartDateTime desc'], false, context.localizeText('sort_filter_prefix'), [schedStartDisplay]));
+
     if (IsOverviewTabPage(context)) {
         const myOperationsFilter = context.createFilterCriteria(context.filterTypeEnum.Filter, 'MyOperationsFilter', undefined, [getMyOperationsFilterQuery(context)], true, '', [context.localizeText('my_operations')]);
         filters.push(myOperationsFilter);

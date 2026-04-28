@@ -29,11 +29,18 @@ import TimeSheetCreateIsEnabled from '../../TimeSheets/TimeSheetCreateIsEnabled'
 import libConfirm from '../../ConfirmationScenarios/ConfirmationScenariosLibrary';
 import TechniciansExist from '../../WorkOrders/Operations/TechniciansExist';
 import OperationMobileStatusLibrary from '../../Operations/MobileStatus/OperationMobileStatusLibrary';
+import { ChecklistLibrary } from '../../Checklists/ChecklistLibrary';
+import IsConfirmationEnabledOperation from '../../Operations/IsConfirmationEnabledOperation';
 
 export default class {
 
 
-    static showTimeCaptureMessage(context, subOperation, isFinalRequired) {
+    static async showTimeCaptureMessage(context, subOperation, isFinalRequired) {
+        // If confirmation capture is not enabled, no need to track time sheet or confirmations
+        const isConfirmationEnabledOperation = await IsConfirmationEnabledOperation(context, subOperation);
+        if (!isConfirmationEnabledOperation) {
+            return Promise.resolve(true);
+        }
 
         if (ConfirmationCreateIsEnabled(context)) {
             return libThis.showConfirmationsCaptureMessage(context, subOperation, isFinalRequired);
@@ -97,7 +104,7 @@ export default class {
     }
 
     static _createBlankConfirmation(context, subOperation) {
-        return Promise.all([GenerateLocalConfirmationNumber(context), GenerateConfirmationCounter(context)]).then(([confirmationNum, confirmationCounter]) => {
+        return Promise.all([GenerateLocalConfirmationNumber(context), GenerateConfirmationCounter(context, subOperation)]).then(([confirmationNum, confirmationCounter]) => {
             const odataDate = new ODataDate();
             const currentDate = odataDate.toDBDateString(context);
             const currentTime = odataDate.toDBTimeString(context);
@@ -134,6 +141,13 @@ export default class {
                         'Target': {
                             'EntitySet': 'MyWorkOrderOperations',
                             'ReadLink': `MyWorkOrderOperations(OrderId='${subOperation.OrderId}',OperationNo='${subOperation.OperationNo}')`,
+                        },
+                    },
+                    {
+                        'Property': 'WorkOrderSubOperation',
+                        'Target': {
+                            'EntitySet': 'MyWorkOrderSubOperations',
+                            'ReadLink': `MyWorkOrderSubOperations(OperationNo='${subOperation.OperationNo}',OrderId='${subOperation.OrderId}',SubOperationNo='${subOperation.SubOperationNo}')`,
                         },
                     }],
                 },
@@ -411,39 +425,43 @@ export default class {
                 // Return early, user elected to not complete this operation
                 return true;
             }
-            context.showActivityIndicator('');
-            const isSubOperationStatusChangeable = libMobile.isSubOperationStatusChangeable(context);
-            return (isSubOperationStatusChangeable ? isSignatureControlEnabled(context) : Promise.resolve())
-                .then(async () => {
-                    //Check for mandatory double-check confirmation
-                    const checkFailed = await libConfirm.isDoubleCheckRequiredForThisOperation(context, subOperation.OrderId, subOperation.OperationNo, subOperation.SubOperationNo);
-                    if (checkFailed) { //Display validation error dialog and exit
-                        await libCommon.showErrorDialog(context, context.localizeText('double_check_required_operation'));
-                        return Promise.reject();
-                    }
-                    if (sdfIsFeatureEnabled(context)) {
-                        const binding = pageProxy.getActionBinding() || pageProxy.binding;
-                        return FormInstanceCount(context, true, binding['@odata.readLink']).then((count) => {
-                            if (count !== 0) {
-                                let message = context.localizeText('sdf_mandatory_forms_required');
-                                return libCommon.showErrorDialog(context, message);
-                            } else {
-                                return Promise.resolve();
-                            }
-                        }).catch((error) => {
-                            Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategorySAPDynamicForms.global').getValue(), error);
+            return ChecklistLibrary.allowWorkOrderComplete(context, subOperation.OperationEquipment, subOperation.OperationFunctionLocation).then(results => { //Check for non-complete checklists and ask for confirmation
+                if (results === false) return true;
+                context.showActivityIndicator('');
+                const isSubOperationStatusChangeable = libMobile.isSubOperationStatusChangeable(context);
+                return (isSubOperationStatusChangeable ? isSignatureControlEnabled(context) : Promise.resolve())
+                    .then(async () => {
+                        //Check for mandatory double-check confirmation
+                        const checkFailed = await libConfirm.isDoubleCheckRequiredForThisOperation(context, subOperation.OrderId, subOperation.OperationNo, subOperation.SubOperationNo);
+                        if (checkFailed) { //Display validation error dialog and exit
+                            await libCommon.showErrorDialog(context, context.localizeText('double_check_required_operation'));
                             return Promise.reject();
-                        });
-                    } else {
-                        return Promise.resolve();
-                    }
-                }).then(() => subOperation.WorkOrderOperation.WOHeader.NotificationNumber ? libWOStatus.NotificationUpdateMalfunctionEnd(context, subOperation.WorkOrderOperation.WOHeader) : '')
-                .then(() => libThis.showTimeCaptureMessage(context, subOperation, true))
-                .then(() => isSubOperationStatusChangeable ? libThis._suboperationCreateCICO(context, subOperation) : '')
-                .then(() => libThis._suboperationCompleteStatus(context, subOperation))
-                .then(() => libThis.didSetSubOperationCompleteWrapper(pageProxy))
-                .then(() => libAutoSync.autoSyncOnStatusChange(context));
-        })
+                        }
+                        if (sdfIsFeatureEnabled(context)) {
+                            const binding = pageProxy.getActionBinding() || pageProxy.binding;
+                            return FormInstanceCount(context, true, binding['@odata.readLink']).then((count) => {
+                                if (count !== 0) {
+                                    let message = context.localizeText('sdf_mandatory_forms_required');
+                                    return libCommon.showErrorDialog(context, message);
+                                } else {
+                                    return Promise.resolve();
+                                }
+                            }).catch((error) => {
+                                Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategorySAPDynamicForms.global').getValue(), error);
+                                return Promise.reject();
+                            });
+                        } else {
+                            return Promise.resolve();
+                        }
+                    })
+                    .then(() => subOperation.WorkOrderOperation.WOHeader.NotificationNumber ? libWOStatus.NotificationUpdateMalfunctionEnd(context, subOperation.WorkOrderOperation.WOHeader) : '')
+                    .then(() => libThis.showTimeCaptureMessage(context, subOperation, true))
+                    .then(() => isSubOperationStatusChangeable ? libThis._suboperationCreateCICO(context, subOperation) : '')
+                    .then(() => libThis._suboperationCompleteStatus(context, subOperation))
+                    .then(() => libThis.didSetSubOperationCompleteWrapper(pageProxy))
+                    .then(() => libAutoSync.autoSyncOnStatusChange(context));
+                });
+            })
             .catch(error => {
                 /**Implementing our Logger class*/
                 Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategorySubOperations.global').getValue(), error);

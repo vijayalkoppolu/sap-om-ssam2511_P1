@@ -3,6 +3,7 @@ import libTelemetry from '../../Extensions/EventLoggers/Telemetry/TelemetryLibra
 import {CreateUpdateFunctionalLocationEventLibrary as libFLOC} from '../FunctionalLocationLibrary';
 import DocLib from '../../Documents/DocumentLibrary';
 import libVal from '../../Common/Library/ValidationLibrary';
+import { handleCacheUpdatedDate } from '../../Equipment/CreateUpdate/EquipmentCreateUpdateOnCommit';
 
 export default function FunctionalLocationCreateUpdateOnCommit(context) {
 
@@ -90,7 +91,27 @@ function _updateFLOC(context) {
             context.binding.LocalID = flocId;
             libCommon.setStateVariable(context, 'LocalId', flocId);
             libTelemetry.logUserEvent(context, context.getGlobalDefinition('/SAPAssetManager/Globals/Features/TechObjectEdit.global').getValue(), libTelemetry.EVENT_TYPE_UPDATE);
-            return context.executeAction('/SAPAssetManager/Actions/FunctionalLocation/CreateUpdate/FunctionalLocationUpdate.action');
+            
+            const dateProperties = {};
+
+            const startDateSwitchControlValue = libCommon.getControlProxy(context, 'StartDateSwitch').getValue();
+            if (startDateSwitchControlValue) {
+                dateProperties.StartDate = '/SAPAssetManager/Rules/Common/Controls/Data/StartDate.js';
+                handleCacheUpdatedDate(context, 'UpdatedTechObjectStartDate', context.binding.FuncLocIdIntern);
+            }
+            const manufactureDateSwitchControlValue = libCommon.getControlProxy(context, 'ManufactureDateSwitch').getValue();
+            if (manufactureDateSwitchControlValue) {
+                dateProperties.ConstYear = '/SAPAssetManager/Rules/Common/Controls/Data/ConstYear.js';
+                dateProperties.ConstMonth = '/SAPAssetManager/Rules/Common/Controls/Data/ConstMonth.js';
+                handleCacheUpdatedDate(context, 'UpdatedTechObjectManufactureDate', context.binding.FuncLocIdIntern);
+            }
+
+            return context.executeAction({
+                'Name': '/SAPAssetManager/Actions/FunctionalLocation/CreateUpdate/FunctionalLocationUpdate.action',
+                'Properties': {
+                    'Properties': dateProperties,
+                },
+            });
         })
         .catch((error) => {
             const idControl = libCommon.getControlProxy(context, 'IdProperty');

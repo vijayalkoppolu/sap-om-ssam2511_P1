@@ -7,8 +7,14 @@ import { getMyEquipmentFilterQuery } from '../Equipment/MyEquipmentsFilter';
 
 export default async function EquipmentFastFiltersItems(context) {
     return [
-        PlanningPlantFastFilterSorter(),
-        WorkcenterFastFilterSorter(),
+        {
+            ...PlanningPlantFastFilterSorter(),
+            ReturnValue: 'MaintPlant',
+        },
+        {
+            ...WorkcenterFastFilterSorter(),
+            ReturnValue: 'WorkCenter_Main_Nav/WorkCenterDescr',
+        },
         MyEquipmentFastFilterItem(getMyEquipmentFilterQuery(context)),
         await getWorkCenterFastFilterItem(context, 'MaintWorkCenter'),
         ModifiedFastFilterItem('sap.hasPendingChanges() or EquipDocuments/any(d: sap.hasPendingChanges())'),

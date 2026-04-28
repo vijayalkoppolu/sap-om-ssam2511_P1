@@ -86,7 +86,7 @@
                 "DetailImageIsCircular": false,
 				"Title": "{{#Property:MaterialNum}} - {{#Property:Material/#Property:Description}}",
 				"Subhead": "{{#Property:Plant}}/{{#Property:StorageLocation}}",
-				"Footnote": "{{#Property:Material/#Property:ManufacturerPartNum}}-{{#Property:Material/#Property:EanUpc}}",
+				"Footnote": "{{#Property:Material/#Property:ManufacturerPartNum}} - {{#Property:Material/#Property:EanUpc}}",
 				"Description": "{{#Property:StorageBin}}",
 				"StatusText" : "/SAPAssetManager/Rules/Inventory/Stock/StockUnrestrictedQuantity.js",
 				"OnPress": "/SAPAssetManager/Actions/Inventory/Stock/StockDetailsNav.action"

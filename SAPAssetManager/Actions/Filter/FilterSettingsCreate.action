@@ -8,8 +8,8 @@
         "UserGuid": "/SAPAssetManager/Rules/UserPreferences/UserPreferencesUserGuidOnCreate.js",
         "RecordId": "/SAPAssetManager/Rules/UserPreferences/UserPreferencesRecordIdOnCreate.js",
         "PreferenceGroup": "/SAPAssetManager/Globals/Filter/PreferenceGroup.global",
-		"PreferenceName": "{#ClientData/PreferenceName}",
-		"PreferenceValue": "{#ClientData/PreferenceValue}"
+		"PreferenceName": "",
+		"PreferenceValue": ""
     },
 	"OnSuccess": "/SAPAssetManager/Actions/Filter/FilterSettingsUpdatedSuccess.action"
 }

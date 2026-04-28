@@ -79,7 +79,26 @@ function _createDocuments(context) {
 
 
 function _updateEquip(context) {
-    return libTelemetry.executeActionWithLogUserEvent(context, '/SAPAssetManager/Actions/Equipment/CreateUpdate/EquipmentUpdate.action',
+    const dateProperties = {};
+
+    const startDateSwitchControlValue = libCommon.getControlProxy(context, 'StartDateSwitch').getValue();
+    if (startDateSwitchControlValue) {
+        dateProperties.StartDate = '/SAPAssetManager/Rules/Common/Controls/Data/StartDate.js';
+        handleCacheUpdatedDate(context, 'UpdatedTechObjectStartDate', context.binding.EquipId);
+    }
+    const manufactureDateSwitchControlValue = libCommon.getControlProxy(context, 'ManufactureDateSwitch').getValue();
+    if (manufactureDateSwitchControlValue) {
+        dateProperties.ConstYear = '/SAPAssetManager/Rules/Common/Controls/Data/ConstYear.js';
+        dateProperties.ConstMonth = '/SAPAssetManager/Rules/Common/Controls/Data/ConstMonth.js';
+        handleCacheUpdatedDate(context, 'UpdatedTechObjectManufactureDate', context.binding.EquipId);
+    }
+
+    return libTelemetry.executeActionWithLogUserEvent(context, {
+            'Name': '/SAPAssetManager/Actions/Equipment/CreateUpdate/EquipmentUpdate.action',
+            'Properties': {
+                'Properties': dateProperties,
+            },
+        },
         context.getGlobalDefinition('/SAPAssetManager/Globals/Features/TechObjectEdit.global').getValue(), libTelemetry.EVENT_TYPE_UPDATE)
         .then(() => {
             return _createDocuments(context).then(() => {
@@ -88,4 +107,25 @@ function _updateEquip(context) {
         }).catch(() => {
             context.dismissActivityIndicator();
         });
+}
+
+export function handleCacheUpdatedDate(context, variableName, objectId, hasChanges = false, checkIfExists = false) {
+    let list = libCommon.getStateVariable(context, variableName) || [];
+
+    if (checkIfExists) {
+        if (hasChanges && objectId) {
+            return list.includes(objectId);
+        } else {
+            if (objectId && list.includes(objectId)) {
+                delete list[list.indexOf(objectId)];
+                libCommon.setStateVariable(context, variableName, list);
+            }
+            return false;
+        }
+    } else if (objectId && !list.includes(objectId)) {
+        list.push(objectId);
+        libCommon.setStateVariable(context, variableName, list);
+    }
+
+    return false;
 }

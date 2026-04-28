@@ -1,12 +1,13 @@
 {
 	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnReturning.js",
 	"_Type": "Page",
 	"_Name": "FunctionalLocationListViewPage",
 	"ActionBar":
 	{
 		"_Name": "FunctionalLocationList",
 		"Items": [
-			"/SAPAssetManager/Pages/Fragments/SyncButton.fragment",
+			"/SAPAssetManager/Pages/Fragments/SyncButton.fragment",	
 			{
 				"Position": "Right",
 				"_Name": "Filter",

@@ -4,7 +4,7 @@
     "Icons": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewIconImages.js",                 
     "Title": "{OrderDescription}",
     "Subhead": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationOrderAndPhase.js",
-    "Footnote": "/SAPAssetManager/Rules/WorkOrders/WorkOrderTechObjects.js",
+    "Footnote": "/SAPAssetManager/Rules/WorkOrders/ObjectCellTechObjects.js",
     "StatusText": "#Property:WOPriority/#Property:PriorityDescription",
     "SubstatusText": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewFormat.js",
     "Tags": [

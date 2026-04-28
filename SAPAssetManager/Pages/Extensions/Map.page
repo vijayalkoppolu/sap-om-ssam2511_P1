@@ -28,6 +28,7 @@
 				"TokenAuthentication": {
 					"Action": "/SAPAssetManager/Rules/Extensions/TokenRequest.js"
 				},
+				"OnMapModeChanged": "/SAPAssetManager/Rules/Maps/Utils/OnMapModeChanged.js",
 				"MapToolsetIcons": "/SAPAssetManager/Pages/Fragments/Map/MapToolsetIcons.fragment",
 				"SettingsControl": "/SAPAssetManager/Pages/Fragments/Map/MapSettingsControl.fragment",
 				"SearchControl": {

@@ -68,6 +68,9 @@
 					],
 					"LeadingItems": "/SAPAssetManager/Rules/Expenses/ContextMenu/ExpensesContextLeadingItems.js",
 					"TrailingItems": "/SAPAssetManager/Rules/Expenses/ContextMenu/ExpensesContextTrailingItems.js"
+				},
+				"Styles": {
+					"AccessoryButtonIcon": "AccessoryButtonIcon"
 				}
 			},
             "Target": { 

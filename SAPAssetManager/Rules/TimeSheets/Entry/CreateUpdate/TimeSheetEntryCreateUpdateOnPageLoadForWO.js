@@ -3,9 +3,9 @@ import minutesDefault from './TimeSheetEntryMinuteInterval';
 import minutesDefaultDecimal from './TimeSheetEntryMinuteIntervalDecimal';
 import libClock from '../../../ClockInClockOut/ClockInClockOutLibrary';
 import {TimeSheetLibrary as libTS} from '../../TimeSheetLibrary';
+import Logger from '../../../Log/Logger';
 
 export default function TimeSheetEntryCreateUpdateOnPageLoadForWO(context) {
-    libCommon.saveInitialValues(context);
     let title = context.localizeText('add_time');
     context.setCaption(title);
     const startDate = libCommon.getStateVariable(context, 'StatusStartDate');
@@ -25,59 +25,65 @@ export default function TimeSheetEntryCreateUpdateOnPageLoadForWO(context) {
     setListPickerValue(oprControl, objects.opReadLink);
     setListPickerValue(subOprControl, objects.subOpReadLink);
 
-    return libClock.getElapsedClockTime(context, objects.orderId, objects.operationNo, objects.subOperationNo).then((clockTime) => {
-        if (clockTime > 0) {
-            elapsed = clockTime; //Clock In/Out records were found for this business object
-        }
-        // small number to determine if enough time has passed to set control
-        const epsilon = 1 / 7200;
-        // Time interval to be used in Duration picker.
-        // Set duration to time rounded to closest interval in minutes expressed in Hours
-        let interval = minutesDefault(context);
-        const defaultDecimal = minutesDefaultDecimal(context);
-        let time = defaultDecimal;
-        if (elapsed > epsilon) {
-            elapsed = (interval / 60) * (Math.round(60 * elapsed/interval));
-            if (elapsed > defaultDecimal) {
-                time = elapsed;
-            } else {
-                time = defaultDecimal;
+    return libClock.getElapsedClockTime(context, objects.orderId, objects.operationNo, objects.subOperationNo)
+        .then((clockTime) => {
+            if (clockTime > 0) {
+                elapsed = clockTime; //Clock In/Out records were found for this business object
             }
-        }
-        context.getClientData().timeSheetInitialDuration = 0;
-        let warningAccumulatedHoursPromise = Promise.resolve();
+            // small number to determine if enough time has passed to set control
+            const epsilon = 1 / 7200;
+            // Time interval to be used in Duration picker.
+            // Set duration to time rounded to closest interval in minutes expressed in Hours
+            let interval = minutesDefault(context);
+            const defaultDecimal = minutesDefaultDecimal(context);
+            let time = defaultDecimal;
+            if (elapsed > epsilon) {
+                elapsed = (interval / 60) * (Math.round(60 * elapsed/interval));
+                if (elapsed > defaultDecimal) {
+                    time = elapsed;
+                } else {
+                    time = defaultDecimal;
+                }
+            }
+            context.getClientData().timeSheetInitialDuration = 0;
+            let warningAccumulatedHoursPromise = Promise.resolve();
 
-        if (time > (24 - defaultDecimal)) { //Maximum the screen control can handle
-            context.getClientData().timeSheetInitialDuration = time; //Store the initial time value for validation later
-            time = 24 - defaultDecimal;
-            let dynamicParams = [Math.round(100 * time) / 100];
-            warningAccumulatedHoursPromise = context.executeAction({ // show warning that accumulated time exceeds 24 hours and user has to resolve that manually
-                'Name': '/SAPAssetManager/Actions/Common/GenericErrorDialog.action',
-                'Properties': {
-                    'Title': context.localizeText('validation_warning'),
-                    'Message': context.localizeText('time_exceeds_24_hours', dynamicParams),
-                    'OKCaption': context.localizeText('ok'),
-                },
-            });
-        }
-        durationControl.setValue(time);
+            if (time > (24 - defaultDecimal)) { //Maximum the screen control can handle
+                context.getClientData().timeSheetInitialDuration = time; //Store the initial time value for validation later
+                time = 24 - defaultDecimal;
+                let dynamicParams = [Math.round(100 * time) / 100];
+                warningAccumulatedHoursPromise = context.executeAction({ // show warning that accumulated time exceeds 24 hours and user has to resolve that manually
+                    'Name': '/SAPAssetManager/Actions/Common/GenericErrorDialog.action',
+                    'Properties': {
+                        'Title': context.localizeText('validation_warning'),
+                        'Message': context.localizeText('time_exceeds_24_hours', dynamicParams),
+                        'OKCaption': context.localizeText('ok'),
+                    },
+                });
+            }
+            durationControl.setValue(time);
 
-        let binding = context.getBindingObject();
-        return libTS.GetWorkCenterFromObject(context, binding['@odata.readLink']).then((workCenterData) => {
-            return libTS.updateWorkCenter(context, workCenterData).then(() => {
-                return libTS.updateActivityType(context).then(() => {             
-                    if (!context.getClientData().LOADED) {
-                        context.getClientData().UPDATOR = 'NONE';
-                        context.getClientData().LOADED = true;
-                    }
-            
-                    return warningAccumulatedHoursPromise.then(() => {
-                        return Promise.resolve(true);
+            let binding = context.getBindingObject();
+            return libTS.GetWorkCenterFromObject(context, binding['@odata.readLink']).then((workCenterData) => {
+                return libTS.updateWorkCenter(context, workCenterData).then(() => {
+                    return libTS.updateActivityType(context).then(() => {             
+                        if (!context.getClientData().LOADED) {
+                            context.getClientData().UPDATOR = 'NONE';
+                            context.getClientData().LOADED = true;
+                        }
+                
+                        return warningAccumulatedHoursPromise.then(() => {
+                            libCommon.saveInitialValues(context);
+                            return Promise.resolve(true);
+                        });
                     });
                 });
             });
+        })
+        .catch(error => {
+            Logger.error('TimeSheetEntryCreateUpdateOnPageLoadForWO', error);
+            libCommon.saveInitialValues(context);
         });
-    });
 }
 
 export function getContextObjects(context) {

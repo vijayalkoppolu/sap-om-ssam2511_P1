@@ -1,3 +1,5 @@
+import EnableEquipmentCreate from '../UserAuthorizations/Equipments/EnableEquipmentCreate';
+import EnableFunctionalLocationCreate from '../UserAuthorizations/FunctionalLocations/EnableFunctionalLocationCreate';
 import S4ServiceAuthorizationLibrary from '../UserAuthorizations/S4ServiceAuthorizationLibrary';
 import EnableWorkOrderCreate from '../UserAuthorizations/WorkOrders/EnableWorkOrderCreate';
 
@@ -28,6 +30,14 @@ export default function IsAddS4RelatedObjectEnabled(context, binding = context.b
         case '#sap_mobile.MyWorkOrderPartner':
         case '#sap_mobile.MyWorkOrderHeader':
             enabled = EnableWorkOrderCreate(context);
+            break;
+        case '#sap_mobile.MyEquipment':
+        case '#sap_mobile.MyEquipPartner':
+            enabled = EnableEquipmentCreate(context);
+            break;
+        case '#sap_mobile.MyFunctionalLocation':
+        case '#sap_mobile.MyFuncLocPartner':
+            enabled = EnableFunctionalLocationCreate(context);
             break;
         default:
             break;

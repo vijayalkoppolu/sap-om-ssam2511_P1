@@ -2,6 +2,8 @@ import libCom from '../Common/Library/CommonLibrary';
 import ValidationLibrary from '../Common/Library/ValidationLibrary';
 import CreateFromValueChanged from './CreateUpdate/FormCellHandlers/CreateFromValueChanged';
 import ODataLibrary from '../OData/ODataLibrary';
+import SetStartDate from '../Common/Controls/Data/SetStartDate';
+import ManufactureDate from '../Common/Controls/Data/ManufactureDate';
 
 /**
  * Triggered when the create/edit page is loaded
@@ -59,13 +61,8 @@ function setDefaultValuesForUndefinedBinding(clientAPI) {
 function setDefaultValues(pageProxy) {
     setControlValues(pageProxy);
 
-    if (pageProxy.binding.ConstMonth && pageProxy.binding.ConstYear) {
-        let date = new Date();
-        date.setFullYear(pageProxy.binding.ConstYear);
-        date.setMonth(pageProxy.binding.ConstMonth - 1);
-        libCom.getControlProxy(pageProxy, 'ManufactureDatePicker').setValue(date);
-    }
-
+    ManufactureDate(pageProxy);
+    SetStartDate(pageProxy);
 
     const locationPicker = libCom.getControlProxy(pageProxy, 'LocationLstPkr');
 

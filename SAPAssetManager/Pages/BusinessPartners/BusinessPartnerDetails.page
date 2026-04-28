@@ -1,7 +1,6 @@
 {
     "Caption": "$(L,business_partner)",
     "OnReturning": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerDetailsOnReturning.js",
-    "OnLoaded": "/SAPAssetManager/Rules/BusinessPartners/Edit/BusinessPartnerEditIsVisible.js",
     "ActionBar":
     {
         "_Name": "BusinessPartnerDetail",
@@ -12,7 +11,7 @@
                 "Icon": "sap-icon://edit",
                 "Caption": "$(L,edit)",
                 "OnPress": "/SAPAssetManager/Actions/BusinessPartners/BusinessPartnerEditNav.action",
-                "Visible": "/SAPAssetManager/Rules/ServiceOrders/IsEditS4RelatedObjectEnabled.js"
+                "Visible": "/SAPAssetManager/Rules/BusinessPartners/Edit/BusinessPartnerEditIsVisible.js"
             },
             {
                 "Position": "Right",

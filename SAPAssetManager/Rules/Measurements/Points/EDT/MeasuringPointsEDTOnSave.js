@@ -307,7 +307,7 @@ function validateReverseCounterWithoutOverflowIsNotPositive(context, measurement
 function validateReadingGreaterThanOrEqualLowerRange(context, measurementDoc, measurementPoint, ErrorsHandler) {
     let isValid = true;
 
-    if (measurementPoint.IsLowerRange === 'X' && measurementPoint.LowerRange) {
+    if (measurementPoint.IsLowerRange === 'X' && !ValidationLibrary.evalIsEmpty(measurementPoint.LowerRange)) {
         isValid = measurementDoc.ReadingValue >= measurementPoint.LowerRange;
 
         if (!isValid) {

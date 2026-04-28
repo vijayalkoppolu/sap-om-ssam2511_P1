@@ -134,5 +134,6 @@
 ],
 	"_Name": "VoyagesListPage",
 	"_Type": "Page",
-	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js"
+	"OnLoaded": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnLoaded.js",
+	"OnReturning": "/SAPAssetManager/Rules/Filter/ListPageWithFilterOnReturning.js"
 }

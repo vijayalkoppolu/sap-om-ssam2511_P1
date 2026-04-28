@@ -111,7 +111,7 @@
 						"Title": "{{#Property:OperationShortText}} ({{#Property:OperationNo}})",
 						"Subhead": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsListViewFormat.js",
 						"Footnote": "{OrderId}",
-						"StatusText": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderDueDate.js",
+						"StatusText": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationDueDate.js",
 						"OnPress" : "/SAPAssetManager/Rules/WorkOrders/Operations/Details/WorkOrderOperationDetailsNav.js",
                         "DetailImage": "$(PLT, /SAPAssetManager/Images/DetailImages/Operation.png, /SAPAssetManager/Images/DetailImages/Operation.android.png)",
 						"OverflowButtons": [

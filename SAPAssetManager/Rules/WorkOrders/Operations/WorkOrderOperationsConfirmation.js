@@ -109,7 +109,7 @@ export default async function WorkOrderOperationsConfirmation(context) {
         }
 
         //Mandatory double-check validation for confirmation scenarios feature
-        const checkFailed = await libConfirm.isDoubleCheckRequiredForThisOperation(context, item.OrderId || item.OrderID, item.Operation || item.OperationNo, '', 'PLANT');
+        const checkFailed = await libConfirm.isDoubleCheckRequiredForThisOperation(context, item.OrderId || item.OrderID, item.Operation || item.OperationNo, item.SubOperation || item.SubOperationNo, 'PLANT');
         if (checkFailed) { //This operation requires a mandatory double-check, so do not process this operation and add to failed array
             item.error = context.localizeText('double_check_required_operation');
             failedOperations.push(item);
@@ -289,7 +289,7 @@ function confirmOperation(context, item, failedOperations, index, workOrderCompl
     });
 }
 
-function createConfirmationOverviewRow(context) {
+export function createConfirmationOverviewRow(context) {
     let postingDate = new ODataDate().toLocalDateString();
     let query = `$filter=PostingDate eq datetime'${postingDate}'&$top=1`;
 
@@ -309,7 +309,7 @@ function createConfirmationOverviewRow(context) {
     });
 }
 
-function createOverviewIfMissing(context, date) {
+export function createOverviewIfMissing(context, date) {
     return new FetchRequest('CatsTimesheetOverviewRows').get(context, `datetime'${date}'`).catch(() => {
         return createOverviewRow(context, date);
     });
@@ -386,7 +386,7 @@ function completeOperationSplit(context, item, failedOperations) {
 }
 
 
-function getConfirmationProperties(context, item) {
+export function getConfirmationProperties(context, item) {
     let odataDate = new ODataDate();
     let currentDate = odataDate.toDBDateTimeString(context);
 

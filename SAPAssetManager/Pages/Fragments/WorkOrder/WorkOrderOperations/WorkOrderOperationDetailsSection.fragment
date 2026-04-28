@@ -46,19 +46,21 @@
             "Value": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/OperationDuration.js"
         },
         {
-            "_Name": "DurationUOM",
-            "KeyName": "$(L,duration_uom)",
-            "Value": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/OperationDurationUOM.js"
-        },
-        {
             "_Name": "Work",
             "KeyName": "$(L,work)",
             "Value": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/OperationWork.js"
         },
         {
-            "_Name": "WorkUnit",
-            "KeyName": "$(L,work_uom)",
-            "Value": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/OperationWorkUnit.js"
+         "_Name": "DueDateStart",
+            "KeyName": "$(L,sched_start)",
+            "Value": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationScheduledStart.js",
+            "Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/OperationScheduledStartVisible.js"
+        },
+        {
+            "_Name": "DueDateEnd",
+            "KeyName": "$(L,sched_end)",
+            "Value": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationScheduledEnd.js",
+            "Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/OperationScheduledEndVisible.js"
         },
         {
             "_Name": "MandatoryDoubleCheck",
@@ -70,6 +72,6 @@
     "Target": {
         "EntitySet": "/SAPAssetManager/Rules/WorkOrders/Operations/Details/BindingReadlink.js",
         "Service": "/SAPAssetManager/Services/AssetManager.service",
-        "QueryOptions": "$select=OrderId,OperationNo,PersonNum,OperationShortText,ControlKey,MainWorkCenterPlant,MainWorkCenter,FunctionalLocationOperation/FuncLocDesc,Work,WorkUnit,NumberOfCapacities,Duration,DurationUOM,SchedEarliestStartDate,SchedLatestStartDate,SchedLatestEndTime,SchedEarliestStartTime&$expand=FunctionalLocationOperation,Employee_Nav"
+        "QueryOptions": "$select=OrderId,OperationNo,PersonNum,OperationShortText,ControlKey,MainWorkCenterPlant,MainWorkCenter,FunctionalLocationOperation/FuncLocDesc,Work,WorkUnit,NumberOfCapacities,Duration,DurationUOM,SchedEarliestStartDate,SchedLatestStartDate,SchedLatestEndTime,SchedEarliestStartTime,DisplayStartDateTime,DisplayEndDateTime&$expand=FunctionalLocationOperation,Employee_Nav"
     }
 }

@@ -4,6 +4,7 @@ import phaseFilterResult from '../../PhaseModel/PhaseModelFilterPickerResult';
 import IsPhaseModelEnabled from '../../Common/IsPhaseModelEnabled';
 import PhaseLibrary from '../../PhaseModel/PhaseLibrary';
 import FilterLibrary from '../../Filter/FilterLibrary';
+import EnableTechObjectsFacet from '../../SideDrawer/EnableTechObjectsFacet';
 
 const cachedWorkOrderOperationListFilterResults = (context) => FilterLibrary.cacheFilterResultIntoClientData(context, WorkOrderOperationListFilterResults);
 export default cachedWorkOrderOperationListFilterResults;
@@ -47,6 +48,16 @@ function GetWorkOrderOperationListFilterCriteria(context, saveToClientData = fal
         PhaseLibrary.addPhaseControlKeyFilterResult(context, 'WorkOrderOperationsFilterPage', filterResults);
     }
 
+    if (EnableTechObjectsFacet(context)) {
+        const flocResult = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:FunctionalLocationFilter/#FilterValue');
+        const formattedFlocResult = FilterLibrary.formatObjectCellListPickerDisplayFilterResult(flocResult);
+        filterResults.push(formattedFlocResult);
+
+        const equipmentResult = context.evaluateTargetPath('#Page:WorkOrderOperationsFilterPage/#Control:EquipmentFilter/#FilterValue');
+        const formattedEquipmentResult = FilterLibrary.formatObjectCellListPickerDisplayFilterResult(equipmentResult);
+        filterResults.push(formattedEquipmentResult);
+    }
+
     const scheduledEarliestStartDate = GetDateFilter(context, 'ScheduledEarliestStartDateSwitch', 'ScheduledEarliestStartDateStartFilter',
         'ScheduledEarliestStartDateEndFilter', 'SchedEarliestStartDate', context.localizeText('scheduled_earliest_start_date'),
         saveToClientData);
@@ -63,12 +74,20 @@ function GetWorkOrderOperationListFilterCriteria(context, saveToClientData = fal
         'ScheduledLatestEndDateEndFilter', 'SchedLatestEndDate', context.localizeText('scheduled_latest_end_date'),
         saveToClientData);
 
-    filterResults = filterResults.concat([scheduledEarliestStartDate, scheduledEarliestEndDate, scheduledLatestStartDate, scheduledLatestEndDate]);
+    const startDueDateTime = GetDateFilter(context, 'StartDueDateSwitch', 'StartDueDateStartFilter',
+        'StartDueDateEndFilter', 'DisplayStartDateTime', context.localizeText('sched_start'),
+        saveToClientData, true);
+
+    const endDueDateTime = GetDateFilter(context, 'EndDueDateSwitch', 'EndDueDateStartFilter',
+        'EndDueDateEndFilter', 'DisplayEndDateTime', context.localizeText('sched_end'),
+        saveToClientData, true);
+
+    filterResults = filterResults.concat([scheduledEarliestStartDate, scheduledEarliestEndDate, scheduledLatestStartDate, scheduledLatestEndDate, startDueDateTime, endDueDateTime]);
 
     return filterResults.filter(c => !!c);
 }
 
-function GetDateFilter(context, switchCtrlName, startCtrlName, endCtrlName, filterProp, fastFilterLabel, saveToClientData) {
+function GetDateFilter(context, switchCtrlName, startCtrlName, endCtrlName, filterProp, fastFilterLabel, saveToClientData, timeIncluded = false) {
     let clientData = context.evaluateTargetPath('#Page:-Previous/#ClientData');
     let dateSwitch = context.evaluateTargetPath(`#Page:WorkOrderOperationsFilterPage/#Control:${switchCtrlName}`);
 
@@ -76,19 +95,35 @@ function GetDateFilter(context, switchCtrlName, startCtrlName, endCtrlName, filt
         let startDate = libCommon.getFieldValue(context, startCtrlName);
 
         let sdate = (libCommon.isDefined(startDate)) ? startDate : new Date();
-        sdate.setHours(0, 0, 0, 0);
+        if (!timeIncluded) {
+            sdate.setHours(0, 0, 0, 0);
+        }
         let odataStartDate = new ODataDate(sdate);
-        let odataBackendStartDate = odataStartDate.toDBDateString(context);
+        let odataBackendStartDate = '';
+        if (!timeIncluded) {
+            odataBackendStartDate = odataStartDate.toDBDateString(context);
+        } else {
+            odataBackendStartDate = odataStartDate.toDBDateTimeString(context);
+        }
 
         let endDate = libCommon.getFieldValue(context, endCtrlName);
         let edate = (libCommon.isDefined(endDate)) ? endDate : new Date();
-        edate.setHours(0, 0, 0, 0);
+        if (!timeIncluded) {
+            edate.setHours(0, 0, 0, 0);
+        }
         let odataEndDate = new ODataDate(edate);
-        let odataBackendEndDate = odataEndDate.toDBDateString(context);
-        odataBackendEndDate = odataBackendEndDate.substring(0, 10) + 'T23:59:59';
+        let odataBackendEndDate = '';
+        if (!timeIncluded) {
+            odataBackendEndDate = odataEndDate.toDBDateString(context);
+            odataBackendEndDate = odataBackendEndDate.substring(0, 10) + 'T23:59:59';
+        } else {
+            odataBackendEndDate = odataEndDate.toDBDateTimeString(context);
+        }
 
         let dateFilter = [`${filterProp} ge datetime'${odataBackendStartDate}' and ${filterProp} le datetime'${odataBackendEndDate}'`];
-        let dateFilterResult = context.createFilterCriteria(context.filterTypeEnum.Filter, undefined, undefined, dateFilter, true, fastFilterLabel, [`${context.formatDatetime(sdate)} - ${context.formatDatetime(edate)}`]);
+        const startLabel = context.formatDatetime(sdate, '', '', { 'format': 'short' });
+        const endLabel = context.formatDatetime(edate, '', '', { 'format': 'short' });
+        let dateFilterResult = context.createFilterCriteria(context.filterTypeEnum.Filter, undefined, undefined, dateFilter, true, fastFilterLabel, [`${startLabel} - ${endLabel}`]);
 
         if (saveToClientData) {
             clientData[switchCtrlName] = dateSwitch.getValue();

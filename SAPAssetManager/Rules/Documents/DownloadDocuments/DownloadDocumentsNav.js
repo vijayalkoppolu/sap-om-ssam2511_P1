@@ -38,5 +38,6 @@ function getType(result) {
     if (result.parentEntitySet.includes('Equip')) type = 'EQUIPMENT';
     else if (result.parentEntitySet.includes('Func')) type = 'FLOC';
     else if (result.parentEntitySet.includes('Item')) type = 'ITEMS';
+    else if (result.parentEntitySet.includes('PRT')) type = 'PRT';
     return type;
 }

@@ -14,5 +14,5 @@ export default function NotificationAssignmentPkrsEditable(control) {
 
 function isEditable(controlName) {
     let controlDefs = assnType.getNotificationAssignmentDefaults();
-    return controlDefs[controlName].enabled || true;
+    return !!controlDefs[controlName].enabled;
 }

@@ -9,8 +9,8 @@ import CurrentDateTime from '../../DateTime/CurrentDateTime';
 import MobileStatusNotificationOverallStatusConfig from '../../MobileStatus/MobileStatusNotificationOverallStatusConfig';
 import GenerateLocalID from '../../Common/GenerateLocalID';
 import WorkOrderOperationPersonNum from '../../WorkOrders/Operations/WorkOrderOperationPersonNum';
-import AppVersionInfo from '../../UserProfile/AppVersionInfo';
 import TelemetryLibrary from '../../Extensions/EventLoggers/Telemetry/TelemetryLibrary';
+import GetMdoId from '../../UserProfile/GetMdoId';
 
 /**
 * Describe this function...
@@ -225,6 +225,8 @@ async function createEmergencyWork(context, notifObject, notifReadLink) {
 			return assnType.getWorkOrderAssignmentDefaults().WorkCenterPlant.default;
 	}).catch(() => assnType.getWorkOrderAssignmentDefaults().WorkCenterPlant.default);
 
+	const omdoId = await GetMdoId(context, 'XX_WORK_ORDER_GENERIC_EAM');
+
 	let woCreateProperties = {
 		'OrderId': OrderId,
 		'OrderDescription': notifObject.NotificationDescription,
@@ -240,7 +242,7 @@ async function createEmergencyWork(context, notifObject, notifReadLink) {
 		'NotificationNumber': notifObject.NotificationNumber,
 		'MainWorkCenterPlant': defaultWorkCenterPlant,
 		'OrderProcessingContext': 'E',
-		'OrderType': 'YA01',
+		'OrderType': context.getGlobalDefinition('/SAPAssetManager/Globals/WorkOrder/EmergencyOrderType.global').getValue(),
 	};
 
 	// ----------------OPERATION CREATE PROPERTIES---------------- //
@@ -295,7 +297,7 @@ async function createEmergencyWork(context, notifObject, notifReadLink) {
 							'OfflineOData.TransactionID': OrderId,
 							'OfflineOData.NonMergeable': false,
 							'OfflineOData.RemoveAfterUpload': '/SAPAssetManager/Rules/Common/RemoveAfterUploadValue.js',
-							'transaction.omdo_id': `SAM${AppVersionInfo(context).split('.')[0]}_WORK_ORDER_GENERIC_EAM`,
+							'transaction.omdo_id': omdoId,
 						},
 						'CreateLinks': createdLinks,
 					},
@@ -308,7 +310,7 @@ async function createEmergencyWork(context, notifObject, notifReadLink) {
 						},
 						'Properties': operationCreateProperties,
 						'Headers': {
-							'transaction.omdo_id': `SAM${AppVersionInfo(context).split('.')[0]}_WORK_ORDER_GENERIC_EAM`,
+							'transaction.omdo_id': omdoId,
 							'OfflineOData.TransactionID': OrderId,
 							'OfflineOData.NonMergeable': false,
 						},
@@ -332,9 +334,11 @@ async function createEmergencyWork(context, notifObject, notifReadLink) {
 }
 
 function getCreateLinks(context, createdNotif) {
+	const emergencyOrderType = context.getGlobalDefinition('/SAPAssetManager/Globals/WorkOrder/EmergencyOrderType.global').getValue();
+	
 	let links = [];
 	return context.read('/SAPAssetManager/Services/AssetManager.service', 'OrderTypes', ['PriorityType'],
-		`$filter=PlanningPlant eq '${createdNotif.PlanningPlant}' and OrderType eq 'YA01'`).then(orderTypes => {
+		`$filter=PlanningPlant eq '${createdNotif.PlanningPlant}' and OrderType eq '${emergencyOrderType}'`).then(orderTypes => {
 		if (orderTypes.getItem(0)) {
 			let priorityType = orderTypes.getItem(0).PriorityType;
 			if (createdNotif.HeaderEquipment) {

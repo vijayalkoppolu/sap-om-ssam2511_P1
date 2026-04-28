@@ -293,11 +293,19 @@
                             }
                         },
                         {
+                            "_Type": "Control.Type.FormCell.Switch",
+                            "_Name": "StartDateSwitch",
+                            "Value": "/SAPAssetManager/Rules/Common/Controls/Handlers/DateSwitchValue.js",
+                            "Caption": "$(L, start_date)",
+                            "IsVisible": "/SAPAssetManager/Rules/Common/IsOnEdit.js",
+                            "OnValueChange": "/SAPAssetManager/Rules/Common/Controls/Handlers/DateSwitchValueChanged.js"
+                        },
+                        {
                             "_Name": "StartDatePicker",
                             "_Type": "Control.Type.FormCell.DatePicker",
                             "Caption": "$(L, start_date)",
                             "Mode": "Date",
-                            "Value": "/SAPAssetManager/Rules/Common/Controls/Data/SetStartDate.js"
+                            "IsEditable": "/SAPAssetManager/Rules/Common/Controls/Handlers/DateSwitchValue.js"
                         },
                         {
                             "_Name": "ManufactureNameProperty",
@@ -307,11 +315,19 @@
                             "Value": "{Manufacturer}"
                         },
                         {
+                            "_Type": "Control.Type.FormCell.Switch",
+                            "_Name": "ManufactureDateSwitch",
+                            "Value": "/SAPAssetManager/Rules/Common/Controls/Handlers/DateSwitchValue.js",
+                            "Caption": "$(L, manufacture_date)",
+                            "IsVisible": "/SAPAssetManager/Rules/Common/IsOnEdit.js",
+                            "OnValueChange": "/SAPAssetManager/Rules/Common/Controls/Handlers/DateSwitchValueChanged.js"
+                        },
+                        {
                             "_Name": "ManufactureDatePicker",
                             "_Type": "Control.Type.FormCell.DatePicker",
                             "Caption": "$(L, manufacture_date)",
                             "Mode": "Date",
-                            "Value": "/SAPAssetManager/Rules/Common/Controls/Data/ManufactureDate.js"
+                            "IsEditable": "/SAPAssetManager/Rules/Common/Controls/Handlers/DateSwitchValue.js"
                         },
                         {
                             "_Name": "ModelNumberProperty",

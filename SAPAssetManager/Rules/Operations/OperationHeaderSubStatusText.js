@@ -1,4 +1,5 @@
 import OperationMobileStatus from '../MobileStatus/OperationMobileStatus';
+import OperationHeaderPriority from './OperationHeaderPriority';
 import TechniciansExist from '../WorkOrders/Operations/TechniciansExist';
 import MobileStatusLibrary from '../MobileStatus/MobileStatusLibrary';
 import OperationMobileStatusLibrary from './MobileStatus/OperationMobileStatusLibrary';
@@ -10,8 +11,10 @@ export default async function OperationHeaderSubStatusText(context, binding = co
         const split = await OperationMobileStatusLibrary.findMySplitForOperation(context, binding);
 
         if (split) {
-            return OperationMobileStatus(context, split);
+            binding = split;
+        } else { //if no split for user, don't show operation status as the Tags on the header already shows it
+            return '';
         }
     }
-    return '';
+    return OperationHeaderPriority(context) ? await OperationMobileStatus(context, binding) : '';
 }

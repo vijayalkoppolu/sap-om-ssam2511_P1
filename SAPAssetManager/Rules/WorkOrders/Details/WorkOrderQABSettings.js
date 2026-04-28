@@ -11,7 +11,6 @@ import EnableWorkOrderEdit from '../../UserAuthorizations/WorkOrders/EnableWorkO
 import IsAddConfirmationButtonVisible from '../../QAB/IsAddConfirmationButtonVisible';
 import ConfirmationCreateIsEnabledForWO from '../../Confirmations/CreateUpdate/ConfirmationCreateIsEnabledForWO';
 import ConfirmationScenariosFeatureIsEnabled from '../../ConfirmationScenarios/ConfirmationScenariosFeatureIsEnabled';
-import CommonLibrary from '../../Common/Library/CommonLibrary';
 
 export default class WorkOrderQABSettings extends QABSettings {
     async generateChips() {
@@ -23,13 +22,12 @@ export default class WorkOrderQABSettings extends QABSettings {
             ];
         } else {
             const isMT = libPersona.isMaintenanceTechnician(this._context);
-            const isNotLocal = !CommonLibrary.isCurrentReadLinkLocal(this._context.binding['@odata.readLink']);
             const enableWorkOrderEdit = await EnableWorkOrderEdit(this._context);
 
             chips = [
                 await this._createMeterActionChip(),
                 await this._createAddWorkOrderChip({
-                    'IsEnabled': isMT && isNotLocal,
+                    'IsEnabled': isMT,
                 }),
                 await this._createAddOperationChip({ 'IsButtonVisibleBySettings': !isMT }),
                 this._createAddPartChip({

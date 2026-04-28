@@ -13,6 +13,9 @@
 		"UpdateMode": "Replace",
         "UnmodifiableRequest": true
 	},
+    "Headers": {
+        "OfflineOData.HeaderFormat": "/SAPAssetManager/Rules/Forms/SDF/FormInstanceCreateUpdateSlug.js"
+    },
     "OnSuccess": "/SAPAssetManager/Rules/Forms/SDF/FormUpdateCloseOnCompleted.js",
     "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/UpdateEntityFailureMessage.action"
 }

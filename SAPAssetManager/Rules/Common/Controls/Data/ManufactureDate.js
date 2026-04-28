@@ -1,19 +1,19 @@
 import ODataDate from '../../../Common/Date/ODataDate';
-import ValidationLibrary from '../../Library/ValidationLibrary';
+import CommonLibrary from '../../Library/CommonLibrary';
 
-export default function ManufactureDate(control) {
+export default function ManufactureDate(context) {
     let date = new Date();
-    let pageProxy = control.getPageProxy();
 
-    if (!(ValidationLibrary.evalIsEmpty(pageProxy.binding)) && pageProxy.binding.ConstYear) {
-        date.setFullYear(pageProxy.binding.ConstYear);
+    if (context?.binding?.ConstYear) {
+        date.setFullYear(context.binding.ConstYear);
     }
 
-    if (!(ValidationLibrary.evalIsEmpty(pageProxy.binding)) && pageProxy.binding.ConstMonth) {
-        date.setMonth(pageProxy.binding.ConstMonth - 1);
+    if (context?.binding?.ConstMonth) {
+        date.setMonth(context.binding.ConstMonth - 1);
     }
 
-    let odataDate = new ODataDate(date).toDBDateString(control);
+    let oDataDate = new ODataDate(date).toLocalDateString();
+    let formattedDate = new Date(oDataDate);
 
-    control.setValue(odataDate);
+    CommonLibrary.getControlProxy(context, 'ManufactureDatePicker').setValue(formattedDate);
 }

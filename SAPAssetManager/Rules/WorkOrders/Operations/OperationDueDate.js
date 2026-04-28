@@ -1,13 +1,15 @@
-import libCommon from '../../Common/Library/CommonLibrary';
-import OffsetODataDate from '../../Common/Date/OffsetODataDate';
-
+import OperationScheduledStart from './OperationScheduledStart';
+import OperationScheduledEnd from './OperationScheduledEnd';
+import OperationScheduledStartVisible from './Details/OperationScheduledStartVisible';
+import OperationScheduledEndVisible from './Details/OperationScheduledEndVisible';
 
 export default function OperationDueDate(context) {
-    const binding = context.binding;
-
-    if (libCommon.isDefined(binding.SchedLatestEndDate)) {
-        let odataDate = new OffsetODataDate(context, binding.SchedLatestEndDate, binding.SchedLatestEndTime);
-        return context.formatDate(odataDate.date());
+    if (OperationScheduledStartVisible(context) && OperationScheduledEndVisible(context)) {
+        return OperationScheduledStart(context) + ' - ' + OperationScheduledEnd(context);
+    } else if (OperationScheduledStartVisible(context)) {
+        return OperationScheduledStart(context);
+    } else if (OperationScheduledEndVisible(context)) {
+        return OperationScheduledEnd(context);
     } else {
         return context.localizeText('no_due_date');
     }

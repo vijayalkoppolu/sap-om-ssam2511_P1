@@ -12,7 +12,7 @@ export default function ServiceOperationsTodayList(context) {
 
     return libWO.dateOperationsFilter(context, defaultDates, 'SchedEarliestStartDate').then(dateFilter => {
         return WorkOrderOperationsFSMQueryOption(context).then(fsmQueryOptions => {
-            let queryOption = `$expand=OperationMobileStatus_Nav,WOHeader&$filter=${dateFilter}`;
+            let queryOption = `$expand=OperationMobileStatus_Nav/OverallStatusCfg_Nav/OverallStatusSeq_Nav/NextOverallStatusCfg_Nav,WOHeader&$filter=${dateFilter}`;
             if (!libVal.evalIsEmpty(fsmQueryOptions)) {
                 queryOption += ' and ' + fsmQueryOptions;
             }

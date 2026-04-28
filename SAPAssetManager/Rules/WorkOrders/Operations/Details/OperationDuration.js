@@ -2,5 +2,5 @@ import {ValueIfExists} from '../../../Common/Library/Formatter';
 
 export default function OperationDuration(context) {
     let binding = context.getBindingObject();
-    return ValueIfExists(binding.Duration);
+    return ValueIfExists(binding.Duration) + ((binding.Duration)? ' ' + ValueIfExists(binding.DurationUOM) : '');
 }

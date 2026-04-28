@@ -1,20 +1,29 @@
 import ODataLibrary from '../../OData/ODataLibrary';
 import libCommon from '../../Common/Library/CommonLibrary';
-import EWMLibrary, { WarehouseTaskStatus, AutoPackDefiningRequestsList } from '../Common/EWMLibrary';
+import EWMLibrary, { WarehouseTaskStatus, AutoPackDefiningRequestsList, InboundDeliveryStatusValue } from '../Common/EWMLibrary';
 import Logger from '../../Log/Logger';
 
 const UPLOAD_CATEGORY = 'InboundDeliveryAutoPack';
 
-export default async function InboundDeliveryAutoPackOnPress(context) {
+export default async function InboundDeliveryAutoPackOnPress(context, binding = context.binding) {
     const pageProxy = context.getPageProxy();
 
-    if (await libCommon.getEntitySetCount(context, `${context.binding['@odata.readLink']}/WarehouseTask_Nav`, `$filter=WTStatus eq '${WarehouseTaskStatus.Open}'`)) {
+    if (await libCommon.getEntitySetCount(context, `${binding['@odata.readLink']}/WarehouseTask_Nav`, `$filter=WTStatus eq '${WarehouseTaskStatus.Open}'`)) {
         return context.executeAction({
             'Name': '/SAPAssetManager/Actions/Common/GenericErrorDialog.action',
             'Properties': {
                 'OKCaption': context.localizeText('ok'),
                 'Title': context.localizeText('error'),
                 'Message': context.localizeText('handling_unit_create_error_task_open'),
+            },
+        });
+    } else if (binding.PackingStatusValue === InboundDeliveryStatusValue.Completed) {
+        return context.executeAction({
+            'Name': '/SAPAssetManager/Actions/Common/GenericErrorDialog.action',
+            'Properties': {
+                'OKCaption': context.localizeText('ok'),
+                'Title': context.localizeText('error'),
+                'Message': context.localizeText('ibd_already_packed_error'),
             },
         });
     }

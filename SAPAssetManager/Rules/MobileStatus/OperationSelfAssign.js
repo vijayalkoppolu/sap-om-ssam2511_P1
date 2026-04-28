@@ -1,12 +1,10 @@
+import ClockInClockOutLibrary from '../ClockInClockOut/ClockInClockOutLibrary';
 import IsPhaseModelEnabled from '../Common/IsPhaseModelEnabled';
 import common from '../Common/Library/CommonLibrary';
 
 export default function OperationSelfAssign(context, binding) {
-    if (!IsPhaseModelEnabled(context)) {
-        return Promise.resolve();
-    }
 
-    if (binding.PersonNum === '00000000') {
+    if (binding.PersonNum === '00000000' && IsPhaseModelEnabled(context) && !ClockInClockOutLibrary.isCICOEnabled(context)) {
         let employee = common.getPersonnelNumber();
         return context.executeAction({
             'Name' : '/SAPAssetManager/Actions/MobileStatus/OperationSelfAssign.action',

@@ -15,6 +15,7 @@ import { WorkOrderDetailsPageName } from '../WorkOrders/Details/WorkOrderDetails
 import { WorkOrderOperationDetailsPageNameToOpen } from '../WorkOrders/Operations/Details/WorkOrderOperationDetailsPageToOpen';
 import GetNotificationItemStepData from './CreateUpdate/GetNotificationItemStepData';
 import ODataDate from '../Common/Date/ODataDate';
+import IsEmergencyWorkEnabled from '../WorkOrders/IsEmergencyWorkEnabled';
 
 export default class {
     static NormalizeSequenceNumber(value) {
@@ -1492,4 +1493,19 @@ export default class {
         return false;
     }
 
+    static async validateEmergencyOrderType(context, emergencyOrderType) {
+        const dict = libCom.getControlDictionaryFromPage(context);
+        const segmentedControlValue = libCom.getControlValue(dict.NPCSeg);
+
+        if (IsEmergencyWorkEnabled(context) && segmentedControlValue === '01') {
+            if (!emergencyOrderType) return false;
+
+            const planningPlant = libThis.NotificationCreateDefaultPlant(context);
+            const filterQuery = `$filter=PlanningPlant eq '${planningPlant}' and OrderType eq '${emergencyOrderType}'`;
+            const emergencyOrderTypes = await context.count('/SAPAssetManager/Services/AssetManager.service', 'OrderTypes', filterQuery);
+            return emergencyOrderTypes > 0;
+        }
+
+        return true;
+    }
 }

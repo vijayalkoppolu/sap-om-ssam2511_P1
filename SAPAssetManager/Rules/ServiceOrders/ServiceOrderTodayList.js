@@ -25,7 +25,7 @@ export default function ServiceOrdersDateFilter(context) {
     } else {
         return libWO.dateOrdersFilter(context, defaultDates, 'ScheduledStartDate').then(dateFilter => {	
             return WorkOrdersFSMQueryOption(context).then(types => {
-                return `$expand=OrderMobileStatus_Nav,WOPriority&$filter=(OrderMobileStatus_Nav/MobileStatus eq '${RECEIVED}'
+                return `$expand=OrderMobileStatus_Nav/OverallStatusCfg_Nav/OverallStatusSeq_Nav/NextOverallStatusCfg_Nav,WOPriority&$filter=(OrderMobileStatus_Nav/MobileStatus eq '${RECEIVED}'
                     or OrderMobileStatus_Nav/MobileStatus eq '${COMPLETED}' or OrderMobileStatus_Nav/MobileStatus eq '${STARTED}'
                     or OrderMobileStatus_Nav/MobileStatus eq '${HOLD}') and ${dateFilter} and ${types}&$top=2`;
                 });

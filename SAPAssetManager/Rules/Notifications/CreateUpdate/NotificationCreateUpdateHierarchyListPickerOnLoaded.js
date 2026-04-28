@@ -1,6 +1,7 @@
 import libCom from '../../Common/Library/CommonLibrary';
 import updateGroupPickers from './UpdateGroupPickers';
 import updateSoldToPartyPickers from './NotificationCreateUpdateSoldToPartyPickers';
+import UpdatePlanningGroup from './UpdatePlanningGroup';
 
 export default function NotificationCreateUpdateHierarchyListPickerOnLoaded(control) {
     
@@ -47,7 +48,7 @@ function setDefaultListPickerValue(context, name, workOrder = {}) {
         }
     }
     if (extension) {
-        extension.setData(value).then(() => updateGroupPickers(context)).then(() => updateSoldToPartyPickers(context));
+        extension.setData(value).then(() => updateGroupPickers(context)).then(() => updateSoldToPartyPickers(context)).then(() => UpdatePlanningGroup(context));
         //resave initial values after default picker value was set
         libCom.saveInitialValues(context);
     }

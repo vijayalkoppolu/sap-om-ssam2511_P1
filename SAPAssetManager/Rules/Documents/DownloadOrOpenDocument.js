@@ -24,7 +24,7 @@ export default function DownloadOrOpenDocument(sectionedTableProxy, documentProp
 
     if (documentObject.ObjectType === 'URL') {
         // Workaround function to address iOS 18 removal of openUrl function
-        return Promise.resolve(URLModuleLibrary.openUrl(documentObject.URL.replace('&KEY&', '')));
+        return Promise.resolve(URLModuleLibrary.openUrl(pageProxy, documentObject.URL.replace('&KEY&', '')));
     } else {
         // Check if media already exists or needs to be downloaded
         return sectionedTableProxy.isMediaLocal(serviceName, entitySet, readLink).then((isMediaLocal) => {

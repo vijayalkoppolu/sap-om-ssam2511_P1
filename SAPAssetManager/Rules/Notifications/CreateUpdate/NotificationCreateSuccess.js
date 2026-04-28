@@ -190,7 +190,13 @@ export default function NotificationCreateSuccess(context, createdNotif) {
         }
         //Checks the place of creation - Operation, SubOperation, Equipemnt, FLocation, Work Order page
         if (await shouldCreateRelatedNotification(context)) {
-            return context.executeAction('/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationCreate.action')
+            return context.executeAction({
+                'Name': '/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationCreate.action',
+                'Properties': {
+                    'Properties': {
+                        'NotificationNumber': libCommon.getStateVariable(context, 'LocalId'),
+                    }
+            }})
                 .then(result => JSON.parse(result.data))
                 .then((/** @type {NotificationHistory} */ notifHistory) => noteText ? NoteUtils.createNotificationHistoryText(context, noteText, notifHistory.NotificationNumber) : '')
                 .then(() => NoteUtils.createNoteIfDefined(context, TransactionNoteType.notification(NotificationDetailsPageName(context))));
@@ -281,6 +287,10 @@ export default function NotificationCreateSuccess(context, createdNotif) {
     }).then(() => {
         context.dismissActivityIndicator();
         if (context.binding && context.binding['@odata.type'] === '#sap_mobile.InspectionCharacteristic') {
+            const recordResultPage = context.evaluateTargetPathForAPI('#Page:-Previous');
+            const recordedDefects = recordResultPage.getClientData().RecordedDefects || [];
+            recordedDefects.push(createdNotif['@odata.readLink']);
+            recordResultPage.getClientData().RecordedDefects = recordedDefects;
             return ExecuteActionWithAutoSync(context, '/SAPAssetManager/Actions/InspectionCharacteristics/Update/InspectionCharacteristicsNotificationSuccessMessageClosePage.action');
         }
 
