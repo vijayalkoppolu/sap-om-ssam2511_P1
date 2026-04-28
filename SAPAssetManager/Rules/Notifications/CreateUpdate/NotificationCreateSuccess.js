@@ -190,7 +190,13 @@ export default function NotificationCreateSuccess(context, createdNotif) {
         }
         //Checks the place of creation - Operation, SubOperation, Equipemnt, FLocation, Work Order page
         if (await shouldCreateRelatedNotification(context)) {
-            return context.executeAction('/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationCreate.action')
+            return context.executeAction({
+                'Name': '/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationCreate.action',
+                'Properties': {
+                    'Properties': {
+                        'NotificationNumber': libCommon.getStateVariable(context, 'LocalId'),
+                    }
+            }})
                 .then(result => JSON.parse(result.data))
                 .then((/** @type {NotificationHistory} */ notifHistory) => noteText ? NoteUtils.createNotificationHistoryText(context, noteText, notifHistory.NotificationNumber) : '')
                 .then(() => NoteUtils.createNoteIfDefined(context, TransactionNoteType.notification(NotificationDetailsPageName(context))));
