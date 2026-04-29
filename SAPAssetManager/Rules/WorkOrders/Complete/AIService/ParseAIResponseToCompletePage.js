@@ -535,7 +535,8 @@ function extractCode(input) {
     if (ValidationLibrary.evalIsEmpty(input)) {
         return undefined;
     }
-    // Trim the input to remove leading and trailing spaces
+    // Keep hyphens inside the code (for example YB-ABC) and only split from description on " - ".
     const trimmedInput = input.trim();
-    return trimmedInput.includes('-') ? trimmedInput.split('-')[0].trim() : trimmedInput;
+    const separatorMatch = trimmedInput.match(/\s-\s/);
+    return separatorMatch ? trimmedInput.substring(0, separatorMatch.index).trim() : trimmedInput;
 }

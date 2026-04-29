@@ -19,7 +19,7 @@ async function generateOperationInfoMessage(context) {
 }
 
 export default async function ProcessFreeText(context, inputText) {
-    const { operationInfoMessage, firstOpNo } = await generateOperationInfoMessage(context); 
+    const { message: operationInfoMessage, firstOpNo } = await generateOperationInfoMessage(context);
     const aiInput = operationInfoMessage + ' ' + inputText;
     try {
         context.showActivityIndicator(context.localizeText('processing'));
@@ -37,7 +37,17 @@ export default async function ProcessFreeText(context, inputText) {
                 },
             },
         }).then(async response => {
-            const result = response.data.actions[0];
+            const actionPayload = response?.data?.action ?? response?.data?.actions ?? [];
+            const normalizedPayload = Array.isArray(actionPayload) ? actionPayload : [actionPayload];
+
+            // Merge response items while preserving top-level keys (for example notificationItem, operation).
+            const result = normalizedPayload.reduce((acc, item) => {
+                if (item && typeof item === 'object' && !Array.isArray(item)) {
+                    return { ...acc, ...item };
+                }
+                return acc;
+            }, {});
+
             Logger.info('Successful response from server:\n', result);
             AnalyticsLibrary.aiJobCompletion();
             return result;
