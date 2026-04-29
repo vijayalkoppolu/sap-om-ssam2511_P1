@@ -7,10 +7,12 @@ import libCom from '../../../../SAPAssetManager/Rules/Common/Library/CommonLibra
  * @param {IClientAPI} context
  */
 export default async function ZFailureEffectCodeGroupPickerItems(context) {
+    // Get the page proxy - context could be a control or page proxy
+    const pageProxy = context.getPageProxy ? context.getPageProxy() : context;
+
     // Get the notification type from TypeLstPkr
     let notifType = '';
     try {
-        const pageProxy = context.getPageProxy ? context.getPageProxy() : context;
         const formCellContainer = pageProxy.getControl('FormCellContainer');
         if (formCellContainer) {
             const typePkr = formCellContainer.getControl('TypeLstPkr');
@@ -30,12 +32,12 @@ export default async function ZFailureEffectCodeGroupPickerItems(context) {
     if (notifType) {
         try {
             // Read the NotificationTypes entity to get the actual CatalogProfile
-            const pageProxy = context.getPageProxy ? context.getPageProxy() : context;
+            // Key property is NotifType (not NotificationType)
             const result = await pageProxy.read(
                 '/SAPAssetManager/Services/AssetManager.service',
                 'NotificationTypes',
                 [],
-                `$filter=NotificationType eq '${notifType}'`
+                `$filter=NotifType eq '${notifType}'`
             );
             if (result && result.length > 0) {
                 const catalogProfile = result.getItem(0).CatalogProfile;
@@ -48,7 +50,7 @@ export default async function ZFailureEffectCodeGroupPickerItems(context) {
         }
     }
 
-    return context.read(
+    return pageProxy.read(
         '/SAPAssetManager/Services/AssetManager.service',
         'PMCatalogProfiles',
         [],
