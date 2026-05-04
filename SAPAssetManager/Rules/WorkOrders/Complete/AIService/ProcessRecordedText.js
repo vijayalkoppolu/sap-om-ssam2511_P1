@@ -22,7 +22,7 @@ export default async function ProcessRecordedText(context) {
                     if (!aiResponse.operation) {
                         aiResponse.operation = {}; // Ensure operation object exists
                     }
-                    aiResponse.operation.id = aiResponse.operation?.id || context.binding?.OperationNo || context.binding?.Operation;
+                    aiResponse.operation.id = aiResponse.operation?.id || aiResponse.time?.id || context.binding?.OperationNo || context.binding?.Operation;
                     const isValidOperation = await isOperationNumberRelated(context, aiResponse.operation.id);
                     if (!isValidOperation) {
                         aiResponse.operation.id = await getFirstRelatedOperationNo(context);

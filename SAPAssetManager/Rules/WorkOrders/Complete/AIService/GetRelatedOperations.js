@@ -21,9 +21,13 @@ export function getFirstOperationNoFromTitles(titles) {
 
 export async function getRelatedOperationsTitles(context) {
     let operationsList = await getRelatedOperations(context);
+    if (!Array.isArray(operationsList) || operationsList.length === 0) {
+        return '';
+    }
+
     let operationsTitles = operationsList.map(operation => {
         // Split the DisplayValue by ' - ' to separate the operation number and description
-        let [operationNo, description] = operation.DisplayValue.split(' - ');
+        let [operationNo, description] = (operation.DisplayValue || '').split(' - ');
 
         // Take only the first line of the description
         let shortText = description?.split('\n')[0] || '';
@@ -33,6 +37,10 @@ export async function getRelatedOperationsTitles(context) {
     });
     return operationsTitles.join('\n');
 
+}
+
+export default async function GetRelatedOperations(context) {
+    return getRelatedOperationsTitles(context);
 }
 
 
