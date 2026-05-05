@@ -8,7 +8,7 @@ import Logger from '../../../../SAPAssetManager/Rules/Log/Logger';
 export default function RequiredFields(context) {
     const formcellContainerProxy = context.getPageProxy().getControl('FormCellContainer');
     const required = [];
-    const notificationMandatoryFields = ['NotificationDescription', 'TypeLstPkr', 'PriorityLstPkr'];
+    const notificationMandatoryFields = ['NotificationDescription', 'TypeLstPkr'];
     const currentPage = CommonLib.getPageName(context);
 
     // eslint-disable-next-line brace-style
@@ -53,7 +53,8 @@ export default function RequiredFields(context) {
     if (currentPage === 'NotificationAddPage') { // on the NotificationUpdateMalfunctionEnd page these fields are not existing
         required.push(
             ...GetUnpopulatedChildControlNamesWithPopulatedParentControl([notificationMandatoryFields], formcellContainerProxy),
-            ...NotificationItemDetectionRequiredFields(formcellContainerProxy));
+            ...NotificationItemDetectionRequiredFields(formcellContainerProxy),
+            ...NotificationItemFailureEffectRequiredFields(formcellContainerProxy));
     }
 
     return required;
@@ -84,6 +85,10 @@ export function NotificationItemCauseRequiredFields(formcellContainerProxy) {
 
 export function NotificationItemDetectionRequiredFields(formcellContainerProxy) {
     return GetUnpopulatedChildControlNamesWithPopulatedParentControl([['DetectionGroupListPicker', 'DetectionMethodListPicker']], formcellContainerProxy); //If a detection group has been entered then the method is required
+}
+
+export function NotificationItemFailureEffectRequiredFields(formcellContainerProxy) {
+    return GetUnpopulatedChildControlNamesWithPopulatedParentControl([['FailureEffectGroupListPicker', 'FailureEffectListPicker']], formcellContainerProxy); //If a failure effect codegroup has been entered then the failure effect code is required
 }
 
 function GetUnpopulatedChildControlNamesWithPopulatedParentControl(parentChildControlNames, formcellContainerProxy) {

@@ -79,10 +79,8 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
                     'NotificationNumber': notifNum,
                     'NotificationDescription': descr,
                     'NotificationType': type,
-                    'Priority': NotificationLibrary.NotificationCreateUpdatePrioritySegValue(clientAPI),
                     'HeaderFunctionLocation': floc,
                     'HeaderEquipment': equip,
-                    'BreakdownIndicator': BreakdownSwitchValue(clientAPI),
                     'MainWorkCenter': workcenter,
                     'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
                     'ReportedBy': ComLib.getSapUserName(clientAPI),
@@ -165,10 +163,8 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
             let notificationUpdateProperties = {
                 'NotificationDescription': descr,
                 'NotificationType': type,
-                'Priority': NotificationLibrary.NotificationCreateUpdatePrioritySegValue(clientAPI),
                 'HeaderFunctionLocation': NotificationLibrary.NotificationCreateUpdateFunctionalLocationLstPkrValue(clientAPI),
                 'HeaderEquipment': NotificationLibrary.NotificationCreateUpdateEquipmentLstPkrValue(clientAPI),
-                'BreakdownIndicator': BreakdownSwitchValue(clientAPI),
                 'PlanningGroup': plannerGroup.length ? plannerGroup[0].ReturnValue : '',
                 'MainWorkCenter': workcenter,
                 'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
@@ -264,9 +260,13 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
  * @returns 
  */
 function setMalfunctionDateTime(clientAPI, properties) {
-    let start = ComLib.getControlProxy(clientAPI, 'BreakdownStartSwitch').getValue();
-    let end = ComLib.getControlProxy(clientAPI, 'BreakdownEndSwitch').getValue();
-    let breakdown = ComLib.getControlProxy(clientAPI, 'BreakdownSwitch').getValue();
+    let startControl = ComLib.getControlProxy(clientAPI, 'BreakdownStartSwitch');
+    let endControl = ComLib.getControlProxy(clientAPI, 'BreakdownEndSwitch');
+    let breakdownControl = ComLib.getControlProxy(clientAPI, 'BreakdownSwitch');
+
+    let start = startControl ? startControl.getValue() : false;
+    let end = endControl ? endControl.getValue() : false;
+    let breakdown = breakdownControl ? breakdownControl.getValue() : false;
 
     properties.MalfunctionStartDate = '';
     properties.MalfunctionStartTime = '';

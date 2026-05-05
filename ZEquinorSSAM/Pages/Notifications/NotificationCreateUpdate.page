@@ -448,7 +448,7 @@
         {
           "_Type": "Control.Type.FormCell.ListPicker",
           "_Name": "FailureEffectListPicker",
-          "Caption": "$(L,failure_effect_code)",
+          "Caption": "$(L,failure_effect_code)*",
           "AllowMultipleSelection": false,
           "AllowEmptySelection": true,
           "IsPickerDismissedOnSelection": true,
@@ -544,7 +544,6 @@
                     "AllowMultipleSelection": false,
                     "Value": "/SAPAssetManager/Rules/Notifications/NotificationPrioritySegDefault.js",
                     "PickerItems": "/SAPAssetManager/Rules/Notifications/PriorityListPicker.js",
-                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePriorityVisibility.js",
                     "OnValueChange": "/SAPAssetManager/Rules/Common/Validation/ResetValidationOnInput.js",                    
                     "_Name": "PriorityLstPkr",
                     "IsVisible": false,
