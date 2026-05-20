@@ -365,7 +365,7 @@
                         "Placeholder": "$(L,search)",
                         "BarcodeScanner": true
                     },
-                    "Caption": "$(L,detection_group)*",
+                    "Caption": "$(L,detection_group)",
                     "PickerItems": {
                         "DisplayValue": "{{#Property:DetectionGroup}} - {{#Property:DetectionGroupDesc}}",
                         "ReturnValue": "{@odata.readLink}",
