@@ -302,6 +302,7 @@
                     "AllowMultipleSelection": false,
                     "IsPickerDismissedOnSelection": true,
                     "IsSearchCancelledAfterSelection": true,
+                    "IsVisible": false,
                     "Search": {
                         "Enabled": true,
                         "Delay": 500,
@@ -329,6 +330,7 @@
                     "IsSearchCancelledAfterSelection": true,
                     "IsEditable": false,
                     "AllowDefaultValueIfOneItem": true,
+                    "IsVisible": false,
                     "Search": {
                         "Enabled": true,
                         "Delay": 500,
@@ -363,7 +365,7 @@
                         "Placeholder": "$(L,search)",
                         "BarcodeScanner": true
                     },
-                    "Caption": "$(L,detection_group)*",
+                    "Caption": "$(L,detection_group)",
                     "PickerItems": {
                         "DisplayValue": "{{#Property:DetectionGroup}} - {{#Property:DetectionGroupDesc}}",
                         "ReturnValue": "{@odata.readLink}",
@@ -411,7 +413,7 @@
                     "IsPickerDismissedOnSelection": true,
                     "IsSearchCancelledAfterSelection": true,
                     "IsEditable": true,
-                    "IsVisible": true,
+                    "IsVisible": false,
                     "Search": {
                         "Enabled": true,
                         "Delay": 500,
@@ -446,7 +448,7 @@
         {
           "_Type": "Control.Type.FormCell.ListPicker",
           "_Name": "FailureEffectListPicker",
-          "Caption": "$(L,failure_effect_code)",
+          "Caption": "$(L,failure_effect_code)*",
           "AllowMultipleSelection": false,
           "AllowEmptySelection": true,
           "IsPickerDismissedOnSelection": true,
@@ -462,6 +464,7 @@
                     "Value": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateBreakdownValue.js",
                     "_Name": "BreakdownSwitch",
                     "_Type": "Control.Type.FormCell.Switch",
+                    "IsVisible": false,
                     "OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateBreakdownOnChange.js"
                 },
                 {
@@ -531,8 +534,8 @@
                     "Value": "/SAPAssetManager/Rules/Notifications/NotificationPrioritySegDefault.js",
                     "Segments": "/SAPAssetManager/Rules/Notifications/PriorityListPicker.js",
                     "OnValueChange":"/SAPAssetManager/Rules/Common/Validation/ResetValidationOnInput.js",
-                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePriorityVisibility.js",
                     "_Name": "PrioritySeg",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.SegmentedControl"
                 },
                 {
@@ -541,9 +544,9 @@
                     "AllowMultipleSelection": false,
                     "Value": "/SAPAssetManager/Rules/Notifications/NotificationPrioritySegDefault.js",
                     "PickerItems": "/SAPAssetManager/Rules/Notifications/PriorityListPicker.js",
-                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePriorityVisibility.js",
                     "OnValueChange": "/SAPAssetManager/Rules/Common/Validation/ResetValidationOnInput.js",                    
                     "_Name": "PriorityLstPkr",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.ListPicker"
                 },
                 {
@@ -552,6 +555,7 @@
                     "Semantic": "Tint",
                     "OnPress": "/SAPAssetManager/Rules/Notifications/PriorityAssessmentNav.js",
                     "_Name": "AssessmentBtn",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.Button"
                 }]
             },
@@ -649,8 +653,8 @@
                     "Title": "$(L,use_template)",
                     "ButtonType": "$(PLT, '', 'Normal')",
                     "OnPress": "/SAPAssetManager/Rules/Notifications/InsertTemplate.js",
-                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/ShowTemplateButton.js",
                     "_Name": "UseTemplateBtn",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.Button"
                 }]
             },
@@ -687,6 +691,7 @@
                         "Caption": "$(L,select_notification_extra_fields)",
                         "Value": false,
                         "_Name": "ShowAdditionalFieldsSwitch",
+                        "IsVisible": false,
                         "_Type": "Control.Type.FormCell.Switch",
                         "OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateShowFieldsChange.js"
                     }
@@ -705,6 +710,7 @@
                     "PlaceHolder": "$(L,item_description)",
                     "OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/OnCreateNotificationItemDescriptionChanged.js",
                     "_Name": "ItemDescription",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.Note"
                 },
                 {
@@ -725,6 +731,7 @@
                     "PickerItems": [],
                     "OnValueChange" : "/SAPAssetManager/Rules/Notifications/Item/CreateUpdate/NotificationItemCreateUpdatePart.js",
                     "_Name": "PartGroupLstPkr",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.ListPicker"
                 },
                 {
@@ -753,6 +760,7 @@
                         }
                     },
                     "_Name": "PartDetailsLstPkr",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.ListPicker"
                 },
                 {
@@ -772,6 +780,7 @@
                     "PickerItems": [],
                     "OnValueChange" : "/SAPAssetManager/Rules/Notifications/Item/CreateUpdate/NotificationItemCreateUpdateDamage.js",
                     "_Name": "DamageGroupLstPkr",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.ListPicker"
                 },
                 {
@@ -800,6 +809,7 @@
                         }
                     },
                     "_Name": "DamageDetailsLstPkr",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.ListPicker"
                 }]
             },
@@ -809,6 +819,7 @@
                     "UseTopPadding": true
                 },
                 "_Name": "CauseSetupSection",
+                "IsVisible": false,
                 "_Type": "Section.Type.FormCell",
                 "Controls":
                 [{
@@ -816,6 +827,7 @@
                     "IsEditable": false,
                     "OnValueChange": "/SAPAssetManager/Rules/Notifications/Utils/NotificationDescriptionLengthValidation.js",
                     "_Name": "CauseDescription",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.Note"
                 },
                 {
@@ -836,6 +848,7 @@
                     "PickerItems": [],
                     "OnValueChange" : "/SAPAssetManager/Rules/Notifications/Item/Cause/CreateUpdate/NotificationItemCauseCreateUpdateCode.js",
                     "_Name": "CauseGroupLstPkr",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.ListPicker"
                 },
                 {
@@ -864,6 +877,7 @@
                         }
                     },
                     "_Name": "CodeLstPkr",
+                    "IsVisible": false,
                     "_Type": "Control.Type.FormCell.ListPicker"
                 }]
             },

@@ -134,6 +134,16 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
             Logger.error('NotificationCreateUpdateOnPageLoad', error);
         }
 
+        // Equinor: In edit mode, re-set the Failure Effect Code Group value after picker items are reloaded
+        if (!onCreate && binding && binding.FailureEffectCodeGrp) {
+            try {
+                const feGroupPicker = context.getControl('FormCellContainer').getControl('FailureEffectGroupListPicker');
+                feGroupPicker.setValue(binding.FailureEffectCodeGrp, false);
+            } catch (e) {
+                Logger.error('NotificationCreateUpdateOnPageLoad - re-set failure effect code group', e);
+            }
+        }
+
         // Equinor: In edit mode, load Failure Effect Code picker items based on existing code group
         if (!onCreate && binding && binding.FailureEffectCodeGrp) {
             const codeGroup = binding.FailureEffectCodeGrp;
@@ -187,27 +197,9 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
       //Equinor GAP NGE-95807 - Hide fields in SSAM “add notification” 
                 let formCellContainer = context.getControl('FormCellContainer');
                 InsertTemplate(context);
-                formCellContainer.getControl('BreakdownSwitch').setVisible(false);
-                formCellContainer.getControl('QMCodeGroupListPicker').setVisible(false);
-                formCellContainer.getControl('QMCodeListPicker').setVisible(false);
-                formCellContainer.getControl('EffectListPicker').setVisible(false);
-                formCellContainer.getControl('ShowAdditionalFieldsSwitch').setVisible(false);            
-                formCellContainer.getControl('PrioritySeg').setVisible(false);
-                formCellContainer.getControl('PriorityLstPkr').setVisible(false);
-                formCellContainer.getControl('AssessmentBtn').setVisible(false);
-                formCellContainer.getControl('ItemDescription').setVisible(false);
-                formCellContainer.getControl('PartGroupLstPkr').setVisible(false);
-                formCellContainer.getControl('PartDetailsLstPkr').setVisible(false);
-                formCellContainer.getControl('DamageGroupLstPkr').setVisible(false);
-                formCellContainer.getControl('DamageDetailsLstPkr').setVisible(false);
-                formCellContainer.getControl('CauseSetupSection').setVisible(false);
-                formCellContainer.getControl('CauseDescription').setVisible(false);
-                formCellContainer.getControl('CauseGroupLstPkr').setVisible(false);
-                formCellContainer.getControl('CodeLstPkr').setVisible(false);
-                formCellContainer.getControl('ShowAdditionalFieldsSwitch').setVisible(false);
                 formCellContainer.getControl('SectionCommonTypeHeader2').setVisible(false);
                 formCellContainer.getControl('SectionCommonTypeHeader3').setVisible(false);
-                formCellContainer.getControl('UseTemplateBtn').setVisible(false);
+             
                
             //End Equinor GAP NGE-95807 - Hide fields in SSAM “add notification” 
     
