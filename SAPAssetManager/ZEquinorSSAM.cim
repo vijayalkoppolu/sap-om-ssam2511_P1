@@ -69,6 +69,14 @@
 {
 "Source": "/ZEquinorSSAM/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment",
 "Target": "/SAPAssetManager/Pages/Fragments/Notification/Details/NotificationMalfunctionDetailsSection.fragment"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationLinks.js",
+    "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationLinks.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationCreateSuccess.js",
+    "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateSuccess.js"
 }
 ]
 }

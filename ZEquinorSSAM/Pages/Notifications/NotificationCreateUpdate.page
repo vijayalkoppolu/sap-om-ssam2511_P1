@@ -653,7 +653,6 @@
                     "Title": "$(L,use_template)",
                     "ButtonType": "$(PLT, '', 'Normal')",
                     "OnPress": "/SAPAssetManager/Rules/Notifications/InsertTemplate.js",
-                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/ShowTemplateButton.js",
                     "_Name": "UseTemplateBtn",
                     "IsVisible": false,
                     "_Type": "Control.Type.FormCell.Button"
