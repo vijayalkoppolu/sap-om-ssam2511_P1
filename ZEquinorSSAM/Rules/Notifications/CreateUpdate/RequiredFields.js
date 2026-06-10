@@ -3,6 +3,8 @@ import ValidationLibrary from '../../../../SAPAssetManager/Rules/Common/Library/
 import DocumentFieldsAddRequired from '../../../../SAPAssetManager/Rules/Documents/Create/DocumentFieldsAddRequired';
 import CommonLib from '../../../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
 import Logger from '../../../../SAPAssetManager/Rules/Log/Logger';
+import IsFromOnlineEquipCreate from '../../../../SAPAssetManager/Rules/Common/IsFromOnlineEquipCreate';
+import IsFromOnlineFlocCreate from '../../../../SAPAssetManager/Rules/Common/IsFromOnlineFlocCreate';
 
 
 export default function RequiredFields(context) {
@@ -35,16 +37,21 @@ export default function RequiredFields(context) {
     }
     
     if (NPCSegValue && NPCSegValue === '01') {
-        if (!context.evaluateTargetPath('#Control:EquipHierarchyExtensionControl').getValue() &&
-            !context.evaluateTargetPath('#Control:FuncLocHierarchyExtensionControl').getValue()) {
-            required.push('EquipHierarchyExtensionControl', 'FuncLocHierarchyExtensionControl');
+        if (!IsFromOnlineEquipCreate(context) && !IsFromOnlineFlocCreate(context)) {
+            if (!context.evaluateTargetPath('#Control:EquipHierarchyExtensionControl').getValue() &&
+                !context.evaluateTargetPath('#Control:FuncLocHierarchyExtensionControl').getValue()) {
+                required.push('EquipHierarchyExtensionControl', 'FuncLocHierarchyExtensionControl');
+            }
         }
     }
      //Start - Equinor: GAP - ID 03.110: make sure a technical object has been entered
-    if (!context.evaluateTargetPath('#Control:EquipHierarchyExtensionControl').getValue() &&
-            !context.evaluateTargetPath('#Control:FuncLocHierarchyExtensionControl').getValue()) {
-            required.push('EquipHierarchyExtensionControl', 'FuncLocHierarchyExtensionControl');
-        }
+    // Skip this check if creating from online equipment or functional location search
+    if (!IsFromOnlineEquipCreate(context) && !IsFromOnlineFlocCreate(context)) {
+        if (!context.evaluateTargetPath('#Control:EquipHierarchyExtensionControl').getValue() &&
+                !context.evaluateTargetPath('#Control:FuncLocHierarchyExtensionControl').getValue()) {
+                required.push('EquipHierarchyExtensionControl', 'FuncLocHierarchyExtensionControl');
+            }
+    }
     //End - Equinor: GAP - ID 03.110
 
     DocumentFieldsAddRequired(context, required);
