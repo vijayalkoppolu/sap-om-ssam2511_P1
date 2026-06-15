@@ -81,6 +81,10 @@
 {
     "Source": "/ZEquinorSSAM/Rules/WorkOrders/Operations/NavOnCompleteOperationPage.js",
     "Target": "/SAPAssetManager/Rules/WorkOrders/Operations/NavOnCompleteOperationPage.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Confirmations/CreateUpdate/OnCommit/CreateUpdateConfirmation.js",
+    "Target": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/CreateUpdateConfirmation.js"
 }
 ]
 }

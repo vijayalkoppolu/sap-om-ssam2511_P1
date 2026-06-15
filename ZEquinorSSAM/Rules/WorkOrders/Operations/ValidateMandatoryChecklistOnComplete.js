@@ -3,33 +3,19 @@ import Logger from '../../../../SAPAssetManager/Rules/Log/Logger';
 import userFeaturesLib from '../../../../SAPAssetManager/Rules/UserFeatures/UserFeaturesLibrary';
 
 /** Equinor NGE-121879:
- * Validates that all mandatory inspection characteristics (checklist items)
- * mapped to the current work order operation are completed (valuated) before
- * allowing the operation to be marked as complete.
- *
- * The mandatory state is indicated by the `RequiredChar` property of the
- * `InspectionCharacteristic` entity (value 'X' means mandatory). A
- * characteristic is considered completed when its `Valuation` property is
- * not empty (typically 'A' for accepted or 'R' for rejected).
- *
- * Returns a Promise that:
- *   - resolves with `true` when there ARE incomplete mandatory items (validation failed)
- *   - resolves with `false` when all mandatory items are complete (validation passed)
+ * Core validation logic that checks whether all mandatory inspection
+ * characteristics (checklist items) for a given order/operation are completed.
  *
  * @param {IClientAPI} context
- * @returns {Promise<boolean>}
+ * @param {string} orderId   - Work order ID
+ * @param {string} operationNo - Operation number
+ * @returns {Promise<boolean>} true when there ARE incomplete mandatory items
  */
-export default function ValidateMandatoryChecklistOnComplete(context) {
+export function validateMandatoryChecklist(context, orderId, operationNo) {
     try {
-        const binding = context.getPageProxy().getActionBinding() || libCommon.getBindingObject(context) || context.binding;
-
-        if (!binding || !binding.OrderId || !binding.OperationNo) {
-            // Nothing to validate against - allow completion
+        if (!orderId || !operationNo) {
             return Promise.resolve(false);
         }
-
-        const orderId = binding.OrderId;
-        const operationNo = binding.OperationNo;
 
         // Only enforce when QM/Checklist feature is enabled. If it is not, we
         // fall back to the standard behaviour.
@@ -87,4 +73,32 @@ export default function ValidateMandatoryChecklistOnComplete(context) {
         );
         return Promise.resolve(false);
     }
+}
+
+/** Equinor NGE-121879:
+ * Validates that all mandatory inspection characteristics (checklist items)
+ * mapped to the current work order operation are completed (valuated) before
+ * allowing the operation to be marked as complete.
+ *
+ * The mandatory state is indicated by the `RequiredChar` property of the
+ * `InspectionCharacteristic` entity (value 'X' means mandatory). A
+ * characteristic is considered completed when its `Valuation` property is
+ * not empty (typically 'A' for accepted or 'R' for rejected).
+ *
+ * Returns a Promise that:
+ *   - resolves with `true` when there ARE incomplete mandatory items (validation failed)
+ *   - resolves with `false` when all mandatory items are complete (validation passed)
+ *
+ * @param {IClientAPI} context
+ * @returns {Promise<boolean>}
+ */
+export default function ValidateMandatoryChecklistOnComplete(context) {
+    const binding = context.getPageProxy().getActionBinding() || libCommon.getBindingObject(context) || context.binding;
+
+    if (!binding || !binding.OrderId || !binding.OperationNo) {
+        // Nothing to validate against - allow completion
+        return Promise.resolve(false);
+    }
+
+    return validateMandatoryChecklist(context, binding.OrderId, binding.OperationNo);
 }
