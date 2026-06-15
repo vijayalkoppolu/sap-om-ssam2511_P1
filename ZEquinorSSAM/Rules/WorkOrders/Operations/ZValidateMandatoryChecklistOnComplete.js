@@ -61,7 +61,7 @@ export function validateMandatoryChecklist(context, orderId, operationNo) {
         }).catch(err => {
             Logger.error(
                 context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryOperations.global').getValue(),
-                `ValidateMandatoryChecklistOnComplete read error: ${err}`,
+                `ZValidateMandatoryChecklistOnComplete read error: ${err}`,
             );
             // In case of read failure, do not block the user.
             return false;
@@ -69,7 +69,7 @@ export function validateMandatoryChecklist(context, orderId, operationNo) {
     } catch (err) {
         Logger.error(
             context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryOperations.global').getValue(),
-            `ValidateMandatoryChecklistOnComplete unexpected error: ${err}`,
+            `ZValidateMandatoryChecklistOnComplete unexpected error: ${err}`,
         );
         return Promise.resolve(false);
     }
@@ -92,7 +92,7 @@ export function validateMandatoryChecklist(context, orderId, operationNo) {
  * @param {IClientAPI} context
  * @returns {Promise<boolean>}
  */
-export default function ValidateMandatoryChecklistOnComplete(context) {
+export default function ZValidateMandatoryChecklistOnComplete(context) {
     const binding = context.getPageProxy().getActionBinding() || libCommon.getBindingObject(context) || context.binding;
 
     if (!binding || !binding.OrderId || !binding.OperationNo) {

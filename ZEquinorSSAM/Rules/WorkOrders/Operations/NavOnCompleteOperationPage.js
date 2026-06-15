@@ -4,7 +4,7 @@ import libCommon from '../../../../SAPAssetManager/Rules/Common/Library/CommonLi
 import { ChecklistLibrary as libChecklist } from '../../../../SAPAssetManager/Rules/Checklists/ChecklistLibrary';
 import SmartFormsCompletionLibrary from '../../../../SAPAssetManager/Rules/Forms/SmartFormsCompletionLibrary';
 import libConfirm from '../../../../SAPAssetManager/Rules/ConfirmationScenarios/ConfirmationScenariosLibrary';
-import ValidateMandatoryChecklistOnComplete from './ValidateMandatoryChecklistOnComplete';
+import ZValidateMandatoryChecklistOnComplete from './ZValidateMandatoryChecklistOnComplete';
 
 export default async function NavOnCompleteOperationPage(context, actionBinding) {
     context.dismissActivityIndicator(); // RunMobileStatusUpdateSequence triggers showActivityIndicator which may result in infinite loading when CheckRequiredFields action is executed.
@@ -15,7 +15,7 @@ export default async function NavOnCompleteOperationPage(context, actionBinding)
     const functionalLocation = binding.OperationFunctionLocation;
 
     //Equinor NGE-121879: Check for mandatory checklist completion
-    const checklistIncomplete = await ValidateMandatoryChecklistOnComplete(context);
+    const checklistIncomplete = await ZValidateMandatoryChecklistOnComplete(context);
     if (checklistIncomplete) { //Display validation error dialog and exit
         return await libCommon.showErrorDialog(context, context.localizeText('mandatory_checklist_incomplete_message'));
     }

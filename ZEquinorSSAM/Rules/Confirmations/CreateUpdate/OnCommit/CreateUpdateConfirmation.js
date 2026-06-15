@@ -30,7 +30,7 @@ import TechniciansExist from '../../../../../SAPAssetManager/Rules/WorkOrders/Op
 import OperationMobileStatusLibrary from '../../../../../SAPAssetManager/Rules/Operations/MobileStatus/OperationMobileStatusLibrary';
 import MobileStatusLibrary from '../../../../../SAPAssetManager/Rules/MobileStatus/MobileStatusLibrary';
 // Equinor: import mandatory checklist validation helper
-import { validateMandatoryChecklist } from '../../../WorkOrders/Operations/ValidateMandatoryChecklistOnComplete';
+import { validateMandatoryChecklist } from '../../../WorkOrders/Operations/ZValidateMandatoryChecklistOnComplete';
 
 export default async function CreateUpdateConfirmation(context) {
 
