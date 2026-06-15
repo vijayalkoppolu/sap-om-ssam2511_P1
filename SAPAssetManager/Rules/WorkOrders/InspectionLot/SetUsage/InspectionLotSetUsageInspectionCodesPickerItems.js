@@ -3,6 +3,7 @@ import InspectionCodesSortedPickerItems from '../../../InspectionCharacteristics
 
 export default async function InspectionLotSetUsageInspectionCodesPickerItems(context) {
     const queryOptions = await InspectionLotSetUsageQueryOptions(context);
+    const udPlanningPlant = context.binding.UDPlant;
 
-    return InspectionCodesSortedPickerItems(context, queryOptions);
+    return InspectionCodesSortedPickerItems(context, queryOptions, udPlanningPlant);
 }
