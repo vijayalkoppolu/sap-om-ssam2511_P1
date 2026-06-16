@@ -18,12 +18,12 @@ export default async function MalfunctionEnd(context) {
     //Description and list picker field values for Notification Item and Cause Item creation
     const itemDescription = context.evaluateTargetPath('#Control:ItemDescription/#Value') ?? '';
     const causeDescription = context.evaluateTargetPath('#Control:CauseDescription/#Value') ?? '';
-    const [objectPartCodeGroup, objectPart, codeGroup, damageCode, causeCodeGroup, cause ] = [
-        'PartGroupLstPkr', 'PartDetailsLstPkr','DamageGroupLstPkr', 'DamageDetailsLstPkr', 'CauseGroupLstPkr', 'CodeLstPkr']
-        .map (controlName => formCellContainer.getControl(controlName)?.getValue())   
+    const [objectPartCodeGroup, objectPart, codeGroup, damageCode, causeCodeGroup, cause] = [
+        'PartGroupLstPkr', 'PartDetailsLstPkr', 'DamageGroupLstPkr', 'DamageDetailsLstPkr', 'CauseGroupLstPkr', 'CodeLstPkr']
+        .map(controlName => formCellContainer.getControl(controlName)?.getValue())
         .map(pickedItems => ValidationLibrary.evalIsEmpty(pickedItems) ? '' : pickedItems[0].ReturnValue);
     let notificationItemData = [];
-     // Handle item note creation if applicable
+    // Handle item note creation if applicable
     const itemNote = context.evaluateTargetPath('#Control:ItemNote/#Value') ?? '';
     const itemStepData = await GetNotificationItemStepData(context);
     let notificationItem = {
@@ -37,12 +37,12 @@ export default async function MalfunctionEnd(context) {
         causeCodeGroup,
         cause,
     };
-   
+
     return context.executeAction('/SAPAssetManager/Actions/Notifications/CreateUpdate/NotificationUpdateMalfunctionEnd.action').then(actionResult => {
         try {
             notificationItemData.push(JSON.parse(actionResult?.data)['@odata.readLink']);
             if (itemDescription || (objectPartCodeGroup && objectPart) || (codeGroup && damageCode)) {
-                return  updateNotificationItem(context, actionResult, notificationItem, itemStepData);
+                return updateNotificationItem(context, actionResult, notificationItem, itemStepData);
             } else {
                 // Resolve promise but don't pass an action result
                 return Promise.resolve();
@@ -50,7 +50,7 @@ export default async function MalfunctionEnd(context) {
         } catch (err) {
             Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryNotifications.global').getValue(), 'MalfunctionEnd.js: Error in NotificationUpdateMalfunctionEnd action', err);
             return Promise.resolve();
-        }   
+        }
     }).then(actionResult => {
         let itemResult = null;
         let itemNoteResult = null;
@@ -62,22 +62,28 @@ export default async function MalfunctionEnd(context) {
             }
         } catch (err) {
             Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryNotifications.global').getValue(), 'MalfunctionEnd.js: Error in Notification Create Item action', err);
-            return Promise.resolve();        
+            return Promise.resolve();
         }
         // If actionResult is null, no don't create a Cause
-        if ((causeDescription || (causeCodeGroup && cause)) && itemResult ) {
-            return  updateNotificationItemCause(context, itemResult, notificationItem, itemStepData);
+        if ((causeDescription || (causeCodeGroup && cause)) && itemResult) {
+            return updateNotificationItemCause(context, itemResult, notificationItem, itemStepData);
         } else {
             return Promise.resolve();
         }
     }).then((actionResult) => {
+        let causeResult = null;
+        let causeNoteResult = null;
         try {
-            notificationItemData.push(JSON.parse(actionResult?.data)['@odata.readLink']);
-            return Promise.resolve();
+            [causeResult, causeNoteResult] = actionResult;
+            notificationItemData.push(JSON.parse(causeResult?.data)['@odata.readLink']);
+            if (causeNoteResult) {
+                notificationItemData.push(JSON.parse(causeNoteResult?.data)['@odata.readLink']);
+            }
         } catch (err) {
             Logger.error(context.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryNotifications.global').getValue(), 'MalfunctionEnd.js: Error in Notification Create Cause action', err);
             return Promise.resolve();
-        }  
+        }
+        return Promise.resolve();
     }).then(() => {
         //Update attachments -- Copied verbatim from DocumentCreateDelete.js because
         //the success message hardcoded into the rule screws things up
@@ -111,13 +117,13 @@ export default async function MalfunctionEnd(context) {
                 itemLinks = [...new Set([...notificationItemData, ...itemLinks])];
             }
             WorkOrderCompletionLibrary.updateStepState(context, 'notification', {
-                    data: JSON.stringify(context.binding),
-                    value: context.localizeText('done'),
-                    link: context.binding['@odata.editLink'],
-                    itemLinks: itemLinks,
-                });
+                data: JSON.stringify(context.binding),
+                value: context.localizeText('done'),
+                link: context.binding['@odata.editLink'],
+                itemLinks: itemLinks,
+            });
 
-                return WorkOrderCompletionLibrary.getInstance().openMainPage(context);
+            return WorkOrderCompletionLibrary.getInstance().openMainPage(context);
         }
         return ExecuteActionWithAutoSync(context, '/SAPAssetManager/Actions/CreateUpdateDelete/UpdateEntitySuccessMessage.action');
     }).catch((err) => {
@@ -235,7 +241,7 @@ export async function updateNotificationItemCause(context, actionResult, notific
         CauseText: notificationItemCause.causeDescription,
         CauseCodeGroup: notificationItemCause.causeCodeGroup,
         CauseCode: notificationItemCause.cause,
-       
+
     };
 
     if (isCreate) {
@@ -263,14 +269,14 @@ export async function updateNotificationItemCause(context, actionResult, notific
             'OnSuccess': '',
             'OnFailure': '',
             'CreateLinks':
-            [{
-                'Property' : 'Item',
-                'Target':
-                {
-                    'EntitySet' : 'MyNotificationItems',
-                    'ReadLink' : data['@odata.readLink'],
-                },
-            }],
+                [{
+                    'Property': 'Item',
+                    'Target':
+                    {
+                        'EntitySet': 'MyNotificationItems',
+                        'ReadLink': data['@odata.readLink'],
+                    },
+                }],
         } : {
             'Properties': properties,
             'Target': target,

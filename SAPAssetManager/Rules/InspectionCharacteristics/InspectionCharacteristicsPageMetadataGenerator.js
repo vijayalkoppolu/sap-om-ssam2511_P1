@@ -4,6 +4,8 @@ import DeviceType from '../Common/DeviceType';
 import DocumentsIsVisible from '../Documents/DocumentsIsVisible';
 import libCom from '../Common/Library/CommonLibrary';
 import SectionHeaderHeight from '../Extensions/SectionHeaderHeight';
+import InspectionCharacteristicsUpdateQueryOptions from './Update/InspectionCharacteristicsUpdateQueryOptions';
+import InspectionCharacteristicsUpdateEntitySet from './Update/InspectionCharacteristicsUpdateEntitySet';
 /**
 * Describe this function...
 * @param {IClientAPI} clientAPI
@@ -19,6 +21,7 @@ export default async function InspectionCharacteristicsPageMetadataGenerator(cli
     sectionIndex = 0;
     const page = clientAPI.getPageProxy().getPageDefinition('/SAPAssetManager/Pages/GenericPage.page');
     let entityset = '';
+    let query = '';
     let binding = clientAPI.binding;
     if (clientAPI.getPageProxy() && clientAPI.getPageProxy().getActionBinding()) {
         binding = clientAPI.getPageProxy().getActionBinding();
@@ -31,13 +34,14 @@ export default async function InspectionCharacteristicsPageMetadataGenerator(cli
             entityset = binding['@odata.readLink'];
         }
     } else if (binding['@odata.type'] === '#sap_mobile.MyWorkOrderOperation') {
-        entityset = binding['@odata.readLink'] + '/InspectionPoint_Nav';
+        entityset = InspectionCharacteristicsUpdateEntitySet(clientAPI);
+        query = InspectionCharacteristicsUpdateQueryOptions(clientAPI);
     } else if (binding['@odata.type'] === '#sap_mobile.InspectionPoint' || binding['@odata.type'] === '#sap_mobile.EAMChecklistLink') {
         entityset = binding['@odata.readLink'];
     }
     page.Controls[0].Sections = [];
     if (entityset) {
-        await read(clientAPI, entityset, [], '').then(async function(results) {
+        await read(clientAPI, entityset, [], query).then(async function(results) {
             bindings = [];
             sectionEquipment = '';
             sectionFunctionalLocation = '';

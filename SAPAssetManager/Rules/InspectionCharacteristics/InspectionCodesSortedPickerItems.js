@@ -6,8 +6,13 @@ import libCommon from '../Common/Library/CommonLibrary';
 * @param {String} queryOptions
 * @returns {Array} sorted list of options for ListPicker/Segmented control
 */
-export default function InspectionCodesSortedPickerItems(context, queryOptions) {
-    return context.read('/SAPAssetManager/Services/AssetManager.service', 'InspectionCodes', [], queryOptions).then(SortInspectionCodesPickerItems);
+export default async function InspectionCodesSortedPickerItems(context, queryOptions, udPlanningPlant) {
+    let result = await context.read('/SAPAssetManager/Services/AssetManager.service', 'InspectionCodes', [], queryOptions);
+    if ((!result || result.length === 0) && udPlanningPlant) {
+        const fallbackQueryOptions = queryOptions.replace(/Plant eq '.*?'/, `Plant eq '${udPlanningPlant}'`);
+        result = await context.read('/SAPAssetManager/Services/AssetManager.service', 'InspectionCodes', [], fallbackQueryOptions);
+    }
+    return SortInspectionCodesPickerItems(result);
 }
 
 export function SortInspectionCodesPickerItems(result) {

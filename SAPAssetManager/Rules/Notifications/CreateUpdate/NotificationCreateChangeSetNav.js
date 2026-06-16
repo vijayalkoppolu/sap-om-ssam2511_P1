@@ -24,7 +24,7 @@ export default function NotificationCreateChangeSetNav(context, bindingParams) {
     }
     PreloadHierarchyListPickerValues(context, '/SAPAssetManager/Pages/Notifications/NotificationCreateUpdate.page');
     return getDefaultNotificationTypeObject(context).then(notificationTypeDefaultObject => {
-        let binding = {'NotifPriority': {}};
+        let binding = { 'NotifPriority': {} };
         const notifTypeDefault = notificationTypeDefaultObject?.NotifType;
         if (notificationTypeDefaultObject?.PriorityType) // Ensure notification create doesn't bomb out if no default is set
             binding.PriorityType = notificationTypeDefaultObject?.PriorityType;
@@ -53,7 +53,7 @@ export default function NotificationCreateChangeSetNav(context, bindingParams) {
         pageProxy.setActionBinding(binding);
         libCommon.setStateVariable(context, 'LocalId', ''); //Reset before starting create
         libCommon.setStateVariable(context, 'lastLocalItemNumber', '');
-        libCommon.setStateVariable(context,'NotifType', notifTypeDefault);
+        libCommon.setStateVariable(context, 'NotifType', notifTypeDefault);
         return NotificationCreateUpdatePartnerType(context, context.binding, notifTypeDefault).finally(() => {
             return context.executeAction('/SAPAssetManager/Actions/Notifications/ChangeSet/NotificationCreateChangeset.action').then(() => {
                 return lamCopy(context);
