@@ -85,6 +85,14 @@
 {
     "Source": "/ZEquinorSSAM/Rules/Confirmations/CreateUpdate/OnCommit/CreateUpdateConfirmation.js",
     "Target": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/CreateUpdateConfirmation.js"
+},
+{
+    "Source" : "/ZEquinorSSAM/Actions/Notifications/RelatedNotifications/RelatedNotificationCreate.action",
+    "Target" : "/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationCreate.action"
+},
+{
+    "Source" : "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationHistoryLinks.js",
+    "Target" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationHistoryLinks.js"
 }
 ]
 }
