@@ -320,9 +320,6 @@ async function shouldCreateRelatedNotification(context) {
         const isCurrentEntityLocal = libCommon.isCurrentReadLinkLocal(context?.binding?.['@odata.readLink']);
         if (isFollowOn || isCurrentEntityLocal) return false;
 
-        // Record Defect (InspectionCharacteristic) notifications don't need related notification histories
-        if (context.binding && context.binding['@odata.type'] === '#sap_mobile.InspectionCharacteristic') return false;
-
         const listPickerValues = await Promise.all([
             libNotif.NotificationCreateUpdateFunctionalLocationLstPkrValue(context),
             libNotif.NotificationCreateUpdateEquipmentLstPkrValue(context),
