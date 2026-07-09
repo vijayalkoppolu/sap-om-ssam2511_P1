@@ -115,11 +115,12 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
 
     style(context, 'DiscardButton');
      //Set Failure Group and Detection Group
-    libNotif.setFailureAndDetectionGroupQuery(context).then(() => {
+    // Equinor: Await async operations to ensure all picker items and values are set before user can submit
+    await libNotif.setFailureAndDetectionGroupQuery(context).then(() => {
         common.saveInitialValues(context);
     });
 
-    setGroupPickersItems(context.getControl('FormCellContainer')).then((pickerItems) => {
+    await setGroupPickersItems(context.getControl('FormCellContainer')).then((pickerItems) => {
         try {
             if (pickerItems[0]?.length === 1) {
                 context.evaluateTargetPath('#Control:PartGroupLstPkr').setValue(pickerItems[0][0].ReturnValue, true);
@@ -148,7 +149,7 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
         if (!onCreate && binding && binding.FailureEffectCodeGrp) {
             const codeGroup = binding.FailureEffectCodeGrp;
             const codePickerControl = context.getControl('FormCellContainer').getControl('FailureEffectListPicker');
-            context.read(
+            return context.read(
                 '/SAPAssetManager/Services/AssetManager.service',
                 'PMCatalogCodes',
                 ['Code', 'CodeDescription'],
@@ -186,7 +187,8 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
         specifier.setDisplayValue('{{#Property:EAMNotifType}} - {{#Property:OrderTypeDesc}}');
         specifier.setReturnValue('{EAMNotifType}');
 
-        typePicker.setTargetSpecifier(specifier).then(() => {
+        // Equinor: Await the type picker setup to ensure NotificationType is available before user can submit
+        await typePicker.setTargetSpecifier(specifier).then(() => {
             return context.read('/SAPAssetManager/Services/AssetManager.service', 'OrderTypes', [], `$filter=OrderType eq '${binding.InspectionLot_Nav.WOHeader_Nav.OrderType}' and PlanningPlant eq '${binding.InspectionLot_Nav.WOHeader_Nav.PlanningPlant}'`).then(function(result) {
                 if (result.length === 1) {
                     typePicker.setValue(result.getItem(0).EAMNotifType);

@@ -1,0 +1,27 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target":
+	{
+		"EntitySet" : "NotificationHistories",
+		"Service": "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties":
+	{
+		"Description" : "#Control:NotificationDescription/#Value",
+		
+		"FuncLocIdIntern" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateFunctionalLocationLstPkrValue.js",
+		"EquipId" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateEquipmentLstPkrValue.js",
+		"ReferenceType" : "P",
+		"NotificationType": "#Page:-Current/#Control:TypeLstPkr/#SelectedValue"
+	},
+	"CreateLinks": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationHistoryLinks.js",
+	"Headers":
+	{
+		"OfflineOData.RemoveAfterUpload": "/SAPAssetManager/Rules/Common/RemoveAfterUploadValue.js",
+		"Transaction.Ignore" : "true"
+	},
+	"OnSuccess" : "",
+	"OnFailure" : "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+	"ShowActivityIndicator": true,
+	"ActionResult": "_result"
+}
