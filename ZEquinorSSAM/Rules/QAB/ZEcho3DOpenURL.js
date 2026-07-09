@@ -37,7 +37,7 @@ export default function ZEcho3DOpenURL(context) {
             const url = `${echo3DUrlPrefix}?fl=${encodedFuncLocId}`;
 
             // Open URL in browser
-            URLModuleLibrary.openUrl(url);
+            URLModuleLibrary.openUrl(context, url);
         } else {
             // If Echo3D AppParameter is not configured, show error message
             return context.executeAction({

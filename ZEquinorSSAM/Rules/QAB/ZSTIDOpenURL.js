@@ -42,7 +42,7 @@ export default function ZSTIDOpenURL(context) {
                 const url = `${stidUrlPrefix}${plant}&TagNumber=${encodedFuncLocId}`;
 
                 // Open URL in browser
-                URLModuleLibrary.openUrl(url);
+                URLModuleLibrary.openUrl(context, url);
             } else {
                 // If functional location format is not as expected, show error message
                 return context.executeAction({
