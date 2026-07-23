@@ -26,9 +26,60 @@ export default async function InspectionCharacteristicsUpdateValidation(context,
     CommonLibrary.setInlineControlErrorVisibility(quantitativeControl, false);
     quantitativeControl.clearValidation();
 
-    let isCommentValid = await validateComment(section, sectionBinding);
-    if (!isCommentValid) {
-        return 'comment_error';
+    const hasQuantitativeValue = !libVal.evalIsEmpty(quantitativeControl.getValue());
+    const hasQualitativeValue =
+        qualitativeValueControl.getValue().length > 0 ||
+        qualitativeValueSegmentControl.getValue().length > 0;
+    const isCharacteristicEvaluated = hasQuantitativeValue || hasQualitativeValue;
+
+    if (isCharacteristicEvaluated) {
+        let preComputedValuation;
+        if (sectionBinding.RemarksRequiredOnRejection === 'X') {
+            if (inspCharLib.isQuantitative(sectionBinding) || inspCharLib.isCalculatedAndQuantitative(sectionBinding)) {
+                const value = quantitativeControl.getValue();
+                if (!libVal.evalIsEmpty(value)) {
+                    const numValue = parseFloat(libLocal.toNumber(context, value));
+                    if (!Number.isNaN(numValue)) {
+                        let valueAccepted = true;
+                        if (sectionBinding.LowerLimitFlag === 'X' && numValue < sectionBinding.LowerLimit) {
+                            valueAccepted = false;
+                        }
+                        if (valueAccepted && sectionBinding.UpperLimitFlag === 'X' && numValue > sectionBinding.UpperLimit) {
+                            valueAccepted = false;
+                        }
+                        preComputedValuation = valueAccepted ? 'A' : 'R';
+                    }
+                }
+                if (!preComputedValuation) {
+                    const valCtrl = section.getControl('Valuation');
+                    const valReadLink = CommonLibrary.getControlValue(valCtrl);
+                    if (valReadLink) {
+                        const match = valReadLink.match(/\('([^']+)'\)/);
+                        if (match) {
+                            preComputedValuation = match[1];
+                        }
+                    }
+                }
+            } else if (inspCharLib.isQualitative(sectionBinding)) {
+                const valCtrl = section.getControl('Valuation');
+                const valItems = valCtrl.getValue();
+                const valReturnValue = valItems && valItems.length > 0 && valItems[0] ? valItems[0].ReturnValue : null;
+                if (valReturnValue) {
+                    const match = valReturnValue.match(/\('([^']+)'\)/);
+                    if (match) {
+                        preComputedValuation = match[1];
+                    }
+                }
+                if (!preComputedValuation && sectionBinding.Valuation) {
+                    preComputedValuation = sectionBinding.Valuation;
+                }
+            }
+        }
+
+        let isCommentValid = await validateComment(section, sectionBinding, preComputedValuation);
+        if (!isCommentValid) {
+            return 'comment_error';
+        }
     }
 
     if (inspCharLib.isQuantitative(sectionBinding) || inspCharLib.isCalculatedAndQuantitative(sectionBinding)) {
@@ -71,7 +122,7 @@ export default async function InspectionCharacteristicsUpdateValidation(context,
     }
 }
 
-export async function validateComment(section, sectionBinding) {
+export async function validateComment(section, sectionBinding, valuation) {
     const commentControl = section.getControl('ShortTextComment');
     const isMandatory = sectionBinding.RemarksRequired === 'X';
     const isMandatoryOnRejection = sectionBinding.RemarksRequiredOnRejection === 'X';
@@ -85,13 +136,15 @@ export async function validateComment(section, sectionBinding) {
             return false;
         }
 
-        const isRejection = await isRejectionValuation(section);
-        if (!comment && isMandatoryOnRejection && isRejection) {
-            CommonLibrary.executeInlineControlError(section, commentControl, section.localizeText('comment_is_mandatory'));
-            return false;
+        if (!comment && isMandatoryOnRejection) {
+            const isRejection = await isRejectionValuation(section, valuation);
+            if (isRejection) {
+                CommonLibrary.executeInlineControlError(section, commentControl, section.localizeText('comment_is_mandatory'));
+                return false;
+            }
         }
 
-        if (comment.length > MaxCommentLength) {
+        if (comment && comment.length > MaxCommentLength) {
             CommonLibrary.executeInlineControlError(section, commentControl, section.localizeText('maximum_field_length', [MaxCommentLength]));
             return false;
         }

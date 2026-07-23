@@ -38,7 +38,34 @@ export default async function InspectionCharacteristicsUpdateValidationEDT(conte
             }
         }
 
-        let isCommentValid = validateComment(context, remarksCell, valuationCell, binding);
+        let preComputedValuation;
+        if (binding.RemarksRequiredOnRejection === 'X') {
+            if (inspCharLib.isQuantitative(binding) || inspCharLib.isCalculatedAndQuantitative(binding)) {
+                let cellValue;
+                if (inspCharLib.isQuantitative(binding)) {
+                    cellValue = quantitativeCell ? quantitativeCell.getValue() : undefined;
+                } else if (inspCharLib.isCalculatedAndQuantitative(binding)) {
+                    cellValue = calculateCell ? calculateCell.getValue() : undefined;
+                }
+                if (cellValue) {
+                    const numValue = parseFloat(cellValue);
+                    if (!Number.isNaN(numValue)) {
+                        let valueAccepted = true;
+                        if (binding.LowerLimitFlag === 'X' && numValue < binding.LowerLimit) {
+                            valueAccepted = false;
+                        }
+                        if (valueAccepted && binding.UpperLimitFlag === 'X' && numValue > binding.UpperLimit) {
+                            valueAccepted = false;
+                        }
+                        preComputedValuation = valueAccepted ? 'A' : 'R';
+                    }
+                }
+            } else if (inspCharLib.isQualitative(binding) && binding.Valuation) {
+                preComputedValuation = binding.Valuation;
+            }
+        }
+
+        let isCommentValid = validateComment(context, remarksCell, valuationCell, binding, preComputedValuation);
         if (!isCommentValid) {
             return isCommentValid;
         }
@@ -95,7 +122,7 @@ export default async function InspectionCharacteristicsUpdateValidationEDT(conte
     }
 }
 
-export function validateComment(context, remarksCell, valuationCell, binding) {
+export function validateComment(context, remarksCell, valuationCell, binding, preComputedValuation) {
     const isMandatory = binding.RemarksRequired === 'X';
     const isMandatoryOnRejection = binding.RemarksRequiredOnRejection === 'X';
 
@@ -103,23 +130,31 @@ export function validateComment(context, remarksCell, valuationCell, binding) {
         remarksCell.clearValidation();
 
         let comment = remarksCell.getValue();
-        const isRejection = isRejectionValuation(valuationCell);
-        if ((!comment && isMandatory) || (!comment && isMandatoryOnRejection && isRejection) || comment.length > MaxCommentLength) {
-            let remarkMessage = '';
-            if (comment.length > MaxCommentLength) {
-                remarkMessage = context.localizeText('maximum_field_length', [MaxCommentLength]);
-            } else {
-                remarkMessage = context.localizeText('comment_is_mandatory');
-            }
-            remarksCell.applyValidation(remarkMessage);
+        if (!comment && isMandatory) {
+            remarksCell.applyValidation(context.localizeText('comment_is_mandatory'));
             return false;
         }
 
+        if (!comment && isMandatoryOnRejection) {
+            const isRejection = isRejectionValuation(valuationCell, preComputedValuation);
+            if (isRejection) {
+                remarksCell.applyValidation(context.localizeText('comment_is_mandatory'));
+                return false;
+            }
+        }
+
+        if (comment && comment.length > MaxCommentLength) {
+            remarksCell.applyValidation(context.localizeText('maximum_field_length', [MaxCommentLength]));
+            return false;
+        }
     }
     return true;
 }
 
-export function isRejectionValuation(valuationCell) {
+export function isRejectionValuation(valuationCell, preComputedValuation) {
+    if (preComputedValuation !== undefined) {
+        return preComputedValuation === 'R' || preComputedValuation === 'F';
+    }
     let valuations = InspectionValuationVar.getInspectionResultValuations();
     let valuation = valuations[valuationCell.getValue()];
     return (valuation === 'R' || valuation === 'F');
