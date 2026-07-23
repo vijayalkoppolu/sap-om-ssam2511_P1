@@ -19,7 +19,8 @@
         "FinishTime": "/SAPAssetManager/Rules/Confirmations/BlankFinal/GetCurrentTime.js",
         "PostingDate": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetCreatedDate.js",
         "CreatedDate": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetCreatedDate.js",
-        "CreatedTime": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetCreatedTime.js"
+        "CreatedTime": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetCreatedTime.js",
+        "PersonnelNumber": "/SAPAssetManager/Rules/TimeSheets/CreateUpdate/TimeSheetCreateUpdatePersonnelNumber.js"
     },
     "Headers": {
         "OfflineOData.RemoveAfterUpload": "/SAPAssetManager/Rules/Common/RemoveAfterUploadValue.js"

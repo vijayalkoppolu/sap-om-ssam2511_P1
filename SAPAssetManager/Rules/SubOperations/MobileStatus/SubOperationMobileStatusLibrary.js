@@ -123,6 +123,7 @@ export default class {
                         'FinishDate': currentDate,
                         'FinishTime': currentTime,
                         'Plant': subOperation.Plant || subOperation.MainWorkCenterPlant,
+                        'PersonnelNumber': libCommon.getPersonnelNumber(),
 
                     },
                     'Headers': {

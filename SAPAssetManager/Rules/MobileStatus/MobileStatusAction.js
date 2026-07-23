@@ -1,4 +1,5 @@
 import CascadingAction from '../Common/Action/CascadingAction';
+import libCommon from '../Common/Library/CommonLibrary';
 import GenerateOffsetConfirmationNum from '../Confirmations/BlankFinal/GenerateOffsetConfirmationNum';
 import GenerateConfirmationCounter from '../Confirmations/CreateUpdate/OnCommit/GenerateConfirmationCounter';
 import FinalConfirmationOrderID from '../Confirmations/BlankFinal/FinalConfirmationOrderID';
@@ -38,6 +39,7 @@ export default class MobileStatusAction extends CascadingAction {
                             'PostingDate': '/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetCreatedDate.js',
                             'CreatedDate': '/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetCreatedDate.js',
                             'CreatedTime': '/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetCreatedTime.js',
+                            'PersonnelNumber': libCommon.getPersonnelNumber(),
                         },
                         'CreateLinks': ConfirmationCreateBlankReadLink(context),
                         'Headers': {

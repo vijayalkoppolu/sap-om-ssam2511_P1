@@ -155,6 +155,7 @@ export default class {
                                     'FinishDate': currentDate,
                                     'FinishTime': currentTime,
                                     'Plant': binding.Plant || binding.MainWorkCenterPlant,
+                                    'PersonnelNumber': libCommon.getPersonnelNumber(),
 
                                 },
                                 'Headers': {
@@ -217,6 +218,7 @@ export default class {
                                 'FinishDate': currentDate,
                                 'FinishTime': currentTime,
                                 'Plant': binding.Plant || binding.MainWorkCenterPlant,
+                                'PersonnelNumber': libCommon.getPersonnelNumber(),
 
                             },
                             'Headers': {
@@ -1217,6 +1219,7 @@ export default class {
                         'FinishTime': currentTime,
                         'Plant': binding.Plant || binding.MainWorkCenterPlant,
                         'SplitNumber': splitNumber || '',
+                        'PersonnelNumber': libCommon.getPersonnelNumber(),
 
                     },
                     'Headers': {
