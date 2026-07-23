@@ -504,12 +504,8 @@ export default class {
                 valueAccepted = false;
             }
 
-            if (valueAccepted && sectionBinding.UpperLimitFlag === 'X') {
-                if (sectionBinding.UpperLimit > value) {
-                    valueAccepted = true;
-                } else {
-                    valueAccepted = false;
-                }
+            if (sectionBinding.UpperLimitFlag === 'X' && value > sectionBinding.UpperLimit) {
+                valueAccepted = false;
             }
 
             if (valueAccepted && sectionBinding.CharId !== '' && sectionBinding.CharId !== '0000000000') { //if a linked measuring point exists then validate from measuring point's info

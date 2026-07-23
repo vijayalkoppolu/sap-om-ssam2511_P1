@@ -93,6 +93,10 @@
 {
     "Source" : "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationHistoryLinks.js",
     "Target" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationHistoryLinks.js"
+},
+{
+    "Source" : "/ZEquinorSSAM/Extensions/URLModule/URLModuleLibrary.js",
+    "Target" : "/SAPAssetManager/Extensions/URLModule/URLModuleLibrary.js"
 }
 ]
 }
