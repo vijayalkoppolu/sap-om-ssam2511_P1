@@ -99,10 +99,6 @@
     "Target": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/ConfirmationCreateUpdateOnPageLoad.js"
 },
 {
-    "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js",
-    "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js"
-},
-{
 "Source": "/ZEquinorSSAM/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page",
 "Target": "/SAPAssetManager/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page"
 },
