@@ -459,8 +459,11 @@ export default class {
     }
 
     static async validateCharacteristic(context, sectionBinding, section, index) {
-        if (libThis.isQuantitative(sectionBinding)) {
+        if (libThis.isQuantitative(sectionBinding) && (section.getControl('QuantitativeValue').getValue() || sectionBinding.RequiredChar)) {
             await this.setCharacteristicValuation(context, sectionBinding, section, section.getControl('QuantitativeValue'), index);
+        } else if (libThis.isQualitative(sectionBinding) && sectionBinding.RequiredChar && !(section.getControl('QualitativeValue').getValue()?.length ||  section.getControl('QualitativeValueSegment').getValue()?.length)) {
+            const qualitativeControl = section.getControl('QualitativeValue').visible ? section.getControl('QualitativeValue') : section.getControl('QualitativeValueSegment');
+            this.setInlineError(context, qualitativeControl, context.localizeText('field_is_required'));
         }
     }
 
