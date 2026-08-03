@@ -28,17 +28,17 @@
 				"Position": "Right",
 				"Text": "$(L,select)",
 				"Icon": "sap-icon://complete",
-				"Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsDefaultModeButtonVisible.js",
+				"Visible": false,
 				"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationsListViewChangeMode.js"
 			},
-			{
-				"_Name": "SelectAll",
-				"Position": "Right",
-				"Icon": "sap-icon://activities",
-				"Text": "$(L,select_all)",
-				"Visible": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsSelectAllButtonVisible.js",
-				"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/SelectAllOperations.js"
-			},
+{
+"_Name": "SelectAll",
+"Position": "Right",
+"Icon": "sap-icon://activities",
+"Text": "$(L,select_all)",
+"Visible": false,
+"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/SelectAllOperations.js"
+},
 			{
 				"_Name": "DeselectAll",
 				"Position": "Right",
