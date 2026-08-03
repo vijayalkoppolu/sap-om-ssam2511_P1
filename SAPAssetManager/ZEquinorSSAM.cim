@@ -97,6 +97,10 @@
 {
     "Source" : "/ZEquinorSSAM/Extensions/URLModule/URLModuleLibrary.js",
     "Target" : "/SAPAssetManager/Extensions/URLModule/URLModuleLibrary.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js",
+    "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js"
 }
 ]
 }
