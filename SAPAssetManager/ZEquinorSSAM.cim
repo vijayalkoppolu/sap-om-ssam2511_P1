@@ -95,6 +95,18 @@
     "Target" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationHistoryLinks.js"
 },
 {
+    "Source": "/ZEquinorSSAM/Rules/Confirmations/CreateUpdate/ConfirmationCreateUpdateOnPageLoad.js",
+    "Target": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/ConfirmationCreateUpdateOnPageLoad.js"
+},
+{
+"Source": "/ZEquinorSSAM/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page",
+"Target": "/SAPAssetManager/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page"
+},
+{
+"Source": "/ZEquinorSSAM/Pages/WorkOrders/Operations/MyWorkOperationsListView.page",
+"Target": "/SAPAssetManager/Pages/WorkOrders/Operations/MyWorkOperationsListView.page"
+},
+{
     "Source" : "/ZEquinorSSAM/Extensions/URLModule/URLModuleLibrary.js",
     "Target" : "/SAPAssetManager/Extensions/URLModule/URLModuleLibrary.js"
 }
