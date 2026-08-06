@@ -70,11 +70,13 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
             promises.push(NotificationCreateUpdateProcessingContextLstPkrValue(clientAPI));
             return Promise.all(promises).then(results => {
                 // eslint-disable-next-line no-unused-vars
-                let [notifNum, workcenter, floc, equip, refObjectType, notifCategory, npc] = results;
+                let [notifNum, wcResult, floc, equip, refObjectType, notifCategory, npc] = results;
+                const workcenter = wcResult?.workCenterId || '';
+                const workCenterPlant = wcResult?.plantId || '';
 
                 let notificationCreateProperties = {
                     'PlanningGroup': plannerGroup.length ? plannerGroup[0].ReturnValue : '',
-                    'PlanningPlant': ComLib.getUserDefaultPlanningPlant() || ComLib.getNotificationPlanningPlant(clientAPI),
+                    'PlanningPlant': clientAPI.binding?.PlanningPlant || ComLib.getUserDefaultPlanningPlant() || ComLib.getNotificationPlanningPlant(clientAPI),
                     'NotificationNumber': notifNum,
                     'NotificationDescription': descr,
                     'NotificationType': type,
@@ -82,8 +84,8 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
                     'HeaderFunctionLocation': floc,
                     'HeaderEquipment': equip,
                     'BreakdownIndicator': BreakdownSwitchValue(clientAPI),
-                    'MainWorkCenter': workcenter,
-                    'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
+                    'MainWorkCenter': workcenter || clientAPI.binding?.MainWorkCenter || '',
+                    'MainWorkCenterPlant': workCenterPlant || NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
                     'ReportedBy': ComLib.getSapUserName(clientAPI),
                     'CreationDate': GetCurrentDate(clientAPI),
                     'ReferenceNumber': NotificationReferenceNumber(clientAPI),
@@ -156,7 +158,9 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
         promises.push(notifCategoryPromise);
 
         return Promise.all(promises).then(results => {
-            let workcenter = results.length >= 2 ? results[0] : '';
+            let wcResult = results.length >= 2 ? results[0] : { workCenterId: '', plantId: '' };
+            let workcenter = wcResult?.workCenterId || '';
+            let workCenterPlant = wcResult?.plantId || '';
 
             let notificationUpdateProperties = {
                 'NotificationDescription': descr,
@@ -167,7 +171,7 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
                 'BreakdownIndicator': BreakdownSwitchValue(clientAPI),
                 'PlanningGroup': plannerGroup.length ? plannerGroup[0].ReturnValue : '',
                 'MainWorkCenter': workcenter,
-                'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
+                'MainWorkCenterPlant': workCenterPlant || NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
             };
 
             notificationUpdateProperties = setMalfunctionDateTime(clientAPI, notificationUpdateProperties);

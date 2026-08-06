@@ -39,15 +39,19 @@ export default function NotificationCreateChangeSetNav(context, bindingParams) {
             binding.HeaderFlocId = contextBinding.FuncLocId;
             binding.HeaderFlocDescription = contextBinding.FuncLocDesc;
             binding.OnlineFloc = contextBinding['@odata.type'] === '#sap_mobile.FunctionalLocation';
-            binding.MainWorkCenter = contextBinding.WorkCenter_Main_Nav?.WorkCenterId;
+            binding.MainWorkCenter = contextBinding.WorkCenter_Main_Nav?.WorkCenterId || contextBinding.WorkCenter;
+            binding.PlanningPlant = contextBinding.PlanningPlant;
         } else if (contextBinding && contextBinding['@odata.type'] === '#sap_mobile.MyEquipment') {
             binding.HeaderEquipment = contextBinding.EquipId;
             binding.HeaderFunctionLocation = contextBinding.FuncLocIdIntern || contextBinding.FunctionalLocation?.FuncLocIdIntern;
-            binding.MainWorkCenter = contextBinding.WorkCenter_Main_Nav?.WorkCenterId;
+            binding.MainWorkCenter = contextBinding.WorkCenter_Main_Nav?.WorkCenterId || contextBinding.WorkCenter;
+            binding.PlanningPlant = contextBinding.PlanningPlant;
         } else if (contextBinding && contextBinding['@odata.type'] === '#sap_mobile.Equipment') { // online use case
             binding.HeaderEquipment = contextBinding.EquipId;
             binding.HeaderEquipmentDesc = contextBinding.EquipDesc;
             binding.OnlineEquipment = true;
+            binding.MainWorkCenter = contextBinding.WorkCenter_Main_Nav?.WorkCenterId || contextBinding.WorkCenter;
+            binding.PlanningPlant = contextBinding.PlanningPlant;
         }
         const pageProxy = context.getPageProxy();
         pageProxy.setActionBinding(binding);
