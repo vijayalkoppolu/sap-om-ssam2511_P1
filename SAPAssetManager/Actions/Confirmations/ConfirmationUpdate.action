@@ -16,7 +16,6 @@
         "VarianceReason": "#Property:VarianceReason",
         "AccountingIndicator": "#Property:AccountingIndicator",
         "ActivityType": "#Property:ActivityType",
-        "ActualDuration": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetDuration.js",
         "ActualWork": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetDuration.js",
         "FinishDate": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetEndDate.js",
         "FinishTime": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetEndTime.js",

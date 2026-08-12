@@ -2,10 +2,9 @@
  * NGE-122630: Equinor override of ConfirmationCreateUpdateOnPageLoad.
  *
  * Customizations:
- *  - The Duration (time) field on the Time Confirmation screen is defaulted to
- *    0:00 hours and editability is controlled by user/work center activity type
- *    against application parameter USER_AUTHORIZATIONS/ZEQ.WC.AT.
- *  - The Final Confirmation switch/radio button must always be readonly.
+  *  - The Duration (time) field on the Time Confirmation screen must always be
+ *    defaulted to 0:00 hours and must be readonly.
+*  - The Final Confirmation switch/radio button must always be readonly.
  *
  * The original SAP rule is delegated to first so that all standard behavior
  * (styling, defaults, scenario setup, etc.) continues to work. After the
@@ -56,13 +55,15 @@ export default async function ConfirmationCreateUpdateOnPageLoad(context) {
 }
 
 function returnLaborTimeMinuteInterval(context, formCellContainerProxy) {
-    return LaborTimeMinuteInterval(context, context.getBindingObject().OrderID, context.getBindingObject().Operation, context.getBindingObject().SubOperation).then(async duration => { //Handle clock in/out processing if necessary
+    return LaborTimeMinuteInterval(context, context.getBindingObject().OrderID, context.getBindingObject().Operation, context.getBindingObject().SubOperation).then(duration => { //Handle clock in/out processing if necessary
         let durationControl = formCellContainerProxy.getControl('DurationPkr');
-        durationControl.setValue(duration);
-        //durationControl.setValue(0, false);
+       // durationControl.setValue(duration);
+        durationControl.setValue(0, false);
+        durationControl.setEditable(false);
 
-        const isDurationReadonly = await shouldDurationBeReadonlyFromWorkCenterActivityType(context);
-        durationControl.setEditable(!isDurationReadonly);
+    //***This block can be used in R4 for external and Internal employee differentiation*** 
+    //     const isDurationReadonly = await shouldDurationBeReadonlyFromWorkCenterActivityType(context);
+    //     durationControl.setEditable(!isDurationReadonly);
 
         enforceFinalConfirmationReadonly(context, formCellContainerProxy);
 
@@ -121,54 +122,54 @@ function returnLaborTimeMinuteInterval(context, formCellContainerProxy) {
         return true;
     });
 }
+//***This block can be used in R4 for external and Internal employee differentiation*** 
+// async function shouldDurationBeReadonlyFromWorkCenterActivityType(context) {
+//     try {
+//         let appParamValue = (libCom.getAppParam(context, 'USER_AUTHORIZATIONS', 'ZEQ.WC.AT') || '').trim();
 
-async function shouldDurationBeReadonlyFromWorkCenterActivityType(context) {
-    try {
-        let appParamValue = (libCom.getAppParam(context, 'USER_AUTHORIZATIONS', 'ZEQ.WC.AT') || '').trim();
+//         const configuredActivityTypePrefixes = (appParamValue.includes(',') ? appParamValue.split(',') : [appParamValue])
+//             .map(value => value && value.trim().toUpperCase())
+//             .filter(value => !!value);
 
-        const configuredActivityTypePrefixes = (appParamValue.includes(',') ? appParamValue.split(',') : [appParamValue])
-            .map(value => value && value.trim().toUpperCase())
-            .filter(value => !!value);
+//         if (configuredActivityTypePrefixes.length === 0) {
+//             Logger.warn('FCTCLog', 'FCTCLog - TIMESHEET <shouldDurationBeReadonlyFromWorkCenterActivityType> ZEQ.WC.AT is empty');
+//             return false;
+//         }
 
-        if (configuredActivityTypePrefixes.length === 0) {
-            Logger.warn('FCTCLog', 'FCTCLog - TIMESHEET <shouldDurationBeReadonlyFromWorkCenterActivityType> ZEQ.WC.AT is empty');
-            return false;
-        }
+//         const userWorkCenter = libCom.getDefaultUserParam('USER_PARAM.VAP');
+//         const userPlanningPlant = libCom.getDefaultUserParam('USER_PARAM.IWK');
+//         if (!userWorkCenter || !userPlanningPlant) {
+//             return false;
+//         }
 
-        const userWorkCenter = libCom.getDefaultUserParam('USER_PARAM.VAP');
-        const userPlanningPlant = libCom.getDefaultUserParam('USER_PARAM.IWK');
-        if (!userWorkCenter || !userPlanningPlant) {
-            return false;
-        }
+//         const escapedWorkCenter = userWorkCenter.replace(/'/g, "''");
+//         const escapedPlanningPlant = userPlanningPlant.replace(/'/g, "''");
+//         const query = `$filter=ExternalWorkCenterId eq '${escapedWorkCenter}' and PlantId eq '${escapedPlanningPlant}'`;
 
-        const escapedWorkCenter = userWorkCenter.replace(/'/g, "''");
-        const escapedPlanningPlant = userPlanningPlant.replace(/'/g, "''");
-        const query = `$filter=ExternalWorkCenterId eq '${escapedWorkCenter}' and PlantId eq '${escapedPlanningPlant}'`;
+//         const servicePath = `/${'SAPAssetManager'}/Services/AssetManager.service`;
+//         const workCenterResults = await context.read(servicePath, 'WorkCenters', ['DefaultActivityType'], query);
+//         if (!workCenterResults || workCenterResults.length === 0) {
+//             return false;
+//         }
 
-        const servicePath = `/${'SAPAssetManager'}/Services/AssetManager.service`;
-        const workCenterResults = await context.read(servicePath, 'WorkCenters', ['DefaultActivityType'], query);
-        if (!workCenterResults || workCenterResults.length === 0) {
-            return false;
-        }
+//         for (let i = 0; i < workCenterResults.length; i++) {
+//             const workCenter = workCenterResults.getItem(i);
+//             const defaultActivityType = (workCenter.DefaultActivityType || '').toString().trim().toUpperCase();
 
-        for (let i = 0; i < workCenterResults.length; i++) {
-            const workCenter = workCenterResults.getItem(i);
-            const defaultActivityType = (workCenter.DefaultActivityType || '').toString().trim().toUpperCase();
+//             if (defaultActivityType && configuredActivityTypePrefixes.some(prefix => defaultActivityType.startsWith(prefix))) {
+//                 const formCellContainerProxy = context.getControl('FormCellContainer');
+//                 const durationControl = formCellContainerProxy.getControl('DurationPkr');
+//                 durationControl.setValue(0, false);
+//                 return true;
+//             }
+//         }
 
-            if (defaultActivityType && configuredActivityTypePrefixes.some(prefix => defaultActivityType.startsWith(prefix))) {
-                const formCellContainerProxy = context.getControl('FormCellContainer');
-                const durationControl = formCellContainerProxy.getControl('DurationPkr');
-                durationControl.setValue(0, false);
-                return true;
-            }
-        }
-
-        return false;
-    } catch (error) {
-        Logger.warn('FCTCLog', `FCTCLog - TIMESHEET <shouldDurationBeReadonlyFromWorkCenterActivityType> fallback editable due to error: ${error}`);
-        return false;
-    }
-}
+//         return false;
+//     } catch (error) {
+//         Logger.warn('FCTCLog', `FCTCLog - TIMESHEET <shouldDurationBeReadonlyFromWorkCenterActivityType> fallback editable due to error: ${error}`);
+//         return false;
+//     }
+// }
 
 function enforceFinalConfirmationReadonly(context, formCellContainerProxy) {
     if (context?.getBindingObject()) {
