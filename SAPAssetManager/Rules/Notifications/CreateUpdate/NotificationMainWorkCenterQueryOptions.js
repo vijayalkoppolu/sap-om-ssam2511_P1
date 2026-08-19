@@ -1,10 +1,10 @@
 import NotificationLibrary from '../NotificationLibrary';
 
 export default function NotificationMainWorkCenterQueryOptions(context) {
-    const defaultPlant = NotificationLibrary.NotificationCreateDefaultPlant(context);
-    if (defaultPlant) {
-        return `$filter=PlantId eq '${defaultPlant}'&$orderby=ExternalWorkCenterId`;
-    } else {
-        return '$orderby=ExternalWorkCenterId';
+    const binding = context.getPageProxy ? context.getPageProxy().binding : context.binding;
+    const plant = binding?.PlanningPlant || NotificationLibrary.NotificationCreateDefaultPlant(context);
+    if (plant) {
+        return `$filter=PlantId eq '${plant}'&$orderby=ExternalWorkCenterId`;
     }
+    return '$orderby=ExternalWorkCenterId';
 }

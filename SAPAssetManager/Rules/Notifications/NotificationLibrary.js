@@ -818,10 +818,11 @@ export default class {
         if (mainWorkcenter) {
             return context.read('/SAPAssetManager/Services/AssetManager.service', 'WorkCenters', [], "$filter=ExternalWorkCenterId eq '" + mainWorkcenter + "'")
                 .then(function(result) {
-                    return result.getItem(0).WorkCenterId;
+                    const item = result.getItem(0);
+                    return { workCenterId: item.WorkCenterId, plantId: item.PlantId };
                 });
         } else {
-            return '';
+            return Promise.resolve({ workCenterId: '', plantId: '' });
         }
     }
 
