@@ -178,7 +178,7 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
     });
 
     // Equinor: For local notifications in edit mode, keep Failure Effect Codegroup and Code read-only
-    if (!onCreate && ODataLibrary.isLocal(binding)) {
+    if (!onCreate && !ODataLibrary.isLocal(binding)) {
         try {
             const formCellContainer = context.getControl('FormCellContainer');
             formCellContainer.getControl('FailureEffectGroupListPicker').setEditable(false);
