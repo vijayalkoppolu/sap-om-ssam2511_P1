@@ -109,6 +109,14 @@
 {
     "Source" : "/ZEquinorSSAM/Extensions/URLModule/URLModuleLibrary.js",
     "Target" : "/SAPAssetManager/Extensions/URLModule/URLModuleLibrary.js"
+},
+{
+    "Source" : "/ZEquinorSSAM/Actions/Confirmations/ConfirmationUpdate.action",
+    "Target" : "/SAPAssetManager/Actions/Confirmations/ConfirmationUpdate.action"
+},
+{
+    "Source" : "/ZEquinorSSAM/Actions/Confirmations/ConfirmationCreate.action",
+    "Target" : "/SAPAssetManager/Actions/Confirmations/ConfirmationCreate.action"
 }
 ]
 }
