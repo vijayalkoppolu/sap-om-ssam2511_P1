@@ -95,12 +95,31 @@
     "Target" : "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationHistoryLinks.js"
 },
 {
+    "Source": "/ZEquinorSSAM/Rules/Confirmations/CreateUpdate/ConfirmationCreateUpdateOnPageLoad.js",
+    "Target": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/ConfirmationCreateUpdateOnPageLoad.js"
+},
+{
+"Source": "/ZEquinorSSAM/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page",
+"Target": "/SAPAssetManager/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page"
+},
+{
+"Source": "/ZEquinorSSAM/Pages/WorkOrders/Operations/MyWorkOperationsListView.page",
+"Target": "/SAPAssetManager/Pages/WorkOrders/Operations/MyWorkOperationsListView.page"
+},
+{
     "Source" : "/ZEquinorSSAM/Extensions/URLModule/URLModuleLibrary.js",
     "Target" : "/SAPAssetManager/Extensions/URLModule/URLModuleLibrary.js"
 },
 {
     "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js",
     "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js"
+},
+    "Source" : "/ZEquinorSSAM/Actions/Confirmations/ConfirmationUpdate.action",
+    "Target" : "/SAPAssetManager/Actions/Confirmations/ConfirmationUpdate.action"
+},
+{
+    "Source" : "/ZEquinorSSAM/Actions/Confirmations/ConfirmationCreate.action",
+    "Target" : "/SAPAssetManager/Actions/Confirmations/ConfirmationCreate.action"
 }
 ]
 }
