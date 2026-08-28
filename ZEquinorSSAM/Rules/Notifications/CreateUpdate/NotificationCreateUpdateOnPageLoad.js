@@ -176,6 +176,17 @@ export default async function NotificationCreateUpdateOnPageLoad(context) {
             });
         }
     });
+
+    // Equinor: For local notifications in edit mode, keep Failure Effect Codegroup and Code read-only
+    if (!onCreate && !ODataLibrary.isLocal(binding)) {
+        try {
+            const formCellContainer = context.getControl('FormCellContainer');
+            formCellContainer.getControl('FailureEffectGroupListPicker').setEditable(false);
+            formCellContainer.getControl('FailureEffectListPicker').setEditable(false);
+        } catch (e) {
+            Logger.error('NotificationCreateUpdateOnPageLoad - set failure effect read-only for local notification', e);
+        }
+    }
   
     if (binding['@odata.type'] === '#sap_mobile.InspectionCharacteristic') {
         let typePicker = context.getControl('FormCellContainer').getControl('TypeLstPkr');
