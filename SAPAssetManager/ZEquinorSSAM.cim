@@ -114,6 +114,7 @@
     "Source": "/ZEquinorSSAM/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js",
     "Target": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationUpdateMalfunctionEndOnPageLoad.js"
 },
+{
     "Source" : "/ZEquinorSSAM/Actions/Confirmations/ConfirmationUpdate.action",
     "Target" : "/SAPAssetManager/Actions/Confirmations/ConfirmationUpdate.action"
 },
