@@ -38,6 +38,7 @@ export default function NotificationCreateChangeSetNav(context, bindingParams) {
             binding.HeaderFunctionLocation = contextBinding.FuncLocIdIntern;
             binding.HeaderFlocId = contextBinding.FuncLocId;
             binding.HeaderFlocDescription = contextBinding.FuncLocDesc;
+            binding.HeaderFlocPlanningPlant = contextBinding.PlanningPlant;
             binding.OnlineFloc = contextBinding['@odata.type'] === '#sap_mobile.FunctionalLocation';
             binding.MainWorkCenter = contextBinding.WorkCenter_Main_Nav?.WorkCenterId;
         } else if (contextBinding && contextBinding['@odata.type'] === '#sap_mobile.MyEquipment') {

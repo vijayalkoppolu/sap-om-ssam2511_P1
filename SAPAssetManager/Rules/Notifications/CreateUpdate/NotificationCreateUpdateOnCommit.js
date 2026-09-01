@@ -20,6 +20,7 @@ import NotificationReferenceType from './NotificationReferenceType';
 import { isControlPopulated } from './RequiredFields';
 import CreateEMPEntries from '../EMP/CreateEMPEntries';
 import IsFromOnlineFlocCreate from '../../Common/IsFromOnlineFlocCreate';
+import NotificationIsFromFlocContext from './NotificationIsFromFlocContext';
 import libAnalytics from '../../Extensions/EventLoggers/Analytics/AnalyticsLibrary';
 import libTelemetry from '../../Extensions/EventLoggers/Telemetry/TelemetryLibrary';
 
@@ -58,7 +59,7 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
                 const onlineEquip = ComLib.getControlProxy(clientAPI, 'OnlineEquipControl').getValue();
                 promises.push(Promise.resolve(''));
                 promises.push(Promise.resolve(onlineEquip ? onlineEquip.split(' - ')[0] : ''));
-            } else if (IsFromOnlineFlocCreate(clientAPI)) {
+            } else if (IsFromOnlineFlocCreate(clientAPI) || NotificationIsFromFlocContext(clientAPI)) {
                 promises.push(clientAPI?.binding?.HeaderFunctionLocation);
                 promises.push('');
             } else {

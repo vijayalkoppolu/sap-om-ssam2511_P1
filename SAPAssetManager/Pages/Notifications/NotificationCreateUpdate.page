@@ -102,6 +102,15 @@
                     "Fragment": "/SAPAssetManager/Pages/Fragments/OnlineSearch/OnlineFunctionalLocationFormCellField.fragment"
                 },
                 {
+                    "_Type": "Control.Type.FormCell.SimpleProperty",
+                    "_Name": "OfflineFlocControl",
+                    "Caption": "$(L,functional_location)",
+                    "PlaceHolder": "$(L,functional_location)",
+                    "Value": "{{#Property:HeaderFlocId}} - {{#Property:HeaderFlocDescription}}",
+                    "Enabled": false,
+                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationIsFromFlocContext.js"
+                },
+                {
                     "_Type": "Control.Type.FormCell.Extension",
                     "Module": "extension-HierarchyFramework",
                     "Control": "HierarchyExtension",
@@ -109,7 +118,7 @@
                     "_Name": "FuncLocHierarchyExtensionControl",
                     "Caption": "$(L,functional_location)",
                     "DataSubscriptions": ["MyFunctionalLocations"],
-                    "IsVisible": "/SAPAssetManager/Rules/Common/IsNotFromOnlineCreate.js",
+                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationIsNotFromFlocContext.js",
                     "ExtensionProperties": {
                         "IsPicker": true,
                         "Search": {
