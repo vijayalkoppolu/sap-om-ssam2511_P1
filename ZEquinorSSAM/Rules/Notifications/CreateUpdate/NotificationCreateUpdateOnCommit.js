@@ -20,6 +20,7 @@ import NotificationReferenceType from '../../../../SAPAssetManager/Rules/Notific
 import { isControlPopulated } from '../../../../SAPAssetManager/Rules/Notifications/CreateUpdate/RequiredFields';
 import CreateEMPEntries from '../../../../SAPAssetManager/Rules/Notifications/EMP/CreateEMPEntries';
 import IsFromOnlineFlocCreate from '../../../../SAPAssetManager/Rules/Common/IsFromOnlineFlocCreate';
+import NotificationIsFromFlocContext from '../../../../SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationIsFromFlocContext';
 import libAnalytics from '../../../../SAPAssetManager/Rules/Extensions/EventLoggers/Analytics/AnalyticsLibrary';
 import libTelemetry from '../../../../SAPAssetManager/Rules/Extensions/EventLoggers/Telemetry/TelemetryLibrary';
 
@@ -59,7 +60,7 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
                 const onlineEquip = ComLib.getControlProxy(clientAPI, 'OnlineEquipControl').getValue();
                 promises.push(Promise.resolve(''));
                 promises.push(Promise.resolve(onlineEquip ? onlineEquip.split(' - ')[0] : ''));
-            } else if (IsFromOnlineFlocCreate(clientAPI)) {
+            } else if (IsFromOnlineFlocCreate(clientAPI) || NotificationIsFromFlocContext(clientAPI)) {
                 promises.push(clientAPI?.binding?.HeaderFunctionLocation);
                 promises.push('');
             } else {
