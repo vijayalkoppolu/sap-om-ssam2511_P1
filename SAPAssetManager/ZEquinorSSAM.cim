@@ -121,6 +121,10 @@
 {
     "Source" : "/ZEquinorSSAM/Actions/Confirmations/ConfirmationCreate.action",
     "Target" : "/SAPAssetManager/Actions/Confirmations/ConfirmationCreate.action"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js",
+    "Target": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js"
 }
 ]
 }
