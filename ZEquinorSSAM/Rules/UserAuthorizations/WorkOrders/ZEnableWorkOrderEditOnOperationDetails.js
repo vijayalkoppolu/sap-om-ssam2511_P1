@@ -1,5 +1,18 @@
 /**
-* Show/Hide Work Order edit button based on User Authorization
+* Equinor GAP NGE-131762
+*
+* Scoped variant of EnableWorkOrderEdit for the Work Order Operation Details screen only.
+*
+* Standard SAP rule EnableWorkOrderEdit -> IsMyWorkOrderOperationEditable disables the operation
+* related actions as soon as the *work order header* mobile status is complete. Equinor requires the
+* operation level actions ("+" button / popover items and the quick action chips) on the Operation
+* Details screen to stay enabled in that situation, and to be driven by the *operation* status only.
+*
+* To avoid side effects this rule is bound ONLY to the "+" button / popover items and the quick
+* action chips of the Operation Details page. For every other page, binding or object type it simply
+* delegates to the untouched standard rule.
+*
+
 * @param {IClientAPI} context
 */
 import libCom from '../../../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
@@ -16,7 +29,7 @@ import libPhase from '../../../../SAPAssetManager/Rules/PhaseModel/PhaseLibrary'
 import ODataLibrary from '../../../../SAPAssetManager/Rules/OData/ODataLibrary';
 import IsS4ServiceRequestEditEnabled from '../../../../SAPAssetManager/Rules/ServiceOrders/ServiceRequests/IsS4ServiceRequestEditEnabled';
 
-export default function EnableWorkOrderEdit(context, customBinding) {
+export default function ZEnableWorkOrderEditOnOperationDetails(context, customBinding) {
     let binding = customBinding || context.binding;
     if (libPersona.isWCMOperator(context)) {
         return Promise.resolve(false);

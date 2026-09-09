@@ -123,8 +123,16 @@
     "Target" : "/SAPAssetManager/Actions/Confirmations/ConfirmationCreate.action"
 },
 {
-    "Source": "/ZEquinorSSAM/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js",
-    "Target": "/SAPAssetManager/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEdit.js"
+    "Source": "/ZEquinorSSAM/Rules/WorkOrders/Operations/WorkOrderOperationPopoverIsVisible.js",
+    "Target": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationPopoverIsVisible.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Actions/WorkOrders/Operations/WorkOrderOperationDetailsPopover.action",
+    "Target": "/SAPAssetManager/Actions/WorkOrders/Operations/WorkOrderOperationDetailsPopover.action"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Operations/WorkOrderOperationQABSettings.js",
+    "Target": "/SAPAssetManager/Rules/Operations/WorkOrderOperationQABSettings.js"
 }
 ]
 }
