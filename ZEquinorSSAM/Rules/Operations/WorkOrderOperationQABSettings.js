@@ -13,13 +13,13 @@ import IsAddConfirmationButtonVisibleOnOperationDetails from '../../../SAPAssetM
 import TechniciansExist from '../../../SAPAssetManager/Rules/WorkOrders/Operations/TechniciansExist';
 import ConfirmationScenariosFeatureIsEnabled from '../../../SAPAssetManager/Rules/ConfirmationScenarios/ConfirmationScenariosFeatureIsEnabled';
 //Equinor GAP NGE-131762 starting - use the Operation Details scoped edit rule instead of EnableWorkOrderEdit
-import EnableWorkOrderEditOnOperationDetails from '../UserAuthorizations/WorkOrders/EnableWorkOrderEditOnOperationDetails';
+import ZEnableWorkOrderEditOnOperationDetails from '../UserAuthorizations/WorkOrders/ZEnableWorkOrderEditOnOperationDetails';
 //Equinor GAP NGE-131762 ending
 
 export default class WorkOrderOperationQABSettings extends QABSettings {
     async generateChips() {
         //Equinor GAP NGE-131762 starting
-        const isEnabledWorkorderEdit = await EnableWorkOrderEditOnOperationDetails(this._context);
+        const isEnabledWorkorderEdit = await ZEnableWorkOrderEditOnOperationDetails(this._context);
         //Equinor GAP NGE-131762 ending
 
         const chips = [

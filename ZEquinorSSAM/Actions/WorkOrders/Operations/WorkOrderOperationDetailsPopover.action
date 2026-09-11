@@ -13,12 +13,12 @@
         {
             "Title" : "$(L,add_part)",
             "OnPress" : "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateNav.js",
-            "Visible": "/ZEquinorSSAM/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEditOnOperationDetails.js"
+            "Visible": "/ZEquinorSSAM/Rules/UserAuthorizations/WorkOrders/ZEnableWorkOrderEditOnOperationDetails.js"
         },
         {
             "Title" : "$(L, add_note)",
             "OnPress": "/SAPAssetManager/Rules/Notes/NoteCreateNav.js",
-            "Visible": "/ZEquinorSSAM/Rules/UserAuthorizations/WorkOrders/EnableWorkOrderEditOnOperationDetails.js"
+            "Visible": "/ZEquinorSSAM/Rules/UserAuthorizations/WorkOrders/ZEnableWorkOrderEditOnOperationDetails.js"
         },
         {
             "Title" : "$(L,record_results)",

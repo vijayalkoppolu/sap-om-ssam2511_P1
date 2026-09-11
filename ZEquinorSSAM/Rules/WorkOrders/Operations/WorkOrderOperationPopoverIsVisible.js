@@ -11,7 +11,7 @@ import CooperationIsEnabledForWorkOrder from '../../../../SAPAssetManager/Rules/
 import DoubleCheckIsEnabledForWorkOrder from '../../../../SAPAssetManager/Rules/ConfirmationScenarios/DoubleCheckIsEnabledForWorkOrder';
 import SDFCreateEnabled from '../../../../SAPAssetManager/Rules/Forms/SDF/SDFCreateEnabled';
 //Equinor GAP NGE-131762 starting - use the Operation Details scoped edit rule instead of EnableWorkOrderEdit
-import EnableWorkOrderEditOnOperationDetails from '../../UserAuthorizations/WorkOrders/EnableWorkOrderEditOnOperationDetails';
+import ZEnableWorkOrderEditOnOperationDetails from '../../UserAuthorizations/WorkOrders/ZEnableWorkOrderEditOnOperationDetails';
 //Equinor GAP NGE-131762 ending
 
 /**
@@ -23,7 +23,7 @@ export default function WorkOrderOperationPopoverIsVisible(clientAPI) {
         EnableSubOperation(clientAPI),
         EnableNotificationCreateFromWorkOrderOperation(clientAPI),
         //Equinor GAP NGE-131762 starting
-        EnableWorkOrderEditOnOperationDetails(clientAPI),
+        ZEnableWorkOrderEditOnOperationDetails(clientAPI),
         //Equinor GAP NGE-131762 ending
         EnableRecordResultsFromOperationDetails(clientAPI),
         DocumentAddFromOperationDetails(clientAPI),
