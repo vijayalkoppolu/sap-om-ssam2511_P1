@@ -133,6 +133,26 @@
 {
     "Source": "/ZEquinorSSAM/Rules/Operations/WorkOrderOperationQABSettings.js",
     "Target": "/SAPAssetManager/Rules/Operations/WorkOrderOperationQABSettings.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/UserAuthorizations/Notifications/EnableNotificationCreateFromWorkOrderOperation.js",
+    "Target": "/SAPAssetManager/Rules/UserAuthorizations/Notifications/EnableNotificationCreateFromWorkOrderOperation.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Documents/DocumentAddFromOperationDetails.js",
+    "Target": "/SAPAssetManager/Rules/Documents/DocumentAddFromOperationDetails.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/InspectionCharacteristics/Update/EnableRecordResultsFromOperationDetails.js",
+    "Target": "/SAPAssetManager/Rules/InspectionCharacteristics/Update/EnableRecordResultsFromOperationDetails.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/Measurements/Points/MeasuringPointsTakeReadingsIsVisible.js",
+    "Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointsTakeReadingsIsVisible.js"
+},
+{
+    "Source": "/ZEquinorSSAM/Rules/ServiceOrders/Mileage/MileageAddCheckIfObjectIsCompleted.js",
+    "Target": "/SAPAssetManager/Rules/ServiceOrders/Mileage/MileageAddCheckIfObjectIsCompleted.js"
 }
 ]
 }
