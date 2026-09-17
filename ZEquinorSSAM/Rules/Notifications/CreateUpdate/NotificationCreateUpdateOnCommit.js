@@ -72,18 +72,23 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
             promises.push(NotificationCreateUpdateProcessingContextLstPkrValue(clientAPI));
             return Promise.all(promises).then(results => {
                 // eslint-disable-next-line no-unused-vars
-                let [notifNum, workcenter, floc, equip, refObjectType, notifCategory, npc] = results;
-
+                //let [notifNum, workcenter, floc, equip, refObjectType, notifCategory, npc] = results; //SAP Note: 3789197
+                let [notifNum, wcResult, floc, equip, refObjectType, notifCategory, npc] = results;//SAP Note: 3789197
+                const workcenter = wcResult?.workCenterId || '';//SAP Note: 3789197
+                const workCenterPlant = wcResult?.plantId || '';//SAP Note: 3789197
                 let notificationCreateProperties = {
                     'PlanningGroup': plannerGroup.length ? plannerGroup[0].ReturnValue : '',
-                    'PlanningPlant': ComLib.getUserDefaultPlanningPlant() || ComLib.getNotificationPlanningPlant(clientAPI),
+                    //'PlanningPlant': ComLib.getUserDefaultPlanningPlant() || ComLib.getNotificationPlanningPlant(clientAPI),//SAP Note: 3789197
+                    'PlanningPlant': clientAPI.binding?.PlanningPlant || ComLib.getUserDefaultPlanningPlant() || ComLib.getNotificationPlanningPlant(clientAPI),//SAP Note: 3789197
                     'NotificationNumber': notifNum,
                     'NotificationDescription': descr,
                     'NotificationType': type,
                     'HeaderFunctionLocation': floc,
                     'HeaderEquipment': equip,
-                    'MainWorkCenter': workcenter,
-                    'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
+                    //'MainWorkCenter': workcenter, //SAP Note: 3789197
+                    //'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI), //SAP Note: 3789197
+                    'MainWorkCenter': workcenter || clientAPI.binding?.MainWorkCenter || '',
+                    'MainWorkCenterPlant': workCenterPlant || NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
                     'ReportedBy': ComLib.getSapUserName(clientAPI),
                     'CreationDate': GetCurrentDate(clientAPI),
                     'ReferenceNumber': NotificationReferenceNumber(clientAPI),
@@ -159,16 +164,24 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
         promises.push(notifCategoryPromise);
 
         return Promise.all(promises).then(results => {
-            let workcenter = results.length >= 2 ? results[0] : '';
-
+           // let workcenter = results.length >= 2 ? results[0] : ''; //SAP Note: 3789197
+            let wcResult = results.length >= 2 ? results[0] : { workCenterId: '', plantId: '' }; //SAP Note: 3789197
+            let workcenter = wcResult?.workCenterId || ''; //SAP Note: 3789197
+            let workCenterPlant = wcResult?.plantId || ''; //SAP Note: 3789197
             let notificationUpdateProperties = {
                 'NotificationDescription': descr,
                 'NotificationType': type,
-                'HeaderFunctionLocation': NotificationLibrary.NotificationCreateUpdateFunctionalLocationLstPkrValue(clientAPI),
-                'HeaderEquipment': NotificationLibrary.NotificationCreateUpdateEquipmentLstPkrValue(clientAPI),
+               // 'HeaderFunctionLocation': NotificationLibrary.NotificationCreateUpdateFunctionalLocationLstPkrValue(clientAPI),
+              //  'HeaderEquipment': NotificationLibrary.NotificationCreateUpdateEquipmentLstPkrValue(clientAPI),
+                 'HeaderFunctionLocation': NotificationLibrary.NotificationCreateUpdateFunctionalLocationLstPkrValue(clientAPI) || clientAPI.binding?.HeaderFunctionLocation || '',//SAP Note: 3789197
+                 'HeaderEquipment': NotificationLibrary.NotificationCreateUpdateEquipmentLstPkrValue(clientAPI) || clientAPI.binding?.HeaderEquipment || '',//SAP Note: 3789197
+             
                 'PlanningGroup': plannerGroup.length ? plannerGroup[0].ReturnValue : '',
-                'MainWorkCenter': workcenter,
-                'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
+               // 'MainWorkCenter': workcenter,//SAP Note: 3789197
+               // 'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),//SAP Note: 3789197
+                'MainWorkCenter': workcenter || clientAPI.binding?.MainWorkCenter || '',//SAP Note: 3789197
+                'MainWorkCenterPlant': workCenterPlant || clientAPI.binding?.MainWorkCenterPlant || NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),//SAP Note: 3789197
+           
             };
 
             notificationUpdateProperties = setMalfunctionDateTime(clientAPI, notificationUpdateProperties);

@@ -268,6 +268,7 @@
                     "OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/UpdateGroupPickers.js",
                     "IsEditable": "/SAPAssetManager/Rules/Notifications/NotificationAssignmentPkrsEditable.js",
                     "Value": "/SAPAssetManager/Rules/Notifications/NotificationMainWorkCenterDefaultPkrDefault.js",
+                    "IsVisible": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationMainWorkCenterVisible.js",
                     "PickerItems": {
                         "DisplayValue": "{ExternalWorkCenterId}",
                         "ReturnValue": "{ExternalWorkCenterId}",
