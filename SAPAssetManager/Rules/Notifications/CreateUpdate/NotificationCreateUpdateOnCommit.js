@@ -20,6 +20,7 @@ import NotificationReferenceType from './NotificationReferenceType';
 import { isControlPopulated } from './RequiredFields';
 import CreateEMPEntries from '../EMP/CreateEMPEntries';
 import IsFromOnlineFlocCreate from '../../Common/IsFromOnlineFlocCreate';
+import NotificationIsFromFlocContext from './NotificationIsFromFlocContext';
 import libAnalytics from '../../Extensions/EventLoggers/Analytics/AnalyticsLibrary';
 import libTelemetry from '../../Extensions/EventLoggers/Telemetry/TelemetryLibrary';
 
@@ -58,7 +59,7 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
                 const onlineEquip = ComLib.getControlProxy(clientAPI, 'OnlineEquipControl').getValue();
                 promises.push(Promise.resolve(''));
                 promises.push(Promise.resolve(onlineEquip ? onlineEquip.split(' - ')[0] : ''));
-            } else if (IsFromOnlineFlocCreate(clientAPI)) {
+            } else if (IsFromOnlineFlocCreate(clientAPI) || NotificationIsFromFlocContext(clientAPI)) {
                 promises.push(clientAPI?.binding?.HeaderFunctionLocation);
                 promises.push('');
             } else {
@@ -70,11 +71,13 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
             promises.push(NotificationCreateUpdateProcessingContextLstPkrValue(clientAPI));
             return Promise.all(promises).then(results => {
                 // eslint-disable-next-line no-unused-vars
-                let [notifNum, workcenter, floc, equip, refObjectType, notifCategory, npc] = results;
+                let [notifNum, wcResult, floc, equip, refObjectType, notifCategory, npc] = results;
+                const workcenter = wcResult?.workCenterId || '';
+                const workCenterPlant = wcResult?.plantId || '';
 
                 let notificationCreateProperties = {
                     'PlanningGroup': plannerGroup.length ? plannerGroup[0].ReturnValue : '',
-                    'PlanningPlant': ComLib.getUserDefaultPlanningPlant() || ComLib.getNotificationPlanningPlant(clientAPI),
+                    'PlanningPlant': clientAPI.binding?.PlanningPlant || ComLib.getUserDefaultPlanningPlant() || ComLib.getNotificationPlanningPlant(clientAPI),
                     'NotificationNumber': notifNum,
                     'NotificationDescription': descr,
                     'NotificationType': type,
@@ -82,8 +85,8 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
                     'HeaderFunctionLocation': floc,
                     'HeaderEquipment': equip,
                     'BreakdownIndicator': BreakdownSwitchValue(clientAPI),
-                    'MainWorkCenter': workcenter,
-                    'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
+                    'MainWorkCenter': workcenter || clientAPI.binding?.MainWorkCenter || '',
+                    'MainWorkCenterPlant': workCenterPlant || NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
                     'ReportedBy': ComLib.getSapUserName(clientAPI),
                     'CreationDate': GetCurrentDate(clientAPI),
                     'ReferenceNumber': NotificationReferenceNumber(clientAPI),
@@ -156,18 +159,20 @@ export default function NotificationCreateUpdateOnCommit(clientAPI) {
         promises.push(notifCategoryPromise);
 
         return Promise.all(promises).then(results => {
-            let workcenter = results.length >= 2 ? results[0] : '';
+            let wcResult = results.length >= 2 ? results[0] : { workCenterId: '', plantId: '' };
+            let workcenter = wcResult?.workCenterId || '';
+            let workCenterPlant = wcResult?.plantId || '';
 
             let notificationUpdateProperties = {
                 'NotificationDescription': descr,
                 'NotificationType': type,
                 'Priority': NotificationLibrary.NotificationCreateUpdatePrioritySegValue(clientAPI),
-                'HeaderFunctionLocation': NotificationLibrary.NotificationCreateUpdateFunctionalLocationLstPkrValue(clientAPI),
-                'HeaderEquipment': NotificationLibrary.NotificationCreateUpdateEquipmentLstPkrValue(clientAPI),
+                'HeaderFunctionLocation': NotificationLibrary.NotificationCreateUpdateFunctionalLocationLstPkrValue(clientAPI) || clientAPI.binding?.HeaderFunctionLocation || '',
+                'HeaderEquipment': NotificationLibrary.NotificationCreateUpdateEquipmentLstPkrValue(clientAPI) || clientAPI.binding?.HeaderEquipment || '',
                 'BreakdownIndicator': BreakdownSwitchValue(clientAPI),
                 'PlanningGroup': plannerGroup.length ? plannerGroup[0].ReturnValue : '',
-                'MainWorkCenter': workcenter,
-                'MainWorkCenterPlant': NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
+                'MainWorkCenter': workcenter || clientAPI.binding?.MainWorkCenter || '',
+                'MainWorkCenterPlant': workCenterPlant || clientAPI.binding?.MainWorkCenterPlant || NotificationLibrary.NotificationCreateMainWorkCenterPlant(clientAPI),
             };
 
             notificationUpdateProperties = setMalfunctionDateTime(clientAPI, notificationUpdateProperties);
