@@ -151,10 +151,6 @@
     "Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointsTakeReadingsIsVisible.js"
 },
 {
-    "Source": "/ZEquinorSSAM/Rules/ServiceOrders/Mileage/MileageAddCheckIfObjectIsCompleted.js",
-    "Target": "/SAPAssetManager/Rules/ServiceOrders/Mileage/MileageAddCheckIfObjectIsCompleted.js"
-},
-{
     "Source": "/ZEquinorSSAM/Rules/QAB/IsAddConfirmationButtonVisibleOnOperationDetails.js",
     "Target": "/SAPAssetManager/Rules/QAB/IsAddConfirmationButtonVisibleOnOperationDetails.js"
 }
