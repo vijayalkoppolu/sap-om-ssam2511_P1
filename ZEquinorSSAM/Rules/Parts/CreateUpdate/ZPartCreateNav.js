@@ -18,17 +18,19 @@ import { executeChangeSetAction } from '../../../../SAPAssetManager/Rules/Parts/
 import libCommon from '../../../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
 import WorkCenterPlant from '../../../../SAPAssetManager/Rules/Common/Controls/WorkCenterPlantControl';
 import assnType from '../../../../SAPAssetManager/Rules/Common/Library/AssignmentType';
+import ODataLibrary from '../../../../SAPAssetManager/Rules/OData/ODataLibrary';
 
 export default function ZPartCreateNav(context) {
     let binding = context.binding || {};
     let storageLocation = libCommon.getUserDefaultStorageLocation();
+    let isLocal = ODataLibrary.isLocal(context.binding);
     binding.StorageLocation = '';
 
     if (libCommon.isDefined(storageLocation)) {
         binding.StorageLocation = storageLocation;
     }
-
-    if (isValidODataBinding(context, binding)) {
+    const isValidOdata = isValidODataBinding(context, binding);
+    if (isValidOdata) {
         const workcenter = getWorkcenterValue(context);
         binding.Plant = libCommon.getAppParam(context, 'WORKORDER', 'PlanningPlant');
         if (libCommon.isDefined(workcenter)) {
@@ -42,10 +44,23 @@ export default function ZPartCreateNav(context) {
         if (!libCommon.isDefined(plant)) {
             binding.Plant = libCommon.getAppParam(context, 'WORKORDER', 'PlanningPlant');
         }
+        if (isLocal) {
+            return executeChangeSetAction(context);
+        }
 
-        //Equinor GAP NGE-131762 - no work order header completion check here on purpose.
-        //Visibility of Add Part on this screen is already driven by the operation level rules.
+        //Equinor GAP NGE-131762 starting
+        //Standard PartCreateNav ends with a *work order header* completion check:
+        //    return libWOStatus.isOrderComplete(context).then(status => {
+        //        if (!status) {
+        //            return executeChangeSetAction(context);
+        //        }
+        //        return '';
+        //    });
+        //For post processing orders the header is complete while the operation is still open, so the
+        //rule returned '' and the Add Part navigation was silently cancelled. On the Operation Details
+        //screen the visibility is already driven by the operation level rules, so we navigate directly.
         return executeChangeSetAction(context);
+        //Equinor GAP NGE-131762 ending
     });
 }
 
