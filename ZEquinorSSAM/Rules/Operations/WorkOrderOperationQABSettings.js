@@ -32,7 +32,9 @@ export default class WorkOrderOperationQABSettings extends QABSettings {
                 'Action': '/SAPAssetManager/Rules/Operations/WorkOrderOperationNotificationCreateNav.js',
             }),
             await this._addMeterChip(),
-            this._createAddPartChip({ IsButtonEnabled: isEnabledWorkorderEdit, IsButtonVisibleBySettings: false }),
+            //Equinor GAP NGE-131762 starting - route Add Part through the Operation Details scoped nav rule
+            this._createAddPartChip({ IsButtonEnabled: isEnabledWorkorderEdit, IsButtonVisibleBySettings: false, Action: '/ZEquinorSSAM/Rules/Parts/CreateUpdate/ZPartCreateNav.js' }),
+            //Equinor GAP NGE-131762 ending
             this._createAddNoteChip({ IsButtonEnabled: isEnabledWorkorderEdit, IsButtonVisibleBySettings: false }),
             await this._createAddSmartFormChip(),
             this._createAddServiceConfirmationChip({
