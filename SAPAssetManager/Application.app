@@ -16,7 +16,7 @@
 	"OnReceiveFetchCompletion": "/SAPAssetManager/Rules/PushNotifications/PushNotificationsContentAvailableEventHandler.js",
 	"OnReceiveNotificationResponse": "/SAPAssetManager/Rules/PushNotifications/PushNotificationsReceiveNotificationResponseEventHandler.js",
 	"Styles": "/SAPAssetManager/Styles/Styles.less",
-	"Version": "3.1.2",
+	"Version": "3.1.3",
 	"OnSuspend": "/SAPAssetManager/Rules/ApplicationEvents/SuspendEventHandler.js",
 	"OnResume": "/SAPAssetManager/Rules/ApplicationEvents/ResumeEventHandler.js",
 	"Localization": "/SAPAssetManager/i18n/i18n.properties",
