@@ -48,7 +48,7 @@ export default function RequiredFields(context) {
     // Skip this check if creating from online equipment or functional location search
     if (!IsFromOnlineEquipCreate(context) && !IsFromOnlineFlocCreate(context)) {
         if (!context.evaluateTargetPath('#Control:EquipHierarchyExtensionControl').getValue() &&
-                !context.evaluateTargetPath('#Control:FuncLocHierarchyExtensionControl').getValue()) {
+                !context.evaluateTargetPath('#Control:FuncLocHierarchyExtensionControl').getValue() && !context.evaluateTargetPath('#Control:OfflineFlocControl').getValue()) {
                 required.push('EquipHierarchyExtensionControl', 'FuncLocHierarchyExtensionControl');
             }
     }
