@@ -12,7 +12,7 @@
         },
         {
             "Title" : "$(L,add_part)",
-            "OnPress" : "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateNav.js",
+            "OnPress" : "/ZEquinorSSAM/Rules/Parts/CreateUpdate/ZPartCreateNav.js",
             "Visible": "/ZEquinorSSAM/Rules/UserAuthorizations/WorkOrders/ZEnableWorkOrderEditOnOperationDetails.js"
         },
         {
