@@ -2,7 +2,14 @@ import libVal from '../Common/Library/ValidationLibrary';
 import assnType from '../Common/Library/AssignmentType';
 
 export default function NotificationMainWorkCenterDefaultPkrDefault(context) {
-    let binding = context.binding;
+    const binding = context.binding;
+
+    // Direct external ID from FLOC/Equipment WorkCenter_Main_Nav — works even when
+    // the work center belongs to an external plant not in the offline WorkCenters store.
+    if (!libVal.evalIsEmpty(binding.MainWorkCenterExternal)) {
+        return binding.MainWorkCenterExternal;
+    }
+
     let workCenter;
     if (!libVal.evalIsEmpty(binding.MainWorkCenter)) {
         workCenter = binding.MainWorkCenter;

@@ -13,9 +13,10 @@ import TelemetryLibrary from '../../Extensions/EventLoggers/Telemetry/TelemetryL
 
 export default function InspectionCharacteristicsFDCUpdateDone(context) {
    let fdcHelper = new FDCSectionHelper(context);
-   let createdAt = GetCurrentDate(context);
-   let createdAtTime = GetCurrentTime(context);
+   
+   
    let createdBy = libCom.getSapUserName(context);
+   let valuationTimestamps = context.getPageProxy().getClientData().ValuationTimestamps || {};
     // Validate all sections first
     return fdcHelper.run((sectionBinding, section) => {
         return InspectionCharacteristicsUpdateValidation(context, sectionBinding, section);
@@ -51,6 +52,9 @@ export default function InspectionCharacteristicsFDCUpdateDone(context) {
         });
     }).then(() => {
         return fdcHelper.run(async (sectionBinding, section) => {
+            let charTimestamp = valuationTimestamps[sectionBinding['@odata.readLink']] || {};
+            let createdAt = charTimestamp.createdAt || sectionBinding.CreatedAt || GetCurrentDate(context);
+            let createdAtTime = charTimestamp.createdAtTime || sectionBinding.CreatedAtTime || GetCurrentTime(context);
             let valuation = await getValuation(context, sectionBinding, section);
             let valuationReaddlink = await getValuationReaddlink(context, sectionBinding, section);
             let comment = getComment(section);

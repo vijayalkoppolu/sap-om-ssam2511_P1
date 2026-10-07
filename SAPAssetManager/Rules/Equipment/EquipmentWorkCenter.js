@@ -1,27 +1,34 @@
-import libCom from '../Common/Library/CommonLibrary';
 import {ValueIfExists} from '../Common/Library/Formatter';
-import IsOnlineFunctionalLocation from '../FunctionalLocation/IsOnlineFunctionalLocation';
 
 export default async function EquipmentWorkCenter(context) {
-    if (context.binding?.['@odata.type'] === '#sap_mobile.Equipment') {
-        const workCenterDescr = await libCom.getEntityProperty(context, 'WorkCenters', 'WorkCenterDescr');
-        return ValueIfExists(workCenterDescr);
+    const wcNav = context.binding?.WorkCenter_Main_Nav;
+    if (wcNav) {
+        const id = wcNav.ExternalWorkCenterId;
+        const desc = wcNav.WorkCenterDescr;
+        if (id && desc) return `${id} - ${desc}`;
+        if (id) return id;
+        if (desc) return desc;
+        return '-';
     }
 
-    if (IsOnlineFunctionalLocation(context)) {
-        const workCenterDescr = await libCom.getEntityProperty(context, 'WorkCenters', 'WorkCenterDescr');
-        return ValueIfExists(workCenterDescr);
-    }
+    // For Equipment or FunctionalLocation - use WorkCenter field with proper filtering
+    const workCenter = context.binding?.WorkCenter;
+    const objectType = context.binding?.CRObjectType || context.binding?.PMObjectType;
 
-    //Look up Work Center Description for offline Functional Location or Equipment
-    if (context.binding?.WorkCenter && context.binding?.CRObjectType) {
-        const result = await context.read('/SAPAssetManager/Services/AssetManager.service', 'WorkCenters', ['WorkCenterDescr'], "$filter=WorkCenterId eq '" + context.binding.WorkCenter + "' and ObjectType eq '" + context.binding.CRObjectType + "'");
+    if (workCenter && objectType) {
+        const result = await context.read(
+            '/SAPAssetManager/Services/AssetManager.service', 'WorkCenters',
+            ['ExternalWorkCenterId', 'WorkCenterDescr'],
+            `$filter=WorkCenterId eq '${workCenter}' and ObjectType eq '${objectType}'`,
+        );
         if (result && result.length > 0) {
-            const workCenterDescr = result.getItem(0).WorkCenterDescr;
-            return ValueIfExists(workCenterDescr);
-        } else {
-            return '-';
+            const wc = result.getItem(0);
+            const id = wc.ExternalWorkCenterId;
+            const desc = wc.WorkCenterDescr;
+            if (id && desc) return `${id} - ${desc}`;
+            return ValueIfExists(id || desc);
         }
+        return '-';
     }
 
     return '-';
