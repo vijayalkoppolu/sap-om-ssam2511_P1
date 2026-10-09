@@ -153,6 +153,10 @@
 {
     "Source": "/ZEquinorSSAM/Rules/QAB/IsAddConfirmationButtonVisibleOnOperationDetails.js",
     "Target": "/SAPAssetManager/Rules/QAB/IsAddConfirmationButtonVisibleOnOperationDetails.js"
+},
+{
+   "Source": "/ZEquinorSSAM/Pages/WorkOrders/Operations/PRT/PRTListView.page",
+   "Target": "/SAPAssetManager/Pages/WorkOrders/Operations/PRT/PRTListView.page"
 }
 ]
 }
