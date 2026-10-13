@@ -1,4 +1,5 @@
 {
+	
 	"DestinationName": "DEST_SAM2511_PPROP",
 	"LanguageURLParam": "sap-language",
 	"OfflineEnabled": true,
@@ -16,6 +17,7 @@
     },
 	"Headers": {
         "SAP-PASSPORT": "/SAPAssetManager/Rules/Common/Passport/GetSAPPassportHeaderValue.js",
-		"x-app-info": "/SAPAssetManager/Rules/ApplicationEvents/AppInformationHeader.js"
+		"x-app-info": "/SAPAssetManager/Rules/ApplicationEvents/AppInformationHeader.js",
+		"X-APP-VERSION": "2511.1.0"
     }
 }

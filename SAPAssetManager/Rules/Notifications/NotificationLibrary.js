@@ -827,6 +827,10 @@ export default class {
     }
 
     static NotificationCreateMainWorkCenterPlant(context) {
+        const flocPlant = context.binding?.HeaderFlocPlanningPlant;
+        if (flocPlant) return flocPlant;
+        const equipPlant = context.binding?.HeaderEquipPlanningPlant;
+        if (equipPlant) return equipPlant;
         if (libCom.getNotificationAssignmentType(context) === '5') {
             return libCom.getNotificationPlanningPlant(context);
         }

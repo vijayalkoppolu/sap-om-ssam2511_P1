@@ -34,7 +34,7 @@ export class EquipmentLibrary {
      */
     static onlineEquipmentDetailsQueryOptions() {
         return '$select=SystemStatus,Document,UserStatus,LongText,Class,' +
-            'EquipDesc,EquipId,PlanningPlant,WorkCenter,EquipType,EquipCategory,FuncLocId,Room,PlantSection,InventoryNum,ManufSerialNo,ManufPartNo,ModelNum,Manufacturer,SuperiorEquip,BoMFlag,ConstType,MaintPlant' +
+            'EquipDesc,EquipId,PlanningPlant,WorkCenter,PMObjectType,EquipType,EquipCategory,FuncLocId,Room,PlantSection,InventoryNum,ManufSerialNo,ManufPartNo,ModelNum,Manufacturer,SuperiorEquip,BoMFlag,ConstType,MaintPlant' +
             '&$expand=SystemStatus,Document,UserStatus,LongText,Class';
     }
 

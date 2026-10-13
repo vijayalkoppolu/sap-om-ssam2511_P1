@@ -5,6 +5,8 @@ import ResetValidationOnInput from '../../Common/Validation/ResetValidationOnInp
 import {FDCSectionHelper} from '../../FDC/DynamicPageGenerator';
 import isWindows from '../../Common/IsWindows';
 import FDCSetEditable from '../FDCSetEditable';
+import GetCurrentDate from '../../Confirmations/BlankFinal/GetCurrentDate';
+import GetCurrentTime from '../../Confirmations/BlankFinal/GetCurrentTime';
 
 export default function InspectionCharacteristicsQualitativeOnChange(context) {
     ResetValidationOnInput(context);
@@ -13,6 +15,15 @@ export default function InspectionCharacteristicsQualitativeOnChange(context) {
     if (section && Object.prototype.hasOwnProperty.call(section,'index') && section.index !== -1) {
         let index = section.index;
         let binding = section.binding;
+
+        let clientData = context.getPageProxy().getClientData();
+        if (!clientData.ValuationTimestamps) {
+            clientData.ValuationTimestamps = {};
+        }
+        clientData.ValuationTimestamps[binding['@odata.readLink']] = {
+            createdAt: GetCurrentDate(context),
+            createdAtTime: GetCurrentTime(context),
+        };
 
         let value = '';
         let valuationControl = 'Valuation';
