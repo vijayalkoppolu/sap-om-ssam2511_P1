@@ -1,7 +1,7 @@
 import libCom from '../../Common/Library/CommonLibrary';
 
 export default function NotificationIsFromFlocContext(context) {
-    if (!context?.binding?.HeaderFlocId) {
+    if (!context?.binding?.HeaderFlocId || context?.binding?.OnlineFloc) {
         return false;
     }
     const flocPlant = context.binding.HeaderFlocPlanningPlant || '';
